@@ -1,0 +1,25 @@
+{
+  "name": "kingstonesystems",
+  "version": "1.0.0",
+  "description": "A bold, modern one-page website for an AI voice agent consulting firm.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --port=3000 --host=localhost --open=/index.html",
+    "start": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vacationa/kingstonesystems.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vacationa/kingstonesystems/issues"
+  },
+  "homepage": "https://github.com/vacationa/kingstonesystems#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
