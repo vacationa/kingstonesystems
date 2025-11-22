@@ -4,7 +4,7 @@
   "description": "A bold, modern one-page website for an AI voice agent consulting firm.",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server --port=3000 --host=localhost --open=/index.html",
+    "dev": "live-server --port=3000 --host=localhost --open=/",
     "start": "npm run dev"
   },
   "repository": {
