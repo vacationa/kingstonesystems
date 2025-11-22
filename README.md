@@ -40,3 +40,26 @@ kingstonesystems/
 
 - `npm run dev` - Start development server on port 3000
 - `npm start` - Alias for `npm run dev`
+
+## Deployment
+
+### Netlify Deployment
+
+This project is configured for easy deployment to Netlify:
+
+1. **Connect your repository** to Netlify:
+   - Go to [Netlify](https://www.netlify.com/)
+   - Click "Add new site" → "Import an existing project"
+   - Connect your Git provider and select this repository
+
+2. **Build settings** (automatically configured via `netlify.toml`):
+   - Build command: (none - static site)
+   - Publish directory: `.` (root directory)
+
+3. **Deploy**: Netlify will automatically deploy on every push to your main branch.
+
+The project includes:
+- `netlify.toml` - Configuration for headers, caching, and build settings
+- `_redirects` - SPA fallback routing for proper navigation
+
+All asset paths are configured to work correctly in production.
