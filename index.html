@@ -41,6 +41,7 @@
                 <span class="logo-text">Kingstone Systems</span>
             </div>
             <div class="nav-links">
+                <a href="#tutorials">Tutorials</a>
                 <a href="#solutions">Solutions</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="https://calendly.com/adhiraj-hangal/voice-agent-consultation" class="btn-signup">Book a Demo</a>
@@ -282,6 +283,34 @@
         </div>
     </section>
 
+    <!-- Tutorials Section -->
+    <section id="tutorials" class="tutorials">
+        <div class="container">
+            <h2 class="section-title">learn with <span class="underlined-text">our tutorials</span></h2>
+            <p class="section-subtitle">Deep dives, walkthroughs, and practical guides from our YouTube channel to help you build and deploy voice AI systems.</p>
+            <div class="tutorials-grid">
+                <article class="tutorial-card">
+                    <div class="tutorial-meta">YouTube • Roofing</div>
+                    <h3 class="tutorial-title">How to Build a Roofing AI Voice Agent with Vapi and n8n</h3>
+                    <p class="tutorial-description">Complete guide to building an AI voice agent for roofing companies that captures storm damage leads, schedules inspections, and converts inquiries into booked appointments.</p>
+                    <a class="tutorial-link" href="https://www.youtube.com/watch?v=BT4cKgOjsnQ&t=7s" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                </article>
+                <article class="tutorial-card">
+                    <div class="tutorial-meta">YouTube • Plumbing</div>
+                    <h3 class="tutorial-title">How to Build a Plumbing AI Voice Agent with Vapi and n8n</h3>
+                    <p class="tutorial-description">Full end-to-end tutorial on designing, wiring, and deploying a plumbing-focused AI voice agent using Vapi and n8n.</p>
+                    <a class="tutorial-link" href="https://www.youtube.com/watch?v=64QwovKjbEU&t=508s" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                </article>
+                <article class="tutorial-card">
+                    <div class="tutorial-meta">YouTube • HVAC</div>
+                    <h3 class="tutorial-title">How to Build an HVAC AI Voice Agent with Vapi and n8n</h3>
+                    <p class="tutorial-description">Complete walkthrough on building and deploying an HVAC-focused AI voice agent that handles emergency calls, schedules service appointments, and qualifies leads.</p>
+                    <a class="tutorial-link" href="https://www.youtube.com/watch?v=Q6rT1a5lgrs&t=4s" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Calculator Section -->
     <section class="calculator-section">
         <div class="container">
@@ -323,6 +352,40 @@
                     <a href="#contact" class="btn-hero">Get a Custom Demo Now →</a>
                 </div>
                 <p class="cta-note">Free consultation • Tailored specifically for your business</p>
+                
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                    </div>
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="text-opt-in" name="text-opt-in" class="form-checkbox">
+                        <label for="text-opt-in" class="form-checkbox-label">
+                            I agree to receive text messages from Kingstone Systems
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-hero form-submit">Send Message →</button>
+                </form>
             </div>
         </div>
     </section>
