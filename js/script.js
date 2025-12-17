@@ -175,4 +175,80 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.stat-card').forEach((card) => {
         countObserver.observe(card);
     });
+
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach((question) => {
+        question.addEventListener('click', function() {
+            const faqItem = this.closest('.faq-item');
+            const isOpen = faqItem.classList.contains('open');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach((item) => {
+                item.classList.remove('open');
+            });
+            
+            // Toggle current item
+            if (!isOpen) {
+                faqItem.classList.add('open');
+            }
+        });
+    });
+
+    // Multi-view Carousel functionality for agents section
+    const agentsDisplay = document.querySelector('.agents-display');
+    const prevBtnNew = document.querySelector('.carousel-prev-new');
+    const nextBtnNew = document.querySelector('.carousel-next-new');
+    
+    if (agentsDisplay && prevBtnNew && nextBtnNew) {
+        const agents = [
+            { img: 'assets/team/1.png', name: 'Julia - Receptionist Agent' },
+            { img: 'assets/team/2.png', name: 'Michael - Receptionist Agent' },
+            { img: 'assets/team/3.png', name: 'Sarah - Receptionist Agent' }
+        ];
+        
+        let currentIndex = 1; // Start with middle agent
+        
+        function getAgentHTML(agent, position) {
+            const isCenter = position === 'center';
+            const className = isCenter ? 'agent-card-center active' : `agent-card-side agent-${position}`;
+            const label = isCenter ? `
+                <div class="agent-label">
+                    <span class="agent-name-label">${agent.name}</span>
+                </div>
+            ` : '';
+            
+            return `
+                <div class="${className}">
+                    <div class="agent-background">
+                        <img src="${agent.img}" alt="Receptionist Agent">
+                    </div>
+                    ${label}
+                </div>
+            `;
+        }
+        
+        function updateCarousel() {
+            const leftIndex = (currentIndex - 1 + agents.length) % agents.length;
+            const centerIndex = currentIndex;
+            const rightIndex = (currentIndex + 1) % agents.length;
+            
+            agentsDisplay.innerHTML = 
+                getAgentHTML(agents[leftIndex], 'left') +
+                getAgentHTML(agents[centerIndex], 'center') +
+                getAgentHTML(agents[rightIndex], 'right');
+        }
+        
+        prevBtnNew.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + agents.length) % agents.length;
+            updateCarousel();
+        });
+        
+        nextBtnNew.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % agents.length;
+            updateCarousel();
+        });
+        
+        // Initialize
+        updateCarousel();
+    }
 });
