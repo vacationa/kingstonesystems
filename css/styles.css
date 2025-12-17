@@ -392,6 +392,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline-block;
     margin-bottom: 16px;
     line-height: 1;
 }
@@ -997,6 +998,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline-block;
     margin-bottom: 20px;
     letter-spacing: -2px;
 }
@@ -1153,7 +1155,7 @@ body {
 
 .tutorials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 60px;
 }
@@ -1636,6 +1638,7 @@ body {
     margin: 0 auto;
     gap: 40px;
     padding: 0 40px;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .agent-card-side,
@@ -1644,7 +1647,7 @@ body {
     height: 450px;
     border-radius: 20px;
     overflow: hidden;
-    transition: all 0.5s ease;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -1658,7 +1661,7 @@ body {
     height: 500px;
     flex-shrink: 0;
     z-index: 2;
-    box-shadow: 0 20px 60px rgba(127, 0, 255, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 .agent-card-side .agent-background {
@@ -1681,7 +1684,7 @@ body {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, 
-        rgba(127, 0, 255, 0.05) 0%, 
+        rgba(255, 255, 255, 0.3) 0%, 
         rgba(255, 255, 255, 0.85) 100%);
     z-index: 1;
 }
@@ -1694,7 +1697,7 @@ body {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, 
-        rgba(127, 0, 255, 0.08) 0%, 
+        rgba(255, 255, 255, 0.1) 0%, 
         rgba(255, 255, 255, 0.25) 100%);
     z-index: 1;
 }
@@ -1710,6 +1713,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .agent-card-side .agent-background img {
@@ -2553,6 +2557,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer-copyright {
+    font-size: 14px;
+    color: var(--text-gray);
 }
 
 .footer-link {
