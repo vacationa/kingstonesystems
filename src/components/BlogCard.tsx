@@ -7,6 +7,7 @@ interface BlogCardProps {
   date: string;
   readTime: string;
   slug: string;
+  image?: string;
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({
@@ -16,16 +17,25 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   date,
   readTime,
   slug,
+  image,
 }) => {
   return (
     <article className="blog-post-card">
       <div className="post-card-header">
-        <div className="post-card-placeholder">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
+        {image ? (
+          <img 
+            src={image} 
+            alt={title} 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          <div className="post-card-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+        )}
       </div>
       <div className="post-card-content">
         <div className="post-meta">
@@ -33,12 +43,12 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           <span className="post-date">{date}</span>
         </div>
         <h3 className="post-card-title">
-          <a href={`/blog/${slug}`}>{title}</a>
+          <a href={`/blog/${slug}.html`}>{title}</a>
         </h3>
         <p className="post-card-excerpt">{excerpt}</p>
         <div className="post-card-footer">
           <span className="post-read-time">{readTime} read</span>
-          <a href={`/blog/${slug}`} className="post-card-link">
+          <a href={`/blog/${slug}.html`} className="post-card-link">
             Read More →
           </a>
         </div>

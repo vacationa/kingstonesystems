@@ -1,22 +1,8 @@
 # Blog index
 /blog    /blog.html    200
 
-# Blog post clean URLs - redirect to .html files
-/blog/how-to-use-agentic-ai                                             /blog/how-to-use-agentic-ai.html                                             200
-/blog/how-to-build-ai-agents                                            /blog/how-to-build-ai-agents.html                                            200
-/blog/ai-voice-agent-services-for-businesses                            /blog/ai-voice-agent-services-for-businesses.html                            200
-/blog/how-to-create-industry-specific-knowledge-bases-for-ai-agents     /blog/how-to-create-industry-specific-knowledge-bases-for-ai-agents.html     200
-/blog/ai-voice-agents-for-law-firms                                     /blog/ai-voice-agents-for-law-firms.html                                     200
-/blog/best-ai-voice-agent-solutions-for-business-phone-systems          /blog/best-ai-voice-agent-solutions-for-business-phone-systems.html          200
-/blog/best-voice-ai-agents-for-telecom-and-utility-providers            /blog/best-voice-ai-agents-for-telecom-and-utility-providers.html            200
-/blog/how-do-ai-chatbots-compare-to-human-agents                        /blog/how-do-ai-chatbots-compare-to-human-agents.html                        200
-/blog/how-to-control-emotional-tone-of-ai-agent-responses               /blog/how-to-control-emotional-tone-of-ai-agent-responses.html               200
-/blog/why-voice-ai-will-replace-traditional-call-centers-in-2026        /blog/why-voice-ai-will-replace-traditional-call-centers-in-2026.html        200
-/blog/best-companies-for-outbound-call-agents-using-voice-ai            /blog/best-companies-for-outbound-call-agents-using-voice-ai.html            200
-/blog/the-roi-of-an-ai-receptionist-for-hospitality-and-travel         /blog/the-roi-of-an-ai-receptionist-for-hospitality-and-travel.html         200
-/blog/the-roi-of-an-ai-receptionist-for-logistics-auto-field-ops    /blog/the-roi-of-an-ai-receptionist-for-logistics-auto-field-ops.html    200
-/blog/the-roi-of-an-ai-receptionist-for-apartment-complexes        /blog/the-roi-of-an-ai-receptionist-for-apartment-complexes.html        200
+# Blog post clean URLs - wildcard rule for all posts
+/blog/:slug  /blog/:slug.html  200
 
 # SPA fallback - redirect all routes to index.html
 /*    /index.html   200
-

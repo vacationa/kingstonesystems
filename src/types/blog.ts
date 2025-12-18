@@ -11,6 +11,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   featured: boolean;
+  image?: string;
   author?: {
     name: string;
     role: string;
