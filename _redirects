@@ -1,3 +1,6 @@
+# Blog index
+/blog    /blog.html    200
+
 # Blog post clean URLs - redirect to .html files
 /blog/how-to-use-agentic-ai                                             /blog/how-to-use-agentic-ai.html                                             200
 /blog/how-to-build-ai-agents                                            /blog/how-to-build-ai-agents.html                                            200
