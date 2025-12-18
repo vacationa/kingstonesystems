@@ -1,25 +1,23 @@
 {
   "name": "kingstonesystems",
   "version": "1.0.0",
-  "description": "A bold, modern one-page website for an AI voice agent consulting firm.",
-  "main": "index.js",
+  "description": "A bold, modern website for an AI voice agent consulting firm.",
+  "type": "module",
   "scripts": {
-    "dev": "live-server --port=3000 --host=localhost --open=/",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "start": "npm run dev"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vacationa/kingstonesystems.git"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/vacationa/kingstonesystems/issues"
-  },
-  "homepage": "https://github.com/vacationa/kingstonesystems#readme",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8"
   }
 }

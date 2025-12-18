@@ -1,65 +1,61 @@
 # Kingstone Systems
 
-A clean, modern website with purple accents and white background.
+Voice AI Agent Consulting & Development website with blog.
 
-## Getting Started
+## Setup
 
-### Install Dependencies
+Install dependencies:
 ```bash
 npm install
 ```
 
-### Run Development Server
+## Development
+
+Run the development server:
 ```bash
 npm run dev
 ```
 
-This will start the development server on `http://localhost:3000` and automatically open your browser.
+Visit:
+- Main site: http://localhost:5173/
+- Blog: http://localhost:5173/blog-new.html
+
+## Build
+
+Build for production:
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
 
 ## Project Structure
 
 ```
-kingstonesystems/
-├── index.html          # Homepage
-├── why-stall.html      # Why AI initiatives stall page
-├── css/
-│   └── styles.css      # Main stylesheet
-├── js/
-│   └── script.js       # JavaScript functionality
-└── assets/             # Static assets (images, etc.)
+src/
+├── components/       # Reusable React components
+│   ├── Navigation.tsx
+│   ├── Footer.tsx
+│   ├── BlogCard.tsx
+│   ├── BlogHero.tsx
+│   ├── FeaturedPost.tsx
+│   └── BlogCTA.tsx
+├── pages/
+│   └── blog/
+│       ├── index.tsx      # Main blog listing page
+│       └── BlogPost.tsx   # Individual blog post template
+├── types/
+│   └── blog.ts           # TypeScript type definitions
+├── blog.tsx              # Blog entry point
+└── index.css             # Global styles
+
+css/
+└── styles.css            # Main stylesheet (imported by React)
 ```
 
-## Technologies
+## Technology Stack
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Live Server (for development)
-
-## Scripts
-
-- `npm run dev` - Start development server on port 3000
-- `npm start` - Alias for `npm run dev`
-
-## Deployment
-
-### Netlify Deployment
-
-This project is configured for easy deployment to Netlify:
-
-1. **Connect your repository** to Netlify:
-   - Go to [Netlify](https://www.netlify.com/)
-   - Click "Add new site" → "Import an existing project"
-   - Connect your Git provider and select this repository
-
-2. **Build settings** (automatically configured via `netlify.toml`):
-   - Build command: (none - static site)
-   - Publish directory: `.` (root directory)
-
-3. **Deploy**: Netlify will automatically deploy on every push to your main branch.
-
-The project includes:
-- `netlify.toml` - Configuration for headers, caching, and build settings
-- `_redirects` - SPA fallback routing for proper navigation
-
-All asset paths are configured to work correctly in production.
+- React 18
+- TypeScript
+- Vite (build tool)
+- CSS (custom styles)
