@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What do AI agents run on? Complete guide to AI agent infrastructure, platforms, frameworks, and technical stack. Learn about the hardware, software, and services that power AI agents.">
+    <meta name="keywords" content="what do ai agents run on, AI agent infrastructure, AI agent platform, AI agent framework, AI agent stack, conversational AI platform, chatbot infrastructure">
+    <meta name="author" content="Kingstone Systems">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kingstonesystems.com/blog/what-do-ai-agents-run-on">
+    <meta property="og:title" content="What Do AI Agents Run On? Complete Infrastructure and Platform Guide 2025">
+    <meta property="og:description" content="Discover what AI agents run on including infrastructure, platforms, frameworks, and technical stack. Comprehensive guide to the technology behind AI agents.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kingstonesystems.com/blog/what-do-ai-agents-run-on">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+    
+    <title>What Do AI Agents Run On? Complete Infrastructure Guide 2025 | Kingstone Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <span class="logo-text">Kingstone Systems</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html#tutorials">Tutorials</a>
+                <a href="../index.html#solutions">Solutions</a>
+                <a href="../index.html#how-it-works">How It Works</a>
+                <a href="../blog.html">Blog</a>
+                <a href="https://cal.com/adhirajhangal/ai-voice-agent-consultation" class="btn-signup">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Header -->
+    <article class="blog-post-page">
+        <div class="container">
+            <div class="post-header">
+                <a href="../blog.html" class="back-to-blog">← Back to Blog</a>
+                <div class="post-meta-top">
+                    <span class="post-category">Technical Guide</span>
+                    <span class="post-date">January 20, 2025</span>
+                    <span class="post-read-time">48 min read</span>
+                </div>
+                <h1 class="post-title">What Do AI Agents Run On? Complete Infrastructure and Platform Guide for 2025</h1>
+                <p class="post-subtitle">
+                    A comprehensive exploration of what AI agents run on—from underlying infrastructure and cloud platforms to frameworks, APIs, and supporting services. Learn about the complete technology stack that powers AI agents, including hardware, software, platforms, and integration layers.
+                </p>
+            </div>
+
+            <div class="post-content">
+                <p>
+                    Understanding what AI agents run on is essential for anyone building, deploying, or managing AI agent systems. The technology stack behind AI agents encompasses cloud infrastructure, large language model APIs, frameworks and platforms, databases, integration services, and more. The answer to "What do AI agents run on?" involves multiple layers of technology working together.
+                </p>
+                <p>
+                    This comprehensive guide examines all components of the AI agent technology stack, explores different deployment architectures, discusses platform and framework options, and provides insights into infrastructure requirements and best practices. Whether you're a developer building AI agents or a business leader evaluating technical requirements, this guide provides the depth needed to understand the technical foundation of AI agent systems.
+                </p>
+                <p>
+                    Modern AI agents typically don't run on single servers or isolated systems. Instead, they leverage distributed cloud architectures, managed services, APIs, and orchestration layers that handle complexity behind the scenes. Understanding these layers helps you make informed decisions about platform selection, infrastructure design, and technical architecture.
+                </p>
+
+                <h2>The AI Agent Technology Stack: Core Components</h2>
+                <p>
+                    AI agents run on a multi-layered technology stack, with each layer serving specific functions. Understanding these layers helps clarify what AI agents actually run on.
+                </p>
+
+                <h3>1. Large Language Model APIs</h3>
+                <p>
+                    At the core, AI agents run on large language models (LLMs) accessed through APIs. These models provide the intelligence and reasoning capabilities that enable agent behavior.
+                </p>
+                <p>
+                    <strong>OpenAI GPT Models:</strong> Many AI agents run on OpenAI's GPT-4, GPT-3.5, or other models accessed via the OpenAI API. These models run on OpenAI's infrastructure, and agents make API calls to utilize their capabilities. The models themselves run on massive GPU clusters in OpenAI's data centers.
+                </p>
+                <p>
+                    <strong>Anthropic Claude:</strong> Anthropic's Claude models (Claude 3 Opus, Sonnet, Haiku) provide alternative LLM capabilities. Agents access these through Anthropic's API, running on Anthropic's infrastructure.
+                </p>
+                <p>
+                    <strong>Google Gemini:</strong> Google's Gemini models offer another option, accessible via Google Cloud's Vertex AI or direct APIs. These run on Google's cloud infrastructure.
+                </p>
+                <p>
+                    <strong>Open Source Models:</strong> Some agents run on open-source models like Llama 2, Mistral, or others, which can be self-hosted on your own infrastructure or accessed through services like Together AI, Replicate, or HuggingFace Inference API.
+                </p>
+                <p>
+                    <strong>Model Selection:</strong> The choice of underlying LLM significantly impacts agent capabilities, costs, latency, and requirements. Different models have different strengths—GPT-4 excels at reasoning, Claude handles long contexts well, and specialized models may perform better for specific domains.
+                </p>
+
+                <h3>2. Cloud Infrastructure and Hosting</h3>
+                <p>
+                    AI agents typically run on cloud infrastructure rather than on-premises servers, providing scalability, reliability, and managed services.
+                </p>
+                <p>
+                    <strong>AWS (Amazon Web Services):</strong> Many AI agents run on AWS infrastructure, leveraging services like Lambda (serverless functions), EC2 (virtual servers), API Gateway, DynamoDB, S3 (storage), and other AWS services. AWS provides comprehensive infrastructure for building and deploying agent systems.
+                </p>
+                <p>
+                    <strong>Google Cloud Platform (GCP):</strong> GCP offers services like Cloud Functions, Cloud Run, Compute Engine, and various AI/ML services. The integration with Vertex AI and Gemini models makes GCP attractive for AI agent deployments.
+                </p>
+                <p>
+                    <strong>Microsoft Azure:</strong> Azure provides cloud infrastructure including Azure Functions, App Service, and Azure OpenAI Service for accessing GPT models. Integration with Microsoft's ecosystem makes Azure appealing for enterprise deployments.
+                </p>
+                <p>
+                    <strong>Specialized AI Platforms:</strong> Platforms like Vercel, Railway, Fly.io, or Render provide simplified hosting specifically designed for modern applications including AI agents, with built-in scaling and deployment features.
+                </p>
+                <p>
+                    <strong>Serverless vs. Traditional Hosting:</strong> Many agents run on serverless infrastructure (AWS Lambda, Cloud Functions) that automatically scales and charges per use, while others run on traditional servers (VPS, containers) for more predictable performance and cost structures.
+                </p>
+
+                <h3>3. AI Agent Platforms and Frameworks</h3>
+                <p>
+                    Specialized platforms and frameworks provide abstractions and tools that simplify building and running AI agents.
+                </p>
+                <p>
+                    <strong>LangChain:</strong> A popular Python framework for building LLM applications and agents. LangChain runs on your infrastructure but provides tools, abstractions, and integrations that simplify agent development. It handles orchestration, tool calling, memory management, and more.
+                </p>
+                <p>
+                    <strong>Vapi:</strong> A platform specifically for building voice AI agents. Vapi handles infrastructure, voice processing, LLM integration, and provides APIs for building voice agents. Agents built on Vapi run on Vapi's infrastructure with optional self-hosting options.
+                </p>
+                <p>
+                    <strong>Voiceflow:</strong> A no-code platform for building conversational AI agents. Agents built with Voiceflow run on Voiceflow's infrastructure, though enterprise plans may offer self-hosting options.
+                </p>
+                <p>
+                    <strong>AutoGPT/AutoGen:</strong> Frameworks for building autonomous AI agents that can work independently. These typically run on your own infrastructure but leverage LLM APIs.
+                </p>
+                <p>
+                    <strong>Custom Platforms:</strong> Many organizations build custom platforms using frameworks like LangChain, LlamaIndex, or custom code, running on their chosen cloud infrastructure.
+                </p>
+
+                <h3>4. Databases and Data Storage</h3>
+                <p>
+                    AI agents require databases and storage systems for conversation history, user data, knowledge bases, and state management.
+                </p>
+                <p>
+                    <strong>Vector Databases:</strong> Many agents use vector databases like Pinecone, Weaviate, Qdrant, or pgvector (PostgreSQL extension) to store and retrieve embeddings for semantic search and RAG (Retrieval Augmented Generation). These enable agents to access relevant information from knowledge bases.
+                </p>
+                <p>
+                    <strong>Traditional Databases:</strong> SQL databases (PostgreSQL, MySQL) or NoSQL databases (MongoDB, DynamoDB) store user data, conversation logs, configuration, and structured information agents need to access.
+                </p>
+                <p>
+                    <strong>Object Storage:</strong> Services like AWS S3, Google Cloud Storage, or Azure Blob Storage store files, documents, images, and other assets that agents might reference or generate.
+                </p>
+                <p>
+                    <strong>In-Memory Stores:</strong> Redis or similar services provide fast caching, session management, and temporary state storage for improved performance.
+                </p>
+
+                <h3>5. Voice and Speech Processing Services</h3>
+                <p>
+                    Voice-enabled AI agents require additional services for speech-to-text and text-to-speech conversion.
+                </p>
+                <p>
+                    <strong>Speech-to-Text (STT):</strong> Services like Deepgram, AssemblyAI, OpenAI Whisper API, Google Cloud Speech-to-Text, or AWS Transcribe convert spoken audio to text. These run on the provider's infrastructure and agents make API calls to them.
+                </p>
+                <p>
+                    <strong>Text-to-Speech (TTS):</strong> Services like ElevenLabs, Google Cloud Text-to-Speech, Amazon Polly, or Azure Neural TTS convert text responses to speech. Like STT, these run on provider infrastructure.
+                </p>
+                <p>
+                    <strong>Real-Time Communication:</strong> For live voice conversations, services like Twilio, Agora, or WebRTC handle real-time audio streaming and connection management.
+                </p>
+
+                <h3>6. Integration and API Services</h3>
+                <p>
+                    AI agents integrate with external systems through APIs and integration platforms.
+                </p>
+                <p>
+                    <strong>CRM Integrations:</strong> Agents connect to CRMs like Salesforce, HubSpot, or Pipedrive through their APIs, running API calls from the agent's infrastructure.
+                </p>
+                <p>
+                    <strong>Communication APIs:</strong> Services like Twilio (SMS, phone), SendGrid (email), or messaging platform APIs enable agents to communicate through various channels.
+                </p>
+                <p>
+                    <strong>Business System APIs:</strong> Agents integrate with calendars (Google Calendar, Outlook), payment processors (Stripe, PayPal), and other business systems through REST APIs, GraphQL, or webhooks.
+                </p>
+                <p>
+                    <strong>Integration Platforms:</strong> Tools like Zapier, n8n, or Make.com can orchestrate integrations, running workflows that connect agents to various services.
+                </p>
+
+                <h3>7. Orchestration and Workflow Management</h3>
+                <p>
+                    Agent orchestration layers manage conversation flow, tool calling, state management, and complex workflows.
+                </p>
+                <p>
+                    <strong>Custom Orchestration:</strong> Many agents use custom code (Python, Node.js, etc.) to orchestrate agent behavior, manage state, handle tool calling, and coordinate workflows. This runs on the agent's hosting infrastructure.
+                </p>
+                <p>
+                    <strong>Workflow Engines:</strong> Tools like Temporal, Airflow, or custom state machines handle complex multi-step workflows, error handling, and retries.
+                </p>
+                <p>
+                    <strong>Message Queues:</strong> Services like RabbitMQ, AWS SQS, or Google Pub/Sub handle asynchronous message processing and task queuing for agents handling high volumes.
+                </p>
+
+                <h2>Deployment Architectures: How AI Agents Are Deployed</h2>
+                <p>
+                    Understanding deployment architectures helps clarify where and how AI agents actually run. Different architectures have different implications for infrastructure, scalability, and control.
+                </p>
+
+                <h3>Fully Managed Platform Deployment</h3>
+                <p>
+                    Some AI agents run entirely on managed platforms that handle all infrastructure, hosting, and operational concerns.
+                </p>
+                <p>
+                    <strong>How It Works:</strong> You configure and customize the agent through platform interfaces, and it runs entirely on the platform's infrastructure. You don't manage servers, databases, or infrastructure directly.
+                </p>
+                <p>
+                    <strong>Examples:</strong> Voiceflow, many chatbot platforms, and SaaS AI agent services operate this way. Your agent runs on their servers, using their infrastructure.
+                </p>
+                <p>
+                    <strong>Pros:</strong> No infrastructure management, automatic scaling, built-in reliability, faster time to market, lower initial technical requirements.
+                </p>
+                <p>
+                    <strong>Cons:</strong> Less control, platform lock-in, potential limitations, ongoing platform fees, limited customization options.
+                </p>
+
+                <h3>Cloud-Hosted Custom Deployment</h3>
+                <p>
+                    Many organizations build custom agents using frameworks like LangChain and deploy them on cloud infrastructure they control.
+                </p>
+                <p>
+                    <strong>How It Works:</strong> You develop the agent code, deploy it to cloud infrastructure (AWS, GCP, Azure), manage the infrastructure, and connect to LLM APIs and other services. The agent runs on your cloud resources.
+                </p>
+                <p>
+                    <strong>Examples:</strong> Custom agents built with LangChain deployed on AWS Lambda, agents in Docker containers on cloud VMs, or serverless functions on cloud platforms.
+                </p>
+                <p>
+                    <strong>Pros:</strong> Full control, customization flexibility, no platform lock-in, can optimize costs and performance, integrates with your infrastructure.
+                </p>
+                <p>
+                    <strong>Cons:</strong> Requires infrastructure management, more development effort, operational overhead, need to handle scaling and reliability yourself.
+                </p>
+
+                <h3>Hybrid Architectures</h3>
+                <p>
+                    Many production agents use hybrid approaches, combining managed services with custom infrastructure.
+                </p>
+                <p>
+                    <strong>How It Works:</strong> Core agent logic runs on your infrastructure, but you leverage managed services for specific components—LLM APIs, vector databases, voice processing, etc. This balances control with operational simplicity.
+                </p>
+                <p>
+                    <strong>Examples:</strong> Custom agent code on AWS Lambda calling OpenAI API, using Pinecone for vector storage, Deepgram for voice processing, but managing orchestration and business logic yourself.
+                </p>
+
+                <h3>Edge and On-Premises Deployment</h3>
+                <p>
+                    Some agents run on edge devices or on-premises infrastructure for latency, privacy, or compliance reasons.
+                </p>
+                <p>
+                    <strong>How It Works:</strong> Agent code runs on local servers, edge devices, or on-premises infrastructure. May use self-hosted LLMs or still call cloud APIs depending on requirements.
+                </p>
+                <p>
+                    <strong>Use Cases:</strong> Low-latency requirements, data privacy regulations, air-gapped environments, or cost optimization for very high volumes.
+                </p>
+
+                <h2>Infrastructure Requirements by Scale</h2>
+                <p>
+                    What AI agents run on varies significantly based on scale and requirements. Understanding infrastructure needs at different scales helps plan deployments.
+                </p>
+
+                <h3>Small-Scale Deployments (Low Volume)</h3>
+                <p>
+                    <strong>Traffic:</strong> Hundreds to low thousands of conversations per month.
+                </p>
+                <p>
+                    <strong>Infrastructure:</strong> Serverless functions (AWS Lambda, Cloud Functions), small databases, minimal infrastructure overhead. May use fully managed platforms.
+                </p>
+                <p>
+                    <strong>Costs:</strong> $50-$500/month for infrastructure, primarily API costs for LLM usage.
+                </p>
+                <p>
+                    <strong>Requirements:</strong> Minimal infrastructure management, automatic scaling handled by serverless platforms, simple deployment processes.
+                </p>
+
+                <h3>Medium-Scale Deployments (Moderate Volume)</h3>
+                <p>
+                    <strong>Traffic:</strong> Thousands to tens of thousands of conversations per month.
+                </p>
+                <p>
+                    <strong>Infrastructure:</strong> Dedicated servers or containers, proper database setup, caching layers, monitoring and logging systems.
+                </p>
+                <p>
+                    <strong>Costs:</strong> $500-$5,000/month for infrastructure plus API costs.
+                </p>
+                <p>
+                    <strong>Requirements:</strong> Proper scaling architecture, database optimization, caching strategies, monitoring and alerting, load balancing for reliability.
+                </p>
+
+                <h3>Large-Scale Deployments (High Volume)</h3>
+                <p>
+                    <strong>Traffic:</strong> Hundreds of thousands to millions of conversations per month.
+                </p>
+                <p>
+                    <strong>Infrastructure:</strong> Distributed architecture, multiple servers/containers, database clusters, CDN, comprehensive monitoring, auto-scaling systems.
+                </p>
+                <p>
+                    <strong>Costs:</strong> $5,000-$50,000+/month for infrastructure, significant API costs, enterprise-grade services.
+                </p>
+                <p>
+                    <strong>Requirements:</strong> High availability architecture, geographic distribution, database sharding/replication, sophisticated caching, comprehensive monitoring, 24/7 operations support.
+                </p>
+
+                <h2>Technical Stack Examples</h2>
+                <p>
+                    Examining real technical stacks helps illustrate what AI agents run on in practice.
+                </p>
+
+                <h3>Example 1: Simple Text Chatbot</h3>
+                <p>
+                    <strong>LLM:</strong> OpenAI GPT-3.5-turbo API
+                </p>
+                <p>
+                    <strong>Hosting:</strong> Vercel serverless functions
+                </p>
+                <p>
+                    <strong>Framework:</strong> LangChain (Python)
+                </p>
+                <p>
+                    <strong>Database:</strong> Supabase (PostgreSQL) for conversation logs
+                </p>
+                <p>
+                    <strong>Frontend:</strong> React chat widget
+                </p>
+                <p>
+                    <strong>Total Infrastructure:</strong> Fully serverless, minimal management required
+                </p>
+
+                <h3>Example 2: Voice AI Agent</h3>
+                <p>
+                    <strong>LLM:</strong> Anthropic Claude API
+                </p>
+                <p>
+                    <strong>Platform:</strong> Vapi for voice infrastructure
+                </p>
+                <p>
+                    <strong>STT:</strong> Deepgram API
+                </p>
+                <p>
+                    <strong>TTS:</strong> ElevenLabs API
+                </p>
+                <p>
+                    <strong>Telephony:</strong> Twilio for phone calls
+                </p>
+                <p>
+                    <strong>CRM Integration:</strong> Custom API integration to HubSpot
+                </p>
+                <p>
+                    <strong>Database:</strong> MongoDB Atlas for call logs and data
+                </p>
+                <p>
+                    <strong>Orchestration:</strong> Custom Node.js backend on AWS Lambda
+                </p>
+
+                <h3>Example 3: Enterprise Multi-Agent System</h3>
+                <p>
+                    <strong>LLMs:</strong> Multiple models (GPT-4 for complex tasks, GPT-3.5 for simple queries)
+                </p>
+                <p>
+                    <strong>Infrastructure:</strong> AWS ECS (container orchestration), multiple regions
+                </p>
+                <p>
+                    <strong>Framework:</strong> Custom orchestration built on LangChain
+                </p>
+                <p>
+                    <strong>Vector Database:</strong> Pinecone for semantic search
+                </p>
+                <p>
+                    <strong>Primary Database:</strong> PostgreSQL on AWS RDS (multi-AZ for high availability)
+                </p>
+                <p>
+                    <strong>Cache:</strong> Redis ElastiCache
+                </p>
+                <p>
+                    <strong>Message Queue:</strong> AWS SQS for async processing
+                </p>
+                <p>
+                    <strong>Monitoring:</strong> Datadog, CloudWatch, custom analytics
+                </p>
+                <p>
+                    <strong>Integrations:</strong> Multiple APIs for CRM, payment processing, email, calendars
+                </p>
+
+                <h2>Performance and Scalability Considerations</h2>
+                <p>
+                    Understanding what AI agents run on includes considering how infrastructure choices impact performance and scalability.
+                </p>
+
+                <h3>Latency Requirements</h3>
+                <p>
+                    Different use cases have different latency requirements, which influence infrastructure choices.
+                </p>
+                <p>
+                    <strong>Real-Time Conversations:</strong> Voice agents and live chat require sub-second response times, necessitating optimized infrastructure, geographic proximity, and efficient API usage.
+                </p>
+                <p>
+                    <strong>Asynchronous Interactions:</strong> Email agents or batch processing can tolerate longer latencies, allowing for different infrastructure trade-offs.
+                </p>
+
+                <h3>Scaling Strategies</h3>
+                <p>
+                    <strong>Horizontal Scaling:</strong> Adding more servers/containers to handle increased load. Requires stateless design and load balancing.
+                </p>
+                <p>
+                    <strong>Vertical Scaling:</strong> Increasing resources on existing servers. Simpler but has limits.
+                </p>
+                <p>
+                    <strong>Auto-Scaling:</strong> Automatic scaling based on demand, essential for variable traffic patterns.
+                </p>
+
+                <h3>High Availability</h3>
+                <p>
+                    Production agents require redundancy, failover capabilities, and geographic distribution to ensure reliability. This influences infrastructure architecture significantly.
+                </p>
+
+                <h2>Security and Compliance Infrastructure</h2>
+                <p>
+                    What AI agents run on must also support security and compliance requirements.
+                </p>
+
+                <h3>Data Security</h3>
+                <p>
+                    Infrastructure must support encryption at rest and in transit, secure API communications, access controls, and data protection measures.
+                </p>
+
+                <h3>Compliance Requirements</h3>
+                <p>
+                    Regulations like GDPR, HIPAA, or SOC 2 require specific infrastructure capabilities—data residency, audit logging, access controls, data retention policies.
+                </p>
+
+                <h2>Conclusion: Understanding What AI Agents Run On</h2>
+                <p>
+                    What AI agents run on is a complex stack involving LLM APIs, cloud infrastructure, databases, integration services, and orchestration layers. There's no single answer—different agents run on different combinations of technologies depending on requirements, scale, use case, and architectural choices.
+                </p>
+                <p>
+                    The key is understanding that modern AI agents typically leverage distributed, cloud-based architectures rather than running on single servers. They combine managed services (LLM APIs, platforms) with custom infrastructure (hosting, databases, orchestration) to create complete systems. Understanding these layers helps you make informed decisions about technology choices, infrastructure design, and deployment strategies.
+                </p>
+                <p>
+                    When building or evaluating AI agents, consider the complete stack—not just the LLM but all supporting infrastructure. The choice of platforms, frameworks, hosting, and services significantly impacts capabilities, costs, scalability, and operational complexity. Understanding what AI agents run on provides the foundation for building effective, scalable, and maintainable AI agent systems.
+                </p>
+
+                <div class="post-cta">
+                    <h3>Need Help Designing Your AI Agent Infrastructure?</h3>
+                    <p>We help businesses design and deploy AI agent infrastructure that scales. Get expert guidance on platform selection, architecture design, and infrastructure optimization for your AI agent deployment.</p>
+                    <a href="https://cal.com/adhirajhangal/ai-voice-agent-consultation" class="btn-primary">Book a Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts-section">
+        <div class="container">
+            <h2 class="section-title">Related Articles</h2>
+            <div class="related-posts-grid">
+                <article class="blog-post-card">
+                    <div class="post-card-header">
+                        <div class="post-card-placeholder">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="post-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Business Guide</span>
+                            <span class="post-date">January 20, 2025</span>
+                        </div>
+                        <h3 class="post-card-title">
+                            <a href="what-do-ai-agents-cost.html">
+                                What Do AI Agents Cost? Complete Pricing Guide
+                            </a>
+                        </h3>
+                        <div class="post-card-footer">
+                            <span class="post-read-time">50 min read</span>
+                            <a href="what-do-ai-agents-cost.html" class="post-card-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post-card">
+                    <div class="post-card-header">
+                        <div class="post-card-placeholder">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="8" width="18" height="12" rx="2"/>
+                                <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="post-card-content">
+                        <div class="post-meta">
+                            <span class="post-category">Implementation</span>
+                            <span class="post-date">December 17, 2025</span>
+                        </div>
+                        <h3 class="post-card-title">
+                            <a href="how-to-build-ai-agents.html">
+                                How to Build AI Agents: Complete Step-by-Step Guide
+                            </a>
+                        </h3>
+                        <div class="post-card-footer">
+                            <span class="post-read-time">40 min read</span>
+                            <a href="how-to-build-ai-agents.html" class="post-card-link">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-copyright">© 2025 Kingstone Systems. All rights reserved.</span>
+                </div>
+                <div class="footer-right">
+                    <a href="https://cal.com/adhirajhangal/ai-voice-agent-consultation" class="footer-link">Book a Call ↗</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
+
