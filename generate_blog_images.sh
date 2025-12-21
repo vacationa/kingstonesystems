@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# OpenAI API Key should be set as an environment variable
+if [ -z "$OPENAI_API_KEY" ]; then
+    echo "Error: OPENAI_API_KEY environment variable is not set"
+    echo "Please set it with: export OPENAI_API_KEY='your-api-key-here'"
+    exit 1
+fi
+
 API_KEY="$OPENAI_API_KEY"
 OUTPUT_DIR="/Users/adhi/Repos/kingstonesystems/public/assets/blog"
 
