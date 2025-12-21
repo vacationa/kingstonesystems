@@ -15,7 +15,7 @@ const featuredPost: Partial<BlogPost> = {
   date: "December 17, 2025",
   readTime: "65 min",
   slug: "roi-of-ai-receptionist-for-locksmiths",
-  image: "/assets/blog/headers/roi-of-ai-receptionist-for-locksmiths.png",
+  image: "/assets/blog/headers/roi-locksmith.png",
 };
 
 const blogPosts: Partial<BlogPost>[] = [
@@ -26,7 +26,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "120 min",
     slug: "roi-of-ai-receptionist-for-realtors",
-    image: "/assets/blog/headers/roi-of-ai-receptionist-for-realtors.png",
+    image: "/assets/blog/headers/roi-realtors.png",
   },
   {
     title: "The ROI of an AI Receptionist for Personal Injury Law: The Definitive Guide for 2026",
@@ -35,7 +35,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "60 min",
     slug: "the-roi-of-an-ai-receptionist-for-personal-injury-law",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-personal-injury-law.png",
+    image: "/assets/blog/headers/roi-personalinjury.png",
   },
   {
     title: "The ROI of an AI Receptionist for Immigration Law: Complete 2026 Guide",
@@ -44,7 +44,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "45 min",
     slug: "the-roi-of-an-ai-receptionist-for-immigration-law",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-immigration-law.png",
+    image: "/assets/blog/headers/roi-immigrationlaw.png",
   },
   {
     title: "The ROI of an AI Receptionist for Accounting Firms: The Ultimate Guide",
@@ -53,7 +53,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "60 min",
     slug: "the-roi-of-an-ai-receptionist-for-accounting-firms",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-accounting-firms.png",
+    image: "/assets/blog/headers/roi-accounting.png",
   },
   {
     title: "The ROI of an AI Receptionist for Recruiting & HR: The Definitive 2026 Guide",
@@ -62,7 +62,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "45 min",
     slug: "roi-of-ai-receptionist-for-recruiting-hr",
-    image: "/assets/blog/headers/roi-of-ai-receptionist-for-recruiting-hr.png",
+    image: "/assets/blog/headers/roi-humanresources.png",
   },
   {
     title: "The ROI of an AI Receptionist for Landscaping: The Ultimate Guide",
@@ -71,7 +71,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "45 min",
     slug: "the-roi-of-an-ai-receptionist-for-landscaping",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-landscaping.png",
+    image: "/assets/blog/headers/roi-landscaping.png",
   },
   {
     title: "The ROI of an AI Receptionist for Education & Training: The Ultimate Guide",
@@ -80,7 +80,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "45 min",
     slug: "roi-ai-receptionist-education-training",
-    image: "/assets/blog/headers/roi-ai-receptionist-education-training.png",
+    image: "/assets/blog/headers/roi-educationandtraining.png",
   },
   {
     title: "The ROI of an AI Receptionist for Consulting Firms: The Definitive 2026 Guide",
