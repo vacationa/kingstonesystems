@@ -9,7 +9,7 @@ import { BlogPost } from '../../types/blog';
 
 // Real blog posts from blog folder
 const featuredPost: Partial<BlogPost> = {
-  title: "The ROI of an AI Receptionist for Locksmiths: The 6,000-Word Definitive Guide",
+  title: "The ROI of an AI Receptionist for Locksmiths: The Definitive Guide",
   excerpt: "The most comprehensive guide ever written for locksmith business owners. Learn how Agentic AI transforms dispatching, captures emergency calls 24/7, and drives massive ROI through deep CRM integration.",
   category: "ROI & Strategy",
   date: "December 17, 2025",
@@ -21,7 +21,7 @@ const featuredPost: Partial<BlogPost> = {
 const blogPosts: Partial<BlogPost>[] = [
   {
     title: "The ROI of an AI Receptionist for Realtors: The Ultimate 2026 Deep-Dive Guide",
-    excerpt: "The definitive 6,000-word guide on the ROI of AI receptionists for Realtors. Learn how to capture 100% of leads, automate qualification, and scale your real estate business with Kingstone Systems.",
+    excerpt: "The definitive comprehensive guide on the ROI of AI receptionists for Realtors. Learn how to capture 100% of leads, automate qualification, and scale your real estate business with Kingstone Systems.",
     category: "Real Estate Strategy",
     date: "December 17, 2025",
     readTime: "120 min",
@@ -89,7 +89,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "60 min",
     slug: "the-roi-of-an-ai-receptionist-for-consulting-firms",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-consulting-firms.png",
+    image: "/assets/blog/headers/roi-consulting.png",
   },
   {
     title: "The ROI of an AI Receptionist for Short-Term Rentals: The Ultimate Guide",
@@ -98,7 +98,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "45 min",
     slug: "the-roi-of-an-ai-receptionist-for-short-term-rentals",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-short-term-rentals.png",
+    image: "/assets/blog/headers/roi-shorttermrentals.png",
   },
   {
     title: "The ROI of an AI Receptionist for B2B SaaS",
@@ -107,7 +107,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "45 min",
     slug: "the-roi-of-an-ai-receptionist-for-b2b-saas",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-b2b-saas.png",
+    image: "/assets/blog/headers/roi-b2bsaas.png",
   },
   {
     title: "AI Voice Agent Services for Businesses: Complete 2026 Guide",
@@ -125,7 +125,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "60 min",
     slug: "the-roi-of-an-ai-receptionist-for-property-managers",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-property-managers.png",
+    image: "/assets/blog/headers/roi-propertymanagers.png",
   },
   {
     title: "The ROI of an AI Receptionist for Roofing: The Ultimate 2026 Guide",
@@ -134,7 +134,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "60 min",
     slug: "the-roi-of-an-ai-receptionist-for-roofing",
-    image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-roofing.png",
+    image: "/assets/blog/headers/roi-roofing.png",
   },
   {
     title: "AI Voice Agents for Law Firms: Complete Implementation Guide",
@@ -143,7 +143,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 17, 2025",
     readTime: "17 min",
     slug: "ai-voice-agents-for-law-firms",
-    image: "/assets/blog/headers/ai-voice-agents-for-law-firms.png",
+    image: "/assets/blog/headers/ai-voice-agents-for-law-firm.png",
   },
   {
     title: "Best AI Voice Agent Solutions for Business Phone Systems (2025)",
