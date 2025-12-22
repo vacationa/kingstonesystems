@@ -8,6 +8,7 @@ interface FeaturedPostProps {
   readTime: string;
   slug: string;
   image?: string;
+  videoUrl?: string;
 }
 
 export const FeaturedPost: React.FC<FeaturedPostProps> = ({
@@ -18,25 +19,50 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
   readTime,
   slug,
   image,
+  videoUrl,
 }) => {
   return (
     <section className="featured-post-section">
       <div className="container">
         <div className="featured-badge">Featured Article</div>
-        <article className="featured-post">
+        <article
+          className="featured-post"
+          itemScope
+          itemType="https://schema.org/BlogPosting"
+        >
           <div className="featured-post-content">
             <div className="post-meta">
               <span className="post-category">{category}</span>
-              <span className="post-date">{date}</span>
+              <span className="post-date" itemProp="datePublished">
+                {date}
+              </span>
               <span className="post-read-time">{readTime} read</span>
             </div>
             <h2 className="featured-post-title">
-              <a href={`/blog/${slug}`}>{title}</a>
+              <a href={`/blog/${slug}`} itemProp="url">
+                <span itemProp="headline">{title}</span>
+              </a>
             </h2>
-            <p className="featured-post-excerpt">{excerpt}</p>
-            <a href={`/blog/${slug}`} className="btn-read-more">
-              Read Article →
-            </a>
+            <p className="featured-post-excerpt" itemProp="description">
+              {excerpt}
+            </p>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              {videoUrl && (
+                <a 
+                  href={videoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-read-more"
+                  style={{ backgroundColor: 'transparent', border: '1px solid #7F00FF', color: '#7F00FF' }}
+                  itemProp="video"
+                >
+                  Watch Video →
+                </a>
+              )}
+              <a href={`/blog/${slug}`} className="btn-read-more">
+                Read Article →
+              </a>
+            </div>
           </div>
           <div className="featured-post-image">
             {image ? (

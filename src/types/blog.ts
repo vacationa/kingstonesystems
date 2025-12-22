@@ -12,6 +12,7 @@ export interface BlogPost {
   readTime: string;
   featured: boolean;
   image?: string;
+  videoUrl?: string; // YouTube video URL for related tutorial
   author?: {
     name: string;
     role: string;

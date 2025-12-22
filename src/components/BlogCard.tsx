@@ -8,6 +8,7 @@ interface BlogCardProps {
   readTime: string;
   slug: string;
   image?: string;
+  videoUrl?: string;
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({
@@ -18,14 +19,20 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   readTime,
   slug,
   image,
+  videoUrl,
 }) => {
   return (
-    <article className="blog-post-card">
+    <article
+      className="blog-post-card"
+      itemScope
+      itemType="https://schema.org/BlogPosting"
+    >
       <div className="post-card-header">
         {image ? (
           <img 
             src={image} 
-            alt={title} 
+            alt={title}
+            itemProp="image"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         ) : (
@@ -40,17 +47,37 @@ export const BlogCard: React.FC<BlogCardProps> = ({
       <div className="post-card-content">
         <div className="post-meta">
           <span className="post-category">{category}</span>
-          <span className="post-date">{date}</span>
+          <span className="post-date" itemProp="datePublished">
+            {date}
+          </span>
         </div>
         <h3 className="post-card-title">
-          <a href={`/blog/${slug}`}>{title}</a>
+          <a href={`/blog/${slug}`} itemProp="url">
+            <span itemProp="headline">{title}</span>
+          </a>
         </h3>
-        <p className="post-card-excerpt">{excerpt}</p>
+        <p className="post-card-excerpt" itemProp="description">
+          {excerpt}
+        </p>
         <div className="post-card-footer">
           <span className="post-read-time">{readTime} read</span>
-          <a href={`/blog/${slug}`} className="post-card-link">
-            Read More →
-          </a>
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            {videoUrl && (
+              <a 
+                href={videoUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="post-card-link"
+                style={{ fontSize: '0.9em', color: '#7F00FF' }}
+                itemProp="video"
+              >
+                Watch Video →
+              </a>
+            )}
+            <a href={`/blog/${slug}`} className="post-card-link">
+              Read More →
+            </a>
+          </div>
         </div>
       </div>
     </article>

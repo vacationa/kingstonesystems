@@ -135,6 +135,7 @@ const blogPosts: Partial<BlogPost>[] = [
     readTime: "1 min",
     slug: "the-roi-of-an-ai-receptionist-for-roofing",
     image: "/assets/blog/headers/roi-roofing.png",
+    videoUrl: "https://www.youtube.com/watch?v=BT4cKgOjsnQ&t=7s",
   },
   {
     title: "AI Voice Agents for Law Firms: Complete Implementation Guide",
@@ -306,6 +307,7 @@ const blogPosts: Partial<BlogPost>[] = [
     readTime: "1 min",
     slug: "the-roi-of-an-ai-receptionist-for-logistics-auto-field-ops",
     image: "/assets/blog/headers/the-roi-of-an-ai-receptionist-for-logistics-auto-field-ops.png",
+    videoUrl: "https://www.youtube.com/watch?v=rFddJe7hpFk",
   },
   {
     title: "How to Use Agentic AI: Complete Implementation Guide",
@@ -333,6 +335,7 @@ const blogPosts: Partial<BlogPost>[] = [
     readTime: "5 min",
     slug: "why-voice-ai-will-replace-traditional-call-centers-in-2026",
     image: "/assets/blog/headers/why-voice-ai-will-replace-traditional-call-centers-in-2026.png",
+    videoUrl: "https://www.youtube.com/watch?v=Qf3goRiy8MU&t=41s",
   },
   {
     title: "The ROI of an AI Receptionist for Real Estate Law",
@@ -405,6 +408,7 @@ const blogPosts: Partial<BlogPost>[] = [
     readTime: "8 min",
     slug: "ai-phone-answering-for-plumbers",
     image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    videoUrl: "https://www.youtube.com/watch?v=64QwovKjbEU&t=508s",
   },
   {
     title: "AI Receptionist for Home Services Booking: The Complete 2026 Automation Guide",
@@ -504,6 +508,7 @@ const blogPosts: Partial<BlogPost>[] = [
     readTime: "2 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-auto-repair-shops",
     image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    videoUrl: "https://www.youtube.com/watch?v=Zn5zYCGWpEs&t=1s",
   },
   {
     title: "How an AI Receptionist Fixes Missed Calls at Dental Practices: Complete 2026 Guide",
@@ -855,6 +860,7 @@ const blogPosts: Partial<BlogPost>[] = [
     readTime: "10 min",
     slug: "stop-missed-calls-for-hvac-company",
     image: "/assets/blog/headers/roi-hvac.png",
+    videoUrl: "https://www.youtube.com/watch?v=Q6rT1a5lgrs&t=4s",
   },
   {
     title: "Technical Architecture for AI Receptionists: Handling Complex Queries Without Frustration",
@@ -955,6 +961,10 @@ const sortedBlogPosts: Partial<BlogPost>[] = [...blogPosts].sort((a, b) => {
   return dateB - dateA;
 });
 
+// Helper to get a small set of related posts for internal linking
+const getPostsByCategory = (category: string, limit: number = 5) =>
+  sortedBlogPosts.filter((post) => post.category === category).slice(0, limit);
+
 export const BlogPage: React.FC = () => {
   return (
     <>
@@ -970,6 +980,7 @@ export const BlogPage: React.FC = () => {
         readTime={featuredPost.readTime || ""}
         slug={featuredPost.slug || ""}
         image={featuredPost.image}
+        videoUrl={featuredPost.videoUrl}
       />
       
       {sortedBlogPosts.length > 0 && (
@@ -986,12 +997,62 @@ export const BlogPage: React.FC = () => {
                   readTime={post.readTime || ""}
                   slug={post.slug || ""}
                   image={post.image}
+                  videoUrl={post.videoUrl}
                 />
               ))}
             </div>
           </div>
         </section>
       )}
+      
+      {/* Internal linking section to strengthen topical authority */}
+      <section className="blog-related-section">
+        <div className="container">
+          <h2 className="blog-related-title">Explore more AI voice & automation guides</h2>
+          <div className="blog-related-columns">
+            <div className="blog-related-column">
+              <h3>ROI & Strategy</h3>
+              <ul>
+                {getPostsByCategory("ROI & Strategy", 5).map((post) => (
+                  <li key={post.slug}>
+                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="blog-related-column">
+              <h3>Implementation & How‑To</h3>
+              <ul>
+                {[
+                  ...getPostsByCategory("Implementation", 5),
+                  ...getPostsByCategory("Development", 5),
+                ]
+                  .slice(0, 5)
+                  .map((post) => (
+                    <li key={post.slug}>
+                      <a href={`/blog/${post.slug}`}>{post.title}</a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div className="blog-related-column">
+              <h3>Industry Solutions</h3>
+              <ul>
+                {[
+                  ...getPostsByCategory("Industry Solutions", 5),
+                  ...getPostsByCategory("Business Solutions", 5),
+                ]
+                  .slice(0, 5)
+                  .map((post) => (
+                    <li key={post.slug}>
+                      <a href={`/blog/${post.slug}`}>{post.title}</a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       
       <BlogCTA />
       
