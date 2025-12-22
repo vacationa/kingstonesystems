@@ -31,10 +31,10 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
               <span className="post-read-time">{readTime} read</span>
             </div>
             <h2 className="featured-post-title">
-              <a href={`/blog/${slug}.html`}>{title}</a>
+              <a href={`/blog/${slug}`}>{title}</a>
             </h2>
             <p className="featured-post-excerpt">{excerpt}</p>
-            <a href={`/blog/${slug}.html`} className="btn-read-more">
+            <a href={`/blog/${slug}`} className="btn-read-more">
               Read Article →
             </a>
           </div>

@@ -948,6 +948,13 @@ const blogPosts: Partial<BlogPost>[] = [
   }
 ];
 
+// Sort blog posts by date (newest first) for proper chronological ordering
+const sortedBlogPosts: Partial<BlogPost>[] = [...blogPosts].sort((a, b) => {
+  const dateA = a.date ? new Date(a.date).getTime() : 0;
+  const dateB = b.date ? new Date(b.date).getTime() : 0;
+  return dateB - dateA;
+});
+
 export const BlogPage: React.FC = () => {
   return (
     <>
@@ -965,11 +972,11 @@ export const BlogPage: React.FC = () => {
         image={featuredPost.image}
       />
       
-      {blogPosts.length > 0 && (
+      {sortedBlogPosts.length > 0 && (
         <section className="blog-posts-section">
           <div className="container">
             <div className="blog-posts-grid">
-              {blogPosts.map((post, index) => (
+              {sortedBlogPosts.map((post, index) => (
                 <BlogCard 
                   key={index} 
                   title={post.title || ""}

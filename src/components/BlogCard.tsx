@@ -43,12 +43,12 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           <span className="post-date">{date}</span>
         </div>
         <h3 className="post-card-title">
-          <a href={`/blog/${slug}.html`}>{title}</a>
+          <a href={`/blog/${slug}`}>{title}</a>
         </h3>
         <p className="post-card-excerpt">{excerpt}</p>
         <div className="post-card-footer">
           <span className="post-read-time">{readTime} read</span>
-          <a href={`/blog/${slug}.html`} className="post-card-link">
+          <a href={`/blog/${slug}`} className="post-card-link">
             Read More →
           </a>
         </div>
