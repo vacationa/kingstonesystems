@@ -353,7 +353,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 20, 2025",
     readTime: "7 min",
     slug: "ai-call-answering-automation-for-chicago-small-businesses",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-call-answering-automation-for-chicago-small-businesses.png",
   },
   {
     title: "AI Call Answering Automation for Houston Small Businesses: Complete 2026 Guide",
@@ -362,7 +362,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "April 9, 2025",
     readTime: "9 min",
     slug: "ai-call-answering-automation-for-houston-small-businesses",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-call-answering-automation-for-houston-small-businesses.png",
   },
   {
     title: "AI Call Answering Automation for Los Angeles Small Businesses: Complete 2026 Guide",
@@ -371,7 +371,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "May 16, 2025",
     readTime: "9 min",
     slug: "ai-call-answering-automation-for-los-angeles-small-businesses",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-call-answering-automation-for-losangeles-small-businesses.png",
   },
   {
     title: "AI Call Answering Automation for New York Small Businesses: Complete 2026 Guide",
@@ -380,7 +380,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "March 17, 2025",
     readTime: "10 min",
     slug: "ai-call-answering-automation-for-new-york-small-businesses",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-call-answering-automation-for-newyork-small-businesses.png",
   },
   {
     title: "AI Call Answering Automation for Phoenix Small Businesses: Complete 2026 Guide",
@@ -389,7 +389,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "April 9, 2025",
     readTime: "5 min",
     slug: "ai-call-answering-automation-for-phoenix-small-businesses",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-call-answering-automation-for-phoenix-small-businesses.png",
   },
   {
     title: "AI Phone Agent to Answer Common Customer Questions: Complete 2026 Guide",
@@ -398,7 +398,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 6, 2025",
     readTime: "2 min",
     slug: "ai-phone-agent-to-answer-common-customer-questions",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-phone-agent-to-answer-common-customer-questions.png",
   },
   {
     title: "AI Phone Answering for Plumbers: The Complete 2026 Guide to 100% Call Capture",
@@ -407,7 +407,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "June 7, 2025",
     readTime: "8 min",
     slug: "ai-phone-answering-for-plumbers",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-phone-answering-for-plumbers.png",
     videoUrl: "https://www.youtube.com/watch?v=64QwovKjbEU&t=508s",
   },
   {
@@ -417,7 +417,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 13, 2025",
     readTime: "3 min",
     slug: "ai-receptionist-for-home-services-booking",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-receptionist-for-home-services-booking.png",
   },
   {
     title: "AI Voice Agent for Booking Appointments: Complete 2026 Guide for Your Business",
@@ -426,7 +426,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 13, 2025",
     readTime: "3 min",
     slug: "ai-voice-agent-for-booking-appointments-for-my-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-voice-agent-for-booking-appointments-for-my-business.png",
   },
   {
     title: "AI Voice Agent for Inbound Sales Calls: Complete 2026 Guide for Small Business",
@@ -435,7 +435,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "June 23, 2025",
     readTime: "6 min",
     slug: "ai-voice-agent-for-inbound-sales-calls-for-small-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-voice-agent-for-inbound-sales-calls-for-small-business.png",
   },
   {
     title: "AI Voice Agent to Handle Missed Calls: Complete 2026 Guide",
@@ -444,7 +444,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "June 5, 2025",
     readTime: "5 min",
     slug: "ai-voice-agent-to-handle-missed-calls-for-my-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-voice-agent-to-handle-missed-calls-for-my-business.png",
   },
   {
     title: "AI Voice Agent vs Human Receptionist for Small Business: Complete 2026 Comparison",
@@ -453,7 +453,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "May 15, 2025",
     readTime: "4 min",
     slug: "ai-voice-agent-vs-human-receptionist-for-small-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/ai-voice-agent-vs-human-receptionist-for-small-business.png",
   },
   {
     title: "Common Problems with AI Voice Agents and How to Fix Them - Complete Guide 2025",
@@ -462,7 +462,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 14, 2025",
     readTime: "4 min",
     slug: "common-problems-with-ai-voice-agents-and-how-to-fix-them",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/common-problems-with-ai-voice-agents-and-how-to-fix-them.png",
   },
   {
     title: "Emotional Intelligence in AI Receptionists: Sentiment Analysis and Response Strategies",
@@ -471,7 +471,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "August 29, 2025",
     readTime: "2 min",
     slug: "emotional-intelligence-ai-receptionist",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/emotional-intelligence-ai-receptionist.png",
   },
   {
     title: "Goodcall AI Receptionist Alternative: Complete 2025 Guide",
@@ -489,7 +489,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "July 3, 2025",
     readTime: "9 min",
     slug: "how-an-ai-receptionist-fixes-long-hold-times-at-hvac-companies",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-long-hold-times-at-hvac-companies.png",
   },
   {
     title: "How an AI Receptionist Fixes Long Wait Times at Home Services Companies: Complete 2026 Guide",
@@ -498,7 +498,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "May 11, 2025",
     readTime: "3 min",
     slug: "how-an-ai-receptionist-fixes-long-wait-times-at-home-services-companies",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-long-wait-times-at-home-services-companies.png",
   },
   {
     title: "How an AI Receptionist Fixes Missed Calls at Auto Repair Shops: Complete 2026 Guide",
@@ -517,7 +517,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 14, 2025",
     readTime: "9 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-dental-practices",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-auto-repair-shops.png",
   },
   {
     title: "How an AI Receptionist Fixes Missed Calls at Medical Clinics: Complete 2026 Guide",
@@ -526,7 +526,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 26, 2025",
     readTime: "9 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-medical-clinics",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-dental-practices.png",
   },
   {
     title: "How an AI Receptionist Fixes Missed Calls at Veterinary Clinics: Complete 2026 Guide",
@@ -535,7 +535,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "March 29, 2025",
     readTime: "8 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-veterinary-clinics",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-medical-clinics.png",
   },
   {
     title: "How an AI Receptionist Fixes Overloaded Front Desk Staff at Law Firms: Complete 2026 Guide",
@@ -553,7 +553,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "October 6, 2025",
     readTime: "8 min",
     slug: "how-an-ai-receptionist-fixes-overloaded-staff-at-property-management-companies",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-veterinary-clinics.png",
   },
   {
     title: "How an AI Receptionist Fixes Patient Complaints at Urgent Care Centers: Complete 2026 Guide",
@@ -562,7 +562,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "March 8, 2025",
     readTime: "3 min",
     slug: "how-an-ai-receptionist-fixes-patient-complaints-at-urgent-care-centers",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-overloaded-staff-at-property-management-companies.png",
   },
   {
     title: "How an AI Receptionist Fixes Restaurant Phones During Dinner Service: Complete 2026 Guide",
@@ -580,7 +580,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "September 23, 2025",
     readTime: "8 min",
     slug: "how-can-ai-help-small-businesses",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-patient-complaints-at-urgent-care-centers.png",
   },
   {
     title: "How Can AI Improve Business: Complete Improvement Guide",
@@ -589,7 +589,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "August 8, 2025",
     readTime: "2 min",
     slug: "how-can-ai-improve-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-can-ai-help-small-businesses.png",
   },
   {
     title: "How Can I Use AI Agents to Load Data into Apache Iceberg? Complete Guide 2025",
@@ -598,7 +598,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 18, 2025",
     readTime: "2 min",
     slug: "how-can-i-use-ai-agents-to-load-data-into-iceberg",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-can-ai-improve-business.png",
   },
   {
     title: "How Can I Use AI Agents to Load Data into Snowflake? Complete Guide 2025",
@@ -607,7 +607,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 17, 2025",
     readTime: "1 min",
     slug: "how-can-i-use-ai-agents-to-load-data-into-snowflake",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-can-i-use-ai-agents-to-load-data-into-iceberg.png",
   },
   {
     title: "How Much Does an AI Voice Agent Cost for a Small Business? Complete 2026 Pricing Guide",
@@ -616,7 +616,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "June 1, 2025",
     readTime: "1 min",
     slug: "how-much-does-an-ai-voice-agent-cost-for-small-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-can-i-use-ai-agents-to-load-data-into-snowflake.png",
   },
   {
     title: "How to Choose the Right AI Voice Agent Provider: Complete 2026 Buyer's Guide",
@@ -625,7 +625,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "April 4, 2025",
     readTime: "1 min",
     slug: "how-to-choose-the-right-ai-voice-agent-provider",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-much-does-an-ai-voice-agent-cost-for-small-business.png",
   },
   {
     title: "How to Connect AI Voice Agent to HubSpot and Salesforce: Complete 2026 Guide",
@@ -634,7 +634,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "July 13, 2025",
     readTime: "7 min",
     slug: "how-to-connect-ai-voice-agent-to-hubspot-salesforce",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-choose-the-right-ai-voice-agent-provider.png",
   },
   {
     title: "How to Learn Building AI Agents: Complete Guide with Reddit Resources 2025",
@@ -643,7 +643,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "April 21, 2025",
     readTime: "4 min",
     slug: "how-to-learn-building-ai-agents",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-connect-ai-voice-agent-to-hubspot-salesforce.png",
   },
   {
     title: "How to Measure ROI of AI Voice Agents in Customer Support: Complete 2026 Guide",
