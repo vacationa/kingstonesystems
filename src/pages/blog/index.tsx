@@ -1015,7 +1015,7 @@ export const BlogPage: React.FC = () => {
               <ul>
                 {getPostsByCategory("ROI & Strategy", 5).map((post) => (
                   <li key={post.slug}>
-                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                    <a href={`/blog/${post.slug}.html`}>{post.title}</a>
                   </li>
                 ))}
               </ul>
@@ -1030,7 +1030,7 @@ export const BlogPage: React.FC = () => {
                   .slice(0, 5)
                   .map((post) => (
                     <li key={post.slug}>
-                      <a href={`/blog/${post.slug}`}>{post.title}</a>
+                      <a href={`/blog/${post.slug}.html`}>{post.title}</a>
                     </li>
                   ))}
               </ul>
@@ -1045,7 +1045,7 @@ export const BlogPage: React.FC = () => {
                   .slice(0, 5)
                   .map((post) => (
                     <li key={post.slug}>
-                      <a href={`/blog/${post.slug}`}>{post.title}</a>
+                      <a href={`/blog/${post.slug}.html`}>{post.title}</a>
                     </li>
                   ))}
               </ul>
