@@ -3726,7 +3726,7 @@ body {
 }
 
 .post-card-header {
-    height: 200px;
+    height: 170px;
     background: var(--bg-lighter);
     border-bottom: 1px solid var(--border-gray);
     display: flex;
@@ -3916,7 +3916,7 @@ body {
 
 .post-featured-image {
     width: 100%;
-    max-width: 900px;
+    max-width: 760px;
     margin: 0 auto 60px;
     border-radius: 20px;
     overflow: hidden;
