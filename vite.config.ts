@@ -6,14 +6,19 @@ import { fileURLToPath } from 'url';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-// Plugin to handle clean URLs for blog posts
+// Plugin to handle clean URLs (remove .html extension)
 function cleanBlogUrls() {
   return {
     name: 'clean-blog-urls',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
+        if (!req.url) {
+          next();
+          return;
+        }
+
         // Handle /blog/:slug (without .html)
-        if (req.url && req.url.startsWith('/blog/') && !req.url.endsWith('.html') && !req.url.includes('.')) {
+        if (req.url.startsWith('/blog/') && !req.url.endsWith('.html') && !req.url.includes('.')) {
           const slug = req.url.replace('/blog/', '').split('?')[0].split('#')[0];
           const htmlPath = resolve(__dirname, 'public', 'blog', `${slug}.html`);
           
@@ -22,6 +27,17 @@ function cleanBlogUrls() {
             req.url = `/blog/${slug}.html${req.url.includes('?') ? '?' + req.url.split('?')[1] : ''}`;
           }
         }
+        
+        // Handle /blog (redirect blog.html to /blog)
+        if (req.url === '/blog.html' || req.url === '/blog.html/') {
+          req.url = '/blog';
+        }
+        
+        // Handle /videos (redirect videos.html to /videos)
+        if (req.url === '/videos.html' || req.url === '/videos.html/') {
+          req.url = '/videos';
+        }
+        
         next();
       });
     }

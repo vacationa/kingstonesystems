@@ -9,6 +9,10 @@
       "destination": "/blog/:slug.html"
     },
     {
+      "source": "/videos",
+      "destination": "/videos.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

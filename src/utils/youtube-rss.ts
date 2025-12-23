@@ -12,20 +12,35 @@ export async function fetchYouTubeRSSFeed(channelId: string): Promise<YouTubeVid
   const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
   
   try {
-    // Note: YouTube RSS feeds may have CORS restrictions
+    // Note: YouTube RSS feeds may have CORS restrictions or may not be available
     // For production, you may need a server-side proxy or use YouTube Data API v3
     const response = await fetch(rssUrl);
     
     if (!response.ok) {
-      throw new Error(`Failed to fetch RSS feed: ${response.statusText}`);
+      if (response.status === 404) {
+        throw new Error('YouTube RSS feed not available for this channel. RSS feeds may be disabled or deprecated. Please use YouTube Data API v3 instead.');
+      }
+      throw new Error(`Failed to fetch RSS feed: ${response.status} ${response.statusText}`);
     }
     
     const xmlText = await response.text();
-    return parseYouTubeRSS(xmlText);
+    
+    // Check if the response is actually XML (not an error page)
+    if (!xmlText.includes('<?xml') && !xmlText.includes('<feed')) {
+      throw new Error('Invalid RSS feed response. YouTube RSS feeds may not be available for this channel.');
+    }
+    
+    const videos = parseYouTubeRSS(xmlText);
+    
+    if (videos.length === 0) {
+      console.warn('RSS feed parsed successfully but no videos found. The channel may not have any public videos.');
+    }
+    
+    return videos;
   } catch (error) {
     console.error('Error fetching YouTube RSS feed:', error);
-    // Fallback: return empty array or use YouTube Data API v3 as alternative
-    return [];
+    // Re-throw to allow the calling code to handle the error appropriately
+    throw error;
   }
 }
 
@@ -74,13 +89,6 @@ export function convertVideoToPost(video: YouTubeVideo, category?: string): Vide
   const excerpt = video.description.length > 150 
     ? video.description.substring(0, 150).trim() + '...'
     : video.description;
-  
-  // Format date
-  const date = new Date(video.publishedAt).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
   
   return {
     ...video,

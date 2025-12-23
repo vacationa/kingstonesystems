@@ -1,6 +1,5 @@
 import React from 'react';
 import { VideoPost } from '../types/video';
-import { cleanSlug } from '../utils/slug';
 import { extractVideoId, getEmbedUrl } from '../utils/youtube-rss';
 
 interface VideoCardProps {
@@ -37,7 +36,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, showEmbed = false }
             />
           </div>
         ) : (
-          <a href={`/blog/videos/${cleanSlug(video.slug)}`} aria-label={`Watch ${video.title}`}>
+          <a href={video.videoUrl} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${video.title}`}>
             <div className="video-thumbnail-container">
               <img 
                 src={video.thumbnailUrl} 
@@ -67,7 +66,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, showEmbed = false }
           </span>
         </div>
         <h3 className="post-card-title">
-          <a href={`/blog/videos/${cleanSlug(video.slug)}`} itemProp="url">
+          <a href={video.videoUrl} target="_blank" rel="noopener noreferrer" itemProp="url">
             <span itemProp="name">{video.title}</span>
           </a>
         </h3>
@@ -76,21 +75,16 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, showEmbed = false }
         </p>
         <div className="post-card-footer">
           <span className="post-read-time">Video</span>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <a 
-              href={video.videoUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="post-card-link"
-              style={{ fontSize: '0.9em', color: '#7F00FF' }}
-              itemProp="contentUrl"
-            >
-              Watch on YouTube →
-            </a>
-            <a href={`/blog/videos/${cleanSlug(video.slug)}`} className="post-card-link">
-              View Page →
-            </a>
-          </div>
+          <a 
+            href={video.videoUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="post-card-link"
+            style={{ fontSize: '0.9em', color: '#7F00FF' }}
+            itemProp="contentUrl"
+          >
+            Watch on YouTube →
+          </a>
         </div>
       </div>
       

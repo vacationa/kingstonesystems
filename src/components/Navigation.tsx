@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface NavigationProps {
-  currentPage?: 'home' | 'blog';
+  currentPage?: 'home' | 'blog' | 'videos';
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) => {
@@ -24,6 +24,9 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) 
           <a href="/#how-it-works">How It Works</a>
           <a href="/blog" className={currentPage === 'blog' ? 'active' : ''}>
             Blog
+          </a>
+          <a href="/videos" className={currentPage === 'videos' ? 'active' : ''}>
+            Videos
           </a>
           <a
             href="https://cal.com/adhirajhangal/ai-voice-agent-consultation"
