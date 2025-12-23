@@ -688,7 +688,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 10, 2025",
     readTime: "10 min",
     slug: "how-to-train-an-ai-voice-agent-on-my-business-knowledge-base",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-train-an-ai-voice-agent-on-my-business-knowledge-base.png",
   },
   {
     title: "How to Use AI for Marketing Your Business: Complete Guide 2025",
@@ -697,7 +697,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 26, 2025",
     readTime: "10 min",
     slug: "how-to-use-ai-for-marketing-my-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-use-ai-for-marketing-my-business.png",
   },
   {
     title: "How to Use AI to Advertise Your Business: Complete Advertising Guide 2025",
@@ -706,7 +706,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 4, 2025",
     readTime: "10 min",
     slug: "how-to-use-ai-to-advertise-my-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-use-ai-to-advertise-my-business.png",
   },
   {
     title: "How to Use AI to Grow Your Business: Complete Growth Strategy Guide 2025",
@@ -724,7 +724,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "June 27, 2025",
     readTime: "3 min",
     slug: "how-to-use-ai-to-promote-your-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-use-ai-to-promote-your-business.png",
   },
   {
     title: "How to Use AI Voice Agents to Reduce Call Center Costs: Complete 2026 Guide",
@@ -733,7 +733,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "July 26, 2025",
     readTime: "5 min",
     slug: "how-to-use-ai-voice-agents-to-reduce-call-center-costs",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-use-ai-voice-agents-to-reduce-call-center-costs.png",
   },
   {
     title: "Is AI Worth Learning? Complete Guide to AI Education in 2025",
@@ -742,7 +742,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 19, 2025",
     readTime: "3 min",
     slug: "is-ai-worth-learning",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/is-ai-worth-learning.png",
   },
   {
     title: "Is AI Worth Paying For? Complete Cost-Benefit Analysis 2025",
@@ -760,7 +760,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "March 9, 2025",
     readTime: "3 min",
     slug: "is-ai-worth-studying",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/is-ai-worth-studying.png",
   },
   {
     title: "Is AI Worth the Cost? Complete Cost Analysis and ROI Guide 2025",
@@ -769,7 +769,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 4, 2025",
     readTime: "6 min",
     slug: "is-ai-worth-the-cost",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/is-ai-worth-the-cost.png",
   },
   {
     title: "Is AI Worth the Hype? Balanced Analysis of AI Reality in 2025",
@@ -778,7 +778,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "June 21, 2025",
     readTime: "5 min",
     slug: "is-ai-worth-the-hype",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/is-ai-worth-the-hype.png",
   },
   {
     title: "Is an AI Phone Agent Worth It for My Business? Complete 2026 ROI Analysis",
@@ -787,7 +787,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "March 1, 2025",
     readTime: "9 min",
     slug: "is-an-ai-phone-agent-worth-it-for-my-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/is-an-ai-phone-agent-worth-it-for-my-business.png",
   },
   {
     title: "Jobber AI Receptionist for HVAC: Complete 2025 Setup Guide",
@@ -805,7 +805,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "February 20, 2025",
     readTime: "1 min",
     slug: "latency-in-ai-voice-agents-why-it-matters",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/latency-in-ai-voice-agents-why-it-matters.png",
   },
   {
     title: "OpenPhone AI Receptionist: How It Works (2025 Guide)",
@@ -859,7 +859,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 2, 2025",
     readTime: "10 min",
     slug: "stop-missed-calls-for-hvac-company",
-    image: "/assets/blog/headers/roi-hvac.png",
+    image: "/assets/blog/headers/stop-missed-calls-for-hvac-company.png",
     videoUrl: "https://www.youtube.com/watch?v=Q6rT1a5lgrs&t=4s",
   },
   {
@@ -869,7 +869,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 13, 2025",
     readTime: "8 min",
     slug: "technical-architecture-ai-receptionist-complex-queries",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/technical-architecture-ai-receptionist-complex-queries.png",
   },
   {
     title: "What Are AI Agents in Crypto? Complete Guide to Blockchain AI Agents 2025",
@@ -878,7 +878,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "May 2, 2025",
     readTime: "5 min",
     slug: "what-are-ai-agents-in-crypto",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-are-ai-agents-in-crypto.png",
   },
   {
     title: "What Are AI Agents? Complete Guide to Artificial Intelligence Agents 2025",
@@ -887,7 +887,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 6, 2025",
     readTime: "1 min",
     slug: "what-are-ai-agents",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-are-ai-agents.png",
   },
   {
     title: "What Can AI Do For My Business: Actionable Use Cases and Examples",
@@ -896,7 +896,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "April 22, 2025",
     readTime: "1 min",
     slug: "what-can-ai-do-for-my-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-can-ai-do-for-my-business.png",
   },
   {
     title: "What Can an AI Voice Agent Do for My Business? Complete Capabilities Guide 2026",
@@ -905,7 +905,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "April 19, 2025",
     readTime: "4 min",
     slug: "what-can-an-ai-voice-agent-do-for-my-business",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-can-an-ai-voice-agent-do-for-my-business.png",
   },
   {
     title: "What Do AI Agents Cost? Complete Pricing and Budgeting Guide 2025",
@@ -914,7 +914,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 4, 2025",
     readTime: "7 min",
     slug: "what-do-ai-agents-cost",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-do-ai-agents-cost.png",
   },
   {
     title: "What Do AI Agents Do? Complete Guide to AI Agent Capabilities and Functions",
@@ -923,7 +923,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "February 1, 2025",
     readTime: "2 min",
     slug: "what-do-ai-agents-do",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-do-ai-agents-do.png",
   },
   {
     title: "What Do AI Agents Look Like? Complete Guide to AI Agent Interfaces and Appearance",
@@ -941,7 +941,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "June 6, 2025",
     readTime: "6 min",
     slug: "what-do-ai-agents-run-on",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-do-ai-agents-run-on.png",
   },
   {
     title: "What Is Tool Calling in AI Agents? Complete Guide 2025",
@@ -950,7 +950,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 20, 2025",
     readTime: "1 min",
     slug: "what-is-tool-calling-in-ai-agents",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/what-is-tool-calling-in-ai-agents.png",
   }
 ];
 
