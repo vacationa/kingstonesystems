@@ -82,10 +82,46 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all elements with animation classes
 document.addEventListener('DOMContentLoaded', () => {
+    // Animate Hero Section
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+        const heroLeft = heroContent.querySelector('.hero-left');
+        const heroRight = heroContent.querySelector('.hero-right');
+        if (heroLeft) {
+            heroLeft.classList.add('fade-in-up');
+            observer.observe(heroLeft);
+        }
+        if (heroRight) {
+            heroRight.classList.add('fade-in-up');
+            heroRight.style.transitionDelay = '0.2s';
+            observer.observe(heroRight);
+        }
+    }
+
+    // Animate AI Agents Section
+    const agentsSection = document.querySelector('.agents-section');
+    if (agentsSection) {
+        agentsSection.classList.add('fade-in-up');
+        observer.observe(agentsSection);
+    }
+
+    // Animate Workflow Section
+    document.querySelectorAll('.workflow-card').forEach((el, index) => {
+        el.classList.add('fade-in-up');
+        el.style.transitionDelay = `${index * 0.15}s`;
+        observer.observe(el);
+    });
+
     // Add fade-in-up to section titles
     document.querySelectorAll('.section-title').forEach((el, index) => {
         el.classList.add('fade-in-up');
         el.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(el);
+    });
+
+    // Add fade-in to section subtitles
+    document.querySelectorAll('.section-subtitle').forEach((el) => {
+        el.classList.add('fade-in');
         observer.observe(el);
     });
 
@@ -96,12 +132,44 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Animate Comparison Section
+    const comparisonSection = document.querySelector('.comparison-section');
+    if (comparisonSection) {
+        const comparisonHeader = comparisonSection.querySelector('.comparison-header');
+        const comparisonContainer = comparisonSection.querySelector('.comparison-container');
+        if (comparisonHeader) {
+            comparisonHeader.classList.add('fade-in-up');
+            observer.observe(comparisonHeader);
+        }
+        if (comparisonContainer) {
+            comparisonContainer.classList.add('fade-in-up');
+            comparisonContainer.style.transitionDelay = '0.2s';
+            observer.observe(comparisonContainer);
+        }
+    }
+
     // Add fade-in-up to steps
     document.querySelectorAll('.step').forEach((el, index) => {
         el.classList.add('fade-in-up');
         el.style.transitionDelay = `${index * 0.15}s`;
         observer.observe(el);
     });
+
+    // Animate Philosophy Section
+    const philosophySection = document.querySelector('.philosophy-section');
+    if (philosophySection) {
+        const philosophyIntro = philosophySection.querySelector('.philosophy-intro');
+        const philosophyValues = philosophySection.querySelectorAll('.philosophy-value');
+        if (philosophyIntro) {
+            philosophyIntro.classList.add('fade-in-up');
+            observer.observe(philosophyIntro);
+        }
+        philosophyValues.forEach((el, index) => {
+            el.classList.add('fade-in-up');
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+        });
+    }
 
     // Add slide-in animations to system cards
     document.querySelectorAll('.system-card').forEach((el, index) => {
@@ -112,6 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add fade-in-up to industry cards
     document.querySelectorAll('.industry-card').forEach((el, index) => {
+        el.classList.add('fade-in-up');
+        el.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(el);
+    });
+
+    // Animate Tutorials Section
+    document.querySelectorAll('.tutorial-card').forEach((el, index) => {
         el.classList.add('fade-in-up');
         el.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(el);
@@ -131,6 +206,20 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(calculator);
     }
 
+    // Animate FAQ Section
+    document.querySelectorAll('.faq-item').forEach((el, index) => {
+        el.classList.add('fade-in-up');
+        el.style.transitionDelay = `${index * 0.05}s`;
+        observer.observe(el);
+    });
+
+    // Animate Final CTA Section
+    const finalCtaCard = document.querySelector('.final-cta-card');
+    if (finalCtaCard) {
+        finalCtaCard.classList.add('scale-in');
+        observer.observe(finalCtaCard);
+    }
+
     // Add fade-in to CTA section
     const ctaContent = document.querySelector('.cta-content');
     if (ctaContent) {
@@ -138,10 +227,40 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(ctaContent);
     }
 
-    // Add fade-in to section subtitles
-    document.querySelectorAll('.section-subtitle').forEach((el) => {
-        el.classList.add('fade-in');
-        observer.observe(el);
+    // Animate main sections that don't have specific child animations
+    const sectionsToAnimate = [
+        '.workflow-section',
+        '.stats-section',
+        '.how-it-works',
+        '.industries',
+        '.tutorials',
+        '.calculator-section',
+        '.faq-section'
+    ];
+
+    sectionsToAnimate.forEach((selector) => {
+        const section = document.querySelector(selector);
+        if (section) {
+            // Only animate the section container if it doesn't have animated children
+            const hasAnimatedChildren = section.querySelectorAll('.fade-in-up, .fade-in, .slide-in-left, .slide-in-right, .scale-in').length > 0;
+            if (!hasAnimatedChildren) {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                
+                const sectionObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            sectionObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                
+                sectionObserver.observe(section);
+            }
+        }
     });
 
     // Animate counting numbers
