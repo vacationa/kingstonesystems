@@ -4245,6 +4245,25 @@ body {
     color: var(--text-dark);
 }
 
+/* Ensure inline media inside blog content scales on small screens */
+.post-content img,
+.post-content iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+}
+
+.post-content table th,
+.post-content table td {
+    padding: 8px 12px;
+}
+
 .post-content h2 {
     font-size: 32px;
     font-weight: 600;
@@ -4581,6 +4600,21 @@ body {
     border-bottom: none;
 }
 
+/* Table of contents inside blog posts */
+.table-of-contents {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-of-contents a {
+    color: var(--accent-purple);
+    text-decoration: none;
+}
+
+.table-of-contents a:hover {
+    text-decoration: underline;
+}
+
 /* Blog Related Section (React Component) */
 .blog-related-section {
     padding: 100px 0;
@@ -4812,6 +4846,12 @@ body {
     .blog-related-columns {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
+    }
+
+    /* Make in-article table of contents single-column on mobile */
+    .table-of-contents ul {
+        columns: 1 !important;
+        -webkit-columns: 1 !important;
     }
     
     .blog-related-column h3 {
