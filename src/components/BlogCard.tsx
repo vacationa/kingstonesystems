@@ -1,4 +1,5 @@
 import React from 'react';
+import { cleanSlug } from '../utils/slug';
 
 interface BlogCardProps {
   title: string;
@@ -52,7 +53,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           </span>
         </div>
         <h3 className="post-card-title">
-          <a href={`/blog/${slug}`} itemProp="url">
+          <a href={`/blog/${cleanSlug(slug)}`} itemProp="url">
             <span itemProp="headline">{title}</span>
           </a>
         </h3>
@@ -74,7 +75,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
                 Watch Video →
               </a>
             )}
-            <a href={`/blog/${slug}`} className="post-card-link">
+            <a href={`/blog/${cleanSlug(slug)}`} className="post-card-link">
               Read More →
             </a>
           </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { cleanSlug } from '../utils/slug';
 
 interface FeaturedPostProps {
   title: string;
@@ -39,7 +40,7 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
               <span className="post-read-time">{readTime} read</span>
             </div>
             <h2 className="featured-post-title">
-              <a href={`/blog/${slug}`} itemProp="url">
+              <a href={`/blog/${cleanSlug(slug)}`} itemProp="url">
                 <span itemProp="headline">{title}</span>
               </a>
             </h2>
@@ -59,7 +60,7 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
                   Watch Video →
                 </a>
               )}
-              <a href={`/blog/${slug}`} className="btn-read-more">
+              <a href={`/blog/${cleanSlug(slug)}`} className="btn-read-more">
                 Read Article →
               </a>
             </div>

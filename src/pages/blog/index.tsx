@@ -6,6 +6,7 @@ import { BlogCard } from '../../components/BlogCard';
 import { BlogCTA } from '../../components/BlogCTA';
 import { Footer } from '../../components/Footer';
 import { BlogPost } from '../../types/blog';
+import { cleanSlug } from '../../utils/slug';
 
 // Real blog posts from blog folder
 const featuredPost: Partial<BlogPost> = {
@@ -14,7 +15,7 @@ const featuredPost: Partial<BlogPost> = {
   category: "ROI & Strategy",
   date: "June 17, 2025",
   readTime: "5 min",
-  slug: "roi-of-ai-receptionist-for-locksmiths",
+  slug: cleanSlug("roi-of-ai-receptionist-for-locksmiths"),
   image: "/assets/blog/headers/roi-locksmith.png",
 };
 
@@ -954,8 +955,14 @@ const blogPosts: Partial<BlogPost>[] = [
   }
 ];
 
+// Clean all slugs to ensure no .html or # fragments
+const cleanedBlogPosts = blogPosts.map(post => ({
+  ...post,
+  slug: post.slug ? cleanSlug(post.slug) : ''
+}));
+
 // Sort blog posts by date (newest first) for proper chronological ordering
-const sortedBlogPosts: Partial<BlogPost>[] = [...blogPosts].sort((a, b) => {
+const sortedBlogPosts: Partial<BlogPost>[] = [...cleanedBlogPosts].sort((a, b) => {
   const dateA = a.date ? new Date(a.date).getTime() : 0;
   const dateB = b.date ? new Date(b.date).getTime() : 0;
   return dateB - dateA;
@@ -978,7 +985,7 @@ export const BlogPage: React.FC = () => {
         category={featuredPost.category || ""}
         date={featuredPost.date || ""}
         readTime={featuredPost.readTime || ""}
-        slug={featuredPost.slug || ""}
+        slug={cleanSlug(featuredPost.slug || "")}
         image={featuredPost.image}
         videoUrl={featuredPost.videoUrl}
       />
@@ -995,7 +1002,7 @@ export const BlogPage: React.FC = () => {
                   category={post.category || ""}
                   date={post.date || ""}
                   readTime={post.readTime || ""}
-                  slug={post.slug || ""}
+                  slug={cleanSlug(post.slug || "")}
                   image={post.image}
                   videoUrl={post.videoUrl}
                 />
@@ -1015,7 +1022,7 @@ export const BlogPage: React.FC = () => {
               <ul>
                 {getPostsByCategory("ROI & Strategy", 5).map((post) => (
                   <li key={post.slug}>
-                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                    <a href={`/blog/${cleanSlug(post.slug || "")}`}>{post.title}</a>
                   </li>
                 ))}
               </ul>
@@ -1030,7 +1037,7 @@ export const BlogPage: React.FC = () => {
                   .slice(0, 5)
                   .map((post) => (
                     <li key={post.slug}>
-                      <a href={`/blog/${post.slug}`}>{post.title}</a>
+                      <a href={`/blog/${cleanSlug(post.slug || "")}`}>{post.title}</a>
                     </li>
                   ))}
               </ul>
@@ -1045,7 +1052,7 @@ export const BlogPage: React.FC = () => {
                   .slice(0, 5)
                   .map((post) => (
                     <li key={post.slug}>
-                      <a href={`/blog/${post.slug}`}>{post.title}</a>
+                      <a href={`/blog/${cleanSlug(post.slug || "")}`}>{post.title}</a>
                     </li>
                   ))}
               </ul>

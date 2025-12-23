@@ -22,7 +22,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) 
           <a href="/#tutorials">Tutorials</a>
           <a href="/#solutions">Solutions</a>
           <a href="/#how-it-works">How It Works</a>
-          <a href="/blog.html" className={currentPage === 'blog' ? 'active' : ''}>
+          <a href="/blog" className={currentPage === 'blog' ? 'active' : ''}>
             Blog
           </a>
           <a
