@@ -276,8 +276,32 @@
                         <div class="integration-badge">Schedule Follow-ups</div>
                         <div class="integration-badge">Generate Reports</div>
                         <div class="integration-badge">Track Analytics</div>
+                        <div class="eye-container">
+                            <svg class="purple-eye" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7F00FF;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#6B00E0;stop-opacity:1" />
+                                    </linearGradient>
+                                    <filter id="eyeGlow">
+                                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <ellipse cx="60" cy="40" rx="45" ry="28" fill="url(#eyeGradient)" filter="url(#eyeGlow)"/>
+                                <ellipse cx="60" cy="40" rx="38" ry="24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <circle cx="60" cy="40" r="14" fill="#FFFFFF" opacity="0.95"/>
+                                <circle cx="60" cy="40" r="8" fill="#7F00FF"/>
+                                <circle cx="62" cy="38" r="3" fill="#FFFFFF" opacity="0.8"/>
+                            </svg>
+                        </div>
                         <div class="integration-badge">Log Call Details</div>
                         <div class="integration-badge">Sync Calendar</div>
+                        <div class="integration-badge">Real-time Alerts</div>
+                        <div class="integration-badge">Data Insights</div>
                     </div>
                 </div>
                 <div class="workflow-card">

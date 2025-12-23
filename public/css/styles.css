@@ -2193,29 +2193,77 @@ body {
 .workflow-visual.integration {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap: 10px;
     max-width: 500px;
     margin: 0 auto;
+    position: relative;
 }
 
 .integration-badge {
-    padding: 10px 16px;
+    padding: 12px 18px;
     background: white;
-    border: 1.5px solid rgba(127, 0, 255, 0.2);
-    border-radius: 12px;
+    border: 1.5px solid rgba(127, 0, 255, 0.15);
+    border-radius: 14px;
     font-size: 12px;
     font-weight: 500;
     color: var(--text-gray);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .integration-badge:hover {
-    border-color: rgba(127, 0, 255, 0.4);
+    border-color: rgba(127, 0, 255, 0.35);
     color: var(--accent-purple);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(127, 0, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(127, 0, 255, 0.2);
+    background: linear-gradient(to bottom, #ffffff, #faf5ff);
+}
+
+.eye-container {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+}
+
+.eye-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(127, 0, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.purple-eye {
+    width: 80px;
+    height: 54px;
+    animation: eye-pulse 4s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(127, 0, 255, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.purple-eye:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 16px rgba(127, 0, 255, 0.4));
+}
+
+@keyframes eye-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.95;
+        transform: scale(1.02);
+    }
 }
 
 /* Growth visualization - Stacked Style */
@@ -3432,8 +3480,23 @@ body {
     }
     
     .workflow-visual.integration {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         max-width: 100%;
+        gap: 8px;
+    }
+    
+    .eye-container {
+        padding: 18px;
+    }
+    
+    .purple-eye {
+        width: 60px;
+        height: 40px;
+    }
+    
+    .integration-badge {
+        padding: 8px 12px;
+        font-size: 11px;
     }
     
     .routing-branches {
