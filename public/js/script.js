@@ -239,10 +239,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
         
         let currentIndex = 1; // Start with middle agent
+        let isAnimating = false; // Prevent rapid clicking
         
         function getAgentHTML(agent, position) {
             const isCenter = position === 'center';
-            const className = isCenter ? 'agent-card-center active' : `agent-card-side agent-${position}`;
+            const className = isCenter 
+                ? 'agent-card-center active' 
+                : `agent-card-side agent-${position}`;
             const label = isCenter ? `
                 <div class="agent-label">
                     <span class="agent-name-label">${agent.name}</span>
@@ -259,28 +262,82 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
         
-        function updateCarousel() {
+        function updateCarousel(direction = 'next', skipAnimation = false) {
+            if (isAnimating && !skipAnimation) return;
+            
             const leftIndex = (currentIndex - 1 + agents.length) % agents.length;
             const centerIndex = currentIndex;
             const rightIndex = (currentIndex + 1) % agents.length;
             
-            agentsDisplay.innerHTML = 
-                getAgentHTML(agents[leftIndex], 'left') +
-                getAgentHTML(agents[centerIndex], 'center') +
-                getAgentHTML(agents[rightIndex], 'right');
+            if (skipAnimation) {
+                // Initial load - no animation
+                agentsDisplay.innerHTML = 
+                    getAgentHTML(agents[leftIndex], 'left') +
+                    getAgentHTML(agents[centerIndex], 'center') +
+                    getAgentHTML(agents[rightIndex], 'right');
+                return;
+            }
+            
+            isAnimating = true;
+            
+            // Get current images and start smooth fade-out
+            const allImages = agentsDisplay.querySelectorAll('.agent-background img');
+            allImages.forEach((img) => {
+                // Force reflow for smooth transition
+                void img.offsetWidth;
+                img.classList.add('fade-out');
+            });
+            
+            // Start crossfade - update content while old images are fading
+            // This creates a smooth overlap effect
+            setTimeout(() => {
+                // Update content
+                agentsDisplay.innerHTML = 
+                    getAgentHTML(agents[leftIndex], 'left') +
+                    getAgentHTML(agents[centerIndex], 'center') +
+                    getAgentHTML(agents[rightIndex], 'right');
+                
+                // Force reflow to ensure pseudo-elements (overlays) are rendered immediately
+                const backgroundElements = agentsDisplay.querySelectorAll('.agent-background');
+                backgroundElements.forEach(el => {
+                    void el.offsetHeight; // Force reflow
+                });
+                
+                // Use requestAnimationFrame to ensure browser has painted overlays
+                requestAnimationFrame(() => {
+                    // Start fade-in on new images with slight stagger for fluidity
+                    const newImages = agentsDisplay.querySelectorAll('.agent-background img');
+                    newImages.forEach((img, index) => {
+                        // Force reflow for each image
+                        void img.offsetWidth;
+                        // Small stagger for smoother visual flow
+                        setTimeout(() => {
+                            img.classList.add('fade-in');
+                        }, index * 20);
+                    });
+                    
+                    // Clean up after animation completes
+                    setTimeout(() => {
+                        newImages.forEach(img => {
+                            img.classList.remove('fade-in');
+                        });
+                        isAnimating = false;
+                    }, 650);
+                });
+            }, 200); // Optimal delay for smooth crossfade
         }
         
         prevBtnNew.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + agents.length) % agents.length;
-            updateCarousel();
+            updateCarousel('prev');
         });
         
         nextBtnNew.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % agents.length;
-            updateCarousel();
+            updateCarousel('next');
         });
         
-        // Initialize
-        updateCarousel();
+        // Initialize without animation
+        updateCarousel('next', true);
     }
 });

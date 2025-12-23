@@ -1775,6 +1775,7 @@ body {
     gap: 40px;
     padding: 0 40px;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .agent-card-side,
@@ -1783,8 +1784,54 @@ body {
     height: 450px;
     border-radius: 20px;
     overflow: hidden;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Slide animation for side cards */
+.agent-card-side.slide-left {
+    animation: slideLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.agent-card-side.slide-right {
+    animation: slideRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.agent-card-center.scale-in {
+    animation: scaleInCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleInCenter {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .agent-card-side {
@@ -1842,6 +1889,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .agent-background img {
@@ -1849,7 +1897,45 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Ensure overlays are always visible and rendered immediately */
+.agent-card-side .agent-background::before,
+.agent-card-center .agent-background::before {
+    will-change: auto;
+    transform: translateZ(0); /* Force GPU layer for immediate rendering */
+}
+
+/* Smooth crossfade animation for image transitions */
+.agent-background img.fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agent-background img.fade-in {
+    opacity: 0;
+    transform: scale(1.02);
+    animation: smoothFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes smoothFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .agent-card-side .agent-background img {
