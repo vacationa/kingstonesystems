@@ -553,7 +553,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "October 6, 2025",
     readTime: "8 min",
     slug: "how-an-ai-receptionist-fixes-overloaded-staff-at-property-management-companies",
-    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-veterinary-clinics.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-overloaded-staff-at-property-management-companies.png",
   },
   {
     title: "How an AI Receptionist Fixes Patient Complaints at Urgent Care Centers: Complete 2026 Guide",
@@ -562,7 +562,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "March 8, 2025",
     readTime: "3 min",
     slug: "how-an-ai-receptionist-fixes-patient-complaints-at-urgent-care-centers",
-    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-overloaded-staff-at-property-management-companies.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-patient-complaints-at-urgent-care-centers.png",
   },
   {
     title: "How an AI Receptionist Fixes Restaurant Phones During Dinner Service: Complete 2026 Guide",
@@ -580,7 +580,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "September 23, 2025",
     readTime: "8 min",
     slug: "how-can-ai-help-small-businesses",
-    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-patient-complaints-at-urgent-care-centers.png",
+    image: "/assets/blog/headers/how-can-ai-help-small-businesses.png",
   },
   {
     title: "How Can AI Improve Business: Complete Improvement Guide",
@@ -589,7 +589,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "August 8, 2025",
     readTime: "2 min",
     slug: "how-can-ai-improve-business",
-    image: "/assets/blog/headers/how-can-ai-help-small-businesses.png",
+    image: "/assets/blog/headers/how-can-ai-improve-business.png",
   },
   {
     title: "How Can I Use AI Agents to Load Data into Apache Iceberg? Complete Guide 2025",
@@ -598,7 +598,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 18, 2025",
     readTime: "2 min",
     slug: "how-can-i-use-ai-agents-to-load-data-into-iceberg",
-    image: "/assets/blog/headers/how-can-ai-improve-business.png",
+    image: "/assets/blog/headers/how-can-i-use-ai-agents-to-load-data-into-iceberg.png",
   },
   {
     title: "How Can I Use AI Agents to Load Data into Snowflake? Complete Guide 2025",
@@ -607,7 +607,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 17, 2025",
     readTime: "1 min",
     slug: "how-can-i-use-ai-agents-to-load-data-into-snowflake",
-    image: "/assets/blog/headers/how-can-i-use-ai-agents-to-load-data-into-iceberg.png",
+    image: "/assets/blog/headers/how-can-i-use-ai-agents-to-load-data-into-snowflake.png",
   },
   {
     title: "How Much Does an AI Voice Agent Cost for a Small Business? Complete 2026 Pricing Guide",
@@ -643,7 +643,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "April 21, 2025",
     readTime: "4 min",
     slug: "how-to-learn-building-ai-agents",
-    image: "/assets/blog/headers/how-to-connect-ai-voice-agent-to-hubspot-salesforce.png",
+    image: "/assets/blog/headers/how-to-learn-building-ai-agents.png",
   },
   {
     title: "How to Measure ROI of AI Voice Agents in Customer Support: Complete 2026 Guide",
@@ -652,7 +652,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "January 30, 2025",
     readTime: "1 min",
     slug: "how-to-measure-roi-of-ai-voice-agents-in-customer-support",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-measure-roi-of-ai-voice-agents-in-customer-support.png",
   },
   {
     title: "How to Qualify Leads Using AI Phone Agents: Complete 2026 Guide",
@@ -661,7 +661,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 15, 2025",
     readTime: "3 min",
     slug: "how-to-qualify-leads-using-ai-phone-agents",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-qualify-leads-using-ai-phone-agents.png",
   },
   {
     title: "How to Replace After Hours Receptionist with AI Voice Agent: Complete 2026 Guide",

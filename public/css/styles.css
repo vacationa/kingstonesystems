@@ -239,7 +239,19 @@ body {
 
 .hero-left {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
+}
+
+.hero-tagline {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--accent-purple);
+    text-transform: uppercase;
+    margin: 0;
+    text-align: left;
 }
 
 .hero-title {
@@ -2988,6 +3000,14 @@ body {
         padding-top: 0;
     }
     
+    .hero-left {
+        align-items: center;
+    }
+    
+    .hero-tagline {
+        text-align: center;
+    }
+    
     .hero-title {
         font-size: 48px;
         text-align: center;
@@ -3057,6 +3077,11 @@ body {
     
     .hero {
         padding: 80px 0 100px;
+    }
+    
+    .hero-tagline {
+        font-size: 14px;
+        text-align: center;
     }
     
     .hero-title {
@@ -3475,6 +3500,10 @@ body {
 
 /* Small mobile devices (below 480px) */
 @media (max-width: 480px) {
+    .hero-tagline {
+        font-size: 13px;
+    }
+    
     .hero-title {
         font-size: 32px;
     }
