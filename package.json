@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "fix-related-articles": "node scripts/fix-related-articles.js",
+    "generate-video-pages": "node scripts/generate-video-pages.js"
   },
   "dependencies": {
     "react": "^18.2.0",
