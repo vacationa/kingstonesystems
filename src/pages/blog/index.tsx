@@ -670,7 +670,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "September 19, 2025",
     readTime: "3 min",
     slug: "how-to-replace-after-hours-receptionist-with-ai-voice-agent",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-to-replace-after-hours-receptionist-with-ai-voice-agent.png",
   },
   {
     title: "How to Run AI Voice Locally: Complete Guide to Making AI Voices and Voice Assistants 2025",
@@ -751,7 +751,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "September 13, 2025",
     readTime: "6 min",
     slug: "is-ai-worth-paying-for",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/is-ai-worth-paying-for.png",
   },
   {
     title: "Is AI Worth Studying? Complete Guide to AI Education Decisions 2025",
