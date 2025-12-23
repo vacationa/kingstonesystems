@@ -39,6 +39,14 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
               </span>
               <span className="post-read-time">{readTime} read</span>
             </div>
+            <div className="featured-post-author">
+              <img 
+                src="/assets/AdhirajProfile.png" 
+                alt="Adhiraj Hangal"
+                className="featured-post-author-avatar"
+              />
+              <span className="featured-post-author-name">Adhiraj Hangal</span>
+            </div>
             <h2 className="featured-post-title">
               <a href={`/blog/${cleanSlug(slug)}`} itemProp="url">
                 <span itemProp="headline">{title}</span>

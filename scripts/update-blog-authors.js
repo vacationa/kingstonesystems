@@ -27,31 +27,35 @@ function updateAuthorInFile(filePath) {
   }
 
   // 2. Update Schema.org author in JSON-LD
-  // Find the JSON-LD script tag and update author
-  const jsonLdPattern = /<script type="application\/ld\+json">\s*({[\s\S]*?})\s*<\/script>/;
-  const jsonLdMatch = content.match(jsonLdPattern);
+  // Use regex to directly replace author field (more robust than parsing)
+  // Match author field with nested braces
+  const authorInJsonLdPattern = /"author"\s*:\s*\{[^}]*"@type"\s*:\s*"[^"]*"[^}]*\}/;
+  const authorReplacement = `"author": {
+        "@type": "Person",
+        "name": "${AUTHOR_NAME}",
+        "image": "https://kingstonesystems.com/assets/AdhirajProfile.png"
+      }`;
   
-  if (jsonLdMatch) {
-    try {
-      const jsonLd = JSON.parse(jsonLdMatch[1]);
-      
-      // Update author to Person type
-      if (jsonLd.author) {
-        jsonLd.author = {
-          "@type": "Person",
-          "name": AUTHOR_NAME,
-          "image": "https://kingstonesystems.com/assets/AdhirajProfile.png"
-        };
-        
-        const updatedJsonLd = JSON.stringify(jsonLd, null, 6);
-        content = content.replace(
-          jsonLdPattern,
-          `<script type="application/ld+json">\n    ${updatedJsonLd}\n    </script>`
-        );
-        hasChanges = true;
-      }
-    } catch (e) {
-      console.warn(`  ⚠ Could not parse JSON-LD in ${path.basename(filePath)}: ${e.message}`);
+  if (authorInJsonLdPattern.test(content)) {
+    content = content.replace(authorInJsonLdPattern, authorReplacement);
+    hasChanges = true;
+  } else {
+    // If author field doesn't exist, try to add it after @type or description
+    const addAuthorAfterType = /("@type"\s*:\s*"Article"[^}]*)(,\s*"publisher")/;
+    const addAuthorAfterDesc = /("description"\s*:\s*"[^"]*"[^}]*)(,\s*"publisher")/;
+    
+    if (addAuthorAfterDesc.test(content)) {
+      content = content.replace(
+        addAuthorAfterDesc,
+        `$1,\n      ${authorReplacement}$2`
+      );
+      hasChanges = true;
+    } else if (addAuthorAfterType.test(content)) {
+      content = content.replace(
+        addAuthorAfterType,
+        `$1,\n      ${authorReplacement}$2`
+      );
+      hasChanges = true;
     }
   }
 
