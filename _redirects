@@ -1,8 +1,0 @@
-# Blog index
-/blog    /blog.html    200
-
-# Blog post clean URLs - wildcard rule for all posts
-/blog/:slug  /blog/:slug.html  200
-
-# SPA fallback - redirect all routes to index.html
-/*    /index.html   200
