@@ -507,7 +507,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 21, 2025",
     readTime: "2 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-auto-repair-shops",
-    image: "/assets/blog/headers/ai-voice-agent-services-for-businesses.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-auto-repair-shops.png",
     videoUrl: "https://www.youtube.com/watch?v=Zn5zYCGWpEs&t=1s",
   },
   {
@@ -517,7 +517,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "November 14, 2025",
     readTime: "9 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-dental-practices",
-    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-auto-repair-shops.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-dental-practices.png",
   },
   {
     title: "How an AI Receptionist Fixes Missed Calls at Medical Clinics: Complete 2026 Guide",
@@ -526,7 +526,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "December 26, 2025",
     readTime: "9 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-medical-clinics",
-    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-dental-practices.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-medical-clinics.png",
   },
   {
     title: "How an AI Receptionist Fixes Missed Calls at Veterinary Clinics: Complete 2026 Guide",
@@ -535,7 +535,7 @@ const blogPosts: Partial<BlogPost>[] = [
     date: "March 29, 2025",
     readTime: "8 min",
     slug: "how-an-ai-receptionist-fixes-missed-calls-at-veterinary-clinics",
-    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-medical-clinics.png",
+    image: "/assets/blog/headers/how-an-ai-receptionist-fixes-missed-calls-at-veterinary-clinics.png",
   },
   {
     title: "How an AI Receptionist Fixes Overloaded Front Desk Staff at Law Firms: Complete 2026 Guide",
