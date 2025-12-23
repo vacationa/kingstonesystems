@@ -52,7 +52,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           </span>
         </div>
         <h3 className="post-card-title">
-          <a href={`/blog/${slug}.html`} itemProp="url">
+          <a href={`/blog/${slug}`} itemProp="url">
             <span itemProp="headline">{title}</span>
           </a>
         </h3>
@@ -74,7 +74,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
                 Watch Video →
               </a>
             )}
-            <a href={`/blog/${slug}.html`} className="post-card-link">
+            <a href={`/blog/${slug}`} className="post-card-link">
               Read More →
             </a>
           </div>
