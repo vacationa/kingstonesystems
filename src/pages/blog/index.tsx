@@ -994,19 +994,25 @@ export const BlogPage: React.FC = () => {
         <section className="blog-posts-section">
           <div className="container">
             <div className="blog-posts-grid">
-              {sortedBlogPosts.map((post, index) => (
-                <BlogCard 
-                  key={index} 
-                  title={post.title || ""}
-                  excerpt={post.excerpt || ""}
-                  category={post.category || ""}
-                  date={post.date || ""}
-                  readTime={post.readTime || ""}
-                  slug={cleanSlug(post.slug || "")}
-                  image={post.image}
-                  videoUrl={post.videoUrl}
-                />
-              ))}
+              {sortedBlogPosts
+                .filter((post) => {
+                  // Only show posts that have a valid slug
+                  const slug = cleanSlug(post.slug || "");
+                  return slug.length > 0;
+                })
+                .map((post, index) => (
+                  <BlogCard 
+                    key={index} 
+                    title={post.title || ""}
+                    excerpt={post.excerpt || ""}
+                    category={post.category || ""}
+                    date={post.date || ""}
+                    readTime={post.readTime || ""}
+                    slug={cleanSlug(post.slug || "")}
+                    image={post.image}
+                    videoUrl={post.videoUrl}
+                  />
+                ))}
             </div>
           </div>
         </section>
