@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "start": "npm run dev",
     "fix-related-articles": "node scripts/fix-related-articles.js",
-    "generate-video-pages": "node scripts/generate-video-pages.js"
+    "generate-video-pages": "node scripts/generate-video-pages.js",
+    "generate-favicons": "node scripts/generate-favicons.js"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -19,6 +20,7 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
+    "sharp": "^0.34.5",
     "typescript": "^5.3.3",
     "vite": "^5.0.8"
   }
