@@ -69,3 +69,4 @@ try {
 }
 
 console.log('\n✓ Favicon generation complete!');
+
