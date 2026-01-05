@@ -9,7 +9,8 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) 
     <nav className="nav">
       <div className="container nav-content">
         <div className="logo">
-          <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <img src="/assets/logo.png" alt="Kingstone Systems" style={{ height: '60px', width: 'auto', borderRadius: '8px' }} />
             <span className="logo-text">Kingstone Systems</span>
           </a>
         </div>
@@ -28,7 +29,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) 
             Videos
           </a>
           <a
-            href="https://cal.com/adhirajhangal/ai-voice-agent-consultation"
+            href="https://cal.com/kingstonesystems/free-strategy-call"
             className="btn-signup"
           >
             Book a Demo

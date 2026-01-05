@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="footer-right">
             <a
-              href="https://cal.com/adhirajhangal/ai-voice-agent-consultation"
+              href="https://cal.com/kingstonesystems/free-strategy-call"
               className="footer-link"
             >
               Book a Call ↗

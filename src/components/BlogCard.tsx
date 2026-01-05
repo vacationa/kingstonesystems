@@ -77,7 +77,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="post-card-link"
-                style={{ fontSize: '0.9em', color: '#7F00FF' }}
+                style={{ fontSize: '0.9em', color: '#1E40AF' }}
                 itemProp="video"
               >
                 Watch Video →

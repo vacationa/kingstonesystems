@@ -80,7 +80,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, showEmbed = false }
             target="_blank" 
             rel="noopener noreferrer"
             className="post-card-link"
-            style={{ fontSize: '0.9em', color: '#7F00FF' }}
+            style={{ fontSize: '0.9em', color: '#1E40AF' }}
             itemProp="contentUrl"
           >
             Watch on YouTube →

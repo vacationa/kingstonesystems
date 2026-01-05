@@ -62,7 +62,7 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-read-more"
-                  style={{ backgroundColor: 'transparent', border: '1px solid #7F00FF', color: '#7F00FF' }}
+                  style={{ backgroundColor: 'transparent', border: '1px solid #1E40AF', color: '#1E40AF' }}
                   itemProp="video"
                 >
                   Watch Video →

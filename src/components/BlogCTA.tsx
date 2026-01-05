@@ -10,7 +10,7 @@ export const BlogCTA: React.FC = () => {
             Book a free consultation to see how voice AI can drive growth in your organization.
           </p>
           <a
-            href="https://cal.com/adhirajhangal/ai-voice-agent-consultation"
+            href="https://cal.com/kingstonesystems/free-strategy-call"
             className="btn-primary"
           >
             Book a Free Consultation

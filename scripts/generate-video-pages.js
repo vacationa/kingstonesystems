@@ -97,7 +97,7 @@ const videoPageTemplate = (video) => `<!DOCTYPE html>
                 <a href="../../index.html#how-it-works">How It Works</a>
                 <a href="../../blog">Blog</a>
                 <a href="../../videos">Videos</a>
-                <a href="https://cal.com/adhirajhangal/ai-voice-agent-consultation" class="btn-signup">Book a Demo</a>
+                <a href="https://cal.com/kingstonesystems/free-strategy-call" class="btn-signup">Book a Demo</a>
             </div>
         </div>
     </nav>
@@ -179,7 +179,7 @@ const videoPageTemplate = (video) => `<!DOCTYPE html>
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="https://cal.com/adhirajhangal/ai-voice-agent-consultation">Book a Demo</a></li>
+                        <li><a href="https://cal.com/kingstonesystems/free-strategy-call">Book a Demo</a></li>
                     </ul>
                 </div>
             </div>
