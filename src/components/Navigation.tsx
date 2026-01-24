@@ -10,7 +10,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) 
       <div className="container nav-content">
         <div className="logo">
           <a href="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <img src="/assets/logo.png" alt="Kingstone Systems" style={{ height: '60px', width: 'auto', borderRadius: '8px' }} />
+            <img src="/assets/newlogo.png" alt="Kingstone Systems" style={{ height: '60px', width: 'auto', borderRadius: '8px' }} />
             <span className="logo-text">Kingstone Systems</span>
           </a>
         </div>
