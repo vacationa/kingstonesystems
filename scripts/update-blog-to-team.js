@@ -86,7 +86,18 @@ function updateAuthorInFile(filePath) {
     hasChanges = true;
   }
 
-  // 4. Add or update author section in the blog post body (Author Section)
+  // 4. Update related posts author references (in post cards)
+  // Replace all instances of Adhiraj references in related posts
+  content = content.replace(
+    /src="\.\.\/assets\/AdhirajProfile\.png" alt="Adhiraj Hangal"/g,
+    `src="${LOGO_IMAGE}" alt="${AUTHOR_NAME}"`
+  );
+  content = content.replace(
+    /<span class="post-card-author-name">Adhiraj Hangal<\/span>/g,
+    `<span class="post-card-author-name">${AUTHOR_NAME}</span>`
+  );
+
+  // 5. Add or update author section in the blog post body (Author Section)
   const authorSectionPattern = /<!-- Author Section -->[\s\S]*?<!-- \/Author Section -->/;
   const hasAuthorSection = authorSectionPattern.test(content);
 
