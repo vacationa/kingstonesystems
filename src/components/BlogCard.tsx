@@ -54,11 +54,11 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         </div>
         <div className="post-card-author">
           <img 
-            src="/assets/AdhirajProfile.png" 
-            alt="Adhiraj Hangal"
+            src="/assets/newlogo.png" 
+            alt="Kingstone Team"
             className="post-card-author-avatar"
           />
-          <span className="post-card-author-name">Adhiraj Hangal</span>
+          <span className="post-card-author-name">Kingstone Team</span>
         </div>
         <h3 className="post-card-title">
           <a href={`/blog/${cleanSlug(slug)}`} itemProp="url">

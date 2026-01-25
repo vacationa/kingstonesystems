@@ -41,11 +41,11 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
             </div>
             <div className="featured-post-author">
               <img 
-                src="/assets/AdhirajProfile.png" 
-                alt="Adhiraj Hangal"
+                src="/assets/newlogo.png" 
+                alt="Kingstone Team"
                 className="featured-post-author-avatar"
               />
-              <span className="featured-post-author-name">Adhiraj Hangal</span>
+              <span className="featured-post-author-name">Kingstone Team</span>
             </div>
             <h2 className="featured-post-title">
               <a href={`/blog/${cleanSlug(slug)}`} itemProp="url">
