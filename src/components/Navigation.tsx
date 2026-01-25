@@ -20,7 +20,6 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage = 'home' }) 
           <span></span>
         </button>
         <div className="nav-links">
-          <a href="/#tutorials">Tutorials</a>
           <a href="/#solutions">Solutions</a>
           <a href="/blog" className={currentPage === 'blog' ? 'active' : ''}>
             Blog
