@@ -84,16 +84,13 @@ export default function OperatorLoginPage() {
                     </Link>
 
                     <div style={{ background: "rgba(30,64,175,0.15)", border: "1px solid rgba(30,64,175,0.3)", borderRadius: "20px", padding: "4px 14px" }}>
-                        <span style={{ fontSize: "11px", fontWeight: 600, color: "#93C5FD", letterSpacing: "0.8px", textTransform: "uppercase" }}>Operator Access</span>
+                        <span style={{ fontSize: "11px", fontWeight: 600, color: "#93C5FD", letterSpacing: "0.8px", textTransform: "uppercase" }}>Partner Access</span>
                     </div>
 
                     <div style={{ textAlign: "center" }}>
                         <h1 style={{ fontSize: "24px", fontWeight: 700, color: "#F1F5F9", margin: "0 0 6px", letterSpacing: "-0.3px" }}>
                             Internal Portal
                         </h1>
-                        <p style={{ fontSize: "14px", color: "#64748B", margin: 0 }}>
-                            Authorized personnel only
-                        </p>
                     </div>
                 </div>
 

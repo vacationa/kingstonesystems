@@ -89,7 +89,7 @@ export default function SignUpPage() {
           <h1
             className={`${aeonik.variable} font-aeonik text-2xl md:text-3xl font-bold text-white mb-2`}
           >
-            Operator <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Registration</span>
+            Partner <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Registration</span>
           </h1>
           <p className={`${aeonik.variable} font-aeonik font-light text-gray-400 text-base`}>
             Create your internal account to access the mission control dashboard.
@@ -212,11 +212,11 @@ export default function SignUpPage() {
               )}
 
               <SubmitButton
-                pendingText="Creating operator account..."
+                pendingText="Creating partner account..."
                 disabled={isSubmitting}
                 className={`h-10 text-sm ${aeonik.variable} font-aeonik bg-blue-600 text-white hover:bg-blue-700 rounded-xl transition-all duration-300 font-semibold shadow-lg shadow-blue-900/20`}
               >
-                Create Operator Account
+                Create Partner Account
               </SubmitButton>
 
               <p className={`text-center text-sm ${aeonik.variable} font-aeonik text-gray-500`}>

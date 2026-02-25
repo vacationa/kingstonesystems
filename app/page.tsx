@@ -19,35 +19,35 @@ export default function HomePage() {
   const faqs = [
     {
       q: "What exactly does Kingstone Systems do?",
-      a: "We build custom AI agents and automations that handle the repetitive, time-consuming parts of running a business—customer inquiries, lead qualification, appointment scheduling, follow-ups, data entry, and more. Unlike off-the-shelf software, we design systems around how your business actually works, integrate with the tools you already use, and keep improving performance over time.",
+      a: "We design, build, and operate AI agents and automation systems for businesses that want to run leaner and respond faster. We handle the full deployment, from build to integration to ongoing optimization.",
     },
     {
-      q: "How do you ensure the AI agents don't make mistakes?",
-      a: "We start with a working prototype that you test before it ever interacts with real customers or leads. Every interaction is logged and reviewed, with clear escalation paths for anything outside the AI's scope. Agents are trained on your specific services, policies, and brand voice—not generic templates.",
+      q: "What is the difference between working directly with Kingstone and working with a Certified Partner?",
+      a: "Both deliver the same system, built to the same standard. Working directly with Kingstone is right for businesses that want to work with our core team. A Certified Partner is a trained and vetted partner who deploys the same Kingstone system, often with specific industry or regional expertise.",
+    },
+    {
+      q: "How do you make sure the AI agents do not make mistakes?",
+      a: "We build in guardrails, escalation logic, and human handoff protocols from the start. The system is trained on your specific business, tested before it goes live, and monitored continuously. Monthly optimization reviews catch and correct any drift before it becomes a problem.",
     },
     {
       q: "Do I need to change any of my existing tools?",
-      a: "No. We work with what you already have—CRMs, scheduling tools, helpdesks, communication platforms, and custom software. The AI connects via APIs and integrations so your team keeps using familiar tools without disruption.",
+      a: "No. We integrate with what you already use, from your CRM to your helpdesk to your scheduling software. Your team keeps their existing workflows.",
     },
     {
       q: "How much does this cost?",
-      a: "Pricing depends on the scope, complexity, and integrations involved. Most clients see systems pay for themselves within a few weeks through time saved, faster response rates, and improved conversion. We'll walk you through projected ROI before you commit.",
+      a: "Pricing depends on the scope of your deployment. We offer a free consultation to understand your needs and give you a clear number before any commitment.",
     },
     {
       q: "How quickly will I see results?",
-      a: "Most clients see meaningful impact within the first few weeks—faster response times, fewer missed leads, and reduced load on their team. Positive ROI typically comes within the first month.",
-    },
-    {
-      q: "Do you offer support and training?",
-      a: "Yes. You get full access to call logs, performance dashboards, and our team for ongoing optimization. We provide training for your staff on monitoring and managing the AI, plus monthly check-ins to review performance. Support is included—not an add-on.",
+      a: "Most clients see measurable improvements within the first few weeks of going live. Full optimization typically comes through in the first 60 to 90 days as the system learns from real interactions.",
     },
     {
       q: "Can I customize how the AI agents communicate?",
-      a: "Absolutely. We work with you to define the tone, personality, and communication style that matches your brand. Professional and concise? Warm and conversational? We configure it to communicate exactly how you want your brand represented.",
+      a: "Yes, completely. We train agents on your brand voice, tone, and communication standards. They respond the way you would want your best team member to respond.",
     },
     {
       q: "What if I want to go back to manual processes?",
-      a: "You can turn it off anytime—no contracts locking you in. Your data and interaction logs are yours to keep. You're never trapped with us.",
+      a: "You can. We do not lock you in. But in practice, clients who see the system running rarely want to go back.",
     },
   ];
 
@@ -139,6 +139,15 @@ export default function HomePage() {
         .industry-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(30,64,175,0.08); }
         .ind-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--primary); background: #EFF6FF; padding: 4px 10px; border-radius: 20px; margin-bottom: 16px; }
         .industry-card p { font-size: 15px; color: var(--text-gray); line-height: 1.7; }
+        /* CERTIFIED PARTNERS */
+        .partners-section { background: var(--bg-light); }
+        .partners-inner { max-width: 820px; }
+        .partners-body { font-size: 16px; color: #4B5563; line-height: 1.8; margin-bottom: 40px; padding: 28px 32px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0; }
+        .partners-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+        .btn-find-partner { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--primary); color: var(--white); font-weight: 600; font-size: 15px; border-radius: 8px; transition: all 0.2s; }
+        .btn-find-partner:hover { background: var(--primary-dark); transform: translateY(-1px); }
+        .btn-work-direct { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--white); color: var(--text-dark); font-weight: 500; font-size: 15px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.2s; }
+        .btn-work-direct:hover { border-color: var(--text-dark); }
         /* CALCULATOR */
         .calc-box { max-width: 900px; margin: 56px auto 0; padding: 56px; background: var(--white); border: 1px solid var(--border); border-radius: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
         .calc-inputs { display: flex; flex-direction: column; gap: 24px; }
@@ -196,6 +205,7 @@ export default function HomePage() {
           <div className={`nav-links${mobileMenuOpen ? " open" : ""}`}>
             <a href="#solutions">Solutions</a>
             <a href="#how-it-works">How It Works</a>
+            <Link href="/partners">Partners</Link>
             <a href="/blog">Blog</a>
             <a href="/videos">Videos</a>
             <Link href="/sign-in" className="btn-client-login">Client Login</Link>
@@ -209,12 +219,12 @@ export default function HomePage() {
         <div className="container">
           <div className="hero-grid">
             <div>
-              <p className="hero-tagline">The AI Deployment Lab</p>
-              <h1 className="hero-title">The Operational Standard for AI Automation Deployment</h1>
+              <p className="hero-tagline">The Operational Standard for AI Deployment</p>
+              <h1 className="hero-title">Your business, run by AI that actually works.</h1>
             </div>
             <div>
               <p className="hero-desc">
-                Kingstone is the infrastructure layer businesses rely on to deploy AI at scale. We design, build, and operate production-grade AI agents and automation systems — so your organization runs smarter, faster, and without limits.
+                Kingstone builds and operates production-grade AI agents and automation systems for businesses that are serious about scale. We handle the infrastructure, the integration, and the ongoing optimization so your team can focus on the work only humans can do.
               </p>
               <div className="hero-cta">
                 <a href="#how-it-works" className="btn-primary">See How It Works →</a>
@@ -231,10 +241,10 @@ export default function HomePage() {
           <h2 className="section-title">Your AI workforce, deployed in weeks</h2>
           <div className="workflow-grid">
             {[
-              { title: "Instant customer support", desc: "Every inquiry is handled within seconds—no hold times, no waiting on email responses. Your AI agents answer questions, route requests, and resolve common issues through chat, email, and phone, around the clock." },
-              { title: "Smart task routing", desc: "AI agents handle routine tasks automatically and escalate only what needs a human touch—freeing your team for the high-value work that actually requires their expertise." },
-              { title: "Complete visibility", desc: "Every interaction is logged, synced to your existing tools, and surfaced as actionable insights. You always know what's happening—and where there's room to improve." },
-              { title: "Gets smarter over time", desc: "Your AI learns from every interaction. Monthly optimizations mean fewer escalations, more accurate responses, and steadily improving outcomes—while costs stay predictable." },
+              { title: "Instant customer support", desc: "Every inquiry is handled within seconds. No hold times, no waiting on email. Your AI agents answer questions, route requests, and resolve common issues across chat, email, and phone, around the clock." },
+              { title: "Smart task routing", desc: "AI agents handle routine tasks automatically and escalate only what needs a human. Your team stays focused on high-value work, not inbox management." },
+              { title: "Complete visibility", desc: "Every interaction is logged, synced to your existing tools, and surfaced as actionable insights. You always know what is happening and where there is room to improve." },
+              { title: "Gets smarter over time", desc: "Your AI learns from every interaction. Monthly optimizations mean fewer escalations, more accurate responses, and steadily improving outcomes while costs stay predictable." },
             ].map((item) => (
               <div key={item.title} className="workflow-card">
                 <h3>{item.title}</h3>
@@ -251,9 +261,9 @@ export default function HomePage() {
           <h2 className="section-title">Results that speak for themselves</h2>
           <div className="stats-grid">
             {[
-              { num: "60%", label: "reduction in response time", note: "Customers and leads get answers in seconds, not hours" },
-              { num: "3x", label: "more capacity, same team", note: "AI handles the volume so your team handles the value" },
-              { num: "24/7", label: "availability", note: "Never miss an opportunity because of time zones or office hours" },
+              { num: "60%", label: "Reduction in response time", note: "Customers and leads get answers in seconds, not hours." },
+              { num: "3x", label: "More capacity, same team", note: "AI handles the volume so your team handles the value." },
+              { num: "24/7", label: "Availability", note: "Never miss an opportunity because of time zones or office hours." },
             ].map((s) => (
               <div key={s.num} className="stat-card">
                 <div className="stat-number">{s.num}</div>
@@ -268,20 +278,20 @@ export default function HomePage() {
       {/* COMPARISON */}
       <section className="comparison">
         <div className="container">
-          <h2 className="section-title">Kingstone Systems vs. Traditional Operations</h2>
+          <h2 className="section-title">Kingstone vs. Traditional Operations</h2>
           <div className="comparison-inner">
             <div className="comp-col left">
-              <p className="comp-label">With AI agents</p>
+              <p className="comp-label">With Kingstone</p>
               <ul className="comp-list">
-                {["Handle unlimited inquiries, leads, and tasks simultaneously", "Automate repetitive workflows and follow-ups around the clock", "Predictable monthly cost instead of growing headcount", "Consistent, accurate responses every time—no off days", "Instant coordination across channels and tools"].map(text => (
+                {["Handle unlimited inquiries, leads, and tasks simultaneously", "Automate repetitive workflows and follow-ups around the clock", "Predictable monthly cost instead of growing headcount", "Consistent, accurate responses every time", "Instant coordination across every channel and tool"].map(text => (
                   <li key={text}><span className="check">✓</span>{text}</li>
                 ))}
               </ul>
             </div>
             <div className="comp-col right">
-              <p className="comp-label">Traditional</p>
+              <p className="comp-label">Traditional Operations</p>
               <ul className="comp-list">
-                {["Weeks to hire, onboard, and train new staff", "Manual processes create bottlenecks as you grow", "Salary + benefits + software costs per person", "Hard to scale quickly during busy periods", "Inconsistent quality and human error over time"].map(text => (
+                {["Weeks to hire, onboard, and train new staff", "Manual processes create bottlenecks as you grow", "Salary, benefits, and software costs per person", "Hard to scale quickly during busy periods", "Inconsistent quality and human error over time"].map(text => (
                   <li key={text}><span className="cross">✗</span>{text}</li>
                 ))}
               </ul>
@@ -293,14 +303,14 @@ export default function HomePage() {
       {/* HOW IT WORKS */}
       <section id="how-it-works">
         <div className="container">
-          <h2 className="section-title">How we transform your business</h2>
-          <p className="section-subtitle">We don't sell off-the-shelf software. We build AI agents and automations tailored to how your business actually works—deployed in weeks, with real ROI you can measure.</p>
+          <h2 className="section-title">How a Kingstone Deployment Works</h2>
+          <p className="section-subtitle">We do not hand you software and wish you luck. We build the system, integrate it into your operations, and stay on to make sure it performs.</p>
           <div className="steps">
             {[
-              { n: "01", title: "A custom demo built for you", desc: "We build a working demo using your real services, FAQs, and common scenarios—your brand voice, your processes, your edge cases. You see exactly how the AI agent performs before anything goes live." },
-              { n: "02", title: "Your brand voice, at scale", desc: "We train AI agents on your business knowledge, communication standards, and brand personality—so they perform like your best team member, available for every conversation, across every channel." },
-              { n: "03", title: "Seamless integration with your tools", desc: "We connect directly with your CRM, scheduling software, helpdesk, or any other platform you rely on. Data flows automatically, your team keeps using familiar tools, and nothing falls through the cracks." },
-              { n: "04", title: "Proven systems, not experiments", desc: "We've already solved the hard problems—handling high inquiry volume, scaling during busy periods, multi-channel communication, and seamless handoffs to humans. You get battle-tested solutions, not guesswork." },
+              { n: "01", title: "A custom demo built around your business", desc: "Before anything goes live, we build a working demo using your real services, FAQs, and common scenarios. Your brand voice, your processes, your edge cases. You see exactly how it performs before we deploy a single line." },
+              { n: "02", title: "Trained on how you communicate", desc: "We train your AI agents on your business knowledge, communication standards, and brand personality. They respond the way your best team member would, across every channel, for every conversation." },
+              { n: "03", title: "Integrated with the tools you already use", desc: "We connect directly with your CRM, scheduling software, helpdesk, and any other platform you rely on. Data flows automatically, your team keeps using familiar tools, and nothing falls through the cracks." },
+              { n: "04", title: "Built on systems we have already proven", desc: "We have already solved the hard problems: high inquiry volume, multi-channel communication, seasonal scaling, seamless handoffs to humans. You get battle-tested infrastructure, not a pilot project." },
             ].map(s => (
               <div key={s.n} className="step">
                 <div className="step-num">{s.n}</div>
@@ -319,15 +329,15 @@ export default function HomePage() {
             <div>
               <h2 className="section-title">Our Philosophy</h2>
               <p style={{ fontSize: "16px", color: "#4B5563", lineHeight: "1.75" }}>
-                We're not here to sell you software. We're here to transform how your business operates. That means obsessing over your metrics, being transparent about what works (and what doesn't), and staying committed long after deployment. Your business growth is our only success metric.
+                We are not here to sell you software. We are here to change how your business operates. That means caring about your metrics more than our own, being honest about what is working and what is not, and staying involved long after the system goes live. Your growth is the only number we track.
               </p>
             </div>
             <div className="philosophy-values">
               {[
-                { title: "ROI-obsessed", desc: "Every feature we build has to improve your bottom line. If it doesn't drive revenue or cut costs, we don't ship it." },
-                { title: "Radically transparent", desc: "Full access to call logs, performance metrics, and pricing. No black boxes, no 'trust the algorithm' nonsense." },
-                { title: "Built to last", desc: "We're building systems that scale with you for years, not quick wins that need replacing in 6 months." },
-                { title: "Always evolving", desc: "Monthly optimizations and performance tuning mean your system gets smarter over time. We don't deploy and disappear." },
+                { title: "ROI-obsessed", desc: "Every feature we build has to improve your bottom line. If it does not drive revenue or cut costs, we do not ship it." },
+                { title: "Radically transparent", desc: "Full access to call logs, performance metrics, and pricing. No black boxes, no vague dashboards, no algorithm you just have to trust." },
+                { title: "Built to last", desc: "We build systems designed to scale with you for years. Not quick wins that need replacing in six months." },
+                { title: "Always evolving", desc: "Monthly optimizations and performance tuning mean your system gets sharper over time. We do not deploy and disappear." },
               ].map(v => (
                 <div key={v.title}><h3>{v.title}</h3><p>{v.desc}</p></div>
               ))}
@@ -342,16 +352,33 @@ export default function HomePage() {
           <h2 className="section-title">Where AI makes the biggest difference</h2>
           <div className="industries-grid">
             {[
-              { tag: "Professional Services", desc: "Agencies, consultancies, and law firms field the same intake questions dozens of times a week. AI agents handle qualification, scheduling, and follow-ups—so your team spends time on billable work, not inbox management." },
-              { tag: "Healthcare & Wellness", desc: "Clinics, therapists, and wellness providers need to be reachable without being overwhelmed. AI agents handle appointment scheduling, intake forms, FAQ responses, and reminders—while your staff stays focused on patient care." },
-              { tag: "Home & Field Services", desc: "HVAC companies, plumbers, and contractors miss leads every time a call goes unanswered. AI agents capture inquiries 24/7, qualify the job, book estimates, and send follow-ups—so no opportunity slips through the cracks." },
-              { tag: "SaaS & Technology", desc: "Support tickets, onboarding questions, and feature inquiries pile up fast. AI agents handle tier-1 support, guide users through common workflows, and surface insights that help your team prioritize what to build next." },
+              { tag: "Professional Services", desc: "Agencies, consultancies, and law firms answer the same intake questions dozens of times a week. AI agents handle qualification, scheduling, and follow-ups so your team spends time on billable work, not inbox management." },
+              { tag: "Healthcare and Wellness", desc: "Clinics, therapists, and wellness providers need to stay reachable without being overwhelmed. AI agents handle appointment scheduling, intake forms, FAQ responses, and reminders while your staff stays focused on patient care." },
+              { tag: "Home and Field Services", desc: "HVAC companies, plumbers, and contractors lose leads every time a call goes unanswered. AI agents capture inquiries 24/7, qualify the job, book estimates, and send follow-ups so no opportunity slips through." },
+              { tag: "SaaS and Technology", desc: "Support tickets, onboarding questions, and feature inquiries pile up fast. AI agents handle tier-1 support, guide users through common workflows, and surface insights that help your team prioritize what to build next." },
             ].map(i => (
               <div key={i.tag} className="industry-card">
                 <span className="ind-tag">{i.tag}</span>
                 <p>{i.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CERTIFIED PARTNERS */}
+      <section className="partners-section">
+        <div className="container">
+          <div className="partners-inner">
+            <h2 className="section-title">Kingstone Certified Partners</h2>
+            <p className="section-subtitle" style={{ marginBottom: "28px" }}>A vetted network of partners who know this system inside out and deploy it for businesses just like yours.</p>
+            <p className="partners-body">
+              Every Kingstone Certified Partner has been trained, tested, and approved by our team. They carry the same standards we do, use the same systems we built, and are held to the same results we promise. Whether you work directly with Kingstone or through a certified partner, you get the same quality of deployment.
+            </p>
+            <div className="partners-cta">
+              <Link href="/partners" className="btn-find-partner">Find a Certified Partner →</Link>
+              <a href="https://cal.com/kingstonesystems/free-strategy-call" className="btn-work-direct">Work Directly With Us</a>
+            </div>
           </div>
         </div>
       </section>
@@ -406,8 +433,8 @@ export default function HomePage() {
       {/* FINAL CTA */}
       <section className="final-cta">
         <div className="container">
-          <h2>Let's talk.</h2>
-          <h3>Book a free consultation</h3>
+          <h2>Let us talk.</h2>
+          <h3>Book a free consultation and see what a Kingstone deployment could look like for your business.</h3>
           <a href="https://cal.com/kingstonesystems/free-strategy-call" className="btn-cta">Book a Call ↗</a>
         </div>
       </section>
@@ -417,8 +444,8 @@ export default function HomePage() {
         <div className="container footer-inner">
           <span>© 2026 Kingstone Systems. All rights reserved.</span>
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-            <a href="https://cal.com/kingstonesystems/free-strategy-call">Book a Call ↗</a>
-            <Link href="/operator-login" style={{ fontSize: "12px", color: "#9CA3AF", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={e => (e.currentTarget.style.color = "#6B7280")} onMouseLeave={e => (e.currentTarget.style.color = "#9CA3AF")}>Operator Login</Link>
+            <Link href="/partners">Certified Partners</Link>
+            <Link href="/operator-login">Partner Login</Link>
           </div>
         </div>
       </footer>
