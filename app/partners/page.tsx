@@ -11,7 +11,7 @@ export default function PartnersPage() {
         {
             name: "Wyneo Technology",
             logo: "W",
-            tier: "Gold",
+            tier: "Platinum",
             specialty: "Salesforce Agents",
             blurb: "Wyneo Technology specializes in deploying custom AI agents integrated natively with Salesforce to automate data entry, streamline pipeline management, and accelerate revenue operations.",
             link: "#"
@@ -50,8 +50,8 @@ export default function PartnersPage() {
           --border: #E5E7EB;
           --bg-light: #F9FAFB;
           --white: #FFFFFF;
-          --gold: #F59E0B;
-          --gold-bg: #FEF3C7;
+          --platinum: #E5E4E2;
+          --platinum-bg: #F3F3F2;
           --silver: #6B7280;
           --silver-bg: #F3F4F6;
         }
@@ -81,42 +81,57 @@ export default function PartnersPage() {
         
         /* Layout */
         .section-padding { padding: 80px 0; }
-        .tier-section { margin-bottom: 80px; }
-        .tier-header { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-        .tier-title { font-size: 32px; font-weight: 400; letter-spacing: -1px; }
-        .tier-desc { font-size: 16px; color: var(--text-gray); margin-top: 8px; }
-        
-        .gold-title { color: var(--text-dark); }
-        .silver-title { color: var(--text-dark); }
-        
+        .tier-section { margin-bottom: 96px; }
+        .tier-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 52px; }
+        .tier-title { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+        .tier-name { font-size: 26px; font-weight: 300; letter-spacing: -0.5px; color: var(--text-dark); }
+        .tier-rule { width: 40px; height: 1px; background: var(--border); margin: 12px 0 32px; }
+        .tier-desc { font-size: 15px; color: var(--text-gray); line-height: 1.65; max-width: 480px; }
+
         /* Grid */
-        .partner-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px; }
-        
-        /* Cards */
-        .partner-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 36px; transition: all 0.3s; display: flex; flex-direction: column; height: 100%; position: relative; overflow: hidden; }
-        .partner-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #D1D5DB; }
-        
-        .gold-card { border-top: 4px solid var(--gold); }
-        .silver-card { border-top: 4px solid var(--text-light); }
-        
-        .partner-logo-container { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .gold-logo { background: linear-gradient(135deg, #FBBF24 0%, #D97706 100%); }
-        .silver-logo { background: linear-gradient(135deg, #9CA3AF 0%, #4B5563 100%); }
-        
-        .partner-name { font-size: 22px; font-weight: 600; color: var(--text-dark); margin-bottom: 12px; }
-        .partner-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 6px 12px; border-radius: 20px; margin-bottom: 20px; }
-        .gold-badge { background: var(--gold-bg); color: #B45309; }
-        .silver-badge { background: var(--silver-bg); color: #374151; }
-        
-        .partner-specialty { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
-        .partner-blurb { font-size: 15px; color: var(--text-gray); line-height: 1.7; flex-grow: 1; padding-bottom: 24px; }
-        
-        .partner-link { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--primary); transition: opacity 0.2s; }
-        .partner-link:hover { opacity: 0.8; }
-        
-        .tier-icon { width: 32px; height: 32px; flex-shrink: 0; }
-        .gold-icon { color: var(--gold); }
-        .silver-icon { color: var(--text-light); }
+        .partner-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+
+        /* PLATINUM CARD — dark luxury */
+        .partner-card { border-radius: 20px; padding: 40px; transition: all 0.35s cubic-bezier(0.22,1,0.36,1); display: flex; flex-direction: column; height: 100%; position: relative; overflow: hidden; }
+
+        .platinum-card { background: #0F1117; border: 1px solid rgba(255,255,255,0.07); color: #fff; }
+        .platinum-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(192,192,210,0.4) 30%, rgba(230,230,245,0.9) 50%, rgba(192,192,210,0.4) 70%, transparent 100%); }
+        .platinum-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.13); box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+
+        /* SILVER CARD — clean white */
+        .silver-card { background: #FFFFFF; border: 1px solid #EBEBEB; border-left: 2px solid #C8C8C8; }
+        .silver-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); border-left-color: #9CA3AF; }
+
+        /* LOGO */
+        .partner-logo-container { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; margin-bottom: 28px; }
+        .platinum-logo { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+        .silver-logo { background: #F5F5F5; color: #9CA3AF; border: 1px solid #E5E7EB; }
+
+        /* BADGE */
+        .partner-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 4px 10px; border-radius: 3px; margin-bottom: 18px; width: fit-content; }
+        .platinum-badge { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.08); }
+        .silver-badge { background: #F5F5F5; color: #B0B0B0; border: 1px solid #E8E8E8; }
+
+        /* TEXT */
+        .partner-name { font-size: 19px; font-weight: 500; letter-spacing: -0.3px; margin-bottom: 8px; }
+        .platinum-card .partner-name { color: #FFFFFF; }
+        .silver-card .partner-name { color: #1F2937; }
+
+        .partner-specialty { font-size: 12px; font-weight: 500; margin-bottom: 16px; display: flex; align-items: center; gap: 5px; letter-spacing: 0.2px; }
+        .platinum-card .partner-specialty { color: rgba(180,185,210,0.65); }
+        .silver-card .partner-specialty { color: var(--primary); }
+
+        .partner-blurb { font-size: 14px; line-height: 1.8; flex-grow: 1; padding-bottom: 28px; }
+        .platinum-card .partner-blurb { color: rgba(255,255,255,0.38); }
+        .silver-card .partner-blurb { color: #6B7280; }
+
+        .partner-link { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; transition: all 0.2s; padding-top: 16px; border-top: 1px solid; width: fit-content; text-transform: uppercase; }
+        .platinum-card .partner-link { color: rgba(255,255,255,0.35); border-color: rgba(255,255,255,0.07); }
+        .platinum-card .partner-link:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.15); }
+        .silver-card .partner-link { color: #9CA3AF; border-color: #F0F0F0; }
+        .silver-card .partner-link:hover { color: var(--primary); }
+
+        .tier-icon { display: none; }
 
         /* FOOTER */
         footer { padding: 32px 0; border-top: 1px solid var(--border); background: var(--white); }
@@ -174,25 +189,24 @@ export default function PartnersPage() {
                     {/* GOLD TIER */}
                     <section className="tier-section">
                         <div className="tier-header">
-                            <svg className="tier-icon gold-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
                             <div>
-                                <h2 className="tier-title gold-title">Gold Certified Partners</h2>
+                                <p className="tier-title">Tier I</p>
+                                <h2 className="tier-name">Platinum Partners</h2>
+                                <div className="tier-rule"></div>
                                 <p className="tier-desc">Top-tier partners who have demonstrated exceptional technical mastery and scaled complex AI deployments.</p>
                             </div>
                         </div>
 
                         <div className="partner-grid">
                             {goldPartners.map((partner) => (
-                                <div key={partner.name} className="partner-card gold-card">
-                                    <div className="partner-badge gold-badge">
+                                <div key={partner.name} className="partner-card platinum-card">
+                                    <div className="partner-badge platinum-badge">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                                         </svg>
-                                        Gold Certified
+                                        Platinum Certified
                                     </div>
-                                    <div className="partner-logo-container gold-logo">
+                                    <div className="partner-logo-container platinum-logo">
                                         {partner.logo}
                                     </div>
                                     <h3 className="partner-name">{partner.name}</h3>
@@ -220,13 +234,10 @@ export default function PartnersPage() {
                     {/* SILVER TIER */}
                     <section className="tier-section">
                         <div className="tier-header">
-                            <svg className="tier-icon silver-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M12 16L16 12L12 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
                             <div>
-                                <h2 className="tier-title silver-title">Silver Certified Partners</h2>
+                                <p className="tier-title">Tier II</p>
+                                <h2 className="tier-name">Silver Partners</h2>
+                                <div className="tier-rule"></div>
                                 <p className="tier-desc">Trusted agencies fully equipped to design, build, and deploy Kingstone AI solutions.</p>
                             </div>
                         </div>
