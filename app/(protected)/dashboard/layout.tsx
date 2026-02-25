@@ -61,8 +61,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 key={item.name}
                 href={item.path}
                 className={`flex items-center justify-between px-3 py-2.5 rounded-xl transition-all duration-200 no-underline ${isActive
-                    ? "bg-blue-700 text-white shadow-md shadow-blue-200"
-                    : "text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+                  ? "bg-blue-700 text-white shadow-md shadow-blue-200"
+                  : "text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                   }`}
               >
                 <div className="flex items-center gap-3">

@@ -69,7 +69,9 @@ const updateSession = async (request: NextRequest) => {
     await supabase.auth.getSession();
 
     // Auth pages that should redirect to dashboard if user is logged in
-    const authPages = ["/sign-in"];
+    // NOTE: /sign-in is the dummy client portal — intentionally excluded so it
+    // always renders regardless of session. Only /operator-login redirects.
+    const authPages = ["/operator-login"];
     const isAuthPage = authPages.some((page) => request.nextUrl.pathname.startsWith(page));
 
     // Get the session - if null, the user is not logged in

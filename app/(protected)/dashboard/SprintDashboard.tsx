@@ -723,9 +723,6 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
             <div className="max-w-3xl mx-auto px-4 py-8 space-y-8 relative z-10">
                 {/* Header */}
                 <div className="space-y-1">
-                    <div className="font-mono text-xs text-emerald-600 tracking-widest uppercase">
-                        ● System Online
-                    </div>
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-900">
                         Mission Control
                     </h1>

@@ -418,7 +418,7 @@ export default function HomePage() {
           <span>© 2026 Kingstone Systems. All rights reserved.</span>
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <a href="https://cal.com/kingstonesystems/free-strategy-call">Book a Call ↗</a>
-            <Link href="/sign-in" style={{ fontSize: "12px", color: "#9CA3AF", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={e => (e.currentTarget.style.color = "#6B7280")} onMouseLeave={e => (e.currentTarget.style.color = "#9CA3AF")}>Operator Login</Link>
+            <Link href="/operator-login" style={{ fontSize: "12px", color: "#9CA3AF", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={e => (e.currentTarget.style.color = "#6B7280")} onMouseLeave={e => (e.currentTarget.style.color = "#9CA3AF")}>Operator Login</Link>
           </div>
         </div>
       </footer>
