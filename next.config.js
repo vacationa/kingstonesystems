@@ -18,6 +18,22 @@ const nextConfig = {
     },
   },
   transpilePackages: ['@supabase/auth-js', '@supabase/supabase-js', '@supabase/ssr', '@supabase/functions-js', '@supabase/postgrest-js', '@supabase/storage-js', '@supabase/realtime-js'],
+  async rewrites() {
+    return [
+      {
+        source: '/blog',
+        destination: '/blog.html',
+      },
+      {
+        source: '/blog/:slug',
+        destination: '/blog/:slug.html',
+      },
+      {
+        source: '/videos',
+        destination: '/videos.html',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
