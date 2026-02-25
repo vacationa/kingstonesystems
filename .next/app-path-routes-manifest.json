@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/(controllers)/auth/callback/route": "/api/auth/callback",
+  "/api/auth/login/route": "/api/auth/login",
+  "/page": "/",
+  "/(auth-pages)/forgot-password/page": "/forgot-password",
+  "/(auth-pages)/sign-up/page": "/sign-up",
+  "/(auth-pages)/operator-login/page": "/operator-login",
+  "/(auth-pages)/otp/page": "/otp",
+  "/(auth-pages)/sign-in/page": "/sign-in",
+  "/(protected)/dashboard/page": "/dashboard",
+  "/(protected)/dashboard/resources/page": "/dashboard/resources",
+  "/(protected)/reset-password/page": "/reset-password"
+}
