@@ -33,8 +33,7 @@ export const signUpAction = async (formData: FormData) => {
   const lastName = formData.get("lastName")?.toString();
   const referralCode = formData.get("referralCode")?.toString();
 
-  // Log referral code for debugging
-  console.log("Sign up - Referral code from URL:", referralCode);
+
 
   // Test Supabase connection
   try {
@@ -85,12 +84,7 @@ export const signUpAction = async (formData: FormData) => {
         trialWeeks = 8;
       }
     }
-    console.log(
-      "Signing up user with trial_weeks:",
-      trialWeeks,
-      "for referral code:",
-      referralCode,
-    );
+
 
     // Attempt to sign up the user with metadata including trial_weeks
     const { data, error } = await supabase.auth.signUp({

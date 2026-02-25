@@ -21,14 +21,13 @@ export function DemoModeProvider({ children }: { children: ReactNode }) {
     if (user?.email === ALLOWED_DEMO_EMAIL) {
       setIsDemoMode(prev => !prev);
     } else {
-      console.warn("Demo mode is only available for authorized users");
+      // Demo mode is restricted to authorized users
     }
   };
 
   const clearDemoCampaigns = () => {
     try {
       localStorage.removeItem('demo_campaigns');
-      console.log("Demo campaigns cleared");
     } catch (error) {
       console.error("Failed to clear demo campaigns:", error);
     }

@@ -253,9 +253,6 @@ export function RealtimeProvider({ children }: { children: React.ReactNode }) {
       if (isDemoMode) {
         const demoCampaignsWithUser = getDemoCampaigns();
         setCampaigns(demoCampaignsWithUser);
-      } else {
-        // No backend API available; keep existing campaigns unchanged.
-        console.warn('refreshCampaigns: API endpoint unavailable, skipping fetch.');
       }
     } catch (error) {
       console.error("Failed to refresh campaigns:", error);
@@ -271,9 +268,6 @@ export function RealtimeProvider({ children }: { children: React.ReactNode }) {
       // API call removed to avoid 404 errors; using demo data or leaving state unchanged.
       if (isDemoMode) {
         setMetrics(demoMetrics);
-      } else {
-        // No backend API available; keep existing metrics unchanged.
-        console.warn('refreshMetrics: API endpoint unavailable, skipping fetch.');
       }
     } catch (error) {
       console.error("Failed to refresh metrics:", error);
@@ -289,9 +283,6 @@ export function RealtimeProvider({ children }: { children: React.ReactNode }) {
       // API call removed to avoid 404 errors; using demo data or leaving state unchanged.
       if (isDemoMode) {
         setActivities(demoActivities);
-      } else {
-        // No backend API available; keep existing activities unchanged.
-        console.warn('refreshActivities: API endpoint unavailable, skipping fetch.');
       }
     } catch (error) {
       console.error("Failed to refresh activities:", error);
@@ -308,7 +299,6 @@ export function RealtimeProvider({ children }: { children: React.ReactNode }) {
         if (isDemoMode) {
           return demoMetrics;
         } else {
-          console.warn('refreshCampaignMetrics: API endpoint unavailable, skipping fetch.');
           return null;
         }
       } catch (error) {

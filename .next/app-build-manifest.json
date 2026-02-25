@@ -53,6 +53,12 @@
       "static/chunks/main-app.js",
       "static/css/app/(auth-pages)/sign-up/page.css",
       "static/chunks/app/(auth-pages)/sign-up/page.js"
+    ],
+    "/(protected)/dashboard/resources/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(protected)/dashboard/resources/page.css",
+      "static/chunks/app/(protected)/dashboard/resources/page.js"
     ]
   }
 }

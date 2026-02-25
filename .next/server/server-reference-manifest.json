@@ -17,13 +17,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "7f02d8a35e0417a30e01973d0ec112fd82a49a2085": {
@@ -43,13 +48,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "7f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a": {
@@ -69,13 +79,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "7f411d2c5eb171ef310d5c09e9f285f189378a70db": {
@@ -95,13 +110,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "7f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d": {
@@ -121,13 +141,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "7f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095": {
@@ -147,13 +172,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "7fed87a174b932dac2d21189d486d35a2c90f5feed": {
@@ -173,13 +203,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "7ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99": {
@@ -199,13 +234,18 @@
         "app/(auth-pages)/sign-up/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
+        },
+        "app/(protected)/dashboard/resources/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fadhi%2FRepos%2Fkingstonesystems%2Fapp%2Factions%2Fauth.ts%22%2C%5B%5B%227f00dfc32a6b7a3078a30afa5d7357c161b35fdb1a%22%2C%22signOutUser%22%5D%2C%5B%227f02d8a35e0417a30e01973d0ec112fd82a49a2085%22%2C%22signOutAction%22%5D%2C%5B%227f3e34eac4d4336fa6f48d29f5037ecd5c94f8688a%22%2C%22verifyOtpAction%22%5D%2C%5B%227f411d2c5eb171ef310d5c09e9f285f189378a70db%22%2C%22signUpAction%22%5D%2C%5B%227f6ab9b2e622354b0acbbb7d19a49d0b4ea73c3e6d%22%2C%22resetPasswordAction%22%5D%2C%5B%227f9a98121de92b5cd66fcc3109ecfa8cb7c2d0f095%22%2C%22forgotPasswordAction%22%5D%2C%5B%227fed87a174b932dac2d21189d486d35a2c90f5feed%22%2C%22isUserAuthenticated%22%5D%2C%5B%227ffda1da3ec4b8e6be1acb4fd58ffd3456d55e3f99%22%2C%22signInAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/(auth-pages)/sign-in/page": "action-browser",
         "app/(auth-pages)/operator-login/page": "action-browser",
         "app/(protected)/dashboard/page": "rsc",
-        "app/(auth-pages)/sign-up/page": "action-browser"
+        "app/(auth-pages)/sign-up/page": "action-browser",
+        "app/(protected)/dashboard/resources/page": "rsc"
       }
     },
     "008eff8dad00eb8c0254a84e05859a42a3820b0223": {

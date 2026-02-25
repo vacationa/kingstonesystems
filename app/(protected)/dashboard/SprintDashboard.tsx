@@ -11,16 +11,14 @@ import { signOutAction } from "@/app/actions/auth";
 const DAYS = [
     {
         day: 1,
-        emoji: "📍",
         title: "Pick your niche",
         color: "#22c55e",
         prize: {
             name: "6 Months Free Notion",
             description: "Get organized from day one with 6 months of Notion's premium tier, completely free! [Claim your 6 free months here](https://ntn.so/kingstonesystems).",
-            emoji: "🎁",
         },
         tasks: [
-            { id: "d1_playbook", label: "🗺️ Copy the Day 1 Playbook" },
+            { id: "d1_playbook", label: "Copy the Day 1 Playbook" },
             { id: "d1_v1", label: 'Watch "The AI Arbitrage Model Explained Simply"' },
             { id: "d1_v2", label: 'Watch "The 5 Filters for a Profitable Niche"' },
             { id: "d1_v3", label: 'Watch "Best Niches for AI Agent Services in 2026"' },
@@ -29,7 +27,7 @@ const DAYS = [
             { id: "d1_niche", label: "Choose your niche" },
             { id: "d1_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
             { id: "d1_post", label: "Post in the community using the template below" },
-            { id: "d1_cheer", label: "💚 Go comment on 5 other members' posts and hype them up" },
+            { id: "d1_cheer", label: "Go comment on 5 other members' posts and hype them up" },
         ],
         postTemplate: {
             title: "Day 1 done — I'm in 🔥",
@@ -41,16 +39,14 @@ const DAYS = [
     },
     {
         day: 2,
-        emoji: "🤖",
         title: "Build your first AI agent",
         color: "#3b82f6",
         prize: {
             name: "6 Custom AI GPTs",
             description: "Instant access to: [AI Closer](https://chatgpt.com/g/g-699e2b8a86fc81918dfe62b4f01b68b3-ai-sprint-closer), [AI Goals](https://chatgpt.com/g/g-699e2d48995c8191ac6f58bd22e97858-ai-sprint-launch), [AI Offer](https://chatgpt.com/g/g-699e2dc6329c819186957a8000a2b31c-ai-sprint-offer), [AI Ads](https://chatgpt.com/g/g-699e2e63cdc4819186a41a83891ee6bb-ai-sprint-ads), [AI Scripts](https://chatgpt.com/g/g-699e2e98d6d481919e00ae5a2ffc7af3-ai-sprint-scripts), and [AI Prompts](https://chatgpt.com/g/g-699e2f9f5d5c8191b0e089a16c29a22d-ai-sprint-promptgpt).",
-            emoji: "🎁",
         },
         tasks: [
-            { id: "d2_playbook", label: "🗺️ Copy the Day 2 Playbook" },
+            { id: "d2_playbook", label: "Copy the Day 2 Playbook" },
             { id: "d2_v1", label: 'Watch "The AI Receptionist: Your Anchor Offer"' },
             { id: "d2_v2", label: 'Watch "Missed Call Text Back & Lead Reactivation"' },
             { id: "d2_v3", label: 'Watch "Outbound Setters & Reputation Management"' },
@@ -59,7 +55,7 @@ const DAYS = [
             { id: "d2_screenshot_agent", label: "Screenshot your finished agent" },
             { id: "d2_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
             { id: "d2_post", label: "Post in the community using the template below" },
-            { id: "d2_cheer", label: "💚 Go comment on 5 other members' posts and hype them up" },
+            { id: "d2_cheer", label: "Go comment on 5 other members' posts and hype them up" },
         ],
         postTemplate: {
             title: "Day 2 done — I built my first AI agent 🤖",
@@ -74,23 +70,21 @@ const DAYS = [
     },
     {
         day: 3,
-        emoji: "",
         title: "Finalize your offer",
         color: "#f59e0b",
         prize: {
             name: "DFY Social Media Makeover",
             description: "A complete 'Done-For-You' professional social media profile optimization to instantly build your authority and trust.",
-            emoji: "🎁",
         },
         tasks: [
-            { id: "d3_playbook", label: "🗺️ Copy the Day 3 Playbook" },
+            { id: "d3_playbook", label: "Copy the Day 3 Playbook" },
             { id: "d3_v1", label: 'Watch "How to Structure a 1K-3K/Month Retainer"' },
             { id: "d3_v2", label: 'Watch "Finalizing Your Core Offer"' },
             { id: "d3_lock", label: "Lock in who you're serving and what you're charging" },
             { id: "d3_website", label: "Follow along with the website video and get yours live" },
             { id: "d3_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
             { id: "d3_post", label: "Post in the community using the template below" },
-            { id: "d3_cheer", label: "💚 Go comment on 5 other members' posts and hype them up" },
+            { id: "d3_cheer", label: "Go comment on 5 other members' posts and hype them up" },
         ],
         postTemplate: {
             title: "Day 3 done — my offer is locked 🔒",
@@ -102,68 +96,64 @@ const DAYS = [
     },
     {
         day: 4,
-        emoji: "",
-        title: "Land your first client conversation",
-        color: "#a855f7",
+        title: "Client acquisition",
+        color: "#ef4444",
         prize: {
-            name: "15K+ Verified Leads",
-            description: "A highly targeted, verified database of 15,000+ high-intent prospects — the ultimate fuel for your daily outreach.",
-            emoji: "🎁",
+            name: "The $10K/mo AI Roadmap",
+            description: "Phase 2 unlocked: Your complete blueprint for scaling from your first client to a consistent $10K/month agency operations.",
         },
         tasks: [
-            { id: "d4_playbook", label: "🗺️ Copy the Day 4 Playbook" },
-            { id: "d4_v1", label: 'Watch "The 4 Lead Channels That Actually Work"' },
-            { id: "d4_v2", label: 'Watch "How to Build an Elite Lead List Fast"' },
-            { id: "d4_v3", label: 'Watch "LinkedIn Prospecting: Authority & Outreach System"' },
-            { id: "d4_v4", label: 'Watch "Cold Calling System: High-Speed Pipeline Building"' },
-            { id: "d4_v5", label: 'Watch "The High-Conversion Cold Email System"' },
-            { id: "d4_pick_channel", label: "Pick your primary lead channel" },
-            { id: "d4_build_list", label: "Build your first lead list using the method from the videos" },
-            { id: "d4_send_first", label: "Send your first outreach message or make your first call" },
-            { id: "d4_screenshot_lead", label: "Screenshot your lead list and outreach" },
+            { id: "d4_playbook", label: "Copy the Day 4 Playbook" },
+            { id: "d4_v1", label: 'Watch "Cold Outreach that Actually Works in 2026"' },
+            { id: "d4_v2", label: 'Watch "The 3-Step Script for Setting Appointments"' },
+            { id: "d4_v3", label: 'Watch "Using Case Studies even if you have zero"' },
+            { id: "d4_linkedin", label: "Follow the LinkedIn optimization guide" },
+            { id: "d4_prospects", label: "Build your list of 20 high-quality prospects" },
+            { id: "d4_outreach", label: "Send your first 5 personalized outreach messages" },
             { id: "d4_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
             { id: "d4_post", label: "Post in the community using the template below" },
-            { id: "d4_cheer", label: "💚 Go comment on 5 other members' posts and hype them up" },
+            { id: "d4_cheer", label: "Go comment on 5 other members' posts and hype them up" },
         ],
         postTemplate: {
-            title: "Day 4 done — I'm in the market 📞",
+            title: "Day 4 done — outreach started 🔥",
             lines: [
-                "Lead channel I chose: [your answer]",
-                "How many people I reached out to: [your answer]",
-                "Biggest learning: [your answer]",
-                "[Screenshot of your lead list]",
+                "How many prospects I've messaged: [your answer]",
+                "Biggest outreach struggle: [your answer]",
                 "[Screenshot of your tracker]",
             ],
         },
     },
     {
         day: 5,
-        emoji: "🤝",
-        title: "Retain your clients & scale what you've built",
-        color: "#ef4444",
-        prize: {
-            name: "The Kingstone AI Solutions Partner Certificate",
-            description: "Get your business featured on our website, building instant credibility and social proof that makes closing clients that much easier.",
-            emoji: "�",
-        },
+        title: "The closing masterclass",
+        color: "#a855f7",
+        prizes: [
+            {
+                name: "AI Solutions Certificate",
+                description: "Official recognition of your expertise in AI deployment and agency operations. [View your certificate here](file:///Users/adhi/Repos/kingstonesystems/public/assets/certificate.pdf).",
+            },
+            {
+                name: "Priority Support Access",
+                description: "Direct line for technical support and strategy for your first 3 client deployments.",
+            }
+        ],
         tasks: [
-            { id: "d5_playbook", label: "🗺️ Copy the Day 5 Playbook" },
-            { id: "d5_v1", label: 'Watch "Day 5 Playbook"' },
-            { id: "d5_v2", label: 'Watch "Launch, QA, & First 7 Days"' },
-            { id: "d5_v3", label: 'Watch "Monthly Reporting That Shows ROI"' },
-            { id: "d5_onboard", label: "Map out your client onboarding process" },
-            { id: "d5_report", label: "Build your first monthly report template" },
+            { id: "d5_playbook", label: "Copy the Day 5 Playbook" },
+            { id: "d5_v1", label: 'Watch "The Closing Framework for AI Agents"' },
+            { id: "d5_v2", label: 'Watch "Handling the \'Is this safe?\' Objection"' },
+            { id: "d5_v3", label: 'Watch "Onboarding Your First Client"' },
+            { id: "d5_v4", label: 'Watch "Next Steps: Beyond the 5 Days"' },
+            { id: "d5_audit", label: "Submit your dashboard for final audit & certification" },
             { id: "d5_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
             { id: "d5_post", label: "Post in the community using the template below" },
-            { id: "d5_cheer", label: "💚 Go comment on 5 other members' posts and hype them up" },
+            { id: "d5_cheer", label: "Go comment on 5 other members' posts and hype them up" },
         ],
         postTemplate: {
-            title: "Day 5 done — I finished the sprint �",
+            title: "Day 5 complete — I am certified 🎓",
             lines: [
-                "The biggest thing I built this week: [your answer]",
-                "Where I'm going from here: [your answer]",
-                "Biggest takeaway from the whole sprint: [your answer]",
-                "[Screenshot of your completed tracker]",
+                "My #1 goal for the next 30 days: [your answer]",
+                "One thing I'd tell someone starting Day 1: [your answer]",
+                "[Screenshot of your tracker]",
             ],
         },
     },
@@ -205,14 +195,13 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
 
     if (!isComplete) {
         return (
-            <div className="mt-6 p-5 rounded-2xl border border-gray-200 bg-gray-50 text-center">
-                <div className="text-3xl mb-2">🔒</div>
-                <p className="text-gray-500 text-sm">
+            <div className="mt-6 p-5 rounded-2xl border border-[#334155] bg-[#0F172A]/50 text-center">
+                <p className="text-gray-400 text-sm">
                     Complete all tasks to unlock today's prize
                 </p>
-                <div className="mt-3 px-4 py-2 bg-gray-100 rounded-xl inline-block">
-                    <p className="text-xs text-gray-500">
-                        {dayData.prize.emoji} {dayData.prize.name}
+                <div className="mt-3 px-4 py-2 bg-[#1E293B] border border-[#334155] rounded-xl inline-block">
+                    <p className="text-xs text-gray-400 font-medium">
+                        {dayData.prize?.name || dayData.prizes?.[0]?.name}
                     </p>
                 </div>
             </div>
@@ -227,7 +216,6 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
             {unlockedPrize ? (
                 <div className="p-5 space-y-4">
                     <div className="flex items-center gap-2">
-                        <span className="text-2xl">🎉</span>
                         <span
                             className="font-bold text-base"
                             style={{ color: dayData.color }}
@@ -237,15 +225,15 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                     </div>
 
                     <div>
-                        <p className="font-bold text-gray-900 text-base">
-                            {dayData.prize.name}
+                        <p className="font-bold text-white text-base">
+                            {dayData.prize?.name || dayData.prizes?.[0]?.name}
                         </p>
                         <div
-                            className="text-gray-500 text-sm leading-relaxed mt-1 max-w-lg prose-a:text-blue-700 prose-a:underline hover:prose-a:text-blue-800 prose-a:transition-colors"
+                            className="text-slate-400 text-sm leading-relaxed mt-1 max-w-lg prose-a:text-blue-400 prose-a:underline hover:prose-a:text-blue-300 prose-a:transition-colors"
                             dangerouslySetInnerHTML={{
                                 __html: dayData.prize.description.replace(
                                     /\[([^\]]+)\]\(([^)]+)\)/g,
-                                    '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: #1E40AF; text-decoration: underline; font-weight: 500;">$1</a>'
+                                    '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: #60A5FA; text-decoration: underline; font-weight: 500;">$1</a>'
                                 )
                             }}
                         />
@@ -253,9 +241,9 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
 
                     {/* Special Inline Form for Day 3 Social Medial Makeover */}
                     {day === 3 && (
-                        <div className="mt-4 p-5 rounded-2xl bg-gray-50 border border-gray-200 space-y-4">
-                            <h4 className="font-bold text-gray-900 text-sm flex items-center gap-2">
-                                <span>🛠️</span> Start Your Audit
+                        <div className="mt-4 p-5 rounded-2xl bg-[#0F172A] border border-[#334155] space-y-4">
+                            <h4 className="font-bold text-white text-sm flex items-center gap-2">
+                                Start Your Audit
                             </h4>
                             <p className="text-xs text-gray-400 leading-relaxed">
                                 Enter the links to up to two platforms you would like our team to review and remake.
@@ -431,10 +419,10 @@ function DayCard({
 
     return (
         <div
-            className="rounded-2xl border transition-all duration-300 overflow-hidden bg-white"
+            className="rounded-2xl border transition-all duration-300 overflow-hidden bg-[#1E293B]"
             style={{
-                borderColor: isActive ? `${dayData.color}50` : "#E5E7EB",
-                boxShadow: isActive ? `0 4px 24px ${dayData.color}12` : "0 1px 3px rgba(0,0,0,0.05)",
+                borderColor: isActive ? `${dayData.color}60` : "#334155",
+                boxShadow: isActive ? `0 8px 32px ${dayData.color}15` : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
             }}
         >
             {/* Header */}
@@ -446,11 +434,12 @@ function DayCard({
                 <div
                     className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold transition-all"
                     style={{
-                        background: isComplete ? `${dayData.color}15` : isActive ? `${dayData.color}10` : "#F9FAFB",
-                        border: `1.5px solid ${isComplete || isActive ? `${dayData.color}40` : "#E5E7EB"}`,
+                        background: isComplete ? `${dayData.color}25` : isActive ? `${dayData.color}15` : "#0F172A",
+                        border: `1.5px solid ${isComplete || isActive ? `${dayData.color}60` : "#334155"}`,
+                        color: isComplete || isActive ? "#FFFFFF" : "#475569",
                     }}
                 >
-                    {isComplete ? "✓" : dayData.emoji}
+                    {isComplete ? "✓" : dayData.day}
                 </div>
 
                 <div className="flex-1 min-w-0">
@@ -470,7 +459,7 @@ function DayCard({
                             </span>
                         )}
                     </div>
-                    <h3 className="font-bold text-gray-900 text-lg mt-0.5 truncate">
+                    <h3 className="font-bold text-white text-lg mt-0.5 truncate">
                         {dayData.title}
                     </h3>
                 </div>
@@ -480,7 +469,7 @@ function DayCard({
                     <span className="font-mono text-xs font-bold" style={{ color: dayData.color }}>
                         {completedTasks}/{totalTasks}
                     </span>
-                    <div className="w-24 h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div className="w-24 h-1.5 rounded-full bg-[#0F172A] overflow-hidden">
                         <div
                             className="h-full rounded-full transition-all duration-500"
                             style={{ width: `${progress}%`, background: dayData.color }}
@@ -501,14 +490,14 @@ function DayCard({
             {/* Expanded content */}
             {isActive && (
                 <div className="px-6 pb-6">
-                    <div className="w-full h-px bg-gray-100 mb-5" />
+                    <div className="w-full h-px bg-[#334155] mb-5" />
 
                     {/* Task list */}
                     <div className="space-y-2">
                         {dayData.tasks.map((task) => (
                             <label
                                 key={task.id}
-                                className="flex items-start gap-3 cursor-pointer group p-2.5 rounded-xl transition-colors hover:bg-gray-50"
+                                className="flex items-start gap-3 cursor-pointer group p-2.5 rounded-xl transition-colors hover:bg-[#2D3748]"
                             >
                                 <div className="relative flex-shrink-0 mt-0.5">
                                     <input
@@ -520,7 +509,7 @@ function DayCard({
                                     <div
                                         className="w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-200"
                                         style={{
-                                            borderColor: checked[task.id] ? dayData.color : "#D1D5DB",
+                                            borderColor: checked[task.id] ? dayData.color : "#334155",
                                             background: checked[task.id] ? `${dayData.color}15` : "transparent",
                                         }}
                                     >
@@ -539,7 +528,7 @@ function DayCard({
                                 </div>
                                 <span
                                     className="text-sm leading-relaxed transition-colors"
-                                    style={{ color: checked[task.id] ? "#9CA3AF" : "#374151", textDecoration: checked[task.id] ? "line-through" : "none" }}
+                                    style={{ color: checked[task.id] ? "#6B7280" : "#F1F5F9", textDecoration: checked[task.id] ? "line-through" : "none" }}
                                 >
                                     {task.label}
                                 </span>
@@ -565,25 +554,25 @@ function DayCard({
 
 function ThirtyDayLockedCard() {
     return (
-        <div className="relative rounded-2xl border border-gray-200 overflow-hidden bg-white p-7 shadow-sm">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-purple-50/20 pointer-events-none" />
+        <div className="relative rounded-2xl border border-[#334155] overflow-hidden bg-[#1E293B] p-7 shadow-xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/5 pointer-events-none" />
 
             <div className="relative z-10 space-y-5">
                 {/* Top row: label + lock button */}
                 <div className="flex items-start justify-between gap-4 flex-wrap">
                     <div>
-                        <div className="font-mono text-xs text-blue-700 tracking-widest uppercase mb-1.5">
+                        <div className="font-mono text-xs text-blue-400 tracking-widest uppercase mb-1.5">
                             Coming Next
                         </div>
-                        <h3 className="text-gray-900 font-bold text-xl">
+                        <h3 className="text-white font-bold text-xl">
                             The 30-Day AI Agency Sprint
                         </h3>
                     </div>
                     <button
-                        className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-gray-400 border border-gray-200 bg-gray-50 cursor-not-allowed whitespace-nowrap"
+                        className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-gray-500 border border-[#334155] bg-[#0F172A] cursor-not-allowed whitespace-nowrap"
                         disabled
                     >
-                        🔒 Complete the 5-Day Sprint to Unlock
+                        Complete the 5-Day Sprint to Unlock
                     </button>
                 </div>
 
@@ -620,37 +609,37 @@ function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
     const completedDays = DAYS.filter(d => d.tasks.every(t => checked[t.id])).length;
 
     return (
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm">
+        <div className="bg-[#1E293B] border border-[#334155] rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-xl">
             {/* Stats */}
             <div className="flex gap-6 flex-shrink-0">
                 <div>
-                    <div className="font-mono text-3xl font-bold text-gray-900">{completedDays}<span className="text-gray-300 text-xl">/5</span></div>
-                    <div className="text-xs text-gray-500 mt-0.5">Days done</div>
+                    <div className="font-mono text-3xl font-bold text-white">{completedDays}<span className="text-gray-600 text-xl">/5</span></div>
+                    <div className="text-xs text-gray-400 mt-0.5 uppercase tracking-wider font-semibold">Days done</div>
                 </div>
-                <div className="w-px bg-gray-200" />
+                <div className="w-px bg-[#334155]" />
                 <div>
-                    <div className="font-mono text-3xl font-bold text-gray-900">{completedTasks}<span className="text-gray-300 text-xl">/{totalTasks}</span></div>
-                    <div className="text-xs text-gray-500 mt-0.5">Tasks done</div>
+                    <div className="font-mono text-3xl font-bold text-white">{completedTasks}<span className="text-gray-600 text-xl">/{totalTasks}</span></div>
+                    <div className="text-xs text-gray-400 mt-0.5 uppercase tracking-wider font-semibold">Tasks done</div>
                 </div>
-                <div className="w-px bg-gray-200" />
+                <div className="w-px bg-[#334155]" />
                 <div>
-                    <div className="font-mono text-3xl font-bold text-gray-900">{pct}<span className="text-gray-300 text-xl">%</span></div>
-                    <div className="text-xs text-gray-500 mt-0.5">Complete</div>
+                    <div className="font-mono text-3xl font-bold text-white">{pct}<span className="text-gray-600 text-xl">%</span></div>
+                    <div className="text-xs text-gray-400 mt-0.5 uppercase tracking-wider font-semibold">Complete</div>
                 </div>
             </div>
 
             {/* Full bar */}
             <div className="flex-1 w-full space-y-2">
                 <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">5-Day Sprint Progress</span>
-                    <span className="font-mono text-xs text-gray-400">{pct}% complete</span>
+                    <span className="text-sm text-gray-300 font-medium">Sprint Progress</span>
+                    <span className="font-mono text-xs text-blue-400">{pct}% complete</span>
                 </div>
-                <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden flex gap-0.5">
+                <div className="h-2 w-full bg-[#0F172A] rounded-full overflow-hidden flex gap-0.5">
                     {DAYS.map((d) => {
                         const dayDone = d.tasks.filter(t => checked[t.id]).length;
                         const dayPct = dayDone / d.tasks.length;
                         return (
-                            <div key={d.day} className="flex-1 bg-gray-100 rounded-full overflow-hidden">
+                            <div key={d.day} className="flex-1 bg-[#0F172A] rounded-full overflow-hidden">
                                 <div
                                     className="h-full rounded-full transition-all duration-700"
                                     style={{ width: `${dayPct * 100}%`, background: d.color }}
@@ -662,7 +651,7 @@ function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
                 <div className="flex gap-1">
                     {DAYS.map((d) => (
                         <div key={d.day} className="flex-1 flex items-center justify-center">
-                            <span className="font-mono text-[10px]" style={{ color: d.color }}>D{d.day}</span>
+                            <span className="font-mono text-[10px] opacity-70" style={{ color: d.color }}>D{d.day}</span>
                         </div>
                     ))}
                 </div>
@@ -706,22 +695,32 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
 
 
     return (
-        <div className="w-full min-h-screen bg-[#FAFAFA] text-gray-900 relative" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
+        <div className="w-full min-h-screen bg-[#0F172A] text-slate-200 relative" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
+
+            {/* Very subtle radial glow */}
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(30,64,175,0.12) 0%, transparent 70%)",
+                    pointerEvents: "none",
+                }}
+            />
 
             <div className="max-w-3xl mx-auto px-4 py-8 space-y-8 relative z-10">
                 {/* Header */}
                 <div className="flex justify-between items-start">
                     <div className="space-y-1">
-                        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-900">
-                            Mission Control
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
+                            Welcome to the AI Sprint.
                         </h1>
-                        <p className="font-mono text-gray-500 text-sm">
-                            The AI Sprint — Your Daily Tracker & Reward Ecosystem
+                        <p className="font-mono text-blue-400 text-sm">
+                            Let's get you one step closer to your first paying AI client today.
                         </p>
                     </div>
                     <button
                         onClick={() => signOutAction()}
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-gray-600 text-sm font-semibold hover:bg-gray-50 transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#334155] bg-[#1E293B] text-gray-300 text-sm font-semibold hover:bg-[#2D3748] transition-colors"
                     >
                         <LogOut size={16} />
                         <span>Log Out</span>
@@ -731,18 +730,15 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                 {/* Overall progress */}
                 <OverallProgress checked={checked} />
 
-                {/* Program selector tabs */}
                 <div className="flex gap-2">
-                    <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-700 text-white text-sm font-semibold shadow-md shadow-blue-200">
-                        <span>⚡️</span>
+                    <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold shadow-md shadow-blue-900/20">
                         <span>5-Day Sprint</span>
                         <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded-full">Active</span>
                     </button>
                     <button
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-gray-400 text-sm cursor-not-allowed bg-white"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#334155] text-gray-500 text-sm cursor-not-allowed bg-[#1E293B]/50"
                         disabled
                     >
-                        <span>🔒</span>
                         <span>30-Day Sprint</span>
                     </button>
                 </div>
@@ -763,14 +759,12 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                     ))}
                 </div>
 
-                {/* Daily Non-Negotiables */}
-                <div className="rounded-2xl border border-gray-200 bg-white p-6 space-y-4 shadow-sm">
+                <div className="rounded-2xl border border-[#334155] bg-[#1E293B] p-6 space-y-4 shadow-xl">
                     <div className="flex items-center gap-2">
-                        <span className="text-lg">🔁</span>
-                        <h2 className="font-bold text-gray-900 text-lg">
+                        <h2 className="font-bold text-white text-lg">
                             Daily Non-Negotiables
                         </h2>
-                        <span className="font-mono text-xs text-gray-400 ml-1">(Days 5–10)</span>
+                        <span className="font-mono text-xs text-blue-400 opacity-70 ml-1">(Days 5–10)</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {[
@@ -779,9 +773,9 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                             "Iterate your outreach scripts",
                             "Post your daily accountability update",
                         ].map((item) => (
-                            <div key={item} className="flex items-center gap-2.5 p-3 rounded-xl bg-gray-50 border border-gray-100">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-700 flex-shrink-0" />
-                                <span className="text-gray-600 text-sm">{item}</span>
+                            <div key={item} className="flex items-center gap-2.5 p-3 rounded-xl bg-[#0F172A] border border-[#334155]">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                                <span className="text-gray-400 text-sm">{item}</span>
                             </div>
                         ))}
                     </div>
