@@ -203,11 +203,8 @@ export default function HomePage() {
             <span /><span /><span />
           </button>
           <div className={`nav-links${mobileMenuOpen ? " open" : ""}`}>
-            <a href="#solutions">Solutions</a>
-            <a href="#how-it-works">How It Works</a>
             <Link href="/partners">Partners</Link>
             <a href="/blog">Blog</a>
-            <a href="/videos">Videos</a>
             <Link href="/sign-in" className="btn-client-login">Client Login</Link>
             <a href="https://cal.com/kingstonesystems/free-strategy-call" className="btn-demo">Book a Demo</a>
           </div>
