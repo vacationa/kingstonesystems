@@ -141,34 +141,48 @@ export const signInAction = async (formData: FormData) => {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
   const supabase = await createClient();
+  const referer = (await headers()).get("referer") || "";
 
   if (!email || !password) {
     return { error: "Email and password are required" };
   }
 
-  const { error } = await supabase.auth.signInWithPassword({
+  // Check if this is an operator login attempt
+  const isOperatorLogin = referer.includes("operator-login");
+
+  if (isOperatorLogin) {
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      console.error(error.message);
+      return { error: "Invalid email or password" };
+    }
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user?.id) {
+      await ensureLinkedInSettings(user.id, supabase);
+    }
+
+    return {
+      success: true,
+      message: "Sign in successful!",
+    };
+  }
+
+  // Standard Client Portal: Always make the auth call (dummy call),
+  // but always return invalid regardless of the actual result.
+  await supabase.auth.signInWithPassword({
     email,
     password,
   });
 
-  if (error) {
-    console.error(error.message);
-    return { error: "Invalid email or password" };
-  }
-
-  const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser();
-
-  if (user?.id) {
-    await ensureLinkedInSettings(user.id, supabase);
-  }
-
-  return {
-    success: true,
-    message: "Sign in successful!",
-  };
+  return { error: "Invalid email or password" };
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {

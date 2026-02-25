@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { LogOut } from "lucide-react";
 import { aeonik, jetbrainsMono } from "../../../app/fonts/fonts";
 import { loadSprintProgress, toggleTask, unlockPrize, submitAuditRequest } from "@/app/actions/sprint";
+import { signOutAction } from "@/app/actions/auth";
 
 // ─── Data ──────────────────────────────────────────────────────────────────
 
@@ -563,50 +565,46 @@ function DayCard({
 
 function ThirtyDayLockedCard() {
     return (
-        <div className="relative rounded-2xl border border-gray-200 overflow-hidden bg-white p-8 shadow-sm">
-            {/* Subtle background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 pointer-events-none" />
+        <div className="relative rounded-2xl border border-gray-200 overflow-hidden bg-white p-7 shadow-sm">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-purple-50/20 pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
-                {/* Lock icon */}
-                <div className="w-16 h-16 rounded-2xl border border-gray-200 bg-gray-50 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-7 h-7 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                </div>
-
-                <div className="flex-1">
-                    <div className="font-mono text-xs text-blue-700 tracking-widest uppercase mb-1">
-                        Coming Next
+            <div className="relative z-10 space-y-5">
+                {/* Top row: label + lock button */}
+                <div className="flex items-start justify-between gap-4 flex-wrap">
+                    <div>
+                        <div className="font-mono text-xs text-blue-700 tracking-widest uppercase mb-1.5">
+                            Coming Next
+                        </div>
+                        <h3 className="text-gray-900 font-bold text-xl">
+                            The 30-Day AI Agency Sprint
+                        </h3>
                     </div>
-                    <h3 className="text-gray-900 font-bold text-2xl mb-3">
-                        The 30-Day AI Agency Sprint
-                    </h3>
-                    <ul className="space-y-2 mb-4">
-                        {[
-                            "Turn your validated offer into a repeatable $10k/month business",
-                            "Advanced client acquisition, delegation, case studies & scaling playbooks",
-                            "Earn your 🥇 Kingstone AI Solutions Gold Certificate",
-                        ].map((item) => (
-                            <li key={item} className="flex items-start gap-2 text-gray-500 text-sm leading-relaxed">
-                                <span className="text-blue-600 mt-0.5 flex-shrink-0">→</span>
-                                <span>{item}</span>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
-                        <span>🎁</span>
-                        <span>Complete the tracker in 30 days and get a <span className="underline">FULL REFUND</span> on your membership</span>
-                    </div>
-                </div>
-
-                <div className="flex-shrink-0 w-full md:w-auto">
                     <button
-                        className="w-full md:w-auto px-6 py-3 rounded-2xl font-semibold text-sm text-gray-400 border border-gray-200 bg-gray-50 cursor-not-allowed"
+                        className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-gray-400 border border-gray-200 bg-gray-50 cursor-not-allowed whitespace-nowrap"
                         disabled
                     >
                         🔒 Complete the 5-Day Sprint to Unlock
                     </button>
+                </div>
+
+                {/* Bullet points */}
+                <ul className="space-y-2">
+                    {[
+                        "Turn your validated offer into a repeatable $10k/month business",
+                        "Advanced client acquisition, delegation, case studies & scaling playbooks",
+                        "Earn your 🥇 Kingstone AI Solutions Gold Certificate",
+                    ].map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-gray-500 text-sm leading-relaxed">
+                            <span className="text-blue-500 mt-0.5 flex-shrink-0">→</span>
+                            <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Refund highlight — full width */}
+                <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
+                    <span className="text-lg">🎁</span>
+                    <span>Complete the tracker in 30 days and get a <span className="underline">FULL REFUND</span> on your membership</span>
                 </div>
             </div>
         </div>
@@ -712,13 +710,22 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
 
             <div className="max-w-3xl mx-auto px-4 py-8 space-y-8 relative z-10">
                 {/* Header */}
-                <div className="space-y-1">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-900">
-                        Mission Control
-                    </h1>
-                    <p className="font-mono text-gray-500 text-sm">
-                        The AI Sprint — Your Daily Tracker & Reward Ecosystem
-                    </p>
+                <div className="flex justify-between items-start">
+                    <div className="space-y-1">
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-900">
+                            Mission Control
+                        </h1>
+                        <p className="font-mono text-gray-500 text-sm">
+                            The AI Sprint — Your Daily Tracker & Reward Ecosystem
+                        </p>
+                    </div>
+                    <button
+                        onClick={() => signOutAction()}
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-gray-600 text-sm font-semibold hover:bg-gray-50 transition-colors"
+                    >
+                        <LogOut size={16} />
+                        <span>Log Out</span>
+                    </button>
                 </div>
 
                 {/* Overall progress */}

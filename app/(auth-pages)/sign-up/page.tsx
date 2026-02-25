@@ -75,22 +75,28 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-12 bg-black min-h-screen relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#0A66C2]/10 rounded-full blur-[120px] pointer-events-none" />
+    <div className="w-full flex flex-col items-center justify-center py-12 bg-[#0F172A] min-h-screen relative overflow-hidden">
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(30,64,175,0.18) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
       <div className="w-full max-w-md px-6 relative z-10">
         <div className="text-center mb-8">
           <h1
             className={`${aeonik.variable} font-aeonik text-2xl md:text-3xl font-bold text-white mb-2`}
           >
-            Join <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">The AI Sprint</span>
+            Operator <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Registration</span>
           </h1>
           <p className={`${aeonik.variable} font-aeonik font-light text-gray-400 text-base`}>
-            Create your account to start the 5-Day Sprint.
+            Create your internal account to access the mission control dashboard.
           </p>
         </div>
 
-        <Card className="border border-white/10 bg-[#111] rounded-3xl text-white">
+        <Card className="border border-[#334155] bg-[#1E293B] rounded-3xl text-white shadow-2xl">
           <CardContent className="p-8 md:p-10">
             <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
               <div className="grid grid-cols-2 gap-3">
@@ -104,7 +110,7 @@ export default function SignUpPage() {
                   <Input
                     id="firstName"
                     type="text"
-                    className="text-sm bg-black/50 h-10 rounded-xl border border-white/10 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/50 text-white"
+                    className="text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
                     placeholder="John"
                     {...register("firstName")}
                   />
@@ -124,7 +130,7 @@ export default function SignUpPage() {
                   <Input
                     id="lastName"
                     type="text"
-                    className="text-sm bg-black/50 h-10 rounded-xl border border-white/10 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/50 text-white"
+                    className="text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
                     placeholder="Doe"
                     {...register("lastName")}
                   />
@@ -146,7 +152,7 @@ export default function SignUpPage() {
                 <Input
                   id="email"
                   type="email"
-                  className="text-sm bg-black/50 h-10 rounded-xl border border-white/10 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/50 text-white"
+                  className="text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
                   placeholder="you@example.com"
                   {...register("email")}
                 />
@@ -168,7 +174,7 @@ export default function SignUpPage() {
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    className="pr-12 text-sm bg-black/50 h-10 rounded-xl border border-white/10 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/50 text-white"
+                    className="pr-12 text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
                     placeholder="Min. 6 characters"
                     {...register("password")}
                   />
@@ -206,16 +212,16 @@ export default function SignUpPage() {
               )}
 
               <SubmitButton
-                pendingText="Creating account..."
+                pendingText="Creating operator account..."
                 disabled={isSubmitting}
-                className={`h-10 text-sm ${aeonik.variable} font-aeonik bg-white text-black hover:bg-gray-200 rounded-xl transition-all duration-300 font-semibold`}
+                className={`h-10 text-sm ${aeonik.variable} font-aeonik bg-blue-600 text-white hover:bg-blue-700 rounded-xl transition-all duration-300 font-semibold shadow-lg shadow-blue-900/20`}
               >
-                Start the Sprint
+                Create Operator Account
               </SubmitButton>
 
               <p className={`text-center text-sm ${aeonik.variable} font-aeonik text-gray-500`}>
                 Already have an account?{" "}
-                <Link href="/sign-in" className="text-white hover:underline">
+                <Link href="/operator-login" className="text-white hover:underline">
                   Sign in
                 </Link>
               </p>

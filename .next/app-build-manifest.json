@@ -42,6 +42,17 @@
       "static/chunks/main-app.js",
       "static/css/app/(protected)/dashboard/page.css",
       "static/chunks/app/(protected)/dashboard/page.js"
+    ],
+    "/api/auth/login/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/auth/login/route.js"
+    ],
+    "/(auth-pages)/sign-up/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(auth-pages)/sign-up/page.css",
+      "static/chunks/app/(auth-pages)/sign-up/page.js"
     ]
   }
 }
