@@ -91,45 +91,43 @@ export default function PartnersPage() {
         /* Grid */
         .partner-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
 
-        /* PLATINUM CARD — dark luxury */
+        /* PLATINUM CARD — near-white, ultra-refined */
+        .platinum-card { background: linear-gradient(160deg, #FFFFFF 0%, #F2F2F6 60%, #FAFAFA 100%); border: 1px solid #D4D4DC; color: #111827; }
+        .platinum-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(200,200,220,0.4) 20%, rgba(255,255,255,1) 50%, rgba(200,200,220,0.4) 80%, transparent 100%); }
+        .platinum-card:hover { transform: translateY(-5px); border-color: #BBBBC8; box-shadow: 0 24px 60px rgba(60,60,100,0.1); }
+
+        /* SILVER CARD — distinctly mid-gray */
+        .silver-card { background: linear-gradient(160deg, #E4E4E9 0%, #D4D4DB 100%); border: 1px solid #BABAC6; border-left: 3px solid #9090A8; }
+        .silver-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(50,50,90,0.12); border-left-color: #707090; }
+
         .partner-card { border-radius: 20px; padding: 40px; transition: all 0.35s cubic-bezier(0.22,1,0.36,1); display: flex; flex-direction: column; height: 100%; position: relative; overflow: hidden; }
-
-        .platinum-card { background: #0F1117; border: 1px solid rgba(255,255,255,0.07); color: #fff; }
-        .platinum-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(192,192,210,0.4) 30%, rgba(230,230,245,0.9) 50%, rgba(192,192,210,0.4) 70%, transparent 100%); }
-        .platinum-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.13); box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
-
-        /* SILVER CARD — clean white */
-        .silver-card { background: #FFFFFF; border: 1px solid #EBEBEB; border-left: 2px solid #C8C8C8; }
-        .silver-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); border-left-color: #9CA3AF; }
-
-        /* LOGO */
         .partner-logo-container { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; margin-bottom: 28px; }
-        .platinum-logo { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
-        .silver-logo { background: #F5F5F5; color: #9CA3AF; border: 1px solid #E5E7EB; }
+        .platinum-logo { background: rgba(0,0,0,0.04); color: #555566; border: 1px solid rgba(0,0,0,0.1); }
+        .silver-logo { background: rgba(0,0,0,0.07); color: #44445A; border: 1px solid rgba(0,0,0,0.12); }
 
         /* BADGE */
         .partner-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 4px 10px; border-radius: 3px; margin-bottom: 18px; width: fit-content; }
-        .platinum-badge { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.08); }
-        .silver-badge { background: #F5F5F5; color: #B0B0B0; border: 1px solid #E8E8E8; }
+        .platinum-badge { background: rgba(0,0,0,0.04); color: #888899; border: 1px solid rgba(0,0,0,0.08); }
+        .silver-badge { background: rgba(0,0,0,0.06); color: #6E6E88; border: 1px solid rgba(0,0,0,0.1); }
 
         /* TEXT */
         .partner-name { font-size: 19px; font-weight: 500; letter-spacing: -0.3px; margin-bottom: 8px; }
-        .platinum-card .partner-name { color: #FFFFFF; }
-        .silver-card .partner-name { color: #1F2937; }
+        .platinum-card .partner-name { color: #111827; }
+        .silver-card .partner-name { color: #111827; }
 
         .partner-specialty { font-size: 12px; font-weight: 500; margin-bottom: 16px; display: flex; align-items: center; gap: 5px; letter-spacing: 0.2px; }
-        .platinum-card .partner-specialty { color: rgba(180,185,210,0.65); }
-        .silver-card .partner-specialty { color: var(--primary); }
+        .platinum-card .partner-specialty { color: #555570; }
+        .silver-card .partner-specialty { color: #444460; }
 
         .partner-blurb { font-size: 14px; line-height: 1.8; flex-grow: 1; padding-bottom: 28px; }
-        .platinum-card .partner-blurb { color: rgba(255,255,255,0.38); }
-        .silver-card .partner-blurb { color: #6B7280; }
+        .platinum-card .partner-blurb { color: #555566; }
+        .silver-card .partner-blurb { color: #444458; }
 
         .partner-link { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; transition: all 0.2s; padding-top: 16px; border-top: 1px solid; width: fit-content; text-transform: uppercase; }
-        .platinum-card .partner-link { color: rgba(255,255,255,0.35); border-color: rgba(255,255,255,0.07); }
-        .platinum-card .partner-link:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.15); }
-        .silver-card .partner-link { color: #9CA3AF; border-color: #F0F0F0; }
-        .silver-card .partner-link:hover { color: var(--primary); }
+        .platinum-card .partner-link { color: #777788; border-color: rgba(0,0,0,0.1); }
+        .platinum-card .partner-link:hover { color: #111827; border-color: rgba(0,0,0,0.2); }
+        .silver-card .partner-link { color: #666678; border-color: rgba(0,0,0,0.1); }
+        .silver-card .partner-link:hover { color: #111827; }
 
         .tier-icon { display: none; }
 
