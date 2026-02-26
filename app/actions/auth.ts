@@ -32,8 +32,11 @@ export const signUpAction = async (formData: FormData) => {
   const firstName = formData.get("firstName")?.toString();
   const lastName = formData.get("lastName")?.toString();
   const referralCode = formData.get("referralCode")?.toString();
+  const partnerCode = formData.get("partnerCode")?.toString();
 
-
+  if (partnerCode !== "KingstonePartner26") {
+    return { error: "Invalid Partner Code" };
+  }
 
   // Test Supabase connection
   try {

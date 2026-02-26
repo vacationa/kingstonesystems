@@ -75,47 +75,51 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-12 bg-[#0F172A] min-h-screen relative overflow-hidden">
+    <div className="w-full flex flex-col items-center justify-center py-12 bg-slate-50 min-h-screen relative overflow-hidden">
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(30,64,175,0.18) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(30,64,175,0.06) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
       <div className="w-full max-w-md px-6 relative z-10">
         <div className="text-center mb-8">
+          <Link href="/" className="inline-flex items-center gap-2 mb-6">
+            <img src="/assets/newlogo.png" alt="Kingstone Systems" className="h-10 w-auto rounded-md border border-slate-200 shadow-sm" />
+            <span className="text-[17px] font-medium text-slate-900 font-[family-name:var(--font-figtree)]">Kingstone Systems</span>
+          </Link>
           <h1
-            className={`${aeonik.variable} font-aeonik text-2xl md:text-3xl font-bold text-white mb-2`}
+            className={`${aeonik.variable} font-aeonik text-2xl md:text-3xl font-bold text-slate-900 mb-2`}
           >
-            Partner <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Registration</span>
+            Partner <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">Registration</span>
           </h1>
-          <p className={`${aeonik.variable} font-aeonik font-light text-gray-400 text-base`}>
+          <p className={`${aeonik.variable} font-aeonik font-light text-slate-500 text-base`}>
             Create your internal account to access the mission control dashboard.
           </p>
         </div>
 
-        <Card className="border border-[#334155] bg-[#1E293B] rounded-3xl text-white shadow-2xl">
+        <Card className="border border-slate-200 bg-white rounded-3xl text-slate-900 shadow-sm">
           <CardContent className="p-8 md:p-10">
             <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="firstName"
-                    className={`text-sm ${aeonik.variable} font-aeonik text-gray-400`}
+                    className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
                   >
                     First Name
                   </Label>
                   <Input
                     id="firstName"
                     type="text"
-                    className="text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
+                    className="text-sm bg-slate-50 h-11 rounded-xl border border-slate-200 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600/50 text-slate-900 placeholder:text-slate-400 shadow-none"
                     placeholder="John"
                     {...register("firstName")}
                   />
                   {errors.firstName && (
-                    <span className={`text-xs text-red-400 ${aeonik.variable} font-aeonik`}>
+                    <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
                       {errors.firstName.message}
                     </span>
                   )}
@@ -123,19 +127,19 @@ export default function SignUpPage() {
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="lastName"
-                    className={`text-sm ${aeonik.variable} font-aeonik text-gray-400`}
+                    className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
                   >
                     Last Name
                   </Label>
                   <Input
                     id="lastName"
                     type="text"
-                    className="text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
+                    className="text-sm bg-slate-50 h-11 rounded-xl border border-slate-200 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600/50 text-slate-900 placeholder:text-slate-400 shadow-none"
                     placeholder="Doe"
                     {...register("lastName")}
                   />
                   {errors.lastName && (
-                    <span className={`text-xs text-red-400 ${aeonik.variable} font-aeonik`}>
+                    <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
                       {errors.lastName.message}
                     </span>
                   )}
@@ -145,19 +149,19 @@ export default function SignUpPage() {
               <div className="space-y-1.5">
                 <Label
                   htmlFor="email"
-                  className={`text-sm ${aeonik.variable} font-aeonik text-gray-400`}
+                  className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
                 >
                   Email
                 </Label>
                 <Input
                   id="email"
                   type="email"
-                  className="text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
+                  className="text-sm bg-slate-50 h-11 rounded-xl border border-slate-200 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600/50 text-slate-900 placeholder:text-slate-400 shadow-none"
                   placeholder="you@example.com"
                   {...register("email")}
                 />
                 {errors.email && (
-                  <span className={`text-xs text-red-400 ${aeonik.variable} font-aeonik`}>
+                  <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
                     {errors.email.message}
                   </span>
                 )}
@@ -166,7 +170,7 @@ export default function SignUpPage() {
               <div className="space-y-1.5">
                 <Label
                   htmlFor="password"
-                  className={`text-sm ${aeonik.variable} font-aeonik text-gray-400`}
+                  className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
                 >
                   Password
                 </Label>
@@ -174,7 +178,7 @@ export default function SignUpPage() {
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    className="pr-12 text-sm bg-[#0F172A] h-10 rounded-xl border border-[#334155] focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 text-white"
+                    className="pr-12 text-sm bg-slate-50 h-11 rounded-xl border border-slate-200 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600/50 text-slate-900 placeholder:text-slate-400 shadow-none"
                     placeholder="Min. 6 characters"
                     {...register("password")}
                   />
@@ -187,14 +191,14 @@ export default function SignUpPage() {
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? (
-                      <EyeOff className="h-4 w-4 text-gray-400 hover:text-white transition-colors" />
+                      <EyeOff className="h-4 w-4 text-slate-400 hover:text-slate-600 transition-colors" />
                     ) : (
-                      <Eye className="h-4 w-4 text-gray-400 hover:text-white transition-colors" />
+                      <Eye className="h-4 w-4 text-slate-400 hover:text-slate-600 transition-colors" />
                     )}
                   </Button>
                 </div>
                 {errors.password && (
-                  <span className={`text-xs text-red-400 ${aeonik.variable} font-aeonik`}>
+                  <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
                     {errors.password.message}
                   </span>
                 )}
@@ -214,20 +218,28 @@ export default function SignUpPage() {
               <SubmitButton
                 pendingText="Creating partner account..."
                 disabled={isSubmitting}
-                className={`h-10 text-sm ${aeonik.variable} font-aeonik bg-blue-600 text-white hover:bg-blue-700 rounded-xl transition-all duration-300 font-semibold shadow-lg shadow-blue-900/20`}
+                className={`h-11 mt-2 text-sm ${aeonik.variable} font-aeonik bg-blue-700 text-white hover:bg-blue-800 rounded-xl transition-all duration-300 font-semibold shadow-sm`}
               >
                 Create Partner Account
               </SubmitButton>
 
-              <p className={`text-center text-sm ${aeonik.variable} font-aeonik text-gray-500`}>
+              <p className={`text-center text-sm ${aeonik.variable} font-aeonik text-slate-600 mt-2`}>
                 Already have an account?{" "}
-                <Link href="/operator-login" className="text-white hover:underline">
+                <Link href="/operator-login" className="text-blue-700 font-medium hover:underline">
                   Sign in
                 </Link>
               </p>
             </form>
           </CardContent>
         </Card>
+        <p className="text-center mt-6">
+          <Link
+            href="/"
+            className="text-sm text-slate-400 hover:text-blue-700 transition-colors"
+          >
+            ← Back to kingstonesystems.com
+          </Link>
+        </p>
       </div>
     </div>
   );

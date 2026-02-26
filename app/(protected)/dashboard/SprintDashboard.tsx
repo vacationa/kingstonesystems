@@ -195,12 +195,12 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
 
     if (!isComplete) {
         return (
-            <div className="mt-6 p-5 rounded-2xl border border-[#334155] bg-[#0F172A]/50 text-center">
-                <p className="text-gray-400 text-sm">
+            <div className="mt-6 p-5 rounded-2xl border border-slate-200 bg-slate-50 text-center shadow-sm">
+                <p className="text-slate-500 text-sm">
                     Complete all tasks to unlock today's prize
                 </p>
-                <div className="mt-3 px-4 py-2 bg-[#1E293B] border border-[#334155] rounded-xl inline-block">
-                    <p className="text-xs text-gray-400 font-medium">
+                <div className="mt-3 px-4 py-2 bg-white border border-slate-200 rounded-xl inline-block shadow-sm">
+                    <p className="text-xs text-slate-500 font-medium">
                         {dayData.prize?.name || dayData.prizes?.[0]?.name}
                     </p>
                 </div>
@@ -225,15 +225,15 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                     </div>
 
                     <div>
-                        <p className="font-bold text-white text-base">
+                        <p className="font-bold text-slate-900 text-base">
                             {dayData.prize?.name || dayData.prizes?.[0]?.name}
                         </p>
                         <div
-                            className="text-slate-400 text-sm leading-relaxed mt-1 max-w-lg prose-a:text-blue-400 prose-a:underline hover:prose-a:text-blue-300 prose-a:transition-colors"
+                            className="text-slate-600 text-sm leading-relaxed mt-1 max-w-lg prose-a:text-blue-600 prose-a:underline hover:prose-a:text-blue-500 prose-a:transition-colors"
                             dangerouslySetInnerHTML={{
                                 __html: dayData.prize.description.replace(
                                     /\[([^\]]+)\]\(([^)]+)\)/g,
-                                    '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: #60A5FA; text-decoration: underline; font-weight: 500;">$1</a>'
+                                    '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: #2563EB; text-decoration: underline; font-weight: 500;">$1</a>'
                                 )
                             }}
                         />
@@ -241,11 +241,11 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
 
                     {/* Special Inline Form for Day 3 Social Medial Makeover */}
                     {day === 3 && (
-                        <div className="mt-4 p-5 rounded-2xl bg-[#0F172A] border border-[#334155] space-y-4">
-                            <h4 className="font-bold text-white text-sm flex items-center gap-2">
+                        <div className="mt-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 shadow-sm">
+                            <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                 Start Your Audit
                             </h4>
-                            <p className="text-xs text-gray-400 leading-relaxed">
+                            <p className="text-xs text-slate-500 leading-relaxed">
                                 Enter the links to up to two platforms you would like our team to review and remake.
                             </p>
 
@@ -274,7 +274,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                                         if (btn) {
                                             btn.innerHTML = "✓ Audit Requested";
                                             btn.style.background = dayData.color;
-                                            btn.style.color = "#000";
+                                            btn.style.color = "#FFF";
                                             btn.disabled = true;
                                         }
                                     });
@@ -282,27 +282,27 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                             }}>
                                 <div className="space-y-3">
                                     <div>
-                                        <label className="block text-[10px] text-gray-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">LinkedIn URL</label>
+                                        <label className="block text-[10px] text-slate-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">LinkedIn URL</label>
                                         <input
                                             type="url"
                                             name="linkedin"
                                             placeholder="https://linkedin.com/in/your-profile"
-                                            className={`w-full bg-white border border-gray-200 text-gray-900 text-sm rounded-xl px-4 py-3 focus:border-blue-700 focus:ring-2 focus:ring-blue-700/20 focus:outline-none transition-all placeholder-gray-400`}
+                                            className={`w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-[10px] text-gray-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">Instagram URL</label>
+                                        <label className="block text-[10px] text-slate-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">Instagram URL</label>
                                         <input
                                             type="url"
                                             name="instagram"
                                             placeholder="https://instagram.com/your-handle"
-                                            className={`w-full bg-white border border-gray-200 text-gray-900 text-sm rounded-xl px-4 py-3 focus:border-blue-700 focus:ring-2 focus:ring-blue-700/20 focus:outline-none transition-all placeholder-gray-400`}
+                                            className={`w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
                                         />
                                     </div>
                                     <div className="pt-2">
-                                        <label className="block text-[10px] flex justify-between text-gray-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">
+                                        <label className="block text-[10px] flex justify-between text-slate-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">
                                             <span>Access Passcode 🔒</span>
-                                            {auditError && <span className="text-red-400 normal-case">Invalid code</span>}
+                                            {auditError && <span className="text-red-500 normal-case">Invalid code</span>}
                                         </label>
                                         <input
                                             type="text"
@@ -310,11 +310,11 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                                             value={auditCode}
                                             onChange={(e) => { setAuditCode(e.target.value); setAuditError(false); }}
                                             placeholder="Enter secret code"
-                                            className={`w-full bg-white border ${auditError ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm rounded-xl px-4 py-3 focus:border-blue-700 focus:outline-none transition-all tracking-widest uppercase`}
+                                            className={`w-full bg-white border ${auditError ? 'border-red-500' : 'border-slate-200'} text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:outline-none transition-all tracking-widest uppercase`}
                                         />
                                     </div>
                                 </div>
-                                <button type="submit" className="w-full mt-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm px-4 py-3 rounded-xl transition-colors">
+                                <button type="submit" className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-4 py-3 rounded-xl transition-colors">
                                     Submit For Audit →
                                 </button>
                             </form>
@@ -324,7 +324,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                     {day !== 3 && (
                         <div
                             className="flex items-center gap-2 text-xs px-4 py-2.5 rounded-xl mt-2 w-max"
-                            style={{ background: `${dayData.color}20`, color: dayData.color }}
+                            style={{ background: `${dayData.color}15`, color: dayData.color }}
                         >
                             <span>✓</span>
                             <span className={`${jetbrainsMono.variable} font-mono font-semibold`}>Access link processed</span>
@@ -335,30 +335,30 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                 <div className="p-5 space-y-4">
                     <div className="flex items-center gap-2 mb-1">
                         <span className="text-xl">🎁</span>
-                        <span className="font-semibold text-gray-900 text-sm">
+                        <span className="font-semibold text-slate-900 text-sm">
                             Day {day} Complete! Enter your unlock code
                         </span>
                     </div>
-                    <p className="text-gray-500 text-xs">
+                    <p className="text-slate-500 text-xs">
                         Post your accountability update, share your dashboard screenshot, and DM to receive your code.
                     </p>
 
                     {/* Post template copy */}
-                    <div className="bg-gray-50 rounded-xl p-4 space-y-2 border border-gray-100">
+                    <div className="bg-white rounded-xl p-4 space-y-2 border border-slate-200 shadow-sm">
                         <div className="flex items-center justify-between">
-                            <span className="font-mono text-xs text-gray-400 uppercase tracking-widest">Post Template</span>
+                            <span className="font-mono text-xs text-slate-400 uppercase tracking-widest">Post Template</span>
                             <button
                                 onClick={handleCopy}
                                 className="text-xs px-3 py-1 rounded-lg transition-all"
-                                style={{ background: copied ? `${dayData.color}20` : "#F3F4F6", color: copied ? dayData.color : "#6B7280" }}
+                                style={{ background: copied ? `${dayData.color}15` : "#F8FAFC", color: copied ? dayData.color : "#64748B", border: copied ? "none" : "1px solid #E2E8F0" }}
                             >
                                 {copied ? "✓ Copied!" : "Copy"}
                             </button>
                         </div>
                         <div className="space-y-1">
-                            <p className="text-gray-900 text-xs font-semibold">{dayData.postTemplate.title}</p>
+                            <p className="text-slate-900 text-xs font-semibold">{dayData.postTemplate.title}</p>
                             {dayData.postTemplate.lines.map((line, i) => (
-                                <p key={i} className="text-gray-500 text-xs">{line}</p>
+                                <p key={i} className="text-slate-600 text-xs">{line}</p>
                             ))}
                         </div>
                     </div>
@@ -371,9 +371,9 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                             onChange={e => { setCode(e.target.value.toUpperCase()); setError(false); }}
                             onKeyDown={e => e.key === "Enter" && handleUnlock()}
                             placeholder="ENTER CODE"
-                            className="flex-1 font-mono text-sm px-4 py-2.5 rounded-xl bg-white border text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-700/20 transition-all tracking-widest uppercase"
+                            className="flex-1 font-mono text-sm px-4 py-2.5 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all tracking-widest uppercase"
                             style={{
-                                borderColor: error ? "#ef4444" : "#E5E7EB",
+                                borderColor: error ? "#ef4444" : "#E2E8F0",
                             }}
                         />
                         <button
@@ -419,10 +419,10 @@ function DayCard({
 
     return (
         <div
-            className="rounded-2xl border transition-all duration-300 overflow-hidden bg-[#1E293B]"
+            className="rounded-2xl border transition-all duration-300 overflow-hidden bg-white shadow-sm"
             style={{
-                borderColor: isActive ? `${dayData.color}60` : "#334155",
-                boxShadow: isActive ? `0 8px 32px ${dayData.color}15` : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+                borderColor: isActive ? `${dayData.color}60` : "#E2E8F0",
+                boxShadow: isActive ? `0 8px 32px ${dayData.color}15` : "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
             }}
         >
             {/* Header */}
@@ -432,11 +432,11 @@ function DayCard({
             >
                 {/* Day badge */}
                 <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold transition-all"
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold transition-all shadow-sm"
                     style={{
-                        background: isComplete ? `${dayData.color}25` : isActive ? `${dayData.color}15` : "#0F172A",
-                        border: `1.5px solid ${isComplete || isActive ? `${dayData.color}60` : "#334155"}`,
-                        color: isComplete || isActive ? "#FFFFFF" : "#475569",
+                        background: isComplete ? `${dayData.color}15` : isActive ? `${dayData.color}10` : "#F8FAFC",
+                        border: `1.5px solid ${isComplete || isActive ? `${dayData.color}60` : "#E2E8F0"}`,
+                        color: isComplete || isActive ? dayData.color : "#64748B",
                     }}
                 >
                     {isComplete ? "✓" : dayData.day}
@@ -459,7 +459,7 @@ function DayCard({
                             </span>
                         )}
                     </div>
-                    <h3 className="font-bold text-white text-lg mt-0.5 truncate">
+                    <h3 className="font-bold text-slate-900 text-lg mt-0.5 truncate">
                         {dayData.title}
                     </h3>
                 </div>
@@ -469,7 +469,7 @@ function DayCard({
                     <span className="font-mono text-xs font-bold" style={{ color: dayData.color }}>
                         {completedTasks}/{totalTasks}
                     </span>
-                    <div className="w-24 h-1.5 rounded-full bg-[#0F172A] overflow-hidden">
+                    <div className="w-24 h-1.5 rounded-full bg-slate-100 overflow-hidden border border-slate-200">
                         <div
                             className="h-full rounded-full transition-all duration-500"
                             style={{ width: `${progress}%`, background: dayData.color }}
@@ -479,7 +479,7 @@ function DayCard({
 
                 {/* Chevron */}
                 <svg
-                    className="w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-300"
+                    className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform duration-300"
                     style={{ transform: isActive ? "rotate(180deg)" : "rotate(0deg)" }}
                     fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 >
@@ -490,14 +490,14 @@ function DayCard({
             {/* Expanded content */}
             {isActive && (
                 <div className="px-6 pb-6">
-                    <div className="w-full h-px bg-[#334155] mb-5" />
+                    <div className="w-full h-px bg-slate-200 mb-5" />
 
                     {/* Task list */}
                     <div className="space-y-2">
                         {dayData.tasks.map((task) => (
                             <label
                                 key={task.id}
-                                className="flex items-start gap-3 cursor-pointer group p-2.5 rounded-xl transition-colors hover:bg-[#2D3748]"
+                                className="flex items-start gap-3 cursor-pointer group p-2.5 rounded-xl transition-colors hover:bg-slate-50"
                             >
                                 <div className="relative flex-shrink-0 mt-0.5">
                                     <input
@@ -507,10 +507,10 @@ function DayCard({
                                         onChange={e => onCheck(task.id, e.target.checked)}
                                     />
                                     <div
-                                        className="w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-200"
+                                        className="w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-200 bg-white shadow-sm"
                                         style={{
-                                            borderColor: checked[task.id] ? dayData.color : "#334155",
-                                            background: checked[task.id] ? `${dayData.color}15` : "transparent",
+                                            borderColor: checked[task.id] ? dayData.color : "#E2E8F0",
+                                            background: checked[task.id] ? `${dayData.color}15` : "#FFFFFF",
                                         }}
                                     >
                                         {checked[task.id] && (
@@ -527,8 +527,8 @@ function DayCard({
                                     </div>
                                 </div>
                                 <span
-                                    className="text-sm leading-relaxed transition-colors"
-                                    style={{ color: checked[task.id] ? "#6B7280" : "#F1F5F9", textDecoration: checked[task.id] ? "line-through" : "none" }}
+                                    className="text-sm leading-relaxed transition-colors mt-0.5"
+                                    style={{ color: checked[task.id] ? "#94A3B8" : "#0F172A", textDecoration: checked[task.id] ? "line-through" : "none" }}
                                 >
                                     {task.label}
                                 </span>
@@ -554,22 +554,22 @@ function DayCard({
 
 function ThirtyDayLockedCard() {
     return (
-        <div className="relative rounded-2xl border border-[#334155] overflow-hidden bg-[#1E293B] p-7 shadow-xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/5 pointer-events-none" />
+        <div className="relative rounded-2xl border border-slate-200 overflow-hidden bg-white p-7 shadow-sm">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 pointer-events-none" />
 
             <div className="relative z-10 space-y-5">
                 {/* Top row: label + lock button */}
                 <div className="flex items-start justify-between gap-4 flex-wrap">
                     <div>
-                        <div className="font-mono text-xs text-blue-400 tracking-widest uppercase mb-1.5">
+                        <div className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-1.5 font-semibold">
                             Coming Next
                         </div>
-                        <h3 className="text-white font-bold text-xl">
+                        <h3 className="text-slate-900 font-bold text-xl">
                             The 30-Day AI Agency Sprint
                         </h3>
                     </div>
                     <button
-                        className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-gray-500 border border-[#334155] bg-[#0F172A] cursor-not-allowed whitespace-nowrap"
+                        className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-slate-500 border border-slate-200 bg-slate-50 cursor-not-allowed whitespace-nowrap shadow-sm"
                         disabled
                     >
                         Complete the 5-Day Sprint to Unlock
@@ -583,15 +583,15 @@ function ThirtyDayLockedCard() {
                         "Advanced client acquisition, delegation, case studies & scaling playbooks",
                         "Earn your 🥇 Kingstone AI Solutions Gold Certificate",
                     ].map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-gray-500 text-sm leading-relaxed">
-                            <span className="text-blue-500 mt-0.5 flex-shrink-0">→</span>
-                            <span>{item}</span>
+                        <li key={item} className="flex items-start gap-2.5 text-slate-600 text-sm leading-relaxed">
+                            <span className="text-blue-600 mt-0.5 flex-shrink-0">→</span>
+                            <span className="font-medium">{item}</span>
                         </li>
                     ))}
                 </ul>
 
                 {/* Refund highlight — full width */}
-                <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
+                <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold shadow-sm">
                     <span className="text-lg">🎁</span>
                     <span>Complete the tracker in 30 days and get a <span className="underline">FULL REFUND</span> on your membership</span>
                 </div>
@@ -609,37 +609,37 @@ function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
     const completedDays = DAYS.filter(d => d.tasks.every(t => checked[t.id])).length;
 
     return (
-        <div className="bg-[#1E293B] border border-[#334155] rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-xl">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm">
             {/* Stats */}
             <div className="flex gap-6 flex-shrink-0">
                 <div>
-                    <div className="font-mono text-3xl font-bold text-white">{completedDays}<span className="text-gray-600 text-xl">/5</span></div>
-                    <div className="text-xs text-gray-400 mt-0.5 uppercase tracking-wider font-semibold">Days done</div>
+                    <div className="font-mono text-3xl font-bold text-slate-900">{completedDays}<span className="text-slate-500 text-xl">/5</span></div>
+                    <div className="text-xs text-slate-500 mt-0.5 uppercase tracking-wider font-semibold">Days done</div>
                 </div>
-                <div className="w-px bg-[#334155]" />
+                <div className="w-px bg-slate-200" />
                 <div>
-                    <div className="font-mono text-3xl font-bold text-white">{completedTasks}<span className="text-gray-600 text-xl">/{totalTasks}</span></div>
-                    <div className="text-xs text-gray-400 mt-0.5 uppercase tracking-wider font-semibold">Tasks done</div>
+                    <div className="font-mono text-3xl font-bold text-slate-900">{completedTasks}<span className="text-slate-500 text-xl">/{totalTasks}</span></div>
+                    <div className="text-xs text-slate-500 mt-0.5 uppercase tracking-wider font-semibold">Tasks done</div>
                 </div>
-                <div className="w-px bg-[#334155]" />
+                <div className="w-px bg-slate-200" />
                 <div>
-                    <div className="font-mono text-3xl font-bold text-white">{pct}<span className="text-gray-600 text-xl">%</span></div>
-                    <div className="text-xs text-gray-400 mt-0.5 uppercase tracking-wider font-semibold">Complete</div>
+                    <div className="font-mono text-3xl font-bold text-slate-900">{pct}<span className="text-slate-500 text-xl">%</span></div>
+                    <div className="text-xs text-slate-500 mt-0.5 uppercase tracking-wider font-semibold">Complete</div>
                 </div>
             </div>
 
             {/* Full bar */}
             <div className="flex-1 w-full space-y-2">
                 <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-300 font-medium">Sprint Progress</span>
-                    <span className="font-mono text-xs text-blue-400">{pct}% complete</span>
+                    <span className="text-sm text-slate-700 font-medium">Sprint Progress</span>
+                    <span className="font-mono text-xs text-blue-600 font-semibold">{pct}% complete</span>
                 </div>
-                <div className="h-2 w-full bg-[#0F172A] rounded-full overflow-hidden flex gap-0.5">
+                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden flex gap-0.5 border border-slate-200">
                     {DAYS.map((d) => {
                         const dayDone = d.tasks.filter(t => checked[t.id]).length;
                         const dayPct = dayDone / d.tasks.length;
                         return (
-                            <div key={d.day} className="flex-1 bg-[#0F172A] rounded-full overflow-hidden">
+                            <div key={d.day} className="flex-1 bg-slate-100 rounded-full overflow-hidden">
                                 <div
                                     className="h-full rounded-full transition-all duration-700"
                                     style={{ width: `${dayPct * 100}%`, background: d.color }}
@@ -651,7 +651,7 @@ function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
                 <div className="flex gap-1">
                     {DAYS.map((d) => (
                         <div key={d.day} className="flex-1 flex items-center justify-center">
-                            <span className="font-mono text-[10px] opacity-70" style={{ color: d.color }}>D{d.day}</span>
+                            <span className="font-mono text-[10px] opacity-100 font-semibold text-slate-500">D{d.day}</span>
                         </div>
                     ))}
                 </div>
@@ -695,14 +695,14 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
 
 
     return (
-        <div className="w-full min-h-screen bg-[#0F172A] text-slate-200 relative" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
+        <div className="w-full min-h-screen bg-slate-50 text-slate-900 relative" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
 
             {/* Very subtle radial glow */}
             <div
                 style={{
                     position: "absolute",
                     inset: 0,
-                    background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(30,64,175,0.12) 0%, transparent 70%)",
+                    background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(30,64,175,0.06) 0%, transparent 70%)",
                     pointerEvents: "none",
                 }}
             />
@@ -710,17 +710,17 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
             <div className="max-w-3xl mx-auto px-4 py-8 space-y-8 relative z-10">
                 {/* Header */}
                 <div className="flex justify-between items-start">
-                    <div className="space-y-1">
-                        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
+                    <div className="space-y-1 mt-6">
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-900">
                             Welcome to the AI Sprint.
                         </h1>
-                        <p className="font-mono text-blue-400 text-sm">
+                        <p className="font-mono text-blue-600 text-sm font-semibold mt-2">
                             Let's get you one step closer to your first paying AI client today.
                         </p>
                     </div>
                     <button
                         onClick={() => signOutAction()}
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#334155] bg-[#1E293B] text-gray-300 text-sm font-semibold hover:bg-[#2D3748] transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-sm font-semibold hover:bg-slate-50 transition-colors shadow-sm mt-6"
                     >
                         <LogOut size={16} />
                         <span>Log Out</span>
@@ -731,12 +731,12 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                 <OverallProgress checked={checked} />
 
                 <div className="flex gap-2">
-                    <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold shadow-md shadow-blue-900/20">
+                    <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold shadow-md shadow-blue-600/20">
                         <span>5-Day Sprint</span>
                         <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded-full">Active</span>
                     </button>
                     <button
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#334155] text-gray-500 text-sm cursor-not-allowed bg-[#1E293B]/50"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 text-slate-500 text-sm cursor-not-allowed bg-white/50 shadow-sm font-medium"
                         disabled
                     >
                         <span>30-Day Sprint</span>
@@ -759,12 +759,12 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                     ))}
                 </div>
 
-                <div className="rounded-2xl border border-[#334155] bg-[#1E293B] p-6 space-y-4 shadow-xl">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6 space-y-4 shadow-sm">
                     <div className="flex items-center gap-2">
-                        <h2 className="font-bold text-white text-lg">
+                        <h2 className="font-bold text-slate-900 text-lg">
                             Daily Non-Negotiables
                         </h2>
-                        <span className="font-mono text-xs text-blue-400 opacity-70 ml-1">(Days 5–10)</span>
+                        <span className="font-mono text-xs text-blue-600 font-semibold ml-1">(Days 5–10)</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {[
@@ -773,9 +773,9 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                             "Iterate your outreach scripts",
                             "Post your daily accountability update",
                         ].map((item) => (
-                            <div key={item} className="flex items-center gap-2.5 p-3 rounded-xl bg-[#0F172A] border border-[#334155]">
+                            <div key={item} className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 shadow-sm text-slate-700 font-medium text-sm">
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                                <span className="text-gray-400 text-sm">{item}</span>
+                                <span>{item}</span>
                             </div>
                         ))}
                     </div>
@@ -786,9 +786,9 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
 
                 {/* Saving indicator */}
                 {isPending && (
-                    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-md border border-gray-200 text-xs text-gray-500 shadow-lg">
-                        <div className="w-2 h-2 rounded-full bg-blue-700 animate-pulse" />
-                        <span className="font-mono">Saving...</span>
+                    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 backdrop-blur-md border border-slate-700 text-xs text-slate-100 shadow-lg font-mono">
+                        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                        <span>Saving...</span>
                     </div>
                 )}
 
