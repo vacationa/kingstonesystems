@@ -26,10 +26,10 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
   return (
     <>
       {/* li_at field */}
-      <FormErrorMessage message={error} />
+      <FormErrorMessage message={error || null} />
       {/* Email Field */}
       <div className="space-y-2">
-        <Label htmlFor="email" className="${aeonik.variable} font-aeonik">
+        <Label htmlFor="email" className="font-medium text-slate-700">
           LinkedIn Email
         </Label>
         <div className="relative">
@@ -39,7 +39,7 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
             placeholder="name@company.com"
             value={cookies?.email}
             onChange={(e) => handleChange("email", e.target.value)}
-            className="pl-10 border-2 focus:border-black transition-colors"
+            className="pl-10 border border-black/10 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all font-sans"
           />
           <div className="absolute left-3 top-2.5 text-gray-500">
             <Mail className="h-5 w-5" aria-hidden="true" />
@@ -49,7 +49,7 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
 
       {/* Password Field */}
       <div className="space-y-2">
-        <Label htmlFor="password" className="${aeonik.variable} font-aeonik">
+        <Label htmlFor="password" className="font-medium text-slate-700">
           LinkedIn Password
         </Label>
         <div className="relative">
@@ -59,7 +59,7 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
             placeholder="Enter your password"
             value={cookies?.password}
             onChange={(e) => handleChange("password", e.target.value)}
-            className="pl-10 border-2 focus:border-black transition-colors"
+            className="pl-10 border border-black/10 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all font-sans"
           />
           <div className="absolute left-3 top-2.5 text-gray-500">
             <Lock className="h-5 w-5" aria-hidden="true" />
@@ -67,7 +67,7 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
         </div>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="li_at" className="${aeonik.variable} font-aeonik">
+        <Label htmlFor="li_at" className="font-medium text-slate-700">
           li_at
         </Label>
         <div className="relative">
@@ -77,7 +77,7 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
             placeholder="Paste your li_at token"
             value={cookies?.li_at || ""}
             onChange={(e) => handleChange("li_at", e.target.value)}
-            className="pl-10 border-2 focus:border-black transition-colors"
+            className="pl-10 border border-black/10 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all font-sans"
           />
           <div className="absolute left-3 top-2.5 text-gray-500">
             <Cookie className="h-5 w-5" />
@@ -87,7 +87,7 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
 
       {/* JSESSIONID field */}
       <div className="space-y-2 mt-4">
-        <Label htmlFor="li_a" className="${aeonik.variable} font-aeonik">
+        <Label htmlFor="li_a" className="font-medium text-slate-700">
           li_a{" "}
           <span className="font-normal text-[#3e3c3c]">
             (If your account has Recruiter or Sales Navigator subscription)
@@ -100,7 +100,7 @@ export const CookiesForm: React.FC<CookiesFormProps> = ({ cookies, onChange, err
             placeholder="Paste your li_a token (Optional)"
             value={cookies?.li_a || ""}
             onChange={(e) => handleChange("li_a", e.target.value)}
-            className="pl-10 border-2 focus:border-black transition-colors"
+            className="pl-10 border border-black/10 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all font-sans"
           />
           <div className="absolute left-3 top-2.5 text-gray-500">
             <KeyRound className="h-5 w-5" />

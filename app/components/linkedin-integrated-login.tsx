@@ -227,11 +227,11 @@ export function LinkedInIntegratedLogin({
   if (showCanvas) {
     return createPortal(
       <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4">
-        <div className="bg-white rounded-2xl w-full max-w-7xl h-[95vh] sm:h-[90vh] flex flex-col shadow-xl border border-gray-100">
-          <div className="flex items-center justify-between p-4 border-b border-gray-100 flex-shrink-0">
+        <div className="bg-white rounded-2xl w-full max-w-7xl h-[95vh] sm:h-[90vh] flex flex-col border border-black/10">
+          <div className="flex items-center justify-between p-4 border-b border-black/10 flex-shrink-0">
             <div>
-              <h3 className="font-aeonik text-xl font-semibold text-gray-900">LinkedIn Login</h3>
-              <p className="text-gray-500 text-sm mt-1 font-outfit">
+              <h3 className=" text-xl font-semibold text-gray-900">LinkedIn Login</h3>
+              <p className="text-gray-500 text-sm mt-1 ">
                 Use the browser to log in to your LinkedIn account
               </p>
             </div>
@@ -267,10 +267,10 @@ export function LinkedInIntegratedLogin({
   const content = (
     <>
       <div className="text-center mb-6">
-        <h2 className="font-aeonik text-2xl text-gray-900 mb-3 tracking-tight">
+        <h2 className=" text-2xl text-gray-900 mb-3 tracking-tight">
           Connect LinkedIn Account
         </h2>
-        <p className="text-gray-500 text-base font-outfit font-light leading-relaxed">
+        <p className="text-gray-500 text-base  font-light leading-relaxed">
           Enter your LinkedIn credentials
         </p>
       </div>
@@ -279,7 +279,7 @@ export function LinkedInIntegratedLogin({
         {/* Credentials Form */}
         <div className="space-y-4 mb-6">
           <div className="space-y-2">
-            <Label htmlFor="email" className="font-outfit text-sm text-gray-700">
+            <Label htmlFor="email" className=" text-sm text-gray-700">
               Email
             </Label>
             <Input
@@ -300,7 +300,7 @@ export function LinkedInIntegratedLogin({
             )}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password" className="font-outfit text-sm text-gray-700">
+            <Label htmlFor="password" className=" text-sm text-gray-700">
               Password
             </Label>
             <div className="relative">
@@ -349,7 +349,7 @@ export function LinkedInIntegratedLogin({
             setShowWebSocketMode(true);
           }}
           disabled={isLoading}
-          className="w-full px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-outfit text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isLoading ? (
             <>
@@ -374,7 +374,7 @@ export function LinkedInIntegratedLogin({
           <div className="mt-4 text-center">
             <button
               onClick={onClose}
-              className="px-4 py-2 text-gray-600 hover:text-gray-800 font-outfit text-sm transition-colors"
+              className="px-4 py-2 text-gray-600 hover:text-gray-800  text-sm transition-colors"
             >
               Cancel
             </button>
@@ -409,7 +409,7 @@ export function LinkedInIntegratedLogin({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl max-w-sm w-full border border-black/5 p-8">
+      <div className="bg-white rounded-2xl max-w-sm w-full border border-black/10 p-8">
         {content}
       </div>
       {/* Hidden WebSocket component for background processing */}

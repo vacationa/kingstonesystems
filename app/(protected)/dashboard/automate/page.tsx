@@ -299,12 +299,12 @@ export default function LinkedInAutomationPage() {
   const writeAutoPaused = (items: { id: number; status: Campaign["status"] }[]) => {
     try {
       localStorage.setItem(AUTO_PAUSE_STORAGE_KEY, JSON.stringify(items));
-    } catch {}
+    } catch { }
   };
   const clearAutoPaused = () => {
     try {
       localStorage.removeItem(AUTO_PAUSE_STORAGE_KEY);
-    } catch {}
+    } catch { }
   };
 
   // Auto-pause active campaigns when access is not allowed; restore when allowed
@@ -762,65 +762,65 @@ export default function LinkedInAutomationPage() {
   // Compute aggregate metrics based on mode
   const aggregateMetrics = isDemoMode
     ? {
-        ...demoMetrics,
-        campaigns: demoCampaigns,
-      }
+      ...demoMetrics,
+      campaigns: demoCampaigns,
+    }
     : {
-        ...(realtimeMetrics || {
-          totalImported: 0,
-          totalSent: 0,
-          accepted: 0,
-          pending: 0,
-          acceptanceRate: 0,
-          responseRate: 0,
-          totalMessages: 0,
-          messageConversionRate: 0,
-          dailyAverage: 0,
-          weeklyGrowth: 0,
-          weeklyData: [0, 0, 0, 0, 0, 0, 0],
-        }),
-        campaigns: campaigns || [],
-      };
+      ...(realtimeMetrics || {
+        totalImported: 0,
+        totalSent: 0,
+        accepted: 0,
+        pending: 0,
+        acceptanceRate: 0,
+        responseRate: 0,
+        totalMessages: 0,
+        messageConversionRate: 0,
+        dailyAverage: 0,
+        weeklyGrowth: 0,
+        weeklyData: [0, 0, 0, 0, 0, 0, 0],
+      }),
+      campaigns: campaigns || [],
+    };
 
   const campaignMetrics = selectedCampaign
     ? isDemoMode
       ? demoMetrics
       : specificCampaignMetrics || {
-          totalImported: selectedCampaign.sent || 0,
-          totalSent: selectedCampaign.sent || 0,
-          accepted: selectedCampaign.accepted || 0,
-          pending: selectedCampaign.pending || 0,
-          acceptanceRate: selectedCampaign.sent
-            ? parseFloat(((selectedCampaign.accepted / selectedCampaign.sent) * 100).toFixed(1))
-            : 0,
-          responseRate: selectedCampaign.sent
+        totalImported: selectedCampaign.sent || 0,
+        totalSent: selectedCampaign.sent || 0,
+        accepted: selectedCampaign.accepted || 0,
+        pending: selectedCampaign.pending || 0,
+        acceptanceRate: selectedCampaign.sent
+          ? parseFloat(((selectedCampaign.accepted / selectedCampaign.sent) * 100).toFixed(1))
+          : 0,
+        responseRate: selectedCampaign.sent
+          ? parseFloat(
+            (((selectedCampaign.accepted * 0.85) / selectedCampaign.sent) * 100).toFixed(1),
+          )
+          : 0,
+        totalMessages: selectedCampaign.totalMessages || 0,
+        messageConversionRate:
+          selectedCampaign.sent && selectedCampaign.totalMessages
             ? parseFloat(
-                (((selectedCampaign.accepted * 0.85) / selectedCampaign.sent) * 100).toFixed(1),
-              )
+              ((selectedCampaign.totalMessages / selectedCampaign.sent) * 100).toFixed(1),
+            )
             : 0,
-          totalMessages: selectedCampaign.totalMessages || 0,
-          messageConversionRate:
-            selectedCampaign.sent && selectedCampaign.totalMessages
-              ? parseFloat(
-                  ((selectedCampaign.totalMessages / selectedCampaign.sent) * 100).toFixed(1),
-                )
-              : 0,
-          dailyAverage:
-            selectedCampaign.dailyAverage || Math.round((selectedCampaign.sent || 0) / 30),
-          weeklyGrowth:
-            selectedCampaign.weeklyGrowth || Math.round((selectedCampaign.accepted || 0) / 8),
-          campaigns: [selectedCampaign],
-          weeklyData: selectedCampaign.weeklyData || [0, 0, 0, 0, 0, 0, 0],
-        }
+        dailyAverage:
+          selectedCampaign.dailyAverage || Math.round((selectedCampaign.sent || 0) / 30),
+        weeklyGrowth:
+          selectedCampaign.weeklyGrowth || Math.round((selectedCampaign.accepted || 0) / 8),
+        campaigns: [selectedCampaign],
+        weeklyData: selectedCampaign.weeklyData || [0, 0, 0, 0, 0, 0, 0],
+      }
     : isDemoMode
       ? {
-          ...demoMetrics,
-          campaigns: demoCampaigns,
-        }
+        ...demoMetrics,
+        campaigns: demoCampaigns,
+      }
       : {
-          ...realtimeMetrics,
-          campaigns: campaigns,
-        };
+        ...realtimeMetrics,
+        campaigns: campaigns,
+      };
 
   // Show loading state if credentials are unknown or loading
   if (hasCredentials === null || isLoading) {
@@ -870,33 +870,33 @@ export default function LinkedInAutomationPage() {
             {/* Content */}
             {!showWarmupStep && !showCredentialsStep && (
               <div className="mb-6">
-                <h3 className="font-aeonik text-2xl text-slate-900 mb-3 tracking-tight">
+                <h3 className=" text-2xl text-slate-900 mb-3 tracking-tight">
                   Connect Your LinkedIn Account
                 </h3>
-                <p className="text-slate-500 text-base font-aeonik font-light leading-relaxed mb-6">
+                <p className="text-slate-500 text-base  font-light leading-relaxed mb-6">
                   Start safe, automated outreach that builds real relationships.
                 </p>
 
                 <div className="text-left">
-                  <h4 className="font-aeonik text-lg text-slate-900 mb-4 tracking-tight">
+                  <h4 className=" text-lg text-slate-900 mb-4 tracking-tight">
                     What you'll unlock
                   </h4>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <span className="text-slate-900 font-medium text-sm">1.</span>
-                      <p className="text-slate-600 text-sm font-aeonik leading-relaxed">
+                      <p className="text-slate-600 text-sm  leading-relaxed">
                         Import prospects from LinkedIn searches, events, or CSVs
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="text-slate-900 font-medium text-sm">2.</span>
-                      <p className="text-slate-600 text-sm font-aeonik leading-relaxed">
+                      <p className="text-slate-600 text-sm  leading-relaxed">
                         Send connection requests automatically
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="text-slate-900 font-medium text-sm">3.</span>
-                      <p className="text-slate-600 text-sm font-aeonik leading-relaxed">
+                      <p className="text-slate-600 text-sm  leading-relaxed">
                         Personalize follow-ups and track replies as they come in
                       </p>
                     </div>
@@ -960,7 +960,7 @@ export default function LinkedInAutomationPage() {
                     setShowCredentialsStep(true);
                   }
                 }}
-                className="px-8 py-3 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-aeonik text-sm"
+                className="px-8 py-3 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm"
               >
                 Sign in with LinkedIn
               </button>
@@ -1010,9 +1010,9 @@ export default function LinkedInAutomationPage() {
             selectedCampaign={
               selectedCampaign
                 ? {
-                    id: selectedCampaign.id.toString(),
-                    name: selectedCampaign.name,
-                  }
+                  id: selectedCampaign.id.toString(),
+                  name: selectedCampaign.name,
+                }
                 : null
             }
             onClearCampaign={() => setSelectedCampaign(null)}

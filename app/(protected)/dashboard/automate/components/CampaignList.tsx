@@ -178,15 +178,15 @@ export function CampaignList({
       <div className="flex flex-col flex-shrink-0 py-2 px-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-2">
           <div className="flex flex-col gap-1 max-w-[320px]">
-            <h2 className="text-xl font-aeonik text-slate-900 tracking-tight">Campaigns</h2>
-            <p className="text-slate-500 text-sm font-aeonik font-light whitespace-nowrap overflow-hidden text-ellipsis">
+            <h2 className="text-xl  text-slate-900 tracking-tight">Campaigns</h2>
+            <p className="text-slate-500 text-sm  font-light whitespace-nowrap overflow-hidden text-ellipsis">
               Manage your campaigns
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-2 sm:mt-0 items-stretch sm:items-center w-full sm:w-auto">
             <button
               onClick={() => !blockActions && setShowNewCampaignModal(true)}
-              className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-aeonik text-sm flex items-center gap-2 w-full sm:w-auto justify-center"
+              className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm flex items-center gap-2 w-full sm:w-auto justify-center"
               disabled={blockActions}
             >
               <PlusIcon className="h-4 w-4" />
@@ -200,11 +200,11 @@ export function CampaignList({
         {loading ? (
           <div className="flex-1 flex flex-col justify-center items-center text-slate-500 p-4">
             <LoadingSpinner className="w-8 h-8 mb-4" />
-            <p className="text-sm text-center max-w-md font-aeonik">Loading campaigns...</p>
+            <p className="text-sm text-center max-w-md ">Loading campaigns...</p>
           </div>
         ) : paginatedCampaigns.length === 0 ? (
           <div className="flex-1 flex flex-col justify-center items-center text-slate-500 p-4">
-            <p className="text-sm text-center max-w-md font-aeonik mb-4">
+            <p className="text-sm text-center max-w-md  mb-4">
               Create your first campaign to start connecting with your ICP
             </p>
           </div>
@@ -224,12 +224,12 @@ export function CampaignList({
               >
                 <div className="flex-1 min-w-0 max-w-[200px]">
                   <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-sm font-aeonik text-slate-900 tracking-tight truncate">
+                    <h3 className="text-sm  text-slate-900 tracking-tight truncate">
                       {campaign.name}
                     </h3>
                     <span
                       className={cn(
-                        "px-2 py-0.5 rounded-full text-[9px] font-medium flex items-center gap-1 font-aeonik tracking-wide",
+                        "px-2 py-0.5 rounded-full text-[9px] font-medium flex items-center gap-1  tracking-wide",
                         campaign.status === "active" && "bg-[#0A66C2]/5 text-[#0A66C2]",
                         campaign.status === "paused" && "bg-slate-50 text-slate-600",
                         campaign.status === "completed" && "bg-slate-50 text-slate-500",
@@ -280,7 +280,7 @@ export function CampaignList({
                         <TooltipTrigger asChild>
                           <div className="flex items-center gap-1.5 cursor-help">
                             <Send className="h-3 w-3 text-slate-500" />
-                            <p className="text-xs font-aeonik font-normal text-slate-900">
+                            <p className="text-xs  font-normal text-slate-900">
                               {campaign.sent}
                             </p>
                           </div>
@@ -289,7 +289,7 @@ export function CampaignList({
                           side="bottom"
                           align="start"
                           sideOffset={5}
-                          className="font-aeonik text-xs"
+                          className=" text-xs"
                         >
                           Total connection requests sent
                         </TooltipContent>
@@ -299,7 +299,7 @@ export function CampaignList({
                         <TooltipTrigger asChild>
                           <div className="flex items-center gap-1.5 cursor-help">
                             <Users className="h-3 w-3 text-slate-500" />
-                            <p className="text-xs font-aeonik font-normal text-slate-900">
+                            <p className="text-xs  font-normal text-slate-900">
                               {campaign.accepted}
                             </p>
                           </div>
@@ -308,7 +308,7 @@ export function CampaignList({
                           side="bottom"
                           align="start"
                           sideOffset={5}
-                          className="font-aeonik text-xs"
+                          className=" text-xs"
                         >
                           Number of accepted connections
                         </TooltipContent>
@@ -318,7 +318,7 @@ export function CampaignList({
                         <TooltipTrigger asChild>
                           <div className="flex items-center gap-1.5 cursor-help">
                             <Clock className="h-3 w-3 text-slate-500" />
-                            <p className="text-xs font-aeonik font-normal text-slate-900">
+                            <p className="text-xs  font-normal text-slate-900">
                               {campaign.invited}
                             </p>
                           </div>
@@ -327,7 +327,7 @@ export function CampaignList({
                           side="bottom"
                           align="start"
                           sideOffset={5}
-                          className="font-aeonik text-xs"
+                          className=" text-xs"
                         >
                           Pending connection requests
                         </TooltipContent>
@@ -337,7 +337,7 @@ export function CampaignList({
                         <TooltipTrigger asChild>
                           <div className="flex items-center gap-1.5 cursor-help">
                             <TrendingUp className="h-3 w-3 text-slate-500" />
-                            <p className="text-[10px] font-inter font-bold text-slate-900">
+                            <p className="text-[10px]  font-bold text-slate-900">
                               {campaign.responseRate}%
                             </p>
                           </div>
@@ -346,7 +346,7 @@ export function CampaignList({
                           side="bottom"
                           align="start"
                           sideOffset={5}
-                          className="font-aeonik text-xs"
+                          className=" text-xs"
                         >
                           Acceptance rate: percentage of sent requests that were accepted
                         </TooltipContent>
@@ -380,7 +380,7 @@ export function CampaignList({
                         }
                       }}
                       className={cn(
-                        "p-1.5 rounded-lg transition-all duration-200 font-aeonik hover:scale-105 text-red-500 hover:bg-red-50",
+                        "p-1.5 rounded-lg transition-all duration-200  hover:scale-105 text-red-500 hover:bg-red-50",
                       )}
                       title="Pause campaign"
                     >
@@ -413,7 +413,7 @@ export function CampaignList({
                         }
                       }}
                       className={cn(
-                        "p-1.5 rounded-lg transition-all duration-200 font-aeonik hover:scale-105 text-[#0A66C2] hover:bg-[#0A66C2]/10",
+                        "p-1.5 rounded-lg transition-all duration-200  hover:scale-105 text-[#0A66C2] hover:bg-[#0A66C2]/10",
                       )}
                       disabled={blockActions}
                       title="Resume campaign"
@@ -426,7 +426,7 @@ export function CampaignList({
                       e.stopPropagation();
                       setDeleteModal({ isOpen: true, campaign });
                     }}
-                    className="p-1.5 rounded-lg transition-all duration-200 font-aeonik hover:scale-105 text-red-500 hover:bg-red-50"
+                    className="p-1.5 rounded-lg transition-all duration-200  hover:scale-105 text-red-500 hover:bg-red-50"
                     title="Delete campaign"
                   >
                     <Trash2 className="h-3 w-3" />
@@ -446,7 +446,7 @@ export function CampaignList({
               onClick={() => handlePageChange(page - 1)}
               disabled={page === 1 || loading}
               className={cn(
-                "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-aeonik transition-all duration-200",
+                "w-8 h-8 rounded-lg flex items-center justify-center text-sm  transition-all duration-200",
                 page === 1 || loading
                   ? "text-slate-300 cursor-not-allowed"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -475,7 +475,7 @@ export function CampaignList({
                     onClick={() => handlePageChange(pageNum)}
                     disabled={loading}
                     className={cn(
-                      "w-8 h-8 rounded-lg text-sm font-aeonik transition-all duration-200",
+                      "w-8 h-8 rounded-lg text-sm  transition-all duration-200",
                       page === pageNum
                         ? "bg-[#0A66C2] text-white"
                         : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -492,7 +492,7 @@ export function CampaignList({
               onClick={() => handlePageChange(page + 1)}
               disabled={page === totalPages || loading}
               className={cn(
-                "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-aeonik transition-all duration-200",
+                "w-8 h-8 rounded-lg flex items-center justify-center text-sm  transition-all duration-200",
                 page === totalPages || loading
                   ? "text-slate-300 cursor-not-allowed"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -526,18 +526,18 @@ function CampaignCard({
 }) {
   return (
     <div
-      className="group p-5 bg-white rounded-2xl border border-black/5 hover:border-[#0A66C2]/10 hover:shadow-lg transition-all duration-200 cursor-pointer"
+      className="group p-5 bg-white rounded-2xl border border-black/10 hover:border-[#0A66C2]/10 hover:shadow-lg transition-all duration-200 cursor-pointer"
       onClick={() => onSelect(campaign)}
     >
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <h3 className="text-lg font-aeonik text-slate-900 truncate tracking-tight">
+            <h3 className="text-lg  text-slate-900 truncate tracking-tight">
               {campaign.name}
             </h3>
             <span
               className={cn(
-                "px-2.5 py-1 rounded-lg text-xs font-medium flex items-center gap-1.5 font-aeonik tracking-wide",
+                "px-2.5 py-1 rounded-lg text-xs font-medium flex items-center gap-1.5  tracking-wide",
                 campaign.status === "active" && "bg-[#0A66C2]/10 text-[#0A66C2]",
                 campaign.status === "paused" && "bg-slate-50 text-slate-600",
                 campaign.status === "completed" && "bg-slate-50 text-slate-500",
@@ -576,18 +576,18 @@ function CampaignCard({
               {campaign.status.charAt(0).toUpperCase() + campaign.status.slice(1)}
             </span>
           </div>
-          <div className="flex items-center gap-5 text-xs text-slate-600 font-aeonik">
+          <div className="flex items-center gap-5 text-xs text-slate-600 ">
             <div className="flex items-center gap-1.5">
               <Send className="h-4 w-4 text-[#0A66C2]" />
-              <span className="font-inter">{campaign.sent} sent</span>
+              <span className="">{campaign.sent} sent</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Users className="h-4 w-4 text-[#0A66C2]" />
-              <span className="font-inter">{campaign.accepted} accepted</span>
+              <span className="">{campaign.accepted} accepted</span>
             </div>
             <div className="flex items-center gap-1.5">
               <TrendingUp className="h-4 w-4 text-[#0A66C2]" />
-              <span className="font-inter">{campaign.responseRate}% response rate</span>
+              <span className="">{campaign.responseRate}% response rate</span>
             </div>
           </div>
         </div>
@@ -621,21 +621,21 @@ function StatusBadge({ status }: { status?: string }) {
   switch (status) {
     case "up":
       return (
-        <span className="inline-flex items-center gap-0.5 px-1 py-0.5 bg-[#0A66C2]/5 text-[#0A66C2] text-[10px] font-medium rounded font-aeonik leading-none">
+        <span className="inline-flex items-center gap-0.5 px-1 py-0.5 bg-[#0A66C2]/5 text-[#0A66C2] text-[10px] font-medium rounded  leading-none">
           <div className="w-1 h-1 rounded-full bg-[#0A66C2] animate-pulse" />
           <span>Active</span>
         </span>
       );
     case "down":
       return (
-        <span className="inline-flex items-center gap-0.5 px-1 py-0.5 bg-slate-50 text-slate-600 text-[10px] font-medium rounded font-aeonik leading-none">
+        <span className="inline-flex items-center gap-0.5 px-1 py-0.5 bg-slate-50 text-slate-600 text-[10px] font-medium rounded  leading-none">
           <div className="w-1 h-1 rounded-full bg-slate-400" />
           <span>Paused</span>
         </span>
       );
     case "completed":
       return (
-        <span className="inline-flex items-center gap-0.5 px-1 py-0.5 bg-slate-50 text-slate-500 text-[10px] font-medium rounded font-aeonik leading-none">
+        <span className="inline-flex items-center gap-0.5 px-1 py-0.5 bg-slate-50 text-slate-500 text-[10px] font-medium rounded  leading-none">
           <svg
             className="w-2 h-2"
             viewBox="0 0 24 24"

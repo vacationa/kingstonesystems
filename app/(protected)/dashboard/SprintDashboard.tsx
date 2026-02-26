@@ -195,11 +195,11 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
 
     if (!isComplete) {
         return (
-            <div className="mt-6 p-5 rounded-2xl border border-slate-200 bg-slate-50 text-center shadow-sm">
+            <div className="mt-6 p-5 rounded-2xl border border-black/10 bg-slate-50 text-center">
                 <p className="text-slate-500 text-sm">
                     Complete all tasks to unlock today's prize
                 </p>
-                <div className="mt-3 px-4 py-2 bg-white border border-slate-200 rounded-xl inline-block shadow-sm">
+                <div className="mt-3 px-4 py-2 bg-white border border-black/10 rounded-xl inline-block">
                     <p className="text-xs text-slate-500 font-medium">
                         {dayData.prize?.name || dayData.prizes?.[0]?.name}
                     </p>
@@ -231,7 +231,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                         <div
                             className="text-slate-600 text-sm leading-relaxed mt-1 max-w-lg prose-a:text-blue-600 prose-a:underline hover:prose-a:text-blue-500 prose-a:transition-colors"
                             dangerouslySetInnerHTML={{
-                                __html: dayData.prize.description.replace(
+                                __html: (dayData.prize?.description || dayData.prizes?.[0]?.description || "").replace(
                                     /\[([^\]]+)\]\(([^)]+)\)/g,
                                     '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: #2563EB; text-decoration: underline; font-weight: 500;">$1</a>'
                                 )
@@ -241,7 +241,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
 
                     {/* Special Inline Form for Day 3 Social Medial Makeover */}
                     {day === 3 && (
-                        <div className="mt-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 shadow-sm">
+                        <div className="mt-4 p-5 rounded-2xl bg-slate-50 border border-black/10 space-y-4">
                             <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                 Start Your Audit
                             </h4>
@@ -287,7 +287,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                                             type="url"
                                             name="linkedin"
                                             placeholder="https://linkedin.com/in/your-profile"
-                                            className={`w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
+                                            className={`w-full bg-white border border-black/10 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
                                         />
                                     </div>
                                     <div>
@@ -296,7 +296,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                                             type="url"
                                             name="instagram"
                                             placeholder="https://instagram.com/your-handle"
-                                            className={`w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
+                                            className={`w-full bg-white border border-black/10 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
                                         />
                                     </div>
                                     <div className="pt-2">
@@ -310,7 +310,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                                             value={auditCode}
                                             onChange={(e) => { setAuditCode(e.target.value); setAuditError(false); }}
                                             placeholder="Enter secret code"
-                                            className={`w-full bg-white border ${auditError ? 'border-red-500' : 'border-slate-200'} text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:outline-none transition-all tracking-widest uppercase`}
+                                            className={`w-full bg-white border ${auditError ? 'border-red-500' : 'border-black/10'} text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:outline-none transition-all tracking-widest uppercase`}
                                         />
                                     </div>
                                 </div>
@@ -344,7 +344,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                     </p>
 
                     {/* Post template copy */}
-                    <div className="bg-white rounded-xl p-4 space-y-2 border border-slate-200 shadow-sm">
+                    <div className="bg-white rounded-xl p-4 space-y-2 border border-black/10">
                         <div className="flex items-center justify-between">
                             <span className="font-mono text-xs text-slate-400 uppercase tracking-widest">Post Template</span>
                             <button
@@ -419,7 +419,7 @@ function DayCard({
 
     return (
         <div
-            className="rounded-2xl border transition-all duration-300 overflow-hidden bg-white shadow-sm"
+            className="rounded-2xl border transition-all duration-300 overflow-hidden bg-white"
             style={{
                 borderColor: isActive ? `${dayData.color}60` : "#E2E8F0",
                 boxShadow: isActive ? `0 8px 32px ${dayData.color}15` : "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
@@ -432,7 +432,7 @@ function DayCard({
             >
                 {/* Day badge */}
                 <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold transition-all shadow-sm"
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold transition-all"
                     style={{
                         background: isComplete ? `${dayData.color}15` : isActive ? `${dayData.color}10` : "#F8FAFC",
                         border: `1.5px solid ${isComplete || isActive ? `${dayData.color}60` : "#E2E8F0"}`,
@@ -469,7 +469,7 @@ function DayCard({
                     <span className="font-mono text-xs font-bold" style={{ color: dayData.color }}>
                         {completedTasks}/{totalTasks}
                     </span>
-                    <div className="w-24 h-1.5 rounded-full bg-slate-100 overflow-hidden border border-slate-200">
+                    <div className="w-24 h-1.5 rounded-full bg-slate-100 overflow-hidden border border-black/10">
                         <div
                             className="h-full rounded-full transition-all duration-500"
                             style={{ width: `${progress}%`, background: dayData.color }}
@@ -507,7 +507,7 @@ function DayCard({
                                         onChange={e => onCheck(task.id, e.target.checked)}
                                     />
                                     <div
-                                        className="w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-200 bg-white shadow-sm"
+                                        className="w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-200 bg-white"
                                         style={{
                                             borderColor: checked[task.id] ? dayData.color : "#E2E8F0",
                                             background: checked[task.id] ? `${dayData.color}15` : "#FFFFFF",
@@ -554,7 +554,7 @@ function DayCard({
 
 function ThirtyDayLockedCard() {
     return (
-        <div className="relative rounded-2xl border border-slate-200 overflow-hidden bg-white p-7 shadow-sm">
+        <div className="relative rounded-2xl border border-black/10 overflow-hidden bg-white p-7">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5 pointer-events-none" />
 
             <div className="relative z-10 space-y-5">
@@ -569,7 +569,7 @@ function ThirtyDayLockedCard() {
                         </h3>
                     </div>
                     <button
-                        className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-slate-500 border border-slate-200 bg-slate-50 cursor-not-allowed whitespace-nowrap shadow-sm"
+                        className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-slate-500 border border-black/10 bg-slate-50 cursor-not-allowed whitespace-nowrap"
                         disabled
                     >
                         Complete the 5-Day Sprint to Unlock
@@ -591,7 +591,7 @@ function ThirtyDayLockedCard() {
                 </ul>
 
                 {/* Refund highlight — full width */}
-                <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold shadow-sm">
+                <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
                     <span className="text-lg">🎁</span>
                     <span>Complete the tracker in 30 days and get a <span className="underline">FULL REFUND</span> on your membership</span>
                 </div>
@@ -609,7 +609,7 @@ function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
     const completedDays = DAYS.filter(d => d.tasks.every(t => checked[t.id])).length;
 
     return (
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm">
+        <div className="bg-white border border-black/10 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             {/* Stats */}
             <div className="flex gap-6 flex-shrink-0">
                 <div>
@@ -634,7 +634,7 @@ function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
                     <span className="text-sm text-slate-700 font-medium">Sprint Progress</span>
                     <span className="font-mono text-xs text-blue-600 font-semibold">{pct}% complete</span>
                 </div>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden flex gap-0.5 border border-slate-200">
+                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden flex gap-0.5 border border-black/10">
                     {DAYS.map((d) => {
                         const dayDone = d.tasks.filter(t => checked[t.id]).length;
                         const dayPct = dayDone / d.tasks.length;
@@ -720,7 +720,7 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                     </div>
                     <button
                         onClick={() => signOutAction()}
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-sm font-semibold hover:bg-slate-50 transition-colors shadow-sm mt-6"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 bg-white text-slate-700 text-sm font-semibold hover:bg-slate-50 transition-colors mt-6"
                     >
                         <LogOut size={16} />
                         <span>Log Out</span>
@@ -736,7 +736,7 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                         <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded-full">Active</span>
                     </button>
                     <button
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 text-slate-500 text-sm cursor-not-allowed bg-white/50 shadow-sm font-medium"
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 text-slate-500 text-sm cursor-not-allowed bg-white/50 font-medium"
                         disabled
                     >
                         <span>30-Day Sprint</span>
@@ -759,7 +759,7 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                     ))}
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-white p-6 space-y-4 shadow-sm">
+                <div className="rounded-2xl border border-black/10 bg-white p-6 space-y-4">
                     <div className="flex items-center gap-2">
                         <h2 className="font-bold text-slate-900 text-lg">
                             Daily Non-Negotiables
@@ -773,7 +773,7 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                             "Iterate your outreach scripts",
                             "Post your daily accountability update",
                         ].map((item) => (
-                            <div key={item} className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 shadow-sm text-slate-700 font-medium text-sm">
+                            <div key={item} className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-black/10 text-slate-700 font-medium text-sm">
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
                                 <span>{item}</span>
                             </div>

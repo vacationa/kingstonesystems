@@ -23,7 +23,7 @@ export const LoginForm = ({ credentials, onChange }: LoginFormProps): JSX.Elemen
     <>
       {/* Email Field */}
       <div className="space-y-2">
-        <Label htmlFor="email" className="${aeonik.variable} font-aeonik">
+        <Label htmlFor="email" className="font-medium text-slate-700">
           LinkedIn Email
         </Label>
         <div className="relative">
@@ -33,7 +33,7 @@ export const LoginForm = ({ credentials, onChange }: LoginFormProps): JSX.Elemen
             placeholder="name@company.com"
             value={credentials.email}
             onChange={handleInputChange("email")}
-            className="pl-10 border-2 focus:border-black transition-colors"
+            className="pl-10 border border-black/10 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all font-sans"
           />
           <div className="absolute left-3 top-2.5 text-gray-500">
             <Mail className="h-5 w-5" aria-hidden="true" />
@@ -43,7 +43,7 @@ export const LoginForm = ({ credentials, onChange }: LoginFormProps): JSX.Elemen
 
       {/* Password Field */}
       <div className="space-y-2">
-        <Label htmlFor="password" className="${aeonik.variable} font-aeonik">
+        <Label htmlFor="password" className="font-medium text-slate-700">
           LinkedIn Password
         </Label>
         <div className="relative">
@@ -53,7 +53,7 @@ export const LoginForm = ({ credentials, onChange }: LoginFormProps): JSX.Elemen
             placeholder="Enter your password"
             value={credentials.password}
             onChange={handleInputChange("password")}
-            className="pl-10 border-2 focus:border-black transition-colors"
+            className="pl-10 border border-black/10 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all font-sans"
           />
           <div className="absolute left-3 top-2.5 text-gray-500">
             <Lock className="h-5 w-5" aria-hidden="true" />
@@ -63,7 +63,7 @@ export const LoginForm = ({ credentials, onChange }: LoginFormProps): JSX.Elemen
 
       {/* Li_a Token Field */}
       <div className="space-y-2">
-        <Label htmlFor="li_at" className="${aeonik.variable} font-aeonik">
+        <Label htmlFor="li_at" className="font-medium text-slate-700">
           li_at
         </Label>
         <div className="relative">
@@ -73,7 +73,7 @@ export const LoginForm = ({ credentials, onChange }: LoginFormProps): JSX.Elemen
             placeholder="Paste your li_at token"
             value={credentials.li_at || ""}
             onChange={handleInputChange("li_at")}
-            className="pl-10 border-2 focus:border-black transition-colors"
+            className="pl-10 border border-black/10 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all font-sans"
           />
           <div className="absolute left-3 top-2.5 text-gray-500">
             <Cookie className="h-5 w-5" />

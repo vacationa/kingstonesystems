@@ -260,20 +260,20 @@ export default function SettingsPage() {
       return (
         <div className="w-full">
           <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl font-aeonik text-gray-900 mb-6 tracking-tight">
+            <h2 className="text-xl  text-gray-900 mb-6 tracking-tight">
               Profile Information
             </h2>
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               {/* Email (read-only) */}
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium font-outfit">
+                <label htmlFor="email" className="text-sm font-medium ">
                   Email
                 </label>
                 <Input
                   id="email"
                   type="email"
                   value={email}
-                  className="border font-outfit bg-gray-100 cursor-not-allowed"
+                  className="border  bg-gray-100 cursor-not-allowed"
                   disabled
                   readOnly
                 />
@@ -285,7 +285,7 @@ export default function SettingsPage() {
 
                 return (
                   <div key={field.id} className="space-y-2">
-                    <label htmlFor={field.id} className="text-sm font-medium font-outfit">
+                    <label htmlFor={field.id} className="text-sm font-medium ">
                       {field.label}
                     </label>
                     <div className="flex gap-2 items-center">
@@ -293,7 +293,7 @@ export default function SettingsPage() {
                         id={field.id}
                         type="text"
                         value={currentValue}
-                        className="border focus:border-black transition-colors font-outfit"
+                        className="border focus:border-black transition-colors "
                         disabled={!isEditing || isLoading}
                         onChange={(e) => handleInputChange(field.id, e.target.value)}
                       />
@@ -315,7 +315,7 @@ export default function SettingsPage() {
                     type="button"
                     disabled={isLoading}
                     onClick={handleSave}
-                    className="w-full px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-outfit text-sm disabled:opacity-50"
+                    className="w-full px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm disabled:opacity-50"
                   >
                     {isLoading ? "Saving..." : "Save Changes"}
                   </button>
@@ -331,7 +331,7 @@ export default function SettingsPage() {
       return (
         <div className="w-full space-y-6">
           <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl font-aeonik text-gray-900 mb-6 tracking-tight">
+            <h2 className="text-xl  text-gray-900 mb-6 tracking-tight">
               LinkedIn Daily Action Limits
             </h2>
 
@@ -341,10 +341,10 @@ export default function SettingsPage() {
                 <div className="flex items-start gap-3">
                   <AlertCircle className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h3 className="font-medium text-gray-900 font-aeonik mb-1">
+                    <h3 className="font-medium text-gray-900  mb-1">
                       Warmup Period Active
                     </h3>
-                    <p className="text-sm text-gray-600 font-outfit">
+                    <p className="text-sm text-gray-600 ">
                       Your account is currently in warmup mode for the first{" "}
                       {daysRemaining > 0
                         ? `${daysRemaining} day${daysRemaining === 1 ? "" : "s"}`
@@ -360,7 +360,7 @@ export default function SettingsPage() {
             <div className={`space-y-6 ${isInWarmup ? "opacity-50 pointer-events-none" : ""}`}>
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 font-outfit">
+                  <label className="text-sm font-medium text-gray-700 ">
                     Connection requests
                   </label>
                   <div className="col-span-2 flex items-center gap-4 w-full py-2">
@@ -375,11 +375,11 @@ export default function SettingsPage() {
                       trackClassName="bg-gradient-to-r from-blue-500 to-indigo-600"
                     />
                     <span className="text-xs text-indigo-600 font-bold ml-2">Ambitious</span>
-                    <span className="text-sm text-gray-500 font-outfit">{connReq}</span>
+                    <span className="text-sm text-gray-500 ">{connReq}</span>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 font-outfit">
+                  <label className="text-sm font-medium text-gray-700 ">
                     Profile visits
                   </label>
                   <div className="col-span-2 flex items-center gap-4 w-full py-2">
@@ -394,11 +394,11 @@ export default function SettingsPage() {
                       trackClassName="bg-gradient-to-r from-blue-500 to-indigo-600"
                     />
                     <span className="text-xs text-indigo-600 font-bold ml-2">Ambitious</span>
-                    <span className="text-sm text-gray-500 font-outfit">{profileVisits}</span>
+                    <span className="text-sm text-gray-500 ">{profileVisits}</span>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 font-outfit">Messages</label>
+                  <label className="text-sm font-medium text-gray-700 ">Messages</label>
                   <div className="col-span-2 flex items-center gap-4 w-full py-2">
                     <span className="text-xs text-blue-600 font-bold mr-2">Conservative</span>
                     <Slider
@@ -411,11 +411,11 @@ export default function SettingsPage() {
                       trackClassName="bg-gradient-to-r from-blue-500 to-indigo-600"
                     />
                     <span className="text-xs text-indigo-600 font-bold ml-2">Ambitious</span>
-                    <span className="text-sm text-gray-500 font-outfit">{messages}</span>
+                    <span className="text-sm text-gray-500 ">{messages}</span>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 font-outfit">InMails</label>
+                  <label className="text-sm font-medium text-gray-700 ">InMails</label>
                   <div className="col-span-2 flex items-center gap-4 w-full py-2">
                     <span className="text-xs text-blue-600 font-bold mr-2">Conservative</span>
                     <Slider
@@ -428,11 +428,11 @@ export default function SettingsPage() {
                       trackClassName="bg-gradient-to-r from-blue-500 to-indigo-600"
                     />
                     <span className="text-xs text-indigo-600 font-bold ml-2">Ambitious</span>
-                    <span className="text-sm text-gray-500 font-outfit">{inmails}</span>
+                    <span className="text-sm text-gray-500 ">{inmails}</span>
                   </div>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 font-outfit mt-4 mb-2">
+              <p className="text-sm text-gray-600  mt-4 mb-2">
                 If you're not sure what to do, select from one of the preset profiles below.
               </p>
               <div className="flex flex-row gap-4 mb-6">
@@ -456,7 +456,7 @@ export default function SettingsPage() {
               <button
                 onClick={handleUpdateLimits}
                 disabled={isLoading || isInWarmup}
-                className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-outfit text-sm disabled:opacity-50"
+                className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm disabled:opacity-50"
               >
                 {isInWarmup ? "Settings locked during warmup" : "Update Limits"}
               </button>
@@ -465,13 +465,13 @@ export default function SettingsPage() {
 
           {/* Blocked Users */}
           <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl font-aeonik text-gray-900 mb-6 tracking-tight">
+            <h2 className="text-xl  text-gray-900 mb-6 tracking-tight">
               Blocked LinkedIn Profiles
             </h2>
 
             <div className="space-y-6">
               <div>
-                <p className="font-outfit text-sm text-gray-500">
+                <p className=" text-sm text-gray-500">
                   Add LinkedIn profile URLs that you want to exclude from automation. These users
                   will be skipped during connection requests and messaging.
                 </p>
@@ -486,12 +486,12 @@ export default function SettingsPage() {
                       setNewBlockedUrl(e.target.value);
                       setUrlError("");
                     }}
-                    className="flex-1 border focus:border-black font-outfit"
+                    className="flex-1 border focus:border-black "
                   />
                   <button
                     onClick={handleAddBlockedUrl}
                     disabled={isLoadingBlocked}
-                    className="px-4 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-outfit text-sm flex items-center gap-2 disabled:opacity-50"
+                    className="px-4 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm flex items-center gap-2 disabled:opacity-50"
                   >
                     <Plus className="h-4 w-4" />
                     {isLoadingBlocked ? "Adding..." : "Add URL"}
@@ -499,7 +499,7 @@ export default function SettingsPage() {
                 </div>
 
                 {urlError && (
-                  <p className="text-sm text-red-500 flex items-center gap-1 font-outfit">
+                  <p className="text-sm text-red-500 flex items-center gap-1 ">
                     <AlertCircle className="h-4 w-4" />
                     {urlError}
                   </p>
@@ -509,7 +509,7 @@ export default function SettingsPage() {
               <div className="space-y-2">
                 {isLoadingUrls ? (
                   <div className="text-center py-8 border border-dashed border-black/10 rounded-xl">
-                    <p className="text-sm text-gray-500 font-outfit">Loading blocked URLs...</p>
+                    <p className="text-sm text-gray-500 ">Loading blocked URLs...</p>
                   </div>
                 ) : (
                   <>
@@ -518,7 +518,7 @@ export default function SettingsPage() {
                         key={index}
                         className="flex items-center justify-between p-3 rounded-xl border border-black/10 bg-white"
                       >
-                        <span className="text-sm font-medium text-gray-700 truncate flex-1 font-outfit">
+                        <span className="text-sm font-medium text-gray-700 truncate flex-1 ">
                           {url}
                         </span>
                         <button
@@ -534,7 +534,7 @@ export default function SettingsPage() {
 
                     {blockedUrls.length === 0 && (
                       <div className="text-center py-8 border border-dashed border-black/10 rounded-xl">
-                        <p className="text-sm text-gray-500 font-outfit">
+                        <p className="text-sm text-gray-500 ">
                           No blocked users added yet
                         </p>
                       </div>
@@ -552,8 +552,8 @@ export default function SettingsPage() {
       return (
         <div className="w-full">
           <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl font-aeonik text-gray-900 mb-4 tracking-tight">Need Help?</h2>
-            <p className="text-gray-600 font-outfit">
+            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Need Help?</h2>
+            <p className="text-gray-600 ">
               If you have any questions, concerns, or need assistance, please don't hesitate to
               reach out to our support team at:{" "}
               <a
@@ -572,15 +572,15 @@ export default function SettingsPage() {
       return (
         <div className="w-full">
           <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl font-aeonik text-gray-900 mb-4 tracking-tight">Logout</h2>
-            <p className="text-gray-600 font-outfit mb-6">
+            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Logout</h2>
+            <p className="text-gray-600  mb-6">
               Are you sure you want to logout? You will need to sign in again to access your
               account.
             </p>
             <button
               onClick={handleLogout}
               disabled={isLoading}
-              className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-outfit text-sm disabled:opacity-50"
+              className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm disabled:opacity-50"
             >
               {isLoading ? "Logging out..." : "Logout"}
             </button>
@@ -594,10 +594,10 @@ export default function SettingsPage() {
       return (
         <div className="w-full">
           <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl font-aeonik text-gray-900 mb-4 tracking-tight">
+            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">
               Manage Your Subscription
             </h2>
-            <p className="text-gray-600 mb-6 font-outfit">
+            <p className="text-gray-600 mb-6 ">
               Manage your subscription, payment methods, and billing history through the Stripe
               customer portal.
             </p>
@@ -608,8 +608,8 @@ export default function SettingsPage() {
                   <CreditCardIcon className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-medium font-outfit">Current Plan: Premium</p>
-                  <p className="text-sm text-gray-500 font-outfit">Active subscription</p>
+                  <p className="font-medium ">Current Plan: Premium</p>
+                  <p className="text-sm text-gray-500 ">Active subscription</p>
                 </div>
               </div>
 
@@ -619,12 +619,12 @@ export default function SettingsPage() {
                 rel="noopener noreferrer"
                 className="block w-full"
               >
-                <span className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200 font-outfit text-sm">
+                <span className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm">
                   Go to Billing Portal
                 </span>
               </a>
 
-              <p className="text-xs text-gray-500 text-center font-outfit">
+              <p className="text-xs text-gray-500 text-center ">
                 You'll be redirected to a secure Stripe page to manage your subscription.
               </p>
             </div>
@@ -642,7 +642,7 @@ export default function SettingsPage() {
 
             return (
               <div key={field.id} className="space-y-2">
-                <label htmlFor={field.id} className="text-sm font-medium font-outfit">
+                <label htmlFor={field.id} className="text-sm font-medium ">
                   {field.label}
                 </label>
                 <div className="flex gap-2 items-center">
@@ -650,7 +650,7 @@ export default function SettingsPage() {
                     id={field.id}
                     type="text"
                     value={currentValue}
-                    className="pr-10 font-outfit"
+                    className="pr-10 "
                     disabled={!isEditing || isLoading}
                     onChange={(e) => handleInputChange(field.id, e.target.value)}
                   />
@@ -672,7 +672,7 @@ export default function SettingsPage() {
                 type="button"
                 disabled={isLoading}
                 onClick={handleSave}
-                className="w-full font-outfit font-bold"
+                className="w-full  font-bold"
               >
                 {isLoading ? "Saving..." : "Save Changes"}
               </button>
@@ -772,12 +772,12 @@ export default function SettingsPage() {
   return (
     <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
       {error && (
-        <div className="p-4 bg-red-50 border border-red-500/50 rounded-xl text-red-800 font-outfit">
+        <div className="p-4 bg-red-50 border border-red-500/50 rounded-xl text-red-800 ">
           {error}
         </div>
       )}
       {success && (
-        <div className="p-4 bg-green-50 border border-green-500/50 rounded-xl text-green-800 font-outfit">
+        <div className="p-4 bg-green-50 border border-green-500/50 rounded-xl text-green-800 ">
           {success}
         </div>
       )}

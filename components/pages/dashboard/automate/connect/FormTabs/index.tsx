@@ -46,12 +46,12 @@ export const FormTabs = ({
             type="button"
             variant="ghost"
             className={cn(
-              "w-full justify-start rounded-lg text-base transition-all font-fraunces",
-              "py-6 px-5 flex items-center gap-4",
-              "hover:bg-[#FFF5EA] hover:text-black hover:scale-[0.98] active:scale-[0.96]",
+              "w-full justify-center rounded-lg text-sm transition-all",
+              "py-3 px-4 flex items-center gap-2",
+              "active:scale-[0.98]",
               isActive
-                ? "bg-gradient-to-r from-[#FFE8D5] via-[#FFF5EA] to-[#FFE8D5] text-black font-medium shadow-[2px_2px_black]"
-                : "bg-black text-white"
+                ? "bg-white text-black font-semibold shadow-sm border border-black/5"
+                : "text-slate-500 hover:text-slate-900 hover:bg-slate-100/50"
             )}
           >
             {icon}
@@ -63,8 +63,8 @@ export const FormTabs = ({
   );
 
   return (
-    <div className="flex justify-center mb-4 rounded-lg overflow-hidden max-w-md mx-auto">
-      <div className="flex bg-black p-1 rounded-xl gap-1">{renderTabs}</div>
+    <div className="flex justify-center mb-6 rounded-lg max-w-md mx-auto">
+      <div className="flex bg-slate-50/50 border border-black/10 p-1.5 rounded-2xl gap-1 w-full">{renderTabs}</div>
     </div>
   );
 };

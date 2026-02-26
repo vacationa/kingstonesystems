@@ -203,11 +203,11 @@ export function MetricsDashboard({
   };
 
   return (
-    <div className="h-full flex flex-col overflow-hidden bg-white rounded-2xl border border-black/5">
+    <div className="h-full flex flex-col overflow-hidden bg-white rounded-2xl border border-black/10">
       <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
         <div className="flex flex-col min-w-[180px]">
-          <h2 className="text-xl font-aeonik text-slate-900 mb-1 tracking-tight">Performance</h2>
-          <p className="text-slate-500 text-sm font-aeonik font-light">Track your growth</p>
+          <h2 className="text-xl  text-slate-900 mb-1 tracking-tight">Performance</h2>
+          <p className="text-slate-500 text-sm  font-light">Track your growth</p>
         </div>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 w-full">
           <div className="flex-1 pl-4">
@@ -260,7 +260,7 @@ export function MetricsDashboard({
           <div className="flex flex-col items-center justify-center gap-1 min-w-[140px] ml-8 py-3 px-4 bg-slate-50/50 rounded-lg border border-slate-100">
             <div className="flex items-center gap-1.5">
               <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#10B981' }}></div>
-              <h3 className="text-xs text-slate-600 font-aeonik font-medium">Network Growth From Tiger</h3>
+              <h3 className="text-xs text-slate-600  font-medium">Network Growth From Tiger</h3>
             </div>
             <div className="text-xl text-slate-900 tracking-tight font-space-grotesk text-center">
               {isLoading ? (
@@ -269,14 +269,14 @@ export function MetricsDashboard({
                 `+${metricsState?.accepted || 0}`
               )}
             </div>
-            <p className="text-xs text-slate-500 font-aeonik text-center leading-tight">
+            <p className="text-xs text-slate-500  text-center leading-tight">
               Total connections made
             </p>
           </div>
         </div>
       </div>
       {error && (
-        <div className="text-slate-600 text-sm p-4 bg-slate-50 border-b border-slate-100 font-aeonik text-center">
+        <div className="text-slate-600 text-sm p-4 bg-slate-50 border-b border-slate-100  text-center">
           <p className="font-medium mb-1">Metrics unavailable</p>
           <p className="text-xs text-slate-500">Please try refreshing the page</p>
         </div>
@@ -293,7 +293,7 @@ interface CardProps {
 function Card({ label, children }: CardProps) {
   return (
     <div className="flex flex-col items-center justify-center gap-1">
-      <h3 className="text-xs text-slate-500 font-aeonik text-center mb-2">{label}</h3>
+      <h3 className="text-xs text-slate-500  text-center mb-2">{label}</h3>
       <div className="text-base text-slate-900 tracking-tight font-space-grotesk text-center mt-1">
         {children}
       </div>

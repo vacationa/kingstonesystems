@@ -2,14 +2,14 @@
  * Represents LinkedIn session cookies.
  */
 export interface Cookies {
-   /**
-   * The `Email` cookie used for session tracking.
-   */
-   email: string;
+  /**
+  * The `Email` cookie used for session tracking.
+  */
+  email: string;
 
-    /**
-   * The `Password` cookie used for session tracking.
-   */
+  /**
+ * The `Password` cookie used for session tracking.
+ */
   password: string;
 
 
@@ -40,4 +40,9 @@ export interface CookiesFormProps {
    * @param value - The new value of the cookie.
    */
   onChange: (key: keyof Cookies, value: string) => void;
+
+  /**
+   * Optional error message to display.
+   */
+  error?: string | null;
 }
