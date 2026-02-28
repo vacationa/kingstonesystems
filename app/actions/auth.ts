@@ -34,7 +34,8 @@ export const signUpAction = async (formData: FormData) => {
   const referralCode = formData.get("referralCode")?.toString();
   const partnerCode = formData.get("partnerCode")?.toString();
 
-  if (partnerCode !== "KingstonePartner26") {
+  const validPartnerCodes = ["Wyneo2026", "PenPaper2026", "LaunchLens2026", "KingstonePartner26"];
+  if (!partnerCode || !validPartnerCodes.includes(partnerCode)) {
     return { error: "Invalid Partner Code" };
   }
 
@@ -99,6 +100,7 @@ export const signUpAction = async (formData: FormData) => {
           last_name: lastName,
           email: email,
           trial_weeks: trialWeeks,
+          partner_code: partnerCode,
         },
       },
     });

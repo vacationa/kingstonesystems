@@ -25,7 +25,7 @@ export default function PartnersPage() {
             tier: "Silver",
             specialty: "Content & Copywriting Automation",
             blurb: "Streamlining content creation, editing, and distribution workflows through custom agentic pipelines for marketing agencies.",
-            link: "#"
+            link: "mailto:ceo@pentopaper.xyz"
         },
         {
             name: "LaunchLens",

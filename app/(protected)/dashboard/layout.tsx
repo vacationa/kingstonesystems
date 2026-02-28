@@ -17,7 +17,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     { name: "Agency Vault", path: "/dashboard/resources", icon: <Database size={20} /> },
     { name: "Automation", path: "/dashboard/automate", icon: <Crown size={20} /> },
     { name: "30-Day Sprint", path: "#", icon: <Lock size={20} />, locked: true },
-    { name: "LinkedIn Settings", path: "/dashboard/settings", icon: <Shield size={20} /> },
+    { name: "Settings", path: "/dashboard/settings", icon: <Shield size={20} /> },
   ];
 
   return (

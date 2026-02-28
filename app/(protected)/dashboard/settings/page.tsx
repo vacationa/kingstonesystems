@@ -5,7 +5,6 @@ import {
   User2Icon,
   MailIcon,
   LogOutIcon,
-  CreditCardIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   Shield,
@@ -32,7 +31,7 @@ interface EditableField {
   value: string;
 }
 
-type TabType = "profile" | "support" | "logout" | "billing" | "guardrails";
+type TabType = "profile" | "support" | "logout" | "guardrails";
 
 function SettingsContent() {
   const user = useUser();
@@ -40,15 +39,11 @@ function SettingsContent() {
   const searchParams = useSearchParams();
   const tabParam = searchParams.get("tab") as TabType | null;
 
-  const billingPortalLink =
-    process.env.NODE_ENV == "development"
-      ? `https://billing.stripe.com/p/login/test_3cs2bc4Km4I52nS3cc?prefilled_email=${user?.user?.email}`
-      : `https://billing.stripe.com/p/login/4gweXFeSa4EOf0k9AA?prefilled_email=${user?.user?.email}`;
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabType>("profile");
 
   useEffect(() => {
-    if (tabParam && ["profile", "support", "logout", "billing", "guardrails"].includes(tabParam)) {
+    if (tabParam && ["profile", "support", "logout", "guardrails"].includes(tabParam)) {
       setActiveTab(tabParam);
     }
   }, [tabParam]);
@@ -559,312 +554,264 @@ function SettingsContent() {
       );
     }
 
-    if (activeTab === "support") {
-      return (
-        <div className="w-full">
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Need Help?</h2>
-            <p className="text-gray-600 ">
-              If you have any questions, concerns, or need assistance, please don't hesitate to
-              reach out to our support team at:{" "}
-              <a
-                href="mailto:help@icptiger.com"
-                className="font-medium text-blue-600 hover:text-blue-700 transition-colors"
-              >
-                help@icptiger.com
-              </a>
-            </p>
-          </div>
-        </div>
-      );
-    }
+    const userMetadata = user.user?.user_metadata || {};
+    const partnerCode = userMetadata.partner_code;
 
-    if (activeTab === "logout") {
-      return (
-        <div className="w-full">
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Logout</h2>
-            <p className="text-gray-600  mb-6">
-              Are you sure you want to logout? You will need to sign in again to access your
-              account.
-            </p>
-            <button
-              onClick={handleLogout}
-              disabled={isLoading}
-              className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm disabled:opacity-50"
-            >
-              {isLoading ? "Logging out..." : "Logout"}
-            </button>
-          </div>
-        </div>
-      );
-    }
-
-    if (activeTab === "billing") {
-      // Use the billingPortalLink to redirect to Stripe
-      return (
-        <div className="w-full">
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">
-              Manage Your Subscription
-            </h2>
-            <p className="text-gray-600 mb-6 ">
-              Manage your subscription, payment methods, and billing history through the Stripe
-              customer portal.
-            </p>
-
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-black/10">
-                <div className="bg-black p-2 rounded-lg">
-                  <CreditCardIcon className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-medium ">Current Plan: Premium</p>
-                  <p className="text-sm text-gray-500 ">Active subscription</p>
-                </div>
-              </div>
-
-              <a
-                href={billingPortalLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full"
-              >
-                <span className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm">
-                  Go to Billing Portal
-                </span>
-              </a>
-
-              <p className="text-xs text-gray-500 text-center ">
-                You'll be redirected to a secure Stripe page to manage your subscription.
-              </p>
-            </div>
-          </div>
-        </div>
-      );
-    }
+    let supportEmail = "adhiraj@kingstonesystems.com";
+    if (partnerCode === "Wyneo2026") supportEmail = "dan@wyneotech.com";
+    else if (partnerCode === "PenPaper2026") supportEmail = "ceo@pentopaper.xyz";
+    else if (partnerCode === "LaunchLens2026") supportEmail = "info@launchlens.xyz";
 
     return (
       <div className="w-full">
-        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-          {fields.map((field) => {
-            const isEditing = editingFields.has(field.id);
-            const currentValue = updatedValues[field.id] ?? field.value;
-
-            return (
-              <div key={field.id} className="space-y-2">
-                <label htmlFor={field.id} className="text-sm font-medium ">
-                  {field.label}
-                </label>
-                <div className="flex gap-2 items-center">
-                  <Input
-                    id={field.id}
-                    type="text"
-                    value={currentValue}
-                    className="pr-10 "
-                    disabled={!isEditing || isLoading}
-                    onChange={(e) => handleInputChange(field.id, e.target.value)}
-                  />
-                  <button
-                    className="h-6 w-6 hover:bg-yellow-400/10 rounded flex items-center justify-center transition-colors disabled:opacity-50"
-                    disabled={isLoading}
-                    onClick={() => handleEdit(field.id)}
-                  >
-                    <Pencil className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-
-          {hasChanges && (
-            <div className="pt-4">
-              <button
-                type="button"
-                disabled={isLoading}
-                onClick={handleSave}
-                className="w-full  font-bold"
-              >
-                {isLoading ? "Saving..." : "Save Changes"}
-              </button>
-            </div>
-          )}
-        </form>
+        <div className="bg-white p-6 rounded-xl border border-black/10">
+          <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Need Help?</h2>
+          <p className="text-gray-600 ">
+            If you have any questions, concerns, or need assistance, please don't hesitate to
+            reach out to our support team at:{" "}
+            <a
+              href={`mailto:${supportEmail}`}
+              className="font-medium text-blue-600 hover:text-blue-700 transition-colors"
+            >
+              {supportEmail}
+            </a>
+          </p>
+        </div>
       </div>
     );
   };
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    dragFree: true,
-    containScroll: "trimSnaps",
-  });
-
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-  const [connLimit, setConnLimit] = useState<number>(20);
-  const [msgLimit, setMsgLimit] = useState<number>(50);
-  const [visitsLimit, setVisitsLimit] = useState<number>(50);
-
-  // Add state for each slider if not already present
-  const [connReq, setConnReq] = useState(20);
-  const [profileVisits, setProfileVisits] = useState(50);
-  const [messages, setMessages] = useState(50);
-  const [inmails, setInmails] = useState(5);
-
-  // Add these preset values
-  const PRESETS = [
-    {
-      label: 'For free, recent or "cold" accounts',
-      description:
-        'Best if you have a free LinkedIn account or a Premium account that\'s "cold" (rarely active, fewer than 2,000 connections)',
-      values: { connReq: 10, profileVisits: 50, messages: 40, inmails: 20 },
-    },
-    {
-      label: "Slow premium account",
-      description:
-        'If you have a "warm" account (>2,000 connections) and use Sales Navigator, Recruiter or Premium',
-      values: { connReq: 20, profileVisits: 150, messages: 100, inmails: 30 },
-    },
-    {
-      label: "Fast premium account",
-      description:
-        "If you have a warm premium account and want to go as fast as possible while remaining safe",
-      values: { connReq: 40, profileVisits: 240, messages: 120, inmails: 30 },
-    },
-  ];
-
-  const handleUpdateLimits = async () => {
-    setIsLoading(true);
-    setError(null);
-    setSuccess(null);
-    try {
-      const res = await fetch("/api/settings", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          max_connections_per_day: connReq,
-          max_message_per_day: messages,
-          total_visits_per_day: profileVisits,
-          max_inmails_per_day: inmails,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Update failed");
-
-      // Оновлюємо локальні стани після успішного збереження
-      setConnLimit(connReq);
-      setMsgLimit(messages);
-      setVisitsLimit(profileVisits);
-
-      setSuccess("Limits updated successfully");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Unknown error");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-  }, [emblaApi, onSelect]);
-
-  return (
-    <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
-      {error && (
-        <div className="p-4 bg-red-50 border border-red-500/50 rounded-xl text-red-800 ">
-          {error}
-        </div>
-      )}
-      {success && (
-        <div className="p-4 bg-green-50 border border-green-500/50 rounded-xl text-green-800 ">
-          {success}
-        </div>
-      )}
-
-      {/* Tab Navigation */}
-      <div className="bg-white p-6 rounded-xl border border-black/10">
-        <div className="flex space-x-1" ref={emblaRef}>
-          <div className="flex">
-            <button
-              onClick={() => setActiveTab("profile")}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                activeTab === "profile"
-                  ? "font-bold text-black"
-                  : "text-gray-600 hover:text-gray-900",
-              )}
-            >
-              <User2Icon className="h-4 w-4" />
-              Profile
-            </button>
-            <button
-              onClick={() => setActiveTab("guardrails")}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                activeTab === "guardrails"
-                  ? "font-bold text-black"
-                  : "text-gray-600 hover:text-gray-900",
-              )}
-            >
-              <Shield className="h-4 w-4" />
-              Guardrails
-            </button>
-            <button
-              onClick={() => setActiveTab("billing")}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                activeTab === "billing"
-                  ? "font-bold text-black"
-                  : "text-gray-600 hover:text-gray-900",
-              )}
-            >
-              <CreditCardIcon className="h-4 w-4" />
-              Billing
-            </button>
-            <button
-              onClick={() => setActiveTab("support")}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                activeTab === "support"
-                  ? "font-bold text-black"
-                  : "text-gray-600 hover:text-gray-900",
-              )}
-            >
-              <MailIcon className="h-4 w-4" />
-              Support
-            </button>
-            <button
-              onClick={() => setActiveTab("logout")}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                activeTab === "logout"
-                  ? "font-bold text-red-600"
-                  : "text-gray-600 hover:text-gray-900",
-              )}
-            >
-              <LogOutIcon className="h-4 w-4" />
-              Logout
-            </button>
-          </div>
+  if (activeTab === "logout") {
+    return (
+      <div className="w-full">
+        <div className="bg-white p-6 rounded-xl border border-black/10">
+          <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Logout</h2>
+          <p className="text-gray-600  mb-6">
+            Are you sure you want to logout? You will need to sign in again to access your
+            account.
+          </p>
+          <button
+            onClick={handleLogout}
+            disabled={isLoading}
+            className="px-6 py-2.5 bg-white text-black border border-black/10 rounded-xl hover:border-black/20 transition-all duration-200  text-sm disabled:opacity-50"
+          >
+            {isLoading ? "Logging out..." : "Logout"}
+          </button>
         </div>
       </div>
+    );
+  }
 
-      {/* Main Content */}
-      {renderMainContent()}
+
+  return (
+    <div className="w-full">
+      <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+        {fields.map((field) => {
+          const isEditing = editingFields.has(field.id);
+          const currentValue = updatedValues[field.id] ?? field.value;
+
+          return (
+            <div key={field.id} className="space-y-2">
+              <label htmlFor={field.id} className="text-sm font-medium ">
+                {field.label}
+              </label>
+              <div className="flex gap-2 items-center">
+                <Input
+                  id={field.id}
+                  type="text"
+                  value={currentValue}
+                  className="pr-10 "
+                  disabled={!isEditing || isLoading}
+                  onChange={(e) => handleInputChange(field.id, e.target.value)}
+                />
+                <button
+                  className="h-6 w-6 hover:bg-yellow-400/10 rounded flex items-center justify-center transition-colors disabled:opacity-50"
+                  disabled={isLoading}
+                  onClick={() => handleEdit(field.id)}
+                >
+                  <Pencil className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          );
+        })}
+
+        {hasChanges && (
+          <div className="pt-4">
+            <button
+              type="button"
+              disabled={isLoading}
+              onClick={handleSave}
+              className="w-full  font-bold"
+            >
+              {isLoading ? "Saving..." : "Save Changes"}
+            </button>
+          </div>
+        )}
+      </form>
     </div>
   );
+};
+
+const [emblaRef, emblaApi] = useEmblaCarousel({
+  dragFree: true,
+  containScroll: "trimSnaps",
+});
+
+const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+
+const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+const [connLimit, setConnLimit] = useState<number>(20);
+const [msgLimit, setMsgLimit] = useState<number>(50);
+const [visitsLimit, setVisitsLimit] = useState<number>(50);
+
+// Add state for each slider if not already present
+const [connReq, setConnReq] = useState(20);
+const [profileVisits, setProfileVisits] = useState(50);
+const [messages, setMessages] = useState(50);
+const [inmails, setInmails] = useState(5);
+
+// Add these preset values
+const PRESETS = [
+  {
+    label: 'For free, recent or "cold" accounts',
+    description:
+      'Best if you have a free LinkedIn account or a Premium account that\'s "cold" (rarely active, fewer than 2,000 connections)',
+    values: { connReq: 10, profileVisits: 50, messages: 40, inmails: 20 },
+  },
+  {
+    label: "Slow premium account",
+    description:
+      'If you have a "warm" account (>2,000 connections) and use Sales Navigator, Recruiter or Premium',
+    values: { connReq: 20, profileVisits: 150, messages: 100, inmails: 30 },
+  },
+  {
+    label: "Fast premium account",
+    description:
+      "If you have a warm premium account and want to go as fast as possible while remaining safe",
+    values: { connReq: 40, profileVisits: 240, messages: 120, inmails: 30 },
+  },
+];
+
+const handleUpdateLimits = async () => {
+  setIsLoading(true);
+  setError(null);
+  setSuccess(null);
+  try {
+    const res = await fetch("/api/settings", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        max_connections_per_day: connReq,
+        max_message_per_day: messages,
+        total_visits_per_day: profileVisits,
+        max_inmails_per_day: inmails,
+      }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Update failed");
+
+    // Оновлюємо локальні стани після успішного збереження
+    setConnLimit(connReq);
+    setMsgLimit(messages);
+    setVisitsLimit(profileVisits);
+
+    setSuccess("Limits updated successfully");
+  } catch (err) {
+    setError(err instanceof Error ? err.message : "Unknown error");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+const onSelect = useCallback(() => {
+  if (!emblaApi) return;
+  setPrevBtnEnabled(emblaApi.canScrollPrev());
+  setNextBtnEnabled(emblaApi.canScrollNext());
+}, [emblaApi]);
+
+useEffect(() => {
+  if (!emblaApi) return;
+  onSelect();
+  emblaApi.on("select", onSelect);
+  emblaApi.on("reInit", onSelect);
+}, [emblaApi, onSelect]);
+
+return (
+  <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
+    {error && (
+      <div className="p-4 bg-red-50 border border-red-500/50 rounded-xl text-red-800 ">
+        {error}
+      </div>
+    )}
+    {success && (
+      <div className="p-4 bg-green-50 border border-green-500/50 rounded-xl text-green-800 ">
+        {success}
+      </div>
+    )}
+
+    {/* Tab Navigation */}
+    <div className="bg-white p-6 rounded-xl border border-black/10">
+      <div className="flex space-x-1" ref={emblaRef}>
+        <div className="flex">
+          <button
+            onClick={() => setActiveTab("profile")}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+              activeTab === "profile"
+                ? "font-bold text-black"
+                : "text-gray-600 hover:text-gray-900",
+            )}
+          >
+            <User2Icon className="h-4 w-4" />
+            Profile
+          </button>
+          <button
+            onClick={() => setActiveTab("guardrails")}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+              activeTab === "guardrails"
+                ? "font-bold text-black"
+                : "text-gray-600 hover:text-gray-900",
+            )}
+          >
+            <Shield className="h-4 w-4" />
+            Guardrails
+          </button>
+          <button
+            onClick={() => setActiveTab("support")}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+              activeTab === "support"
+                ? "font-bold text-black"
+                : "text-gray-600 hover:text-gray-900",
+            )}
+          >
+            <MailIcon className="h-4 w-4" />
+            Support
+          </button>
+          <button
+            onClick={() => setActiveTab("logout")}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+              activeTab === "logout"
+                ? "font-bold text-red-600"
+                : "text-gray-600 hover:text-gray-900",
+            )}
+          >
+            <LogOutIcon className="h-4 w-4" />
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* Main Content */}
+    {renderMainContent()}
+  </div>
+);
 }
 
 export default function SettingsPage() {
