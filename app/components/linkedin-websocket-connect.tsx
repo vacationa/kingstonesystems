@@ -758,7 +758,7 @@ export default function LinkedInWebSocketConnect({
               <div className="flex items-center justify-center h-full">
                 <div className="text-center">
                   <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-gray-400" />
-                  <p className="text-gray-500 font-outfit">Waiting for browser screenshot...</p>
+                  <p className="text-gray-500 ">Waiting for browser screenshot...</p>
                 </div>
               </div>
             ) : (
@@ -805,14 +805,14 @@ export default function LinkedInWebSocketConnect({
         <div className="flex items-center justify-center h-full">
           <div className="text-center">
             <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-gray-400" />
-            <p className="text-gray-500 font-outfit">Logging you in...</p>
+            <p className="text-gray-500 ">Logging you in...</p>
           </div>
         </div>
       ) : (
         <div className="flex items-center justify-center h-full">
           <div className="text-center">
             <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-gray-400" />
-            <p className="text-gray-500 font-outfit">Connecting to browser session...</p>
+            <p className="text-gray-500 ">Connecting to browser session...</p>
           </div>
         </div>
       )}

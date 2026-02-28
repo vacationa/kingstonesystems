@@ -186,7 +186,7 @@ export default function LinkedInVerifyPage() {
           <div className="mt-8 flex justify-center space-x-4">
             <Button
               onClick={handleRetry}
-              className="font-aeonik"
+              className=""
               disabled={isLoading}
             >
               {isLoading ? "Checking..." : "Retry Connection Check"}
@@ -196,7 +196,7 @@ export default function LinkedInVerifyPage() {
               <Button
                 variant="outline"
                 onClick={() => (window.location.href = "/dashboard/scale/connect")}
-                className="font-aeonik"
+                className=""
               >
                 Back to Connection Settings
               </Button>

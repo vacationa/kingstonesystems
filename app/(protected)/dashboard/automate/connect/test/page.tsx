@@ -141,7 +141,7 @@ export default function TestLinkedInVerifyPage() {
       <div className="mt-8 flex justify-center space-x-4">
         <Button
           onClick={handleRetry}
-          className="font-aeonik"
+          className=""
           disabled={isLoading}
         >
           {isLoading ? "Testing..." : "Retry Test"}
@@ -150,7 +150,7 @@ export default function TestLinkedInVerifyPage() {
         <Button
           variant="outline"
           onClick={() => (window.location.href = "/dashboard/scale/connect")}
-          className="font-aeonik"
+          className=""
         >
           Back to Dashboard
         </Button>

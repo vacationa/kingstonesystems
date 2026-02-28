@@ -23,7 +23,7 @@ export function TimeFilter({ selectedRange, onRangeChange, className }: TimeFilt
           key={option.value}
           onClick={() => onRangeChange(option.value)}
           className={cn(
-            "px-3 py-1.5 text-sm font-aeonik font-medium rounded-md transition-all duration-200",
+            "px-3 py-1.5 text-sm  font-medium rounded-md transition-all duration-200",
             selectedRange === option.value
               ? "bg-white text-slate-900 shadow-sm"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"

@@ -45,7 +45,7 @@ export function DeleteCampaignModal({
       <DialogContent className="max-w-md w-[95%] rounded-2xl bg-white p-0 border border-black/10 shadow-lg">
         <DialogHeader>
           <div className="flex flex-col items-start px-6 pt-6">
-            <DialogTitle className="text-xl font-aeonik text-black">
+            <DialogTitle className="text-xl  text-black">
               Delete Campaign
             </DialogTitle>
           </div>
@@ -58,11 +58,11 @@ export function DeleteCampaignModal({
                 <AlertTriangle className="h-5 w-5 text-black/80" strokeWidth={1.25} />
               </div>
               <div className="space-y-2">
-                <DialogDescription className="font-aeonik text-base text-black/80">
+                <DialogDescription className=" text-base text-black/80">
                   Are you sure you want to delete the campaign{" "}
                   <span className="font-medium">"{campaignName}"</span>?
                 </DialogDescription>
-                <DialogDescription className="font-aeonik text-sm text-slate-500">
+                <DialogDescription className=" text-sm text-slate-500">
                   This action cannot be undone. All campaign data, connections, and logs will be
                   permanently deleted.
                 </DialogDescription>
@@ -74,7 +74,7 @@ export function DeleteCampaignModal({
             <Button
               onClick={handleConfirm}
               disabled={isDeleting}
-              className="w-full font-aeonik text-sm py-2.5 rounded-xl"
+              className="w-full  text-sm py-2.5 rounded-xl"
             >
               {isDeleting ? (
                 <>
@@ -91,7 +91,7 @@ export function DeleteCampaignModal({
             <button
               onClick={onClose}
               disabled={isDeleting}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-aeonik text-sm text-slate-600 border border-transparent hover:border-black/10 transition-all duration-200"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl  text-sm text-slate-600 border border-transparent hover:border-black/10 transition-all duration-200"
             >
               Cancel
             </button>

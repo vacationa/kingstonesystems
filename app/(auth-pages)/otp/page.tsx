@@ -125,10 +125,10 @@ function OtpVerificationContent() {
             <img src="/assets/newlogo.png" alt="Kingstone Systems" className="h-10 w-auto rounded-md border border-slate-200 shadow-sm" />
             <span className="text-[17px] font-medium text-slate-900 font-[family-name:var(--font-figtree)]">Kingstone Systems</span>
           </Link>
-          <h1 className={`${aeonik.variable} font-aeonik text-2xl md:text-3xl font-bold text-slate-900 mb-2`}>
+          <h1 className={` text-2xl md:text-3xl font-bold text-slate-900 mb-2`}>
             Email Verification
           </h1>
-          <p className={`${aeonik.variable} font-aeonik font-light text-slate-500 text-base`}>
+          <p className={` font-light text-slate-500 text-base`}>
             Enter the 6-digit code sent to your email
           </p>
         </div>
@@ -158,7 +158,7 @@ function OtpVerificationContent() {
                   ))}
                 </div>
                 {errors.otp && (
-                  <span className={`text-xs text-destructive ${aeonik.variable} font-aeonik text-center block`}>{errors.otp.message}</span>
+                  <span className={`text-xs text-destructive  text-center block`}>{errors.otp.message}</span>
                 )}
               </div>
               {errors.root && (
@@ -169,11 +169,11 @@ function OtpVerificationContent() {
               <SubmitButton
                 pendingText="Verifying..."
                 disabled={isSubmitting}
-                className={`h-11 mt-2 text-sm ${aeonik.variable} font-aeonik bg-blue-700 text-white hover:bg-blue-800 rounded-xl transition-all duration-300 font-semibold shadow-sm`}
+                className={`h-11 mt-2 text-sm  bg-blue-700 text-white hover:bg-blue-800 rounded-xl transition-all duration-300 font-semibold shadow-sm`}
               >
                 Verify Email
               </SubmitButton>
-              <div className={`text-center text-sm ${aeonik.variable} font-aeonik text-slate-600 mt-2`}>
+              <div className={`text-center text-sm  text-slate-600 mt-2`}>
                 Didn't receive the code?{" "}
                 <button
                   type="button"

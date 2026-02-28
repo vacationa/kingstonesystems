@@ -93,11 +93,11 @@ export default function SignUpPage() {
             <span className="text-[17px] font-medium text-slate-900 font-[family-name:var(--font-figtree)]">Kingstone Systems</span>
           </Link>
           <h1
-            className={`${aeonik.variable} font-aeonik text-2xl md:text-3xl font-bold text-slate-900 mb-2`}
+            className={` text-2xl md:text-3xl font-bold text-slate-900 mb-2`}
           >
             Partner <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">Registration</span>
           </h1>
-          <p className={`${aeonik.variable} font-aeonik font-light text-slate-500 text-base`}>
+          <p className={` font-light text-slate-500 text-base`}>
             Create your internal account to access the mission control dashboard.
           </p>
         </div>
@@ -109,7 +109,7 @@ export default function SignUpPage() {
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="firstName"
-                    className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
+                    className={`text-sm  text-slate-700 font-semibold`}
                   >
                     First Name
                   </Label>
@@ -121,7 +121,7 @@ export default function SignUpPage() {
                     {...register("firstName")}
                   />
                   {errors.firstName && (
-                    <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
+                    <span className={`text-xs text-red-500 `}>
                       {errors.firstName.message}
                     </span>
                   )}
@@ -129,7 +129,7 @@ export default function SignUpPage() {
                 <div className="space-y-1.5">
                   <Label
                     htmlFor="lastName"
-                    className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
+                    className={`text-sm  text-slate-700 font-semibold`}
                   >
                     Last Name
                   </Label>
@@ -141,7 +141,7 @@ export default function SignUpPage() {
                     {...register("lastName")}
                   />
                   {errors.lastName && (
-                    <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
+                    <span className={`text-xs text-red-500 `}>
                       {errors.lastName.message}
                     </span>
                   )}
@@ -151,7 +151,7 @@ export default function SignUpPage() {
               <div className="space-y-1.5">
                 <Label
                   htmlFor="email"
-                  className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
+                  className={`text-sm  text-slate-700 font-semibold`}
                 >
                   Email
                 </Label>
@@ -163,7 +163,7 @@ export default function SignUpPage() {
                   {...register("email")}
                 />
                 {errors.email && (
-                  <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
+                  <span className={`text-xs text-red-500 `}>
                     {errors.email.message}
                   </span>
                 )}
@@ -172,7 +172,7 @@ export default function SignUpPage() {
               <div className="space-y-1.5">
                 <Label
                   htmlFor="password"
-                  className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
+                  className={`text-sm  text-slate-700 font-semibold`}
                 >
                   Password
                 </Label>
@@ -200,7 +200,7 @@ export default function SignUpPage() {
                   </Button>
                 </div>
                 {errors.password && (
-                  <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
+                  <span className={`text-xs text-red-500 `}>
                     {errors.password.message}
                   </span>
                 )}
@@ -209,7 +209,7 @@ export default function SignUpPage() {
               <div className="space-y-1.5">
                 <Label
                   htmlFor="partnerCode"
-                  className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
+                  className={`text-sm  text-slate-700 font-semibold`}
                 >
                   Partner Code
                 </Label>
@@ -221,7 +221,7 @@ export default function SignUpPage() {
                   {...register("partnerCode")}
                 />
                 {errors.partnerCode && (
-                  <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
+                  <span className={`text-xs text-red-500 `}>
                     {errors.partnerCode.message}
                   </span>
                 )}
@@ -241,12 +241,12 @@ export default function SignUpPage() {
               <SubmitButton
                 pendingText="Creating partner account..."
                 disabled={isSubmitting}
-                className={`h-11 mt-2 text-sm ${aeonik.variable} font-aeonik bg-blue-700 text-white hover:bg-blue-800 rounded-xl transition-all duration-300 font-semibold shadow-sm`}
+                className={`h-11 mt-2 text-sm  bg-blue-700 text-white hover:bg-blue-800 rounded-xl transition-all duration-300 font-semibold shadow-sm`}
               >
                 Create Partner Account
               </SubmitButton>
 
-              <p className={`text-center text-sm ${aeonik.variable} font-aeonik text-slate-600 mt-2`}>
+              <p className={`text-center text-sm  text-slate-600 mt-2`}>
                 Already have an account?{" "}
                 <Link href="/partner-login" className="text-blue-700 font-medium hover:underline">
                   Sign in

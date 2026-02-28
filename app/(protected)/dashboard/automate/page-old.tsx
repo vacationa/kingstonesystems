@@ -327,7 +327,7 @@ export default function LinkedInAutomationPage() {
               </div>
               <button
                 type="submit"
-                className="w-full mt-6 font-aeonik text-base px-6 py-3 !bg-[#0A66C2] !text-white hover:!bg-[#0A66C2]/90 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] !border-none disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full mt-6 text-base px-6 py-3 !bg-[#0A66C2] !text-white hover:!bg-[#0A66C2]/90 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] !border-none disabled:opacity-60 disabled:cursor-not-allowed"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Connecting..." : "Connect LinkedIn Account"}
@@ -390,7 +390,7 @@ export default function LinkedInAutomationPage() {
   const handleCampaignCreated = () => {
     // clear out old campaigns so the list remounts with a fresh key
     setCampaigns([]);
-    setReloadKey(k => k +1);
+    setReloadKey(k => k + 1);
   };
 
   return (
@@ -406,7 +406,7 @@ export default function LinkedInAutomationPage() {
           {/* Active Campaigns */}
           <div className="h-[calc(100vh-18rem)]">
             <CampaignList
-              key={reloadKey}  
+              key={reloadKey}
               campaigns={campaigns}
               setCampaigns={setCampaigns}
               onToggleCampaign={handleToggleCampaign}
@@ -424,7 +424,7 @@ export default function LinkedInAutomationPage() {
       <CampaignModal
         showModal={showNewCampaignModal}
         onClose={() => setShowNewCampaignModal(false)}
-        onSuccess={handleCampaignCreated} 
+        onSuccess={handleCampaignCreated}
         campaignData={campaignData}
         setCampaignData={setCampaignData}
         currentStep={currentStep}

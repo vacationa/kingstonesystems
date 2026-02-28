@@ -387,7 +387,7 @@ export function LinkedInIframeSimple() {
             <CheckCircle className="w-8 h-8 text-green-600" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Successfully Connected!</h2>
-          <p className="text-gray-600 mb-4">Your LinkedIn account is now connected to Tiger</p>
+          <p className="text-gray-600 mb-4">Your LinkedIn account is now connected</p>
           <div className="animate-pulse text-sm text-gray-500">Redirecting to dashboard...</div>
         </div>
       </div>

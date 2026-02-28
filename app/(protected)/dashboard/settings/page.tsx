@@ -16,7 +16,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { useUser } from "@/context/user-context";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { signOutUser } from "@/app/actions/auth";
@@ -24,6 +24,7 @@ import { cn } from "@/lib/utils";
 import { createClient } from "@/utils/supabase/server";
 import { Slider } from "@/components/ui/slider";
 import { useWarmupStatus } from "@/components/hooks/useWarmupStatus";
+import { Suspense } from "react";
 
 interface EditableField {
   id: "first_name" | "last_name";
@@ -33,15 +34,25 @@ interface EditableField {
 
 type TabType = "profile" | "support" | "logout" | "billing" | "guardrails";
 
-export default function SettingsPage() {
+function SettingsContent() {
   const user = useUser();
   const { isInWarmup, daysRemaining, isLoading: warmupLoading } = useWarmupStatus();
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab") as TabType | null;
+
   const billingPortalLink =
     process.env.NODE_ENV == "development"
       ? `https://billing.stripe.com/p/login/test_3cs2bc4Km4I52nS3cc?prefilled_email=${user?.user?.email}`
       : `https://billing.stripe.com/p/login/4gweXFeSa4EOf0k9AA?prefilled_email=${user?.user?.email}`;
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabType>("profile");
+
+  useEffect(() => {
+    if (tabParam && ["profile", "support", "logout", "billing", "guardrails"].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, [tabParam]);
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
@@ -853,5 +864,17 @@ export default function SettingsPage() {
       {/* Main Content */}
       {renderMainContent()}
     </div>
+  );
+}
+
+export default function SettingsPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    }>
+      <SettingsContent />
+    </Suspense>
   );
 }

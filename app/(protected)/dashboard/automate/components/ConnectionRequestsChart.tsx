@@ -123,20 +123,20 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
 
       return (
         <div className="bg-white border border-black/10 rounded-lg px-3 py-2 shadow-lg">
-          <p className="font-aeonik text-sm text-slate-900 mb-1">{label}</p>
+          <p className="text-sm text-slate-900 mb-1">{label}</p>
           {sentData && (
-            <p className="font-aeonik text-xs text-black">Requests Sent: {sentData.value}</p>
+            <p className="text-xs text-black">Requests Sent: {sentData.value}</p>
           )}
           {acceptedData && (
-            <p className="font-aeonik text-xs text-black">
-              Connections Made With Tiger: {acceptedData.value}
+            <p className="text-xs text-black">
+              Connections Made: {acceptedData.value}
             </p>
           )}
           {messagesData && (
-            <p className="font-aeonik text-xs text-black">Messages Sent: {messagesData.value}</p>
+            <p className="text-xs text-black">Messages Sent: {messagesData.value}</p>
           )}
           {responsesData && (
-            <p className="font-aeonik text-xs text-black">
+            <p className="text-xs text-black">
               Responses Received: {responsesData.value}
             </p>
           )}
@@ -151,10 +151,10 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       <div className="bg-white rounded-2xl border border-black/5">
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
           <div className="flex flex-col min-w-[180px]">
-            <h2 className="text-xl font-aeonik text-slate-900 mb-1 tracking-tight">
+            <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
               Daily Connection Activity
             </h2>
-            <p className="text-slate-500 text-sm font-aeonik font-light">
+            <p className="text-slate-500 text-sm font-light">
               {selectedCampaignId
                 ? "Last 7 days (selected campaign)"
                 : "Last 7 days (all campaigns)"}
@@ -175,10 +175,10 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       <div className="bg-white rounded-2xl border border-black/5">
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
           <div className="flex flex-col min-w-[180px]">
-            <h2 className="text-xl font-aeonik text-slate-900 mb-1 tracking-tight">
+            <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
               Daily Connection Activity
             </h2>
-            <p className="text-slate-500 text-sm font-aeonik font-light">
+            <p className="text-slate-500 text-sm font-light">
               {selectedCampaignId
                 ? "Last 7 days (selected campaign)"
                 : "Last 7 days (all campaigns)"}
@@ -187,7 +187,7 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
         </div>
         <div className="px-6 pb-6">
           <div className="h-48 flex items-center justify-center">
-            <p className="text-slate-400 text-sm font-aeonik">{error}</p>
+            <p className="text-slate-400 text-sm">{error}</p>
           </div>
         </div>
       </div>
@@ -206,10 +206,10 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       <div className="bg-white rounded-2xl border border-black/5">
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
           <div className="flex flex-col min-w-[180px]">
-            <h2 className="text-xl font-aeonik text-slate-900 mb-1 tracking-tight">
+            <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
               Daily Connection Activity
             </h2>
-            <p className="text-slate-500 text-sm font-aeonik font-light">
+            <p className="text-slate-500 text-sm font-light">
               {selectedCampaignId
                 ? "Last 7 days (selected campaign)"
                 : "Last 7 days (all campaigns)"}
@@ -218,7 +218,7 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
         </div>
         <div className="px-6 pb-6">
           <div className="h-48 flex items-center justify-center">
-            <p className="text-slate-400 text-sm font-aeonik">
+            <p className="text-slate-400 text-sm">
               No connection activity data available
             </p>
           </div>
@@ -232,23 +232,23 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       {/* Header - matches MetricsDashboard pattern */}
       <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between py-2 px-4 flex-shrink-0 gap-6">
         <div className="flex flex-col min-w-[180px]">
-          <h2 className="text-xl font-aeonik text-slate-900 mb-1 tracking-tight">
+          <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
             Daily Connection Activity
           </h2>
-          <p className="text-slate-500 text-sm font-aeonik font-light">
+          <p className="text-slate-500 text-sm font-light">
             {selectedCampaignId
               ? `Last ${timeRange === "7d" ? "7" : timeRange === "30d" ? "30" : "90"} days (selected campaign)`
               : `Last ${timeRange === "7d" ? "7" : timeRange === "30d" ? "30" : "90"} days (all campaigns)`}
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-3 text-xs font-aeonik">
+        <div className="flex flex-wrap items-center gap-3 text-xs">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded" style={{ backgroundColor: "#3B82F6" }}></div>
             <span className="text-slate-600">Requests Sent</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded" style={{ backgroundColor: "#10B981" }}></div>
-            <span className="text-slate-600">Connections Made With Tiger</span>
+            <span className="text-slate-600">Connections Made</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded" style={{ backgroundColor: "#8B5CF6" }}></div>
@@ -281,7 +281,6 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
                 tick={{
                   fontSize: 12,
                   fill: "#6B7280",
-                  fontFamily: "var(--font-aeonik)",
                 }}
               />
               <YAxis
@@ -290,7 +289,6 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
                 tick={{
                   fontSize: 12,
                   fill: "#6B7280",
-                  fontFamily: "var(--font-aeonik)",
                 }}
                 domain={[0, yAxisMax]}
                 width={30}
@@ -310,7 +308,7 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
                 fill="#10B981"
                 radius={[4, 4, 0, 0]}
                 maxBarSize={25}
-                name="Connections Made With Tiger"
+                name="Connections Made"
               />
               <Bar
                 dataKey="messages"
@@ -333,29 +331,29 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
         {/* Summary stats */}
         <div className="mt-4 pt-4 border-t border-black/5">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 text-sm">
-            <span className="text-slate-500 font-aeonik font-light">Total this week</span>
+            <span className="text-slate-500 font-light">Total this week</span>
             <div className="flex flex-wrap items-center gap-4 text-xs">
               <div className="flex items-center gap-1.5">
                 <div className="w-3 h-3 rounded" style={{ backgroundColor: "#3B82F6" }}></div>
-                <span className="font-aeonik text-slate-900 font-medium">
+                <span className="text-slate-900 font-medium">
                   {data.reduce((sum, day) => sum + day.sent, 0)}
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
                 <div className="w-3 h-3 rounded" style={{ backgroundColor: "#10B981" }}></div>
-                <span className="font-aeonik text-slate-900 font-medium">
+                <span className="text-slate-900 font-medium">
                   {data.reduce((sum, day) => sum + day.accepted, 0)}
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
                 <div className="w-3 h-3 rounded" style={{ backgroundColor: "#8B5CF6" }}></div>
-                <span className="font-aeonik text-slate-900 font-medium">
+                <span className="text-slate-900 font-medium">
                   {data.reduce((sum, day) => sum + day.messages, 0)}
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
                 <div className="w-3 h-3 rounded" style={{ backgroundColor: "#F59E0B" }}></div>
-                <span className="font-aeonik text-slate-900 font-medium">
+                <span className="text-slate-900 font-medium">
                   {data.reduce((sum, day) => sum + (day.responses || 0), 0)}
                 </span>
               </div>

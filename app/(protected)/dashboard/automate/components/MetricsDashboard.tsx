@@ -11,7 +11,9 @@ import {
   UserPlus,
   Handshake,
   BarChart3,
+  Shield,
 } from "lucide-react";
+import Link from "next/link";
 import { LoadingDots, LoadingSpinner } from "@/components/ui/loading";
 import { useRealtime } from "@/app/context/realtime-context";
 import PostHogClient from "@/lib/posthog";
@@ -206,8 +208,21 @@ export function MetricsDashboard({
     <div className="h-full flex flex-col overflow-hidden bg-white rounded-2xl border border-black/10">
       <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
         <div className="flex flex-col min-w-[180px]">
-          <h2 className="text-xl  text-slate-900 mb-1 tracking-tight">Performance</h2>
-          <p className="text-slate-500 text-sm  font-light">Track your growth</p>
+          <div className="flex items-center gap-2 mb-1">
+            <h2 className="text-xl text-slate-900 tracking-tight">Performance</h2>
+            <Link
+              href="/dashboard/settings?tab=guardrails"
+              className="p-1.5 hover:bg-slate-100 rounded-lg transition-colors text-slate-400 hover:text-blue-600 group relative"
+              title="LinkedIn Limits & Settings"
+            >
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full absolute -top-0.5 -right-0.5 animate-pulse" />
+              <Shield size={16} />
+              <span className="absolute left-1/2 -bottom-8 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+                LinkedIn Limits
+              </span>
+            </Link>
+          </div>
+          <p className="text-slate-500 text-sm font-light">Track your growth</p>
         </div>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 w-full">
           <div className="flex-1 pl-4">
@@ -260,9 +275,9 @@ export function MetricsDashboard({
           <div className="flex flex-col items-center justify-center gap-1 min-w-[140px] ml-8 py-3 px-4 bg-slate-50/50 rounded-lg border border-slate-100">
             <div className="flex items-center gap-1.5">
               <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#10B981' }}></div>
-              <h3 className="text-xs text-slate-600  font-medium">Network Growth From Tiger</h3>
+              <h3 className="text-xs text-slate-600 font-medium whitespace-nowrap">Network Growth</h3>
             </div>
-            <div className="text-xl text-slate-900 tracking-tight font-space-grotesk text-center">
+            <div className="text-xl text-slate-900 tracking-tight text-center font-semibold">
               {isLoading ? (
                 <LoadingDots size="sm" color="primary" />
               ) : (
@@ -294,7 +309,7 @@ function Card({ label, children }: CardProps) {
   return (
     <div className="flex flex-col items-center justify-center gap-1">
       <h3 className="text-xs text-slate-500  text-center mb-2">{label}</h3>
-      <div className="text-base text-slate-900 tracking-tight font-space-grotesk text-center mt-1">
+      <div className="text-base text-slate-900 tracking-tight text-center mt-1 font-semibold">
         {children}
       </div>
     </div>

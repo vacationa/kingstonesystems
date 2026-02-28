@@ -360,10 +360,10 @@ export function CampaignDetails({
       <div className="flex flex-col flex-shrink-0 py-2 px-4 h-20">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-2">
           <div className="flex flex-col gap-1 max-w-[320px] min-w-0">
-            <h2 className="text-xl font-aeonik text-slate-900 tracking-tight truncate">
+            <h2 className="text-xl  text-slate-900 tracking-tight truncate">
               {campaign.name}
             </h2>
-            <p className="text-slate-500 text-sm font-aeonik font-light whitespace-nowrap overflow-hidden text-ellipsis">
+            <p className="text-slate-500 text-sm  font-light whitespace-nowrap overflow-hidden text-ellipsis">
               View and manage your campaign
             </p>
           </div>
@@ -372,7 +372,7 @@ export function CampaignDetails({
               <button
                 onClick={() => setActiveTab("contacts")}
                 className={cn(
-                  "px-4 py-2 text-sm font-aeonik font-medium transition-all duration-200 rounded-lg flex-1 sm:flex-none sm:min-w-[100px]",
+                  "px-4 py-2 text-sm  font-medium transition-all duration-200 rounded-lg flex-1 sm:flex-none sm:min-w-[100px]",
                   activeTab === "contacts"
                     ? "bg-white text-slate-900 shadow-sm"
                     : "text-slate-500 hover:text-slate-700",
@@ -383,7 +383,7 @@ export function CampaignDetails({
               <button
                 onClick={() => setActiveTab("settings")}
                 className={cn(
-                  "px-4 py-2 text-sm font-aeonik font-medium transition-all duration-200 rounded-lg flex-1 sm:flex-none sm:min-w-[100px]",
+                  "px-4 py-2 text-sm  font-medium transition-all duration-200 rounded-lg flex-1 sm:flex-none sm:min-w-[100px]",
                   activeTab === "settings"
                     ? "bg-white text-slate-900 shadow-sm"
                     : "text-slate-500 hover:text-slate-700",
@@ -411,10 +411,10 @@ export function CampaignDetails({
                     <div className="w-12 h-12 bg-[#0A66C2]/10 rounded-full flex items-center justify-center mb-3">
                       <Users className="h-6 w-6 text-[#0A66C2]" />
                     </div>
-                    <p className="text-sm font-aeonik font-medium text-slate-700 mb-1">
+                    <p className="text-sm  font-medium text-slate-700 mb-1">
                       Your campaign is starting soon
                     </p>
-                    <p className="text-xs font-aeonik text-slate-500 text-center max-w-xs">
+                    <p className="text-xs  text-slate-500 text-center max-w-xs">
                       We'll begin connecting with your target audience according to your campaign
                       schedule
                     </p>
@@ -429,7 +429,7 @@ export function CampaignDetails({
                         {/* Left: Name, Headline, Company */}
                         <div className="flex flex-col min-w-0">
                           <div className="flex items-center gap-1.5 mb-0.5">
-                            <p className="text-sm font-bold text-slate-900 font-aeonik truncate">
+                            <p className="text-sm font-bold text-slate-900  truncate">
                               {person.name}
                             </p>
                             <a
@@ -442,10 +442,10 @@ export function CampaignDetails({
                               <ExternalLink className="h-3 w-3" />
                             </a>
                           </div>
-                          {/* <p className="text-xs text-slate-500 font-aeonik truncate">
+                          {/* <p className="text-xs text-slate-500  truncate">
                           {person.headline}
                         </p> */}
-                          <p className="text-xs text-slate-400 font-aeonik truncate mt-0.5">
+                          <p className="text-xs text-slate-400  truncate mt-0.5">
                             {person.company}
                           </p>
                         </div>
@@ -454,7 +454,7 @@ export function CampaignDetails({
                         <div className="flex items-center gap-3 ml-4 flex-shrink-0">
                           <span
                             className={cn(
-                              "px-2 py-1 rounded-full text-xs font-medium font-aeonik",
+                              "px-2 py-1 rounded-full text-xs font-medium ",
                               person.status === "queued" && "bg-blue-50 text-blue-600",
                               (person.status === "invited" || person.status === "pending") &&
                                 "bg-slate-100 text-slate-700",
@@ -525,7 +525,7 @@ export function CampaignDetails({
               <div className="space-y-8">
                 {/* Settings */}
                 <div className="bg-white rounded-2xl p-6 shadow-sm">
-                  <h4 className="text-xs font-aeonik font-medium text-slate-700 uppercase tracking-wide mb-4">
+                  <h4 className="text-xs  font-medium text-slate-700 uppercase tracking-wide mb-4">
                     Settings
                   </h4>
                   <div className="grid grid-cols-2 gap-y-3">
@@ -566,7 +566,7 @@ export function CampaignDetails({
                                   href={campaign.linkedin_url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="truncate text-slate-600 text-sm hover:text-[#0A66C2] transition-colors flex-1 font-aeonik"
+                                  className="truncate text-slate-600 text-sm hover:text-[#0A66C2] transition-colors flex-1 "
                                   title={campaign.linkedin_url}
                                 >
                                   {formatUrlForDisplay(String(campaign.linkedin_url))}
@@ -665,19 +665,19 @@ export function CampaignDetails({
                 </div>
                 {/* Messages */}
                 <div className="bg-white rounded-2xl p-6 shadow-sm">
-                  <h4 className="text-xs font-aeonik font-medium text-slate-700 uppercase tracking-wide mb-4">
+                  <h4 className="text-xs  font-medium text-slate-700 uppercase tracking-wide mb-4">
                     Messages & Timing
                   </h4>
                   <div className="space-y-4">
                     <div>
                       <p className="text-xs text-slate-500 mb-2 font-medium">Connection Message</p>
-                      <div className="bg-slate-50 p-3 rounded border text-sm text-slate-900 font-aeonik whitespace-pre-line">
+                      <div className="bg-slate-50 p-3 rounded border text-sm text-slate-900  whitespace-pre-line">
                         {campaign.connection_message}
                       </div>
                     </div>
                     <div>
                       <p className="text-xs text-slate-500 mb-2 font-medium">Follow-up Message</p>
-                      <div className="bg-slate-50 p-3 rounded border text-sm text-slate-900 font-aeonik whitespace-pre-line">
+                      <div className="bg-slate-50 p-3 rounded border text-sm text-slate-900  whitespace-pre-line">
                         {campaign.follow_up_message}
                       </div>
                       <div className="mt-2 flex items-center gap-2 text-xs text-slate-500">
@@ -690,7 +690,7 @@ export function CampaignDetails({
                     </div>
                     <div>
                       <p className="text-xs text-slate-500 mb-2 font-medium">Second Follow-up</p>
-                      <div className="bg-slate-50 p-3 rounded border text-sm text-slate-900 font-aeonik whitespace-pre-line">
+                      <div className="bg-slate-50 p-3 rounded border text-sm text-slate-900  whitespace-pre-line">
                         {campaign.second_follow_up_message}
                       </div>
                       <div className="mt-2 flex items-center gap-2 text-xs text-slate-500">
@@ -718,7 +718,7 @@ export function CampaignDetails({
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage <= 1 || loading || totalPages <= 1}
               className={cn(
-                "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-aeonik transition-all duration-200",
+                "w-8 h-8 rounded-lg flex items-center justify-center text-sm  transition-all duration-200",
                 currentPage <= 1 || loading || totalPages <= 1
                   ? "text-slate-300 cursor-not-allowed"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -748,7 +748,7 @@ export function CampaignDetails({
                       onClick={() => handlePageChange(pageNum)}
                       disabled={loading}
                       className={cn(
-                        "w-8 h-8 rounded-lg text-sm font-aeonik transition-all duration-200",
+                        "w-8 h-8 rounded-lg text-sm  transition-all duration-200",
                         currentPage === pageNum
                           ? "bg-[#0A66C2] text-white"
                           : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -759,7 +759,7 @@ export function CampaignDetails({
                   );
                 })
               ) : (
-                <div className="text-sm text-slate-400 font-aeonik px-4">
+                <div className="text-sm text-slate-400  px-4">
                   {totalCount > 0
                     ? `${totalCount} contact${totalCount !== 1 ? "s" : ""}`
                     : "No contacts yet"}
@@ -772,7 +772,7 @@ export function CampaignDetails({
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage >= totalPages || loading || totalPages <= 1}
               className={cn(
-                "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-aeonik transition-all duration-200",
+                "w-8 h-8 rounded-lg flex items-center justify-center text-sm  transition-all duration-200",
                 currentPage >= totalPages || loading || totalPages <= 1
                   ? "text-slate-300 cursor-not-allowed"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -787,7 +787,7 @@ export function CampaignDetails({
       <div className="flex items-center justify-between px-6 py-4 border-t border-black/5 h-16 flex-shrink-0">
         <button
           onClick={onBack}
-          className="px-3 py-2 text-sm text-slate-600 hover:text-slate-900 transition-colors font-aeonik font-medium flex items-center gap-2"
+          className="px-3 py-2 text-sm text-slate-600 hover:text-slate-900 transition-colors  font-medium flex items-center gap-2"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Campaigns
@@ -807,14 +807,14 @@ export function CampaignDetails({
                 );
               }}
               className={cn(
-                "px-3 py-2 text-sm transition-colors font-aeonik font-medium flex items-center gap-2 text-slate-600 hover:text-slate-900",
+                "px-3 py-2 text-sm transition-colors  font-medium flex items-center gap-2 text-slate-600 hover:text-slate-900",
               )}
             >
               <Pause className="h-4 w-4" />
               Pause Campaign
             </button>
           ) : localCampaign.status === "queued" ? (
-            <span className="text-sm text-slate-500 font-aeonik">
+            <span className="text-sm text-slate-500 ">
               Scheduled to start at {formatDateTime(String(localCampaign.start_date))}
             </span>
           ) : null}
@@ -824,7 +824,7 @@ export function CampaignDetails({
               e.stopPropagation();
               setDeleteModal({ isOpen: true, campaign: localCampaign });
             }}
-            className="px-3 py-2 text-sm text-red-500 hover:text-red-700 transition-colors font-aeonik font-medium flex items-center gap-2"
+            className="px-3 py-2 text-sm text-red-500 hover:text-red-700 transition-colors  font-medium flex items-center gap-2"
             title="Delete campaign"
           >
             <Trash2 className="h-4 w-4" />

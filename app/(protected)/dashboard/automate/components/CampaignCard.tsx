@@ -45,10 +45,10 @@ export function CampaignCard({ campaign, onToggle, onSelect }: CampaignCardProps
       <div className="flex items-center justify-between">
         <div className="flex-1 min-w-0 max-w-[200px]">
           <div className="flex items-center gap-2 mb-2">
-            <h3 className="font-medium font-fraunces truncate">{campaign.name}</h3>
+            <h3 className="font-semibold truncate">{campaign.name}</h3>
             <span
               className={cn(
-                "px-2 py-0.5 rounded-lg text-xs font-medium flex items-center gap-1 font-aeonik",
+                "px-2 py-0.5 rounded-lg text-xs font-medium flex items-center gap-1",
                 displayStatus === "active" && "bg-[#0A66C2]/10 text-[#0A66C2]",
                 displayStatus === "paused" && "bg-slate-100 text-slate-600",
                 displayStatus === "queued" && "bg-slate-100 text-slate-600",
@@ -75,18 +75,18 @@ export function CampaignCard({ campaign, onToggle, onSelect }: CampaignCardProps
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs text-slate-500 font-aeonik">
+          <div className="flex items-center gap-4 text-xs text-slate-500">
             <div className="flex items-center gap-1">
               <Send className="h-4 w-4" />
-              <span className="font-inter font-bold">{campaign.sent} sent</span>
+              <span className="font-bold">{campaign.sent} sent</span>
             </div>
             <div className="flex items-center gap-1">
               <Users className="h-4 w-4" />
-              <span className="font-inter font-bold">{campaign.accepted} accepted</span>
+              <span className="font-bold">{campaign.accepted} accepted</span>
             </div>
             <div className="flex items-center gap-1">
               <TrendingUp className="h-4 w-4" />
-              <span className="font-inter font-bold">{campaign.responseRate}% response rate</span>
+              <span className="font-bold">{campaign.responseRate}% response rate</span>
             </div>
           </div>
         </div>

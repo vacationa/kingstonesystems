@@ -139,7 +139,7 @@ export default function LinkedInTokenGuidePage() {
             description="Open LinkedIn and login with your account."
           >
             <Button
-              className="bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90 border-2 border-[#0A66C2] font-aeonik transition-all"
+              className="bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90 border-2 border-[#0A66C2]  transition-all"
               onClick={() => window.open("https://www.linkedin.com", "_blank")}
             >
               Open LinkedIn
@@ -226,7 +226,7 @@ export default function LinkedInTokenGuidePage() {
               </div>
 
               {error && (
-                <div className="bg-[#0A66C2]/5 border border-[#0A66C2]/20 rounded-xl p-4 text-[#0A66C2] font-aeonik">
+                <div className="bg-[#0A66C2]/5 border border-[#0A66C2]/20 rounded-xl p-4 text-[#0A66C2] ">
                   <p className="flex items-start gap-2">
                     <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
                     {error}
@@ -234,7 +234,7 @@ export default function LinkedInTokenGuidePage() {
                 </div>
               )}
 
-              <div className="bg-[#0A66C2]/5 border border-[#0A66C2]/20 rounded-xl p-4 text-[#0A66C2] font-aeonik">
+              <div className="bg-[#0A66C2]/5 border border-[#0A66C2]/20 rounded-xl p-4 text-[#0A66C2] ">
                 <p className="flex items-start gap-2">
                   <Lock className="h-4 w-4 mt-0.5 flex-shrink-0" />
                   Your cookies are securely stored and only used for automation purposes
@@ -243,7 +243,7 @@ export default function LinkedInTokenGuidePage() {
 
               <Button
                 type="submit"
-                className="w-full bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90 border-2 border-[#0A66C2] font-aeonik transition-all"
+                className="w-full bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90 border-2 border-[#0A66C2]  transition-all"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Connecting..." : "Connect LinkedIn Account"}

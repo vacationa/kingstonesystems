@@ -168,7 +168,7 @@ export function Loading({
       <div className="flex flex-col items-center gap-3">
         {renderLoader()}
         <p className={cn(
-          "text-sm font-aeonik",
+          "text-sm",
           color === "primary" && "text-[#0A66C2]",
           color === "secondary" && "text-gray-500",
           color === "white" && "text-white",

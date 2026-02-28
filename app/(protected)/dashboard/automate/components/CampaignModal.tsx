@@ -967,7 +967,7 @@ export function CampaignModal({
 
                   <span
                     className={cn(
-                      "mt-2 text-xs font-aeonik text-center transition-all duration-300",
+                      "mt-2 text-xs  text-center transition-all duration-300",
 
                       currentStep === step.number
                         ? "text-[#0A66C2] font-semibold scale-105"
@@ -1059,7 +1059,7 @@ export function CampaignModal({
                             <div>
                               <h3
                                 className={cn(
-                                  "font-aeonik font-medium text-base mb-2 transition-colors",
+                                  " font-medium text-base mb-2 transition-colors",
 
                                   campaignData.sourceType === option.id
                                     ? "text-slate-900"
@@ -1071,7 +1071,7 @@ export function CampaignModal({
 
                               <p
                                 className={cn(
-                                  "text-sm font-aeonik leading-relaxed transition-colors",
+                                  "text-sm  leading-relaxed transition-colors",
 
                                   campaignData.sourceType === option.id
                                     ? "text-slate-700"
@@ -1088,7 +1088,7 @@ export function CampaignModal({
                       {errors.sourceType && (
                         <div className="flex items-center gap-2 mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
                           <AlertCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
-                          <p className="text-sm text-red-600 font-aeonik">{errors.sourceType}</p>
+                          <p className="text-sm text-red-600 ">{errors.sourceType}</p>
                         </div>
                       )}
 
@@ -1098,7 +1098,7 @@ export function CampaignModal({
                           {salesNavStatus === "checking" && (
                             <div className="flex items-center gap-2 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
-                              <p className="text-sm text-blue-600 font-aeonik">
+                              <p className="text-sm text-blue-600 ">
                                 Checking Sales Navigator access...
                               </p>
                             </div>
@@ -1108,10 +1108,10 @@ export function CampaignModal({
                             <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg">
                               <AlertCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
                               <div className="flex-1">
-                                <p className="text-sm text-red-600 font-aeonik font-medium">
+                                <p className="text-sm text-red-600  font-medium">
                                   Sales Navigator access not detected
                                 </p>
-                                <p className="text-xs text-red-500 font-aeonik mt-1">
+                                <p className="text-xs text-red-500  mt-1">
                                   Please ensure you have an active Sales Navigator subscription and
                                   try again.
                                 </p>
@@ -1129,7 +1129,7 @@ export function CampaignModal({
                           {salesNavStatus === "available" && (
                             <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg">
                               <div className="h-4 w-4 text-green-500 flex-shrink-0">✅</div>
-                              <p className="text-sm text-green-600 font-aeonik">
+                              <p className="text-sm text-green-600 ">
                                 Sales Navigator access confirmed
                               </p>
                             </div>
@@ -1198,7 +1198,7 @@ export function CampaignModal({
                           {/* Number of prospects to import input */}
 
                           <div className="flex items-center gap-4">
-                            <Label className="font-aeonik font-medium text-slate-700 text-sm whitespace-nowrap">
+                            <Label className=" font-medium text-slate-700 text-sm whitespace-nowrap">
                               Number of prospects to import <span className="text-red-500">*</span>
                             </Label>
 
@@ -1227,7 +1227,7 @@ export function CampaignModal({
                           {/* File selection section */}
 
                           <div className="flex items-center gap-4">
-                            <Label className="font-aeonik font-medium text-slate-700 text-sm whitespace-nowrap">
+                            <Label className=" font-medium text-slate-700 text-sm whitespace-nowrap">
                               CSV File <span className="text-red-500">*</span>
                             </Label>
 
@@ -1304,7 +1304,7 @@ export function CampaignModal({
                             </label>
                           </div>
 
-                          <p className="text-sm text-slate-600 font-aeonik">
+                          <p className="text-sm text-slate-600 ">
                             Upload a CSV file containing LinkedIn profile URLs. The file should have
                             a "linkedin_url" column.
                           </p>
@@ -1379,12 +1379,12 @@ export function CampaignModal({
                         return (
                           <div className="mb-8">
                             <div className="mb-4 flex items-center justify-between">
-                              <div className="text-sm font-medium text-slate-700 font-aeonik">
+                              <div className="text-sm font-medium text-slate-700 ">
                                 Match your columns by selecting the appropriate option for each
                                 header.
                               </div>
                               {csvAllData && (
-                                <div className="text-xs text-slate-500 font-aeonik">
+                                <div className="text-xs text-slate-500 ">
                                   Showing {previewRowsCount} of {totalRowsToImport} rows
                                   {importLimit && totalRowsInFile > importLimit && (
                                     <span className="text-slate-400">
@@ -1474,7 +1474,7 @@ export function CampaignModal({
                             {/* Validation message if linkedin_url not mapped */}
 
                             {!Object.values(csvColumnMap).includes("linkedin_url") && (
-                              <div className="text-red-500 text-sm mt-2 font-aeonik flex items-center gap-2">
+                              <div className="text-red-500 text-sm mt-2  flex items-center gap-2">
                                 <AlertCircle className="h-4 w-4" />
                                 Please tag one column as "LinkedIn Profile URL" to continue.
                               </div>
@@ -1483,7 +1483,7 @@ export function CampaignModal({
                             {/* Validation for invalid LinkedIn URLs */}
 
                             {!!invalidUrls.length && (
-                              <div className="text-red-500 text-sm mt-2 font-aeonik flex items-center gap-2">
+                              <div className="text-red-500 text-sm mt-2  flex items-center gap-2">
                                 <AlertCircle className="h-4 w-4" />
 
                                 {`Some values in the selected column are not valid LinkedIn profile URLs.`}
@@ -1552,7 +1552,7 @@ export function CampaignModal({
                           {/* Steps */}
 
                           <div className="flex-1">
-                            <h4 className="font-aeonik font-medium text-slate-700 text-sm mb-4">
+                            <h4 className=" font-medium text-slate-700 text-sm mb-4">
                               How to import from LinkedIn search
                             </h4>
 
@@ -1631,12 +1631,12 @@ export function CampaignModal({
                     {campaignData.sourceType === "searchUrl" && (
                       <div className="border border-slate-100 rounded-xl p-3 mt-2">
                         <div className="mb-3">
-                          <h4 className="font-aeonik font-medium text-slate-600 text-sm">
+                          <h4 className=" font-medium text-slate-600 text-sm">
                             Example searches
                           </h4>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-2 text-xs text-slate-600 font-aeonik">
+                        <div className="grid grid-cols-3 gap-2 text-xs text-slate-600 ">
                           <a
                             href="https://www.linkedin.com/search/results/people/?keywords=Software%20Engineer&network=%5B%22S%22%5D&openTo=%5B%22JOB%22%5D&geo=%5B%22us%3A0%22%5D"
                             target="_blank"
@@ -1886,7 +1886,7 @@ export function CampaignModal({
                           {/* Steps */}
 
                           <div className="flex-1">
-                            <h4 className="font-aeonik font-medium text-slate-700 text-sm mb-4">
+                            <h4 className=" font-medium text-slate-700 text-sm mb-4">
                               How to import from Sales Navigator
                             </h4>
 
@@ -1896,7 +1896,7 @@ export function CampaignModal({
                                 <div className="w-6 h-6 flex items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 text-xs font-medium mb-2 mx-auto">
                                   1
                                 </div>
-                                <p className="text-xs text-slate-600 font-aeonik">
+                                <p className="text-xs text-slate-600 ">
                                   Go to Sales Navigator
                                 </p>
                               </div>
@@ -1906,7 +1906,7 @@ export function CampaignModal({
                                 <div className="w-6 h-6 flex items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 text-xs font-medium mb-2 mx-auto">
                                   2
                                 </div>
-                                <p className="text-xs text-slate-600 font-aeonik">
+                                <p className="text-xs text-slate-600 ">
                                   Search for people
                                 </p>
                               </div>
@@ -1916,7 +1916,7 @@ export function CampaignModal({
                                 <div className="w-6 h-6 flex items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 text-xs font-medium mb-2 mx-auto">
                                   3
                                 </div>
-                                <p className="text-xs text-slate-600 font-aeonik">Copy the URL</p>
+                                <p className="text-xs text-slate-600 ">Copy the URL</p>
                               </div>
 
                               {/* Step 4 */}
@@ -1924,7 +1924,7 @@ export function CampaignModal({
                                 <div className="w-6 h-6 flex items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 text-xs font-medium mb-2 mx-auto">
                                   4
                                 </div>
-                                <p className="text-xs text-slate-600 font-aeonik">Paste below</p>
+                                <p className="text-xs text-slate-600 ">Paste below</p>
                               </div>
                             </div>
                           </div>
@@ -1982,7 +1982,7 @@ export function CampaignModal({
                       <div className="mb-4">
                         <div className="flex items-center gap-3">
                           <Label
-                            className="font-aeonik font-medium text-slate-700 text-sm"
+                            className=" font-medium text-slate-700 text-sm"
                             htmlFor="importLimitInput"
                           >
                             Number of prospects to import <span className="text-red-500">*</span>
@@ -2012,7 +2012,7 @@ export function CampaignModal({
                           />
 
                           {errors.importLimit && (
-                            <span className="text-xs text-red-500 ml-2 flex items-center gap-1 font-aeonik">
+                            <span className="text-xs text-red-500 ml-2 flex items-center gap-1 ">
                               <AlertCircle className="h-4 w-4" />
 
                               {errors.importLimit}
@@ -2029,7 +2029,7 @@ export function CampaignModal({
                         <div className="space-y-2">
                           <div className="flex items-center gap-4">
                             <Label
-                              className="font-aeonik font-medium text-slate-700 text-sm whitespace-nowrap"
+                              className=" font-medium text-slate-700 text-sm whitespace-nowrap"
                               htmlFor="searchUrlInput"
                             >
                               LinkedIn Search URL <span className="text-red-500">*</span>
@@ -2082,7 +2082,7 @@ export function CampaignModal({
                         <div className="space-y-2">
                           <div className="flex items-center gap-4">
                             <Label
-                              className="font-aeonik font-medium text-slate-700 text-sm whitespace-nowrap"
+                              className=" font-medium text-slate-700 text-sm whitespace-nowrap"
                               htmlFor="postUrlInput"
                             >
                               LinkedIn Post URL <span className="text-red-500">*</span>
@@ -2135,7 +2135,7 @@ export function CampaignModal({
                         <div className="space-y-2">
                           <div className="flex items-center gap-4">
                             <Label
-                              className="font-aeonik font-medium text-slate-700 text-sm whitespace-nowrap"
+                              className=" font-medium text-slate-700 text-sm whitespace-nowrap"
                               htmlFor="postUrlInputComments"
                             >
                               LinkedIn Post URL <span className="text-red-500">*</span>
@@ -2188,7 +2188,7 @@ export function CampaignModal({
                         <div className="space-y-2">
                           <div className="flex items-center gap-4">
                             <Label
-                              className="font-aeonik font-medium text-slate-700 text-sm whitespace-nowrap"
+                              className=" font-medium text-slate-700 text-sm whitespace-nowrap"
                               htmlFor="searchUrlInput"
                             >
                               Sales Navigator URL <span className="text-red-500">*</span>
@@ -2223,7 +2223,7 @@ export function CampaignModal({
                           </div>
 
                           {errors.searchUrl && (
-                            <p className="text-red-500 text-xs font-aeonik">{errors.searchUrl}</p>
+                            <p className="text-red-500 text-xs ">{errors.searchUrl}</p>
                           )}
                         </div>
                       </div>
@@ -2236,7 +2236,7 @@ export function CampaignModal({
                         <div className="space-y-2">
                           <div className="flex items-center gap-4">
                             <Label
-                              className="font-aeonik font-medium text-slate-700 text-sm whitespace-nowrap"
+                              className=" font-medium text-slate-700 text-sm whitespace-nowrap"
                               htmlFor="eventUrlInput"
                             >
                               LinkedIn Event URL <span className="text-red-500">*</span>
@@ -2842,11 +2842,11 @@ export function CampaignModal({
                     <div className="mb-4">
                       <div className="flex items-center justify-between gap-4 mb-2">
                         <div className="flex-shrink-0">
-                          <Label className="font-aeonik font-semibold text-slate-900 text-lg">
+                          <Label className=" font-semibold text-slate-900 text-lg">
                             Name
                           </Label>
 
-                          <p className="text-sm text-slate-500 font-aeonik mt-1">
+                          <p className="text-sm text-slate-500  mt-1">
                             Give your campaign a memorable name
                           </p>
                         </div>
@@ -2855,7 +2855,7 @@ export function CampaignModal({
                           <Input
                             placeholder="e.g., Sales Outreach Q3"
                             className={cn(
-                              "w-80 p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0A66C2]/20 focus:border-[#0A66C2] transition-all duration-200 bg-white placeholder:text-slate-400 text-base font-aeonik",
+                              "w-80 p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0A66C2]/20 focus:border-[#0A66C2] transition-all duration-200 bg-white placeholder:text-slate-400 text-base ",
 
                               errors.name
                                 ? "border-red-300 focus:border-red-500 focus:ring-red-200"
@@ -2874,7 +2874,7 @@ export function CampaignModal({
                           {errors.name && (
                             <div className="flex items-center gap-2 mt-3 p-3 bg-red-50 border border-red-200 rounded-lg">
                               <AlertCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
-                              <p className="text-sm text-red-600 font-aeonik">{errors.name}</p>
+                              <p className="text-sm text-red-600 ">{errors.name}</p>
                             </div>
                           )}
                         </div>
@@ -2886,11 +2886,11 @@ export function CampaignModal({
                     <div className="mb-8">
                       <div className="flex items-center justify-between gap-4 mb-4">
                         <div className="flex-shrink-0">
-                          <Label className="font-aeonik font-semibold text-slate-900 text-lg">
+                          <Label className=" font-semibold text-slate-900 text-lg">
                             Schedule
                           </Label>
 
-                          <p className="text-sm text-slate-500 font-aeonik mt-1">
+                          <p className="text-sm text-slate-500  mt-1">
                             Set when your campaign should start and optionally when it should end
                           </p>
                         </div>
@@ -2994,7 +2994,7 @@ export function CampaignModal({
                     {/* Campaign Summary */}
 
                     <div className="mb-3">
-                      <h4 className="font-aeonik font-semibold text-slate-900 text-lg mb-2">
+                      <h4 className=" font-semibold text-slate-900 text-lg mb-2">
                         Summary
                       </h4>
 
@@ -3197,7 +3197,7 @@ export function CampaignModal({
             <button
               onClick={() => setCurrentStep(Math.max(currentStep - 1, 1))}
               className={cn(
-                "px-4 py-2 rounded-xl border font-medium transition-all font-aeonik flex items-center gap-2 text-sm border-slate-300 text-slate-600 hover:border-slate-400 hover:bg-slate-50",
+                "px-4 py-2 rounded-xl border font-medium transition-all  flex items-center gap-2 text-sm border-slate-300 text-slate-600 hover:border-slate-400 hover:bg-slate-50",
 
                 isFirstStep || isSubmitting
                   ? "border-slate-200 text-slate-400 cursor-not-allowed"
@@ -3211,7 +3211,7 @@ export function CampaignModal({
             <button
               onClick={handleSubmit}
               className={cn(
-                "px-4 py-2 rounded-xl border-none font-medium transition-all font-aeonik flex items-center gap-2 shadow-md text-sm",
+                "px-4 py-2 rounded-xl border-none font-medium transition-all  flex items-center gap-2 shadow-md text-sm",
 
                 isSubmitting || !isStepValid || isCheckingSalesNav
                   ? "bg-slate-200 text-slate-400 cursor-not-allowed"

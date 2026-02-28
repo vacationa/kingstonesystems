@@ -25,7 +25,7 @@ function LockedResource({ title }: { title: string }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
             </div>
-            <span className={`${aeonik.variable} font-aeonik text-sm text-slate-600 font-medium`}>{title}</span>
+            <span className={`  text-sm text-slate-600 font-medium`}>{title}</span>
         </div>
     );
 }
@@ -63,7 +63,7 @@ export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDash
     };
 
     return (
-        <div className={`${aeonik.variable} font-aeonik w-full min-h-full bg-slate-50 text-slate-900 relative`}>
+        <div className={`  w-full min-h-full bg-slate-50 text-slate-900 relative`}>
             {/* Background gradients */}
             <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(30,64,175,0.03)_0%,transparent_100%)] pointer-events-none z-0" />
             <div className="fixed top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px] z-0 pointer-events-none" />

@@ -212,17 +212,17 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
     <div className="h-full flex flex-col">
       <div className="w-full flex flex-row items-center py-2 px-4 flex-shrink-0 gap-4">
         <div className="flex flex-col min-w-[180px]">
-          <h2 className="text-xl font-aeonik text-slate-900 mb-1 tracking-tight">Activity</h2>
-          <p className="text-slate-500 text-sm font-aeonik font-light">See what's happening</p>
+          <h2 className="text-xl  text-slate-900 mb-1 tracking-tight">Activity</h2>
+          <p className="text-slate-500 text-sm  font-light">See what's happening</p>
         </div>
         <div className="ml-auto">
           <Select value={activeFilter} onValueChange={setActiveFilter}>
-            <SelectTrigger className="w-auto min-w-[100px] bg-white font-aeonik focus:ring-0 focus:ring-offset-0 focus:outline-none px-2 [&>svg]:ml-1 border-none">
+            <SelectTrigger className="w-auto min-w-[100px] bg-white  focus:ring-0 focus:ring-offset-0 focus:outline-none px-2 [&>svg]:ml-1 border-none">
               <SelectValue placeholder="Filter activities" />
             </SelectTrigger>
             <SelectContent>
               {filterOptions.map((option) => (
-                <SelectItem key={option.value} value={option.value} className="font-aeonik">
+                <SelectItem key={option.value} value={option.value} className="">
                   {option.label}
                 </SelectItem>
               ))}
@@ -234,7 +234,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
       <div className="flex-1 overflow-y-auto flex flex-col pb-6" ref={scrollContainerRef}>
         {activities.length === 0 ? (
           <div className="flex-1 flex flex-col justify-center items-center text-slate-500 p-4">
-            <p className="text-sm text-center max-w-md font-aeonik mb-4">
+            <p className="text-sm text-center max-w-md  mb-4">
               Your connection activities will appear here
             </p>
           </div>
@@ -250,7 +250,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
-                      <p className="text-sm font-aeonik font-normal text-slate-900 truncate">
+                      <p className="text-sm  font-normal text-slate-900 truncate">
                         {(() => {
                           // Helper to render name + icon
                           const renderNameWithIcon = (name: string, profileUrl?: string | null) => (
@@ -337,7 +337,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
                           );
                         })()}
                       </p>
-                      <span className="text-[10px] text-slate-500 font-aeonik whitespace-nowrap">
+                      <span className="text-[10px] text-slate-500  whitespace-nowrap">
                         {activity.timestamp
                           ? formatDistanceToNow(new Date(activity.timestamp), { addSuffix: true })
                           : ""}
@@ -360,7 +360,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage <= 1 || loading}
               className={cn(
-                "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-aeonik transition-all duration-200",
+                "w-8 h-8 rounded-lg flex items-center justify-center text-sm  transition-all duration-200",
                 currentPage <= 1 || loading
                   ? "text-slate-300 cursor-not-allowed"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
@@ -389,7 +389,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
                     onClick={() => handlePageChange(pageNum)}
                     disabled={loading}
                     className={cn(
-                      "w-8 h-8 rounded-lg text-sm font-aeonik transition-all duration-200",
+                      "w-8 h-8 rounded-lg text-sm  transition-all duration-200",
                       currentPage === pageNum
                         ? "bg-[#0A66C2] text-white"
                         : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
@@ -406,7 +406,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage >= totalPages || loading}
               className={cn(
-                "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-aeonik transition-all duration-200",
+                "w-8 h-8 rounded-lg flex items-center justify-center text-sm  transition-all duration-200",
                 currentPage >= totalPages || loading
                   ? "text-slate-300 cursor-not-allowed"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
