@@ -5,31 +5,15 @@ import { aeonik, jetbrainsMono } from "@/app/fonts/fonts";
 
 const RESOURCES_BY_DAY: Record<number, { title: string, type: string, icon: string, dayTitle: string, locked?: boolean, link?: string, unlockType?: string }[]> = {
     1: [
-        { title: "Niche Selection Matrix", type: "Notion", icon: "📝", dayTitle: "Choose A Niche" },
-        { title: "Identity Kit Templates", type: "Figma", icon: "🎨", dayTitle: "Choose A Niche" },
         { title: "6 Months Free Notion", type: "Link", icon: "🎁", dayTitle: "Workspace Setup", locked: true, unlockType: "notion", link: "https://ntn.so/kingstonesystems" },
     ],
     2: [
-        { title: "AI Receptionist Prompts", type: "Doc", icon: "📄", dayTitle: "Your AI Systems Vault" },
-        { title: "Zapier Connectors", type: "Link", icon: "🔗", dayTitle: "Your AI Systems Vault" },
         { title: "CloserGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2b8a86fc81918dfe62b4f01b68b3-ai-sprint-closergpt" },
         { title: "PromptGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2f9f5d5c8191b0e089a16c29a22d-ai-sprint-promptgpt" },
         { title: "ScriptGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e98d6d481919e00ae5a2ffc7af3-ai-sprint-scriptgpt" },
         { title: "OfferGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2dc6329c819186957a8000a2b31c-ai-sprint-offergpt" },
         { title: "LaunchGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2d48995c8191ac6f58bd22e97858-ai-sprint-launchgpt" },
         { title: "AdGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e63cdc4819186a41a83891ee6bb-ai-sprint-adgpt" },
-    ],
-    3: [
-        { title: "Core Offer Calculator", type: "Sheet", icon: "📊", dayTitle: "Finalize Your Core Offer" },
-        { title: "Retainer Agreement", type: "PDF", icon: "📕", dayTitle: "Finalize Your Core Offer" },
-    ],
-    4: [
-        { title: "LinkedIn Outreach Scripts", type: "Doc", icon: "📄", dayTitle: "Your First Client Strategy" },
-        { title: "Cold Email Sequences", type: "Doc", icon: "📄", dayTitle: "Your First Client Strategy" },
-    ],
-    5: [
-        { title: "Client Onboarding Form", type: "Typeform", icon: "📝", dayTitle: "Retaining Clients" },
-        { title: "ROI Reporting Template", type: "Sheet", icon: "📊", dayTitle: "Retaining Clients" },
     ],
 };
 
@@ -46,9 +30,13 @@ function LockedResource({ title }: { title: string }) {
     );
 }
 
-export default function ResourcesDashboard() {
-    const [unlockedAI, setUnlockedAI] = useState(false);
-    const [unlockedNotion, setUnlockedNotion] = useState(false);
+interface ResourcesDashboardProps {
+    initialPrizes?: Record<number, boolean>;
+}
+
+export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDashboardProps) {
+    const [unlockedAI, setUnlockedAI] = useState(!!initialPrizes[2]);
+    const [unlockedNotion, setUnlockedNotion] = useState(!!initialPrizes[1]);
     const [showUnlockFor, setShowUnlockFor] = useState<{ id: string, type?: string } | null>(null);
     const [code, setCode] = useState("");
     const [error, setError] = useState(false);

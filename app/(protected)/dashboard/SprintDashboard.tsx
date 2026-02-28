@@ -18,22 +18,20 @@ const DAYS = [
             description: "Get organized from day one with 6 months of Notion's premium tier, completely free! [Claim your 6 free months here](https://ntn.so/kingstonesystems).",
         },
         tasks: [
-            { id: "d1_playbook", label: "Copy the Day 1 Playbook" },
             { id: "d1_v1", label: 'Watch "The AI Arbitrage Model Explained Simply"' },
-            { id: "d1_v2", label: 'Watch "The 5 Filters for a Profitable Niche"' },
             { id: "d1_v3", label: 'Watch "Best Niches for AI Agent Services in 2026"' },
             { id: "d1_v4", label: 'Watch "Choosing Your Niche & Committing"' },
-            { id: "d1_account", label: "Create account on AI Sprint" },
-            { id: "d1_niche", label: "Choose your niche" },
-            { id: "d1_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
-            { id: "d1_post", label: "Post in the community using the template below" },
+            { id: "d1_niche", label: "Choose your niche and commit to it" },
+            { id: "d1_post", label: "Post in the community" },
             { id: "d1_cheer", label: "Go comment on 5 other members' posts and hype them up" },
+            { id: "d1_screenshot", label: "Screenshot your finished tracker in your Dashboard" },
         ],
         postTemplate: {
             title: "Day 1 done — I'm in 🔥",
             lines: [
                 "My niche: [your answer]",
                 "Biggest takeaway: [your answer]",
+                "[Your Screenshot]",
             ],
         },
     },
@@ -176,7 +174,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
     const [auditCode, setAuditCode] = useState("");
     const [auditError, setAuditError] = useState(false);
 
-    const postText = `${dayData.postTemplate.title}\n${dayData.postTemplate.lines.join("\n")}\n________________________\n🎁 TO GET YOUR DAILY REWARD 🎁\n\nScreenshot your aisprint.com dashboard showing Day ${day} complete\nComment EXACTLY this ⬇️\n"Day ${day} done! Here's my dashboard: [insert screenshot]"\nI'll DM you the secret unlock code 🤫`;
+    const postText = `${dayData.postTemplate.title}\n${dayData.postTemplate.lines.join("\n")}\n________________________\n🎁 TO GET YOUR DAILY REWARD 🎁\n\nScreenshot your aisprint.com dashboard showing Day ${day} complete\nComment EXACTLY this ⬇️\n"Day ${day} done! Here's my dashboard: [insert screenshot]"\nComment on 5 other posts, and we will DM you the code to access your prize 🤫`;
 
     const handleCopy = () => {
         navigator.clipboard.writeText(postText);
@@ -340,7 +338,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                         </span>
                     </div>
                     <p className="text-slate-500 text-xs">
-                        Post your accountability update, share your dashboard screenshot, and DM to receive your code.
+                        Post your accountability update, share your dashboard screenshot, comment on 5 other posts, and we will DM you the code to access your prize.
                     </p>
 
                     {/* Post template copy */}

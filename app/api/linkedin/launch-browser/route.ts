@@ -19,6 +19,37 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    // Check if user has LinkedIn access
+    const { data } = await supabase
+      .from("profiles")
+      .select("linkedin_access, created_at")
+      .eq("id", user.id)
+      .single();
+
+    const profile = data as any;
+
+    if (!profile) {
+      return NextResponse.json({ error: "Profile not found" }, { status: 404 });
+    }
+
+    let hasAccess = profile.linkedin_access === true;
+
+    // If no explicit access, check if within 14 days of account creation
+    if (!hasAccess && profile.created_at) {
+      const createdAt = new Date(profile.created_at);
+      const daysSinceCreation = (new Date().getTime() - createdAt.getTime()) / (1000 * 3600 * 24);
+      if (daysSinceCreation <= 14) {
+        hasAccess = true;
+      }
+    }
+
+    if (!hasAccess) {
+      return NextResponse.json(
+        { error: "LinkedIn tool access expired. Please contact support to restore access." },
+        { status: 403 }
+      );
+    }
+
     const backendUrl =
       process.env.BACKEND_URL ||
       process.env.NEXT_PUBLIC_SOCKET_API_BASE_URL ||

@@ -1,39 +1,14 @@
-import Stripe from "stripe";
 import { createClient } from "@/lib/supabase/server";
-
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("STRIPE_SECRET_KEY is not set in environment variables");
-}
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export class SubscriptionValidator {
   static async validateSubscription(subscriptionId: string): Promise<{
     isValid: boolean;
     error?: string;
   }> {
-    try {
-      const subscription = await stripe.subscriptions.retrieve(subscriptionId);
-
-      // Check if subscription is active
-      const isValid = subscription.status === "active";
-
-      return {
-        isValid,
-      };
-    } catch (error) {
-      if (error instanceof Stripe.errors.StripeError) {
-        return {
-          isValid: false,
-          error: error.message,
-        };
-      }
-
-      return {
-        isValid: false,
-        error: "An unexpected error occurred while validating the subscription",
-      };
-    }
+    // Stripe has been removed, returning true by default
+    return {
+      isValid: true,
+    };
   }
 
   static async checkMonthlyImportLimit(userId: string): Promise<{
@@ -43,7 +18,7 @@ export class SubscriptionValidator {
   }> {
     try {
       const supabase = await createClient();
-      
+
       // Get user's subscription status
       const { data: profile, error: profileError } = await supabase
         .from("profiles")
@@ -102,10 +77,10 @@ export class SubscriptionValidator {
   }> {
     try {
       const supabase = await createClient();
-      
+
       const { error } = await supabase
         .from("profiles")
-        .update({ 
+        .update({
           monthly_imports: supabase.rpc('increment_monthly_imports', { increment_by: importCount })
         })
         .eq("id", userId);

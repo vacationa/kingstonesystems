@@ -12,6 +12,7 @@ export interface Database {
           referral_source: string | null;
           referral_source_detail: string | null;
           onboarding_completed: boolean | null;
+          linkedin_access: boolean | null;
         };
         Insert: {
           id: string;
@@ -21,6 +22,7 @@ export interface Database {
           referral_source?: string | null;
           referral_source_detail?: string | null;
           onboarding_completed?: boolean | null;
+          linkedin_access?: boolean | null;
         };
         Update: {
           id?: string;
@@ -30,6 +32,7 @@ export interface Database {
           referral_source?: string | null;
           referral_source_detail?: string | null;
           onboarding_completed?: boolean | null;
+          linkedin_access?: boolean | null;
         };
       };
       linkedin_accounts: {
