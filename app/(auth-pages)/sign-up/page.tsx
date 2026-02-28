@@ -21,6 +21,7 @@ const signUpSchema = z.object({
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Please enter a valid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
+  partnerCode: z.string().min(1, "Partner code is required"),
 });
 
 type SignUpFormValues = z.infer<typeof signUpSchema>;
@@ -49,6 +50,7 @@ export default function SignUpPage() {
       formData.append("lastName", data.lastName);
       formData.append("email", data.email);
       formData.append("password", data.password);
+      formData.append("partnerCode", data.partnerCode);
 
       // Check for referral code in URL
       const urlParams = new URLSearchParams(window.location.search);
@@ -200,6 +202,27 @@ export default function SignUpPage() {
                 {errors.password && (
                   <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
                     {errors.password.message}
+                  </span>
+                )}
+              </div>
+
+              <div className="space-y-1.5">
+                <Label
+                  htmlFor="partnerCode"
+                  className={`text-sm ${aeonik.variable} font-aeonik text-slate-700 font-semibold`}
+                >
+                  Partner Code
+                </Label>
+                <Input
+                  id="partnerCode"
+                  type="text"
+                  className="text-sm bg-slate-50 h-11 rounded-xl border border-slate-200 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600/50 text-slate-900 placeholder:text-slate-400 shadow-none"
+                  placeholder="Enter partner code"
+                  {...register("partnerCode")}
+                />
+                {errors.partnerCode && (
+                  <span className={`text-xs text-red-500 ${aeonik.variable} font-aeonik`}>
+                    {errors.partnerCode.message}
                   </span>
                 )}
               </div>
