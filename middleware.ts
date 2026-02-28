@@ -70,8 +70,8 @@ const updateSession = async (request: NextRequest) => {
 
     // Auth pages that should redirect to dashboard if user is logged in
     // NOTE: /sign-in is the dummy client portal — intentionally excluded so it
-    // always renders regardless of session. Only /operator-login redirects.
-    const authPages = ["/operator-login"];
+    // always renders regardless of session. Only /partner-login redirects.
+    const authPages = ["/partner-login"];
     const isAuthPage = authPages.some((page) => request.nextUrl.pathname.startsWith(page));
 
     // Get the session - if null, the user is not logged in

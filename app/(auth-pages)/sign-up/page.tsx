@@ -248,7 +248,7 @@ export default function SignUpPage() {
 
               <p className={`text-center text-sm ${aeonik.variable} font-aeonik text-slate-600 mt-2`}>
                 Already have an account?{" "}
-                <Link href="/operator-login" className="text-blue-700 font-medium hover:underline">
+                <Link href="/partner-login" className="text-blue-700 font-medium hover:underline">
                   Sign in
                 </Link>
               </p>

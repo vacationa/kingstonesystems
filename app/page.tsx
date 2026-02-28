@@ -442,7 +442,7 @@ export default function HomePage() {
           <span>© 2026 Kingstone Systems. All rights reserved.</span>
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <Link href="/partners">Certified Partners</Link>
-            <Link href="/operator-login">Partner Login</Link>
+            <Link href="/partner-login">Partner Login</Link>
           </div>
         </div>
       </footer>

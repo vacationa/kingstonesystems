@@ -144,8 +144,8 @@ export const signInAction = async (formData: FormData) => {
     return { error: "Email and password are required" };
   }
 
-  // Check if this is an operator login attempt
-  const isOperatorLogin = referer.includes("operator-login");
+  // Check if this is a partner login attempt
+  const isOperatorLogin = referer.includes("partner-login");
 
   if (isOperatorLogin) {
     const { error } = await supabase.auth.signInWithPassword({

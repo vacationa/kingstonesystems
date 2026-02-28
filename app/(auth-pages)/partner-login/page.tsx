@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signInAction } from "@/app/actions/auth";
 
-export default function OperatorLoginPage() {
+export default function PartnerLoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -117,7 +117,7 @@ export default function OperatorLoginPage() {
                                 value={email}
                                 onChange={(e) => { setEmail(e.target.value); setError(null); }}
                                 onBlur={() => setTouched((t) => ({ ...t, email: true }))}
-                                placeholder="operator@kingstonesystems.com"
+                                placeholder="partner@kingstonesystems.com"
                                 style={{
                                     height: "44px",
                                     padding: "0 14px",

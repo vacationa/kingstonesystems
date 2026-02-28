@@ -284,7 +284,7 @@ export default function PartnersPage() {
                     <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
                         <Link href="/partners">Certified Partners</Link>
                         <a href="https://cal.com/kingstonesystems/free-strategy-call">Book a Call ↗</a>
-                        <Link href="/operator-login" style={{ fontSize: "12px", color: "#9CA3AF", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={e => (e.currentTarget.style.color = "#6B7280")} onMouseLeave={e => (e.currentTarget.style.color = "#9CA3AF")}>Partner Login</Link>
+                        <Link href="/partner-login" style={{ fontSize: "12px", color: "#9CA3AF", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={e => (e.currentTarget.style.color = "#6B7280")} onMouseLeave={e => (e.currentTarget.style.color = "#9CA3AF")}>Partner Login</Link>
                     </div>
                 </div>
             </footer>
