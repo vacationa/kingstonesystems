@@ -24,6 +24,7 @@ import { createClient } from "@/utils/supabase/server";
 import { Slider } from "@/components/ui/slider";
 import { useWarmupStatus } from "@/components/hooks/useWarmupStatus";
 import { Suspense } from "react";
+import { jetbrainsMono, aeonik } from "@/app/fonts/fonts";
 
 interface EditableField {
   id: "first_name" | "last_name";
@@ -265,8 +266,8 @@ function SettingsContent() {
     if (activeTab === "profile") {
       return (
         <div className="w-full">
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-6 tracking-tight">
+          <div className="bg-white p-6 rounded-xl border border-black/10 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-6 tracking-tight">
               Profile Information
             </h2>
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -336,8 +337,8 @@ function SettingsContent() {
     if (activeTab === "guardrails") {
       return (
         <div className="w-full space-y-6">
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-6 tracking-tight">
+          <div className="bg-white p-6 rounded-xl border border-black/10 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-6 tracking-tight">
               LinkedIn Daily Action Limits
             </h2>
 
@@ -470,8 +471,8 @@ function SettingsContent() {
           </div>
 
           {/* Blocked Users */}
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-6 tracking-tight">
+          <div className="bg-white p-6 rounded-xl border border-black/10 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-6 tracking-tight">
               Blocked LinkedIn Profiles
             </h2>
 
@@ -565,8 +566,8 @@ function SettingsContent() {
 
       return (
         <div className="w-full">
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Need Help?</h2>
+          <div className="bg-white p-6 rounded-xl border border-black/10 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-4 tracking-tight">Need Help?</h2>
             <p className="text-gray-600 ">
               If you have any questions, concerns, or need assistance, please don't hesitate to
               reach out to our support team at:{" "}
@@ -585,8 +586,8 @@ function SettingsContent() {
     if (activeTab === "logout") {
       return (
         <div className="w-full">
-          <div className="bg-white p-6 rounded-xl border border-black/10">
-            <h2 className="text-xl  text-gray-900 mb-4 tracking-tight">Logout</h2>
+          <div className="bg-white p-6 rounded-xl border border-black/10 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 mb-4 tracking-tight">Logout</h2>
             <p className="text-gray-600  mb-6">
               Are you sure you want to logout? You will need to sign in again to access your
               account.
@@ -741,7 +742,7 @@ function SettingsContent() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
+    <div className={`w-full max-w-4xl mx-auto flex flex-col gap-6 font-figtree text-slate-900`}>
       {error && (
         <div className="p-4 bg-red-50 border border-red-500/50 rounded-xl text-red-800 ">
           {error}

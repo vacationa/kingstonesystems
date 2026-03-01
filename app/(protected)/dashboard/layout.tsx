@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronLeft, ChevronRight, LayoutDashboard, Database, Lock, Rocket, Shield } from "lucide-react";
+import { ChevronLeft, ChevronRight, LayoutDashboard, Database, Lock, Rocket, Shield, Target, Folder } from "lucide-react";
 import { jetbrainsMono } from "@/app/fonts/fonts";
 import { TimeRangeProvider } from "./automate/components/TimeRangeContext";
 import { getPartnerStatus } from "@/app/actions/sprint";
@@ -22,11 +22,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     fetchStatus();
   }, []);
 
-  const navItems = [
+  interface NavItem {
+    name: string;
+    path: string;
+    icon: React.ReactNode;
+    locked?: boolean;
+  }
+
+  const navItems: NavItem[] = [
     { name: "Mission Control", path: "/dashboard", icon: <LayoutDashboard size={20} /> },
-    { name: "Systems Vault", path: "/dashboard/resources", icon: <Database size={20} /> },
     { name: "Outreach Engine", path: "/dashboard/automate", icon: <Rocket size={20} /> },
-    { name: "Platinum Arsenal", path: "/dashboard/platinum-arsenal", icon: <Lock size={20} />, locked: true },
+    { name: "Systems Vault", path: "/dashboard/resources", icon: <Folder size={20} /> },
+    { name: "Platinum Arsenal", path: "/dashboard/platinum-arsenal", icon: <Target size={20} /> },
     { name: "Settings", path: "/dashboard/settings", icon: <Shield size={20} /> },
   ];
 
@@ -66,17 +73,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              System Online
+              All Systems Online
             </p>
           )}
         </div>
 
-        <nav className="flex-1 p-4 space-y-1 overflow-y-auto custom-scrollbar">
-          {!isCollapsed && (
-            <div className={`${jetbrainsMono.variable} font-mono text-[10px] text-slate-500 uppercase tracking-widest px-3 mb-4 mt-2 font-medium`}>
-              Main Menu
-            </div>
-          )}
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto custom-scrollbar pt-6">
           {navItems.map((item) => {
             const isActive = pathname === item.path;
             return item.locked ? (

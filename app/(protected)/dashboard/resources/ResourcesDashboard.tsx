@@ -1,28 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { Lock as LucideLock, Database, Shield } from "lucide-react";
+import { Lock as LucideLock, Database, Shield, Zap, Terminal, Compass, Calculator, CheckCircle2 } from "lucide-react";
 import { aeonik, jetbrainsMono } from "@/app/fonts/fonts";
 import { submitAuditRequest, submitCertificationRequest } from "@/app/actions/sprint";
 
-const RESOURCES_BY_DAY: Record<number, { title: string, type: string, icon: string, dayTitle: string, locked?: boolean, link?: string, unlockType?: string }[]> = {
+const RESOURCES_BY_DAY: Record<number, { title: string, type: string, icon: React.ReactNode, dayTitle: string, locked?: boolean, link?: string, unlockType?: string }[]> = {
     1: [
-        { title: "6 Months Free Notion", type: "Link", icon: "📐", dayTitle: "Workspace Setup", locked: true, unlockType: "notion", link: "https://ntn.so/kingstonesystems" },
+        { title: "6 Months Free Notion", type: "Link", icon: <Calculator size={20} />, dayTitle: "Workspace Setup", locked: true, unlockType: "notion", link: "https://ntn.so/kingstonesystems" },
     ],
     2: [
-        { title: "CloserGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2b8a86fc81918dfe62b4f01b68b3-ai-sprint-closergpt" },
-        { title: "PromptGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2f9f5d5c8191b0e089a16c29a22d-ai-sprint-promptgpt" },
-        { title: "ScriptGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e98d6d481919e00ae5a2ffc7af3-ai-sprint-scriptgpt" },
-        { title: "OfferGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2dc6329c819186957a8000a2b31c-ai-sprint-offergpt" },
-        { title: "LaunchGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2d48995c8191ac6f58bd22e97858-ai-sprint-launchgpt" },
-        { title: "AdGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e63cdc4819186a41a83891ee6bb-ai-sprint-adgpt" },
+        { title: "CloserGPT", type: "AI", icon: <Terminal size={20} />, dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2b8a86fc81918dfe62b4f01b68b3-ai-sprint-closergpt" },
+        { title: "PromptGPT", type: "AI", icon: <Terminal size={20} />, dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2f9f5d5c8191b0e089a16c29a22d-ai-sprint-promptgpt" },
+        { title: "ScriptGPT", type: "AI", icon: <Terminal size={20} />, dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e98d6d481919e00ae5a2ffc7af3-ai-sprint-scriptgpt" },
+        { title: "OfferGPT", type: "AI", icon: <Terminal size={20} />, dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2dc6329c819186957a8000a2b31c-ai-sprint-offergpt" },
+        { title: "LaunchGPT", type: "AI", icon: <Terminal size={20} />, dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2d48995c8191ac6f58bd22e97858-ai-sprint-launchgpt" },
+        { title: "AdGPT", type: "AI", icon: <Terminal size={20} />, dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e63cdc4819186a41a83891ee6bb-ai-sprint-adgpt" },
     ],
     3: [
-        { title: "Instagram Audit", type: "Audit", icon: "🧭", dayTitle: "Audit Request Unlocked", locked: true, unlockType: "audit" },
-        { title: "LinkedIn Audit", type: "Audit", icon: "🧭", dayTitle: "Audit Request Unlocked", locked: true, unlockType: "audit" },
+        { title: "Instagram Audit", type: "Audit", icon: <Compass size={20} />, dayTitle: "Audit Request Unlocked", locked: true, unlockType: "audit" },
+        { title: "LinkedIn Audit", type: "Audit", icon: <Compass size={20} />, dayTitle: "Audit Request Unlocked", locked: true, unlockType: "audit" },
     ],
     4: [
-        { title: "15,000+ Lead Database", type: "Database", icon: "🗄️", dayTitle: "Land Your First Client Assets", locked: true, unlockType: "leads", link: "https://docs.google.com/spreadsheets/d/1_5TOn2Y-n0n7mKMdZl9Fzcb5kfmSYWAr1U3N6JCVkK8/edit?gid=491522820#gid=491522820" },
+        { title: "15,000+ Lead Database", type: "Database", icon: <Database size={20} />, dayTitle: "Land Your First Client Assets", locked: true, unlockType: "leads", link: "https://docs.google.com/spreadsheets/d/1_5TOn2Y-n0n7mKMdZl9Fzcb5kfmSYWAr1U3N6JCVkK8/edit?gid=491522820#gid=491522820" },
     ],
     5: []
 };
@@ -31,7 +31,7 @@ function LockedResource({ title }: { title: string }) {
     return (
         <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm opacity-90">
             <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                <span className="text-xl">💎</span>
+                <Shield className="text-blue-600" size={20} />
             </div>
             <span className={`  text-sm text-slate-600 font-medium`}>{title}</span>
         </div>
@@ -61,26 +61,33 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
             <div className="max-w-5xl mx-auto px-4 lg:px-12 py-10 relative z-10 space-y-12">
 
                 {/* Header */}
-                <div className="space-y-2">
-                    <div className={`${jetbrainsMono.variable} font-mono text-xs text-blue-600 tracking-widest uppercase font-semibold`}>
-                        <span className="flex items-center gap-2">
+                <div className="flex flex-col md:flex-row gap-6 md:items-start items-center mb-4">
+                    <div className="w-32 h-32 flex-shrink-0">
+                        <img
+                            src="/assets/silver-badge.png"
+                            alt="Silver Partner Status Badge"
+                            className="w-full h-full object-contain filter drop-shadow-xl"
+                        />
+                    </div>
+                    <div className="space-y-2 text-center md:text-left">
+                        <div className={`${jetbrainsMono.variable} font-mono text-xs text-blue-600 tracking-widest uppercase font-semibold flex items-center justify-center md:justify-start gap-2`}>
                             <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                             ACTIVE ARCHITECTURE
-                        </span>
+                        </div>
+                        <h1 className={`text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4`}>
+                            Systems Vault
+                        </h1>
+                        <p className="text-slate-500 text-lg max-w-2xl font-medium leading-relaxed">
+                            Proprietary architectures, sales systems, and growth assets for the Silver Partner Architecture.
+                        </p>
                     </div>
-                    <h1 className={`text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4`}>
-                        Systems Vault
-                    </h1>
-                    <p className="text-slate-500 text-lg max-w-2xl font-medium leading-relaxed">
-                        Proprietary architectures, sales systems, and growth assets for the Silver Partner Architecture.
-                    </p>
                 </div>
 
                 {/* 5-Day Resources Grid */}
                 <div className="space-y-6">
                     <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 text-xl border border-emerald-500/20 shadow-sm">
-                            ⚡️
+                        <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 border border-emerald-500/20 shadow-sm">
+                            <Zap size={16} />
                         </div>
                         <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
                             5-Day Sprint Assets
@@ -106,7 +113,7 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
 
                                         <div className="relative z-10 flex items-start justify-between">
                                             <div className="flex gap-4 items-start">
-                                                <div className={`w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shadow-sm ${isLocked ? 'shadow-blue-500/10' : ''}`}>
+                                                <div className={`w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-700 group-hover:scale-110 group-hover:bg-slate-50 transition-transform shadow-sm ${isLocked ? 'shadow-blue-500/10' : ''}`}>
                                                     {res.icon}
                                                 </div>
                                                 <div className="space-y-1">
@@ -190,7 +197,7 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
                                 );
 
                                 const isNotion = res.unlockType === 'notion';
-                                const className = `group relative rounded-2xl border ${isLocked ? 'border-slate-200 bg-white' : 'border-slate-200 bg-white shadow-sm'} p-5 hover:bg-slate-50 hover:border-slate-300 transition-all cursor-pointer overflow-hidden block w-full text-left ${isNotion && !isLocked ? 'ring-2 ring-amber-400/50 border-amber-500/30' : ''}`;
+                                const className = `group relative rounded-2xl border ${isLocked ? 'border-slate-200 bg-white' : 'border-slate-200 bg-white shadow-sm'} p-5 hover:bg-slate-50 hover:border-slate-300 transition-all cursor-pointer overflow-hidden block w-full text-left`;
 
                                 if (isLinkInteractive) {
                                     return (
@@ -260,8 +267,8 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
                             {unlockedCertification ? (
                                 initialPartnerStatus === "Active" ? (
                                     <div className="bg-emerald-50/50 p-6 md:p-8 rounded-[2rem] border border-emerald-200 flex flex-col items-center justify-center text-center space-y-3">
-                                        <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 text-2xl mb-2">
-                                            ✓
+                                        <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-2">
+                                            <CheckCircle2 size={32} />
                                         </div>
                                         <h3 className="text-xl font-bold text-slate-900">Partner Status Activated</h3>
                                         <p className="text-emerald-700 font-medium">Your Silver Partner Status is active and your account is fully verified.</p>
@@ -350,7 +357,7 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
                             ) : (
                                 <div className="bg-slate-100/50 rounded-2xl p-4 border border-slate-200 flex items-center justify-between text-slate-500 font-medium">
                                     <span className="flex items-center gap-3">
-                                        <span className="text-xl">💎</span> Finish Day 5 tasks to unlock your Silver Partner Status.
+                                        <Shield size={20} className="text-slate-400" /> Finish Day 5 tasks to unlock your Silver Partner Status.
                                     </span>
                                     <span className={`${jetbrainsMono.variable} font-mono text-[10px] bg-slate-200 px-2 py-1 rounded uppercase tracking-tighter`}>Status: Locked</span>
                                 </div>
@@ -384,11 +391,11 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
 
                         <div className="flex-1 w-full space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm backdrop-blur-md">
                             <div className="text-[10px] font-mono text-slate-500 font-bold uppercase tracking-widest mb-4">Included in Platinum</div>
-                            <LockedResource title="💎 Unlimited GHL Sub-accounts (Save $97/mo+)" />
-                            <LockedResource title="💎 LinkedIn Outreach Engine (Automate your prospecting)" />
-                            <LockedResource title="💎 Advanced Voice AI Blueprints (Vapi & n8n Deployments)" />
-                            <LockedResource title="💎 The Platinum Pipeline (Direct High-Ticket Lead Overflow)" />
-                            <LockedResource title="💎 Featured Website Partner Status (Instant SEO & Social Proof)" />
+                            <LockedResource title="Unlimited GHL Sub-accounts (Save $97/mo+)" />
+                            <LockedResource title="LinkedIn Outreach Engine (Automate your prospecting)" />
+                            <LockedResource title="Advanced Voice AI Blueprints (Vapi & n8n Deployments)" />
+                            <LockedResource title="The Platinum Pipeline (Direct High-Ticket Lead Overflow)" />
+                            <LockedResource title="Featured Website Partner Status (Instant SEO & Social Proof)" />
                         </div>
                     </div>
                 </div>
