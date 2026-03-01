@@ -52,7 +52,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
   const [totalCount, setTotalCount] = useState<number>(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { activities: realtimeActivities = [] } = useRealtime();
-  
+
   const ITEMS_PER_PAGE = 10;
 
   const getJobTypesForFilter = (filter: string): string[] => {
@@ -108,7 +108,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
       }));
 
       setActivities(newLogs);
-      
+
       // Update pagination info
       const total = json.total || 0;
       const pages = Math.ceil(total / ITEMS_PER_PAGE);
@@ -211,8 +211,8 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
   return (
     <div className="h-full flex flex-col">
       <div className="w-full flex flex-row items-center py-2 px-4 flex-shrink-0 gap-4">
-        <div className="flex flex-col min-w-[180px]">
-          <h2 className="text-xl  text-slate-900 mb-1 tracking-tight">Activity</h2>
+        <div className="flex-shrink-0 flex items-center justify-between py-2 px-4 shadow-sm z-10">
+          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Recent Activity</h2>
           <p className="text-slate-500 text-sm  font-light">See what's happening</p>
         </div>
         <div className="ml-auto">
@@ -368,7 +368,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
-            
+
             {/* Page numbers */}
             <div className="flex items-center gap-1 mx-2">
               {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
@@ -382,7 +382,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
                 } else {
                   pageNum = currentPage - 2 + i;
                 }
-                
+
                 return (
                   <button
                     key={pageNum}
@@ -400,7 +400,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
                 );
               })}
             </div>
-            
+
             {/* Next button */}
             <button
               onClick={() => handlePageChange(currentPage + 1)}

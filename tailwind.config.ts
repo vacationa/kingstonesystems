@@ -20,6 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
+        "figtree": ["var(--font-figtree)", "sans-serif"],
         "aeonik": ["var(--font-aeonik)", "sans-serif"],
         "riffic-free": ["var(--font-riffic-bold)", "monospace"],
         "playfair": ["var(--font-playfair)", "serif"],

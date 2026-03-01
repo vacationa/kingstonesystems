@@ -99,6 +99,10 @@ body {
   }
 
   /* Ensure font loading */
+  .font-figtree {
+    font-family: var(--font-figtree), system-ui, -apple-system, sans-serif;
+  }
+
   .font-outfit {
     font-family: 'Outfit', system-ui, -apple-system, sans-serif;
   }

@@ -5,7 +5,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { MessageSquare, Lock, Crown } from "lucide-react";
+import { MessageSquare, Lock, Crown, Rocket } from "lucide-react";
+import { jetbrainsMono } from "@/app/fonts/fonts";
 import { MetricsDashboard } from "./components/MetricsDashboard";
 import { CampaignList } from "./components/CampaignList";
 import { CampaignModal } from "./components/CampaignModal";
@@ -825,11 +826,10 @@ export default function LinkedInAutomationPage() {
   // Show loading state if credentials are unknown or loading
   if (hasCredentials === null || isLoading) {
     return (
-      <div className="h-full flex flex-col min-h-0">
-        <div className="flex-1 flex items-center justify-center bg-white -mx-8 -my-8 px-8 py-8">
-          <div className="text-center">
-            <LoadingSpinner size="xl" color="primary" text="Loading dashboard..." />
-          </div>
+      <div className="flex-1 flex flex-col items-center justify-center min-h-[60vh] bg-white animate-in fade-in duration-500">
+        <div className="relative">
+          <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse" />
+          <LoadingSpinner size="xl" color="primary" text="Loading dashboard..." className="relative z-10" />
         </div>
       </div>
     );
@@ -1002,7 +1002,7 @@ export default function LinkedInAutomationPage() {
   // If already connected or in demo mode, show the main dashboard
   if ((hasCredentials || isDemoMode) && !isLoading) {
     return (
-      <div className="h-full flex flex-col min-h-0 dashboard-scroll-container scrollbar-hide">
+      <div className="font-figtree h-full flex flex-col min-h-0 dashboard-scroll-container scrollbar-hide" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
         <div className="w-full flex flex-col gap-6 min-h-0 h-full dashboard-content-wrapper pb-12">
           {/* Campaign Context (only when campaign selected) */}
           <DashboardContext
@@ -1017,6 +1017,23 @@ export default function LinkedInAutomationPage() {
             }
             onClearCampaign={() => setSelectedCampaign(null)}
           />
+
+          {!selectedCampaign && (
+            <div className="max-w-5xl mx-auto px-4 lg:px-12 py-10 relative z-10 space-y-2 w-full">
+              <div className={`${jetbrainsMono.variable} font-mono text-xs text-blue-600 tracking-widest uppercase font-semibold`}>
+                <span className="flex items-center gap-2">
+                  <span className="flex h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                  NETWORK EXPANSION
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">
+                Outreach Engine
+              </h1>
+              <p className="text-slate-500 text-lg max-w-2xl font-medium leading-relaxed">
+                Scale your network and generate predictable sales conversations on autopilot.
+              </p>
+            </div>
+          )}
 
           {/* Metrics Dashboard */}
           <div

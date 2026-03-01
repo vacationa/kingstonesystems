@@ -9,13 +9,18 @@ export const metadata: Metadata = {
 
 export default async function ResourcesPage() {
     let initialPrizes: Record<number, boolean> = {};
+    let partnerStatus = "Awaiting Activation";
 
     try {
         const data = await loadSprintProgress();
         initialPrizes = data.prizes;
+
+        // Load partner status
+        const { getPartnerStatus } = await import("@/app/actions/sprint");
+        partnerStatus = await getPartnerStatus();
     } catch (error) {
         console.error("Error loading sprint progress:", error);
     }
 
-    return <ResourcesDashboard initialPrizes={initialPrizes} />;
+    return <ResourcesDashboard initialPrizes={initialPrizes} initialPartnerStatus={partnerStatus} />;
 }

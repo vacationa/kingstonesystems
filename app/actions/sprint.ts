@@ -88,6 +88,20 @@ export async function unlockPrize(day: number, code: string) {
     const headersList = await headers();
     const ip = headersList.get("x-forwarded-for") || headersList.get("x-real-ip") || "unknown";
 
+    // Validate code based on day
+    const codes: Record<number, string> = {
+        1: "NOTIONPARTNER26",
+        2: "KINGSTONEGPT",
+        3: "AUDIT",
+        4: "15K",
+        5: "SILVERPARTNER"
+    };
+
+    const expectedCode = codes[day];
+    if (!expectedCode || code.trim().toUpperCase() !== expectedCode) {
+        return { error: `Invalid unlock code for Day ${day}` };
+    }
+
     // Check if already unlocked
     const { data: existing } = await supabase
         .from("sprint_prize_unlocks")
@@ -158,4 +172,74 @@ export async function submitAuditRequest(linkedinUrl: string, instagramUrl: stri
     }
 
     return { success: true };
+}
+
+// ─── Submit Kingstone Silver Certification Request ─────────────────────────
+
+export async function submitCertificationRequest(website: string, name: string, email: string, skoolName: string) {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return { error: "Not authenticated" };
+
+    const headersList = await headers();
+    const ip = headersList.get("x-forwarded-for") || headersList.get("x-real-ip") || "unknown";
+
+    // Check if already active
+    const { data: profile } = await supabase
+        .from("profiles")
+        .select("partner_status")
+        .eq("id", user.id)
+        .single();
+    if (profile?.partner_status === "Active") {
+        return { error: "Partner status already activated" };
+    }
+
+    const { error } = await supabase.from("sprint_audit_log").insert({
+        user_id: user.id,
+        action: "silver_certification_request",
+        payload: {
+            website_name: website,
+            contact_name: name,
+            contact_email: email,
+            skool_name: skoolName,
+            timestamp: new Date().toISOString(),
+        },
+        ip_address: ip,
+    });
+
+    const { error: profileError } = await supabase
+        .from("profiles")
+        .update({ partner_status: "Active" })
+        .eq("id", user.id);
+
+    if (error || profileError) {
+        console.error("Error submitting certification request:", error?.message || profileError?.message);
+        return { error: error?.message || profileError?.message };
+    }
+
+    return { success: true };
+}
+
+// ─── Get Partner Status ────────────────────────────────────────────────────
+
+export async function getPartnerStatus() {
+    try {
+        const supabase = await createClient();
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return "Awaiting Activation";
+
+        const { data, error } = await supabase
+            .from("profiles")
+            .select("partner_status")
+            .eq("id", user.id)
+            .single();
+
+        if (error || !data || !data.partner_status) {
+            return "Awaiting Activation";
+        }
+
+        return data.partner_status;
+    } catch {
+        return "Awaiting Activation";
+    }
 }

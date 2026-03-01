@@ -209,7 +209,7 @@ export function MetricsDashboard({
       <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
         <div className="flex flex-col min-w-[180px]">
           <div className="flex items-center gap-2 mb-1">
-            <h2 className="text-xl text-slate-900 tracking-tight">Performance</h2>
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Performance</h2>
             <Link
               href="/dashboard/settings?tab=guardrails"
               className="p-1.5 hover:bg-slate-100 rounded-lg transition-colors text-slate-400 hover:text-blue-600 group relative"
@@ -308,7 +308,7 @@ interface CardProps {
 function Card({ label, children }: CardProps) {
   return (
     <div className="flex flex-col items-center justify-center gap-1">
-      <h3 className="text-xs text-slate-500  text-center mb-2">{label}</h3>
+      <h3 className="text-xs text-slate-500 text-center mb-2">{label}</h3>
       <div className="text-base text-slate-900 tracking-tight text-center mt-1 font-semibold">
         {children}
       </div>

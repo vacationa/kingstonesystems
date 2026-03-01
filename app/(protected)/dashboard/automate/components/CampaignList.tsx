@@ -178,7 +178,7 @@ export function CampaignList({
       <div className="flex flex-col flex-shrink-0 py-2 px-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-2">
           <div className="flex flex-col gap-1 max-w-[320px]">
-            <h2 className="text-xl  text-slate-900 tracking-tight">Campaigns</h2>
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Campaigns</h2>
             <p className="text-slate-500 text-sm  font-light whitespace-nowrap overflow-hidden text-ellipsis">
               Manage your campaigns
             </p>
@@ -224,7 +224,7 @@ export function CampaignList({
               >
                 <div className="flex-1 min-w-0 max-w-[200px]">
                   <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-sm  text-slate-900 tracking-tight truncate">
+                    <h3 className="text-sm text-slate-900 tracking-tight truncate">
                       {campaign.name}
                     </h3>
                     <span

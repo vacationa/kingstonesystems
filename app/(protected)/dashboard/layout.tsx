@@ -1,27 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronLeft, ChevronRight, LayoutDashboard, Database, Lock, Crown, Shield } from "lucide-react";
+import { ChevronLeft, ChevronRight, LayoutDashboard, Database, Lock, Rocket, Shield } from "lucide-react";
 import { jetbrainsMono } from "@/app/fonts/fonts";
 import { TimeRangeProvider } from "./automate/components/TimeRangeContext";
+import { getPartnerStatus } from "@/app/actions/sprint";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [timeRange, setTimeRange] = useState<any>("7d");
+  const [partnerStatus, setPartnerStatus] = useState("Awaiting Activation");
+
+  useEffect(() => {
+    async function fetchStatus() {
+      const status = await getPartnerStatus();
+      setPartnerStatus(status);
+    }
+    fetchStatus();
+  }, []);
 
   const navItems = [
     { name: "Mission Control", path: "/dashboard", icon: <LayoutDashboard size={20} /> },
-    { name: "Agency Vault", path: "/dashboard/resources", icon: <Database size={20} /> },
-    { name: "Automation", path: "/dashboard/automate", icon: <Crown size={20} /> },
-    { name: "30-Day Sprint", path: "#", icon: <Lock size={20} />, locked: true },
+    { name: "Systems Vault", path: "/dashboard/resources", icon: <Database size={20} /> },
+    { name: "Outreach Engine", path: "/dashboard/automate", icon: <Rocket size={20} /> },
+    { name: "Platinum Arsenal", path: "/dashboard/platinum-arsenal", icon: <Lock size={20} />, locked: true },
     { name: "Settings", path: "/dashboard/settings", icon: <Shield size={20} /> },
   ];
 
   return (
-    <div className="font-[family-name:var(--font-figtree)] min-h-screen bg-slate-50 flex flex-col md:flex-row text-slate-900 overflow-hidden">
+    <div className="font-figtree min-h-screen bg-slate-50 flex flex-col md:flex-row text-slate-900 overflow-hidden">
       {/* Left Navigation Sidebar */}
       <aside
         className={`${isCollapsed ? "w-20" : "w-64"} border-r border-slate-200 bg-white flex flex-col flex-shrink-0 relative z-20 h-screen transition-all duration-300 ease-in-out shadow-sm`}
@@ -70,17 +80,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           {navItems.map((item) => {
             const isActive = pathname === item.path;
             return item.locked ? (
-              <div
+              <Link
                 key={item.name}
-                className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-slate-500 cursor-not-allowed ${isCollapsed ? "justify-center" : ""}`}
+                href={item.path}
+                className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-50 transition-all ${isCollapsed ? "justify-center" : ""}`}
                 title={isCollapsed ? item.name : ""}
               >
                 <div className="flex items-center gap-3">
-                  <span className="opacity-40 text-slate-400">{item.icon}</span>
+                  <span className="opacity-60">{item.icon}</span>
                   {!isCollapsed && <span className="text-sm font-semibold">{item.name}</span>}
                 </div>
-                {!isCollapsed && <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-md font-mono uppercase">Locked</span>}
-              </div>
+                {!isCollapsed && <Lock size={12} className="text-slate-300" />}
+              </Link>
             ) : (
               <Link
                 key={item.name}
@@ -108,8 +119,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </div>
             {!isCollapsed && (
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold text-slate-900 truncate">Sprint Member</div>
-                <div className={`${jetbrainsMono.variable} font-mono text-[10px] text-slate-500 uppercase tracking-widest`}>5-Day Free Sprint</div>
+                <div className="text-sm font-bold text-slate-900 truncate">Silver Partner</div>
+                <div className={`${jetbrainsMono.variable} font-mono text-[10px] text-slate-500 uppercase tracking-widest`}>
+                  {partnerStatus === "Active" ? "Silver Partner Activated" : partnerStatus}
+                </div>
               </div>
             )}
           </div>

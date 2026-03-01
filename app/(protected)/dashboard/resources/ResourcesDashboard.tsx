@@ -1,29 +1,37 @@
 "use client";
 
 import { useState } from "react";
+import { Lock as LucideLock, Database, Shield } from "lucide-react";
 import { aeonik, jetbrainsMono } from "@/app/fonts/fonts";
+import { submitAuditRequest, submitCertificationRequest } from "@/app/actions/sprint";
 
 const RESOURCES_BY_DAY: Record<number, { title: string, type: string, icon: string, dayTitle: string, locked?: boolean, link?: string, unlockType?: string }[]> = {
     1: [
-        { title: "6 Months Free Notion", type: "Link", icon: "🎁", dayTitle: "Workspace Setup", locked: true, unlockType: "notion", link: "https://ntn.so/kingstonesystems" },
+        { title: "6 Months Free Notion", type: "Link", icon: "📐", dayTitle: "Workspace Setup", locked: true, unlockType: "notion", link: "https://ntn.so/kingstonesystems" },
     ],
     2: [
-        { title: "CloserGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2b8a86fc81918dfe62b4f01b68b3-ai-sprint-closergpt" },
-        { title: "PromptGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2f9f5d5c8191b0e089a16c29a22d-ai-sprint-promptgpt" },
-        { title: "ScriptGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e98d6d481919e00ae5a2ffc7af3-ai-sprint-scriptgpt" },
-        { title: "OfferGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2dc6329c819186957a8000a2b31c-ai-sprint-offergpt" },
-        { title: "LaunchGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2d48995c8191ac6f58bd22e97858-ai-sprint-launchgpt" },
-        { title: "AdGPT", type: "AI", icon: "🎁", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e63cdc4819186a41a83891ee6bb-ai-sprint-adgpt" },
+        { title: "CloserGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2b8a86fc81918dfe62b4f01b68b3-ai-sprint-closergpt" },
+        { title: "PromptGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2f9f5d5c8191b0e089a16c29a22d-ai-sprint-promptgpt" },
+        { title: "ScriptGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e98d6d481919e00ae5a2ffc7af3-ai-sprint-scriptgpt" },
+        { title: "OfferGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2dc6329c819186957a8000a2b31c-ai-sprint-offergpt" },
+        { title: "LaunchGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2d48995c8191ac6f58bd22e97858-ai-sprint-launchgpt" },
+        { title: "AdGPT", type: "AI", icon: "📟", dayTitle: "Your AI Systems Vault", locked: true, link: "https://chatgpt.com/g/g-699e2e63cdc4819186a41a83891ee6bb-ai-sprint-adgpt" },
     ],
+    3: [
+        { title: "Instagram Audit", type: "Audit", icon: "🧭", dayTitle: "Audit Request Unlocked", locked: true, unlockType: "audit" },
+        { title: "LinkedIn Audit", type: "Audit", icon: "🧭", dayTitle: "Audit Request Unlocked", locked: true, unlockType: "audit" },
+    ],
+    4: [
+        { title: "15,000+ Lead Database", type: "Database", icon: "🗄️", dayTitle: "Land Your First Client Assets", locked: true, unlockType: "leads", link: "https://docs.google.com/spreadsheets/d/1_5TOn2Y-n0n7mKMdZl9Fzcb5kfmSYWAr1U3N6JCVkK8/edit?gid=491522820#gid=491522820" },
+    ],
+    5: []
 };
 
 function LockedResource({ title }: { title: string }) {
     return (
         <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm opacity-90">
             <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
+                <span className="text-xl">💎</span>
             </div>
             <span className={`  text-sm text-slate-600 font-medium`}>{title}</span>
         </div>
@@ -32,35 +40,17 @@ function LockedResource({ title }: { title: string }) {
 
 interface ResourcesDashboardProps {
     initialPrizes?: Record<number, boolean>;
+    initialPartnerStatus?: string;
 }
 
-export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDashboardProps) {
-    const [unlockedAI, setUnlockedAI] = useState(!!initialPrizes[2]);
-    const [unlockedNotion, setUnlockedNotion] = useState(!!initialPrizes[1]);
-    const [showUnlockFor, setShowUnlockFor] = useState<{ id: string, type?: string } | null>(null);
-    const [code, setCode] = useState("");
-    const [error, setError] = useState(false);
-
-    const handleUnlock = () => {
-        const normalizedCode = code.trim().toUpperCase();
-        if (showUnlockFor?.type === "notion") {
-            if (normalizedCode === "AILAUNCH2026") {
-                setUnlockedNotion(true);
-                setShowUnlockFor(null);
-                setError(false);
-            } else {
-                setError(true);
-            }
-        } else {
-            if (normalizedCode === "AILAUNCH2026") {
-                setUnlockedAI(true);
-                setShowUnlockFor(null);
-                setError(false);
-            } else {
-                setError(true);
-            }
-        }
-    };
+export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerStatus = "Awaiting Activation" }: ResourcesDashboardProps) {
+    const [unlockedNotion] = useState(!!initialPrizes[1]);
+    const [unlockedAI] = useState(!!initialPrizes[2]);
+    const [unlockedAudit] = useState(!!initialPrizes[3]);
+    const [unlockedLeads] = useState(!!initialPrizes[4]);
+    const [unlockedCertification] = useState(!!initialPrizes[5]);
+    const [activeAuditForm, setActiveAuditForm] = useState<string | null>(null);
+    const [submittedAudits, setSubmittedAudits] = useState<string[]>([]);
 
     return (
         <div className={`  w-full min-h-full bg-slate-50 text-slate-900 relative`}>
@@ -73,13 +63,16 @@ export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDash
                 {/* Header */}
                 <div className="space-y-2">
                     <div className={`${jetbrainsMono.variable} font-mono text-xs text-blue-600 tracking-widest uppercase font-semibold`}>
-                        ● Resource Center
+                        <span className="flex items-center gap-2">
+                            <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            ACTIVE ARCHITECTURE
+                        </span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-900">
-                        The Agency Vault
+                    <h1 className={`text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4`}>
+                        Systems Vault
                     </h1>
-                    <p className={`${jetbrainsMono.variable} font-mono text-slate-600 font-medium text-sm max-w-xl leading-relaxed mt-2`}>
-                        All the master templates, SOPs, and guides you need to build, launch, and scale your AI agency efficiently.
+                    <p className="text-slate-500 text-lg max-w-2xl font-medium leading-relaxed">
+                        Proprietary architectures, sales systems, and growth assets for the Silver Partner Architecture.
                     </p>
                 </div>
 
@@ -97,8 +90,14 @@ export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDash
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {Object.entries(RESOURCES_BY_DAY).map(([day, items]) => (
                             items.map((res, i) => {
-                                const isLocked = res.locked && (res.unlockType === 'notion' ? !unlockedNotion : !unlockedAI);
-                                const isUnlocking = showUnlockFor?.id === `${day}-${i}`;
+                                const isLocked = res.locked && (
+                                    res.unlockType === 'notion' ? !unlockedNotion :
+                                        res.unlockType === 'audit' ? !unlockedAudit :
+                                            res.unlockType === 'leads' ? !unlockedLeads :
+                                                res.unlockType === 'certification' ? !unlockedCertification :
+                                                    !unlockedAI
+                                );
+                                const isSubmitted = res.unlockType === 'audit' && submittedAudits.includes(res.title);
                                 const isLinkInteractive = !isLocked && res.link;
 
                                 const CardContent = (
@@ -124,47 +123,74 @@ export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDash
                                             </div>
                                         </div>
 
-                                        {isUnlocking ? (
-                                            <div className="relative z-10 mt-4 pt-4 border-t border-slate-200 space-y-2">
-                                                <div className="flex gap-2">
-                                                    <input
-                                                        autoFocus
-                                                        type="text"
-                                                        placeholder="Enter code..."
-                                                        value={code}
-                                                        onChange={(e) => { setCode(e.target.value); setError(false); }}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === 'Enter') handleUnlock();
-                                                        }}
-                                                        className={`w-full bg-slate-50 border ${error ? 'border-red-500' : 'border-slate-200'} text-xs px-3 py-2 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 placeholder-slate-400 tracking-widest uppercase font-mono`}
-                                                    />
-                                                    <button
-                                                        type="button"
-                                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleUnlock(); }}
-                                                        className="bg-blue-600 text-white px-3 py-2 rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors"
-                                                    >
-                                                        Unlock
+                                        <div className="relative z-10 mt-4 pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 font-medium">
+                                            <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-slate-400"></span> {res.type} Format</span>
+                                            <span className="group-hover:text-slate-900 transition-colors flex items-center gap-1 font-semibold">
+                                                {isLocked ? (
+                                                    <span className="text-slate-400 flex items-center gap-1">Locked 🔒</span>
+                                                ) : (
+                                                    <>
+                                                        {res.unlockType === 'audit' ? (
+                                                            isSubmitted ? <span className="text-emerald-600">Submitted ✓</span> :
+                                                                (activeAuditForm === res.title ? 'Close ×' : 'Request Audit →')
+                                                        ) : 'Open Asset →'}
+                                                    </>
+                                                )}
+                                            </span>
+                                        </div>
+
+                                        {/* Inline Audit Form */}
+                                        {!isLocked && res.unlockType === 'audit' && activeAuditForm === res.title && (
+                                            <div className="relative z-10 mt-4 pt-4 border-t border-slate-200 animate-in fade-in slide-in-from-top-2 duration-300" onClick={(e) => e.stopPropagation()}>
+                                                <form className="space-y-3" onSubmit={(e) => {
+                                                    e.preventDefault();
+                                                    const form = e.target as HTMLFormElement;
+                                                    const input = form.querySelector('input') as HTMLInputElement;
+                                                    const btn = form.querySelector('button') as HTMLButtonElement;
+                                                    const val = input.value.trim();
+
+                                                    if (val) {
+                                                        const originalHtml = btn.innerHTML;
+                                                        btn.innerHTML = "Submitting...";
+                                                        btn.disabled = true;
+
+                                                        const isInsta = res.title.toLowerCase().includes('instagram');
+                                                        submitAuditRequest(isInsta ? "" : val, isInsta ? val : "").then((result) => {
+                                                            if (result.success) {
+                                                                btn.innerHTML = "✓ Submitted";
+                                                                btn.style.background = "#22c55e";
+                                                                setSubmittedAudits(prev => [...prev, res.title]);
+                                                                setTimeout(() => { setActiveAuditForm(null); }, 2000);
+                                                            } else {
+                                                                btn.innerHTML = "Error";
+                                                                btn.disabled = false;
+                                                                setTimeout(() => { btn.innerHTML = originalHtml; }, 2000);
+                                                            }
+                                                        });
+                                                    }
+                                                }}>
+                                                    <div className="space-y-1">
+                                                        <label className={`${jetbrainsMono.variable} font-mono block text-[9px] text-slate-500 uppercase tracking-widest font-bold`}>
+                                                            {res.title.includes('Instagram') ? 'Instagram Handle' : 'LinkedIn URL/Handle'}
+                                                        </label>
+                                                        <input
+                                                            autoFocus
+                                                            type="text"
+                                                            placeholder={res.title.includes('Instagram') ? '@username' : 'linkedin.com/in/you'}
+                                                            className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-xs rounded-lg px-3 py-2.5 focus:border-blue-600 focus:outline-none transition-all placeholder-slate-400 font-medium"
+                                                        />
+                                                    </div>
+                                                    <button type="submit" className="w-full bg-slate-900 hover:bg-black text-white font-bold text-[10px] py-2 rounded-lg transition-all active:scale-95 uppercase tracking-wider">
+                                                        Submit for Audit
                                                     </button>
-                                                </div>
-                                                {error && <p className="text-red-500 text-[10px] font-semibold">Invalid code</p>}
-                                            </div>
-                                        ) : (
-                                            <div className="relative z-10 mt-4 pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 font-medium">
-                                                <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-slate-400"></span> {res.type} Format</span>
-                                                <span className="group-hover:text-slate-900 transition-colors flex items-center gap-1 font-semibold">
-                                                    {isLocked ? (
-                                                        <span className="text-blue-600 flex items-center gap-1 transition-colors group-hover:text-blue-700">Unlock 🔒</span>
-                                                    ) : (
-                                                        <>Access <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></>
-                                                    )}
-                                                </span>
+                                                </form>
                                             </div>
                                         )}
                                     </>
                                 );
 
-                                const className = `group relative rounded-2xl border ${isLocked ? 'border-slate-200 bg-white' : 'border-slate-200 bg-white shadow-sm'} p-5 hover:bg-slate-50 hover:border-slate-300 transition-all cursor-pointer overflow-hidden block w-full text-left`;
+                                const isNotion = res.unlockType === 'notion';
+                                const className = `group relative rounded-2xl border ${isLocked ? 'border-slate-200 bg-white' : 'border-slate-200 bg-white shadow-sm'} p-5 hover:bg-slate-50 hover:border-slate-300 transition-all cursor-pointer overflow-hidden block w-full text-left ${isNotion && !isLocked ? 'ring-2 ring-amber-400/50 border-amber-500/30' : ''}`;
 
                                 if (isLinkInteractive) {
                                     return (
@@ -181,22 +207,155 @@ export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDash
                                 }
 
                                 return (
-                                    <button
+                                    <div
                                         key={`${day}-${i}`}
-                                        className={className}
+                                        className={`${className} ${!isLocked && res.unlockType === 'audit' && !isSubmitted ? 'cursor-pointer hover:bg-slate-50' : 'cursor-default hover:bg-white'}`}
                                         onClick={() => {
-                                            if (isLocked && !isUnlocking) {
-                                                setShowUnlockFor({ id: `${day}-${i}`, type: res.unlockType });
-                                                setCode("");
-                                                setError(false);
+                                            if (!isLocked && res.unlockType === 'audit' && !isSubmitted) {
+                                                setActiveAuditForm(activeAuditForm === res.title ? null : res.title);
                                             }
                                         }}
                                     >
                                         {CardContent}
-                                    </button>
+                                    </div>
                                 );
                             })
                         ))}
+                    </div>
+
+                </div>
+
+                {/* Kingstone Silver Certification - Main Feature at Bottom */}
+                <div className="mt-20 relative rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl overflow-hidden group">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(226,232,240,0.5)_0%,transparent_100%)] pointer-events-none" />
+
+                    <div className="p-8 md:p-12 relative z-10 flex flex-col lg:flex-row gap-12 items-center">
+                        {/* Certificate Badge Image */}
+                        <div className="w-full lg:w-1/3 flex justify-center">
+                            <div className="relative group/badge">
+                                <div className="absolute -inset-4 bg-slate-200/50 rounded-full blur-2xl group-hover/badge:bg-slate-300/50 transition-all duration-500" />
+                                <img
+                                    src="/assets/silver-badge.png"
+                                    alt="Silver Partner Certification"
+                                    className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl transition-transform duration-500 group-hover/badge:scale-105"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Content & Form */}
+                        <div className="flex-1 space-y-8">
+                            <div className="space-y-4 text-center lg:text-left">
+                                <div className={`${jetbrainsMono.variable} font-mono text-xs text-blue-600 tracking-widest uppercase font-bold flex items-center justify-center lg:justify-start gap-2`}>
+                                    <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                                    Partner Status Activation
+                                </div>
+                                <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                                    Silver Partner Status
+                                </h2>
+                                <p className="text-slate-500 text-lg font-medium max-w-xl">
+                                    Submit your details to activate your Silver Partner status and join the Kingstone Verified Network.
+                                </p>
+                            </div>
+
+                            {unlockedCertification ? (
+                                initialPartnerStatus === "Active" ? (
+                                    <div className="bg-emerald-50/50 p-6 md:p-8 rounded-[2rem] border border-emerald-200 flex flex-col items-center justify-center text-center space-y-3">
+                                        <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 text-2xl mb-2">
+                                            ✓
+                                        </div>
+                                        <h3 className="text-xl font-bold text-slate-900">Partner Status Activated</h3>
+                                        <p className="text-emerald-700 font-medium">Your Silver Partner Status is active and your account is fully verified.</p>
+                                    </div>
+                                ) : (
+                                    <form
+                                        className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50/50 p-6 md:p-8 rounded-[2rem] border border-slate-200"
+                                        onSubmit={(e) => {
+                                            e.preventDefault();
+                                            const form = e.target as HTMLFormElement;
+                                            const formData = new FormData(form);
+                                            const website = formData.get("website") as string;
+                                            const name = formData.get("name") as string;
+                                            const email = formData.get("email") as string;
+                                            const skoolName = formData.get("skoolName") as string;
+                                            const btn = form.querySelector('button');
+
+                                            if (website && name && email && skoolName && btn) {
+                                                const originalHtml = btn.innerHTML;
+                                                btn.innerHTML = "Activating Partner Status...";
+                                                btn.disabled = true;
+
+                                                submitCertificationRequest(website, name, email, skoolName).then((res) => {
+                                                    if (res.success) {
+                                                        btn.innerHTML = "✓ Partner Status Activated";
+                                                        btn.style.background = "#059669";
+                                                        btn.style.color = "#FFF";
+                                                        // Note: The UI will fully update to the success state on the next page refresh
+                                                    } else {
+                                                        btn.innerHTML = "Error. Sync required.";
+                                                        btn.disabled = false;
+                                                        setTimeout(() => { btn.innerHTML = originalHtml; }, 2000);
+                                                    }
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        <div className="space-y-1.5">
+                                            <label className={`${jetbrainsMono.variable} font-mono block text-[10px] text-slate-400 uppercase tracking-widest font-bold ml-1`}>Agency/Website Name</label>
+                                            <input
+                                                required
+                                                type="text"
+                                                name="website"
+                                                placeholder="e.g. Lethal AI"
+                                                className="w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3.5 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/10 transition-all font-medium"
+                                            />
+                                        </div>
+                                        <div className="space-y-1.5">
+                                            <label className={`${jetbrainsMono.variable} font-mono block text-[10px] text-slate-400 uppercase tracking-widest font-bold ml-1`}>Contact Full Name</label>
+                                            <input
+                                                required
+                                                type="text"
+                                                name="name"
+                                                placeholder="John Doe"
+                                                className="w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3.5 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/10 transition-all font-medium"
+                                            />
+                                        </div>
+                                        <div className="space-y-1.5">
+                                            <label className={`${jetbrainsMono.variable} font-mono block text-[10px] text-slate-400 uppercase tracking-widest font-bold ml-1`}>Official Contact Email</label>
+                                            <input
+                                                required
+                                                type="email"
+                                                name="email"
+                                                placeholder="john@example.com"
+                                                className="w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3.5 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/10 transition-all font-medium"
+                                            />
+                                        </div>
+                                        <div className="space-y-1.5">
+                                            <label className={`${jetbrainsMono.variable} font-mono block text-[10px] text-slate-400 uppercase tracking-widest font-bold ml-1`}>Skool Username</label>
+                                            <input
+                                                required
+                                                type="text"
+                                                name="skoolName"
+                                                placeholder="@username"
+                                                className="w-full bg-white border border-slate-200 text-slate-900 text-sm rounded-xl px-4 py-3.5 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/10 transition-all font-medium"
+                                            />
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            className="md:col-span-2 bg-slate-900 hover:bg-black text-white font-bold text-sm tracking-widest uppercase py-4 rounded-xl transition-all active:scale-95 shadow-2xl shadow-black/10 mt-2"
+                                        >
+                                            Activate Partner Status →
+                                        </button>
+                                    </form>
+                                )
+                            ) : (
+                                <div className="bg-slate-100/50 rounded-2xl p-4 border border-slate-200 flex items-center justify-between text-slate-500 font-medium">
+                                    <span className="flex items-center gap-3">
+                                        <span className="text-xl">💎</span> Finish Day 5 tasks to unlock your Silver Partner Status.
+                                    </span>
+                                    <span className={`${jetbrainsMono.variable} font-mono text-[10px] bg-slate-200 px-2 py-1 rounded uppercase tracking-tighter`}>Status: Locked</span>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
 
@@ -206,30 +365,30 @@ export default function ResourcesDashboard({ initialPrizes = {} }: ResourcesDash
 
                     <div className="p-8 md:p-10 relative z-10 flex flex-col md:flex-row gap-10 items-center justify-between">
                         <div className="flex-1 space-y-4">
-                            <div className={`${jetbrainsMono.variable} font-mono text-xs text-blue-600 tracking-widest uppercase mb-1 flex items-center gap-2 font-semibold`}>
-                                <span>🔒</span> The Next Level
+                            <div className={`${jetbrainsMono.variable} font-mono text-[10px] text-blue-600 tracking-widest uppercase mb-1 flex items-center gap-2 font-bold`}>
+                                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span> Silver to Platinum Status
                             </div>
 
                             <h3 className="font-bold text-slate-900 text-3xl">
-                                30-Day Agency Arsenal
+                                The Platinum Arsenal
                             </h3>
 
                             <p className="text-slate-600 text-base leading-relaxed max-w-lg font-medium">
-                                When you are ready to scale to $10k/month, unlock the proprietary systems, sales pipelines, and hiring SOPs used to build multiple 7-figure AI automated agencies.
+                                For those ready to move from Silver to Platinum Status. Unlock the High-Ticket Pipeline, the proprietary Agency Arsenal, and our Lead Overflow.
                             </p>
 
-                            <button className="mt-6 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.2)] hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5">
-                                Upgrade & Unlock Access ↗
+                            <button className="mt-6 px-10 py-4 rounded-xl bg-slate-900 border border-slate-800 hover:bg-black text-white font-bold transition-all shadow-xl shadow-slate-900/10 hover:-translate-y-0.5">
+                                Upgrade Status ↗
                             </button>
                         </div>
 
                         <div className="flex-1 w-full space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm backdrop-blur-md">
-                            <div className="text-xs font-mono text-slate-500 font-semibold uppercase tracking-widest mb-4">Included in 30-Day</div>
-                            <LockedResource title="100k Agency Operating System" />
-                            <LockedResource title="7-Figure Sales Call Pipeline" />
-                            <LockedResource title="Hiring Your First Setter SOP" />
-                            <LockedResource title="Advanced Lead Gen Matrix" />
-                            <LockedResource title="White-label Subcontracting Hub" />
+                            <div className="text-[10px] font-mono text-slate-500 font-bold uppercase tracking-widest mb-4">Included in Platinum</div>
+                            <LockedResource title="💎 Unlimited GHL Sub-accounts (Save $97/mo+)" />
+                            <LockedResource title="💎 LinkedIn Outreach Engine (Automate your prospecting)" />
+                            <LockedResource title="💎 Advanced Voice AI Blueprints (Vapi & n8n Deployments)" />
+                            <LockedResource title="💎 The Platinum Pipeline (Direct High-Ticket Lead Overflow)" />
+                            <LockedResource title="💎 Featured Website Partner Status (Instant SEO & Social Proof)" />
                         </div>
                     </div>
                 </div>

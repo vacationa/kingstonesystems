@@ -18,22 +18,11 @@ const DAYS = [
             description: "Get organized from day one with 6 months of Notion's premium tier, completely free! [Claim your 6 free months here](https://ntn.so/kingstonesystems).",
         },
         tasks: [
-            { id: "d1_v1", label: 'Watch "The AI Arbitrage Model Explained Simply"' },
-            { id: "d1_v3", label: 'Watch "Best Niches for AI Agent Services in 2026"' },
-            { id: "d1_v4", label: 'Watch "Choosing Your Niche & Committing"' },
+            { id: "d1_v1", label: 'Watch The AI Arbitrage Model Explained Simply' },
+            { id: "d1_v3", label: 'Watch Best Niches for AI Agent Services in 2026' },
+            { id: "d1_v4", label: 'Watch Choosing Your Niche & Committing' },
             { id: "d1_niche", label: "Choose your niche and commit to it" },
-            { id: "d1_post", label: "Post in the community" },
-            { id: "d1_cheer", label: "Go comment on 5 other members' posts and hype them up" },
-            { id: "d1_screenshot", label: "Screenshot your finished tracker in your Dashboard" },
         ],
-        postTemplate: {
-            title: "Day 1 done — I'm in 🔥",
-            lines: [
-                "My niche: [your answer]",
-                "Biggest takeaway: [your answer]",
-                "[Your Screenshot]",
-            ],
-        },
     },
     {
         day: 2,
@@ -44,114 +33,63 @@ const DAYS = [
             description: "Instant access to: [AI Closer](https://chatgpt.com/g/g-699e2b8a86fc81918dfe62b4f01b68b3-ai-sprint-closer), [AI Goals](https://chatgpt.com/g/g-699e2d48995c8191ac6f58bd22e97858-ai-sprint-launch), [AI Offer](https://chatgpt.com/g/g-699e2dc6329c819186957a8000a2b31c-ai-sprint-offer), [AI Ads](https://chatgpt.com/g/g-699e2e63cdc4819186a41a83891ee6bb-ai-sprint-ads), [AI Scripts](https://chatgpt.com/g/g-699e2e98d6d481919e00ae5a2ffc7af3-ai-sprint-scripts), and [AI Prompts](https://chatgpt.com/g/g-699e2f9f5d5c8191b0e089a16c29a22d-ai-sprint-promptgpt).",
         },
         tasks: [
-            { id: "d2_v1", label: 'Watch "The AI Receptionist: Your Anchor Offer"' },
-            { id: "d2_v2", label: 'Watch "Missed Call Text Back & Lead Reactivation"' },
-            { id: "d2_v3", label: 'Watch "Build an AI Agent"' },
+            { id: "d2_v1", label: 'Watch The AI Receptionist: Your Anchor Offer' },
+            { id: "d2_v2", label: 'Watch Missed Call Text Back & Lead Reactivation' },
+            { id: "d2_v3", label: 'Watch Build an AI Agent' },
             { id: "d2_build", label: "Follow along with the \"Build Your First AI Agent\" instructions and build yours" },
             { id: "d2_screenshot_agent", label: "Screenshot your finished agent" },
-            { id: "d2_post", label: "Post in the community using the template below" },
-            { id: "d2_screenshot", label: "Screenshot your finished Dashboard tracker" },
-            { id: "d2_cheer", label: "Go comment on 5 other members' posts and hype them up" },
         ],
-        postTemplate: {
-            title: "Day 2 done! I built my first AI agent 🤖",
-            lines: [
-                "What my agent does: [your answer]",
-                "The biggest surprise I had while building this was [your answer].",
-                "Honestly, it was [describe overall difficulty].",
-                "[Screenshot of your finished agent]",
-                "[Screenshot of your tracker]",
-            ],
-        },
     },
     {
         day: 3,
-        title: "Finalize your offer",
+        title: "Build Your AI Agency Website",
         color: "#f59e0b",
-        prize: {
-            name: "DFY Social Media Makeover",
-            description: "A complete 'Done-For-You' professional social media profile optimization to instantly build your authority and trust.",
-        },
-        tasks: [
-            { id: "d3_playbook", label: "Copy the Day 3 Playbook" },
-            { id: "d3_v1", label: 'Watch "How to Structure a 1K-3K/Month Retainer"' },
-            { id: "d3_v2", label: 'Watch "Finalizing Your Core Offer"' },
-            { id: "d3_lock", label: "Lock in who you're serving and what you're charging" },
-            { id: "d3_website", label: "Follow along with the website video and get yours live" },
-            { id: "d3_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
-            { id: "d3_post", label: "Post in the community using the template below" },
-            { id: "d3_cheer", label: "Go comment on 5 other members' posts and hype them up" },
-        ],
-        postTemplate: {
-            title: "Day 3 done — my offer is locked 🔒",
-            lines: [
-                "Who I'm serving & what I'm charging: [your answer]",
-                "[Screenshot of your tracker]",
-            ],
-        },
-    },
-    {
-        day: 4,
-        title: "Client acquisition",
-        color: "#ef4444",
-        prize: {
-            name: "The $10K/mo AI Roadmap",
-            description: "Phase 2 unlocked: Your complete blueprint for scaling from your first client to a consistent $10K/month agency operations.",
-        },
-        tasks: [
-            { id: "d4_playbook", label: "Copy the Day 4 Playbook" },
-            { id: "d4_v1", label: 'Watch "Cold Outreach that Actually Works in 2026"' },
-            { id: "d4_v2", label: 'Watch "The 3-Step Script for Setting Appointments"' },
-            { id: "d4_v3", label: 'Watch "Using Case Studies even if you have zero"' },
-            { id: "d4_linkedin", label: "Follow the LinkedIn optimization guide" },
-            { id: "d4_prospects", label: "Build your list of 20 high-quality prospects" },
-            { id: "d4_outreach", label: "Send your first 5 personalized outreach messages" },
-            { id: "d4_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
-            { id: "d4_post", label: "Post in the community using the template below" },
-            { id: "d4_cheer", label: "Go comment on 5 other members' posts and hype them up" },
-        ],
-        postTemplate: {
-            title: "Day 4 done — outreach started 🔥",
-            lines: [
-                "How many prospects I've messaged: [your answer]",
-                "Biggest outreach struggle: [your answer]",
-                "[Screenshot of your tracker]",
-            ],
-        },
-    },
-    {
-        day: 5,
-        title: "The closing masterclass",
-        color: "#a855f7",
         prizes: [
             {
-                name: "AI Solutions Certificate",
-                description: "Official recognition of your expertise in AI deployment and agency operations. [View your certificate here](file:///Users/adhi/Repos/kingstonesystems/public/assets/certificate.pdf).",
+                name: "Instagram Audit",
+                description: "Enter your Instagram handle below and our team will provide a comprehensive profile optimization audit within 48 hours.",
             },
             {
-                name: "Priority Support Access",
-                description: "Direct line for technical support and strategy for your first 3 client deployments.",
+                name: "LinkedIn Audit",
+                description: "Enter your LinkedIn profile URL or username below and our team will provide a comprehensive profile optimization audit within 48 hours.",
             }
         ],
         tasks: [
-            { id: "d5_playbook", label: "Copy the Day 5 Playbook" },
-            { id: "d5_v1", label: 'Watch "The Closing Framework for AI Agents"' },
-            { id: "d5_v2", label: 'Watch "Handling the \'Is this safe?\' Objection"' },
-            { id: "d5_v3", label: 'Watch "Onboarding Your First Client"' },
-            { id: "d5_v4", label: 'Watch "Next Steps: Beyond the 5 Days"' },
-            { id: "d5_audit", label: "Submit your dashboard for final audit & certification" },
-            { id: "d5_screenshot", label: "Screenshot your finished tracker in AI Sprint Dashboard" },
-            { id: "d5_post", label: "Post in the community using the template below" },
-            { id: "d5_cheer", label: "Go comment on 5 other members' posts and hype them up" },
+            { id: "d3_v2", label: 'Watch Finalizing Your Core Offer' },
+            { id: "d3_v4", label: "Watch Build Your AI Agency Website" },
+            { id: "d3_website", label: "Get your website up" },
         ],
-        postTemplate: {
-            title: "Day 5 complete — I am certified 🎓",
-            lines: [
-                "My #1 goal for the next 30 days: [your answer]",
-                "One thing I'd tell someone starting Day 1: [your answer]",
-                "[Screenshot of your tracker]",
-            ],
+    },
+    {
+        day: 4,
+        title: "Book Your First Meeting",
+        color: "#ef4444",
+        prize: {
+            name: "15,000+ Verified Lead Database",
+            description: "[Access your 15,000+ Verified Leads here](https://docs.google.com/spreadsheets/d/1_5TOn2Y-n0n7mKMdZl9Fzcb5kfmSYWAr1U3N6JCVkK8/edit?gid=491522820#gid=491522820).",
         },
+        tasks: [
+            { id: "d4_v1", label: "Watch How to Build an Elite Lead List Fast" },
+            { id: "d4_v2", label: "Watch LinkedIn Prospecting: Authority & Outreach System" },
+            { id: "d4_v3", label: "Watch Cold Calling System: High-Speed Pipeline Building" },
+            { id: "d4_google_maps", label: "Build your first lead list using the Google Maps method" },
+            { id: "d4_outreach_call", label: "Send your first outreach message or make your first call" },
+            { id: "d4_screenshot", label: "Screenshot your lead list and outreach" },
+        ],
+    },
+    {
+        day: 5,
+        title: "Close Your First AI Client",
+        color: "#a855f7",
+        prize: {
+            name: "Silver Partner Status",
+            description: "Submit your details in the Systems Vault to activate your Silver Partner status and join the Kingstone Verified Network.",
+        },
+        tasks: [
+            { id: "d5_v1", label: "Watch The One-Call Close" },
+            { id: "d5_v2", label: "Watch Launch, QA, & First 7 Days" },
+            { id: "d5_outreach", label: "Continue doing outreach" },
+        ],
     },
 ];
 
@@ -162,34 +100,36 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
     dayData: typeof DAYS[0];
     isComplete: boolean;
     unlockedPrize: boolean;
-    onUnlock: (day: number, code: string) => void;
+    onUnlock: (day: number, code: string) => Promise<{ success: boolean; error?: string }>;
 }) {
     const [code, setCode] = useState("");
     const [error, setError] = useState(false);
-    const [copied, setCopied] = useState(false);
+    const [serverError, setServerError] = useState<string | null>(null);
+    const [isUnlocking, setIsUnlocking] = useState(false);
 
-    // Day 3 state
-    const [auditCode, setAuditCode] = useState("");
-    const [auditError, setAuditError] = useState(false);
-
-    const postText = `${dayData.postTemplate.title}\n${dayData.postTemplate.lines.join("\n")}\n________________________\n🎁 TO GET YOUR DAILY REWARD 🎁\n\nScreenshot your aisprint.com dashboard showing Day ${day} complete\nComment EXACTLY this ⬇️\n"Day ${day} done! Here's my dashboard: [insert screenshot]"\nComment on 5 other posts, and we will DM you the code to access your prize 🤫`;
-
-    const handleCopy = () => {
-        navigator.clipboard.writeText(postText);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
-
-    const handleUnlock = () => {
-        if (code.trim()) {
-            onUnlock(day, code.trim().toUpperCase());
-            setError(false);
-        } else {
+    const handleUnlock = async () => {
+        if (!code.trim()) {
             setError(true);
+            return;
+        }
+
+        setError(false);
+        setServerError(null);
+        setIsUnlocking(true);
+
+        try {
+            const result = await onUnlock(day, code.trim().toUpperCase());
+            if (!result.success) {
+                setServerError(result.error || "Invalid code");
+            }
+        } catch (err) {
+            setServerError("An error occurred. Please try again.");
+        } finally {
+            setIsUnlocking(false);
         }
     };
 
-    if (!isComplete) {
+    if (!isComplete && !unlockedPrize) {
         return (
             <div className="mt-6 p-5 rounded-2xl border border-black/10 bg-slate-50 text-center">
                 <p className="text-slate-500 text-sm">
@@ -235,154 +175,84 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                         />
                     </div>
 
-                    {/* Special Inline Form for Day 3 Social Medial Makeover */}
-                    {day === 3 && (
-                        <div className="mt-4 p-5 rounded-2xl bg-slate-50 border border-black/10 space-y-4">
-                            <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2">
-                                Start Your Audit
-                            </h4>
-                            <p className="text-xs text-slate-500 leading-relaxed">
-                                Enter the links to up to two platforms you would like our team to review and remake.
-                            </p>
+                    {(dayData.prize as any)?.link && (
+                        <a
+                            href={(dayData.prize as any).link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-bold text-sm transition-all hover:opacity-90 active:scale-95 shadow-lg"
+                            style={{ background: dayData.color }}
+                        >
+                            Access Reward ↗
+                        </a>
+                    )}
 
-                            <form className="space-y-4" onSubmit={(e) => {
-                                e.preventDefault();
-
-                                if (auditCode.trim().toUpperCase() !== "AILAUNCH2026") {
-                                    setAuditError(true);
-                                    return;
-                                }
-                                setAuditError(false);
-
-                                const form = e.target as HTMLFormElement;
-                                const formData = new FormData(form);
-                                const linkedin = formData.get("linkedin") as string;
-                                const instagram = formData.get("instagram") as string;
-
-                                if (linkedin || instagram) {
-                                    const btn = form.querySelector('button');
-                                    if (btn) {
-                                        btn.innerHTML = "Submitting...";
-                                    }
-
-                                    // Submit to Supabase audit log
-                                    submitAuditRequest(linkedin, instagram).then(() => {
-                                        if (btn) {
-                                            btn.innerHTML = "✓ Audit Requested";
-                                            btn.style.background = dayData.color;
-                                            btn.style.color = "#FFF";
-                                            btn.disabled = true;
-                                        }
-                                    });
-                                }
-                            }}>
-                                <div className="space-y-3">
-                                    <div>
-                                        <label className="block text-[10px] text-slate-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">LinkedIn URL</label>
-                                        <input
-                                            type="url"
-                                            name="linkedin"
-                                            placeholder="https://linkedin.com/in/your-profile"
-                                            className={`w-full bg-white border border-black/10 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-[10px] text-slate-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">Instagram URL</label>
-                                        <input
-                                            type="url"
-                                            name="instagram"
-                                            placeholder="https://instagram.com/your-handle"
-                                            className={`w-full bg-white border border-black/10 text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition-all placeholder-slate-400`}
-                                        />
-                                    </div>
-                                    <div className="pt-2">
-                                        <label className="block text-[10px] flex justify-between text-slate-500 mb-1.5 ml-1 uppercase tracking-widest font-mono">
-                                            <span>Access Passcode 🔒</span>
-                                            {auditError && <span className="text-red-500 normal-case">Invalid code</span>}
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="passcode"
-                                            value={auditCode}
-                                            onChange={(e) => { setAuditCode(e.target.value); setAuditError(false); }}
-                                            placeholder="Enter secret code"
-                                            className={`w-full bg-white border ${auditError ? 'border-red-500' : 'border-black/10'} text-slate-900 text-sm rounded-xl px-4 py-3 focus:border-blue-600 focus:outline-none transition-all tracking-widest uppercase`}
-                                        />
+                    {dayData.prizes && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            {dayData.prizes.map((p, i) => (
+                                <div
+                                    key={i}
+                                    className="p-4 rounded-xl bg-white border border-black/5 shadow-sm"
+                                >
+                                    <div className="flex items-center justify-between gap-2">
+                                        <div className="min-w-0">
+                                            <p className="font-bold text-slate-900 text-sm truncate">{p.name}</p>
+                                            <p className="text-slate-500 text-[10px] mt-0.5 whitespace-normal leading-tight">{p.description}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <button type="submit" className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-4 py-3 rounded-xl transition-colors">
-                                    Submit For Audit →
-                                </button>
-                            </form>
+                            ))}
                         </div>
                     )}
 
-                    {day !== 3 && (
-                        <div
-                            className="flex items-center gap-2 text-xs px-4 py-2.5 rounded-xl mt-2 w-max"
-                            style={{ background: `${dayData.color}15`, color: dayData.color }}
-                        >
-                            <span>✓</span>
-                            <span className={`${jetbrainsMono.variable} font-mono font-semibold`}>Access link processed</span>
-                        </div>
-                    )}
+
+                    <div
+                        className="flex items-center gap-2 text-xs px-4 py-2.5 rounded-xl mt-2 w-max"
+                        style={{ background: `${dayData.color}15`, color: dayData.color }}
+                    >
+                        <span>✓</span>
+                        <span className={`${jetbrainsMono.variable} font-mono font-semibold`}>Access link processed</span>
+                    </div>
                 </div>
             ) : (
                 <div className="p-5 space-y-4">
                     <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xl">🎁</span>
+                        <span className="text-xl">🔑</span>
                         <span className="font-semibold text-slate-900 text-sm">
                             Day {day} Complete! Enter your unlock code
                         </span>
                     </div>
-                    <p className="text-slate-500 text-xs">
-                        Post your accountability update, share your dashboard screenshot, comment on 5 other posts, and we will DM you the code to access your prize.
-                    </p>
 
-                    {/* Post template copy */}
-                    <div className="bg-white rounded-xl p-4 space-y-2 border border-black/10">
-                        <div className="flex items-center justify-between">
-                            <span className="font-mono text-xs text-slate-400 uppercase tracking-widest">Post Template</span>
+
+                    <div className="space-y-2">
+                        <div className="flex gap-2">
+                            <input
+                                type="text"
+                                value={code}
+                                onChange={e => { setCode(e.target.value.toUpperCase()); setError(false); setServerError(null); }}
+                                onKeyDown={e => e.key === "Enter" && handleUnlock()}
+                                placeholder="ENTER CODE"
+                                disabled={isUnlocking}
+                                className={`flex-1 font-mono text-sm px-4 py-2.5 rounded-xl bg-white border text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all tracking-widest uppercase disabled:opacity-50`}
+                                style={{
+                                    borderColor: error || serverError ? "#ef4444" : "#E2E8F0",
+                                }}
+                            />
                             <button
-                                onClick={handleCopy}
-                                className="text-xs px-3 py-1 rounded-lg transition-all"
-                                style={{ background: copied ? `${dayData.color}15` : "#F8FAFC", color: copied ? dayData.color : "#64748B", border: copied ? "none" : "1px solid #E2E8F0" }}
+                                onClick={handleUnlock}
+                                disabled={isUnlocking}
+                                className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                                style={{ background: dayData.color }}
                             >
-                                {copied ? "✓ Copied!" : "Copy"}
+                                {isUnlocking ? "..." : "Unlock"}
                             </button>
                         </div>
-                        <div className="space-y-1">
-                            <p className="text-slate-900 text-xs font-semibold">{dayData.postTemplate.title}</p>
-                            {dayData.postTemplate.lines.map((line, i) => (
-                                <p key={i} className="text-slate-600 text-xs">{line}</p>
-                            ))}
-                        </div>
+                        {(error || serverError) && (
+                            <p className="text-red-500 text-xs font-medium">
+                                {serverError || "Please enter your unlock code"}
+                            </p>
+                        )}
                     </div>
-
-                    {/* Code input */}
-                    <div className="flex gap-2">
-                        <input
-                            type="text"
-                            value={code}
-                            onChange={e => { setCode(e.target.value.toUpperCase()); setError(false); }}
-                            onKeyDown={e => e.key === "Enter" && handleUnlock()}
-                            placeholder="ENTER CODE"
-                            className="flex-1 font-mono text-sm px-4 py-2.5 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all tracking-widest uppercase"
-                            style={{
-                                borderColor: error ? "#ef4444" : "#E2E8F0",
-                            }}
-                        />
-                        <button
-                            onClick={handleUnlock}
-                            className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
-                            style={{ background: dayData.color }}
-                        >
-                            Unlock
-                        </button>
-                    </div>
-                    {error && (
-                        <p className="text-red-500 text-xs">Please enter your unlock code</p>
-                    )}
                 </div>
             )}
         </div>
@@ -406,12 +276,12 @@ function DayCard({
     unlockedPrize: boolean;
     onCheck: (id: string, val: boolean) => void;
     onActivate: () => void;
-    onUnlock: (day: number, code: string) => void;
+    onUnlock: (day: number, code: string) => Promise<{ success: boolean; error?: string }>;
 }) {
     const totalTasks = dayData.tasks.length;
     const completedTasks = dayData.tasks.filter(t => checked[t.id]).length;
     const progress = Math.round((completedTasks / totalTasks) * 100);
-    const isComplete = progress === 100;
+    const isComplete = unlockedPrize || progress === 100;
 
     return (
         <div
@@ -557,12 +427,13 @@ function ThirtyDayLockedCard() {
                 {/* Top row: label + lock button */}
                 <div className="flex items-start justify-between gap-4 flex-wrap">
                     <div>
-                        <div className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-1.5 font-semibold">
-                            Coming Next
+                        <div className="font-mono text-xs text-blue-600 tracking-widest uppercase mb-1.5 font-semibold flex items-center gap-2">
+                            <span className="text-sm">🏆</span> COMING NEXT
                         </div>
                         <h3 className="text-slate-900 font-bold text-xl">
-                            The 30-Day AI Agency Sprint
+                            THE PLATINUM ARSENAL
                         </h3>
+                        <p className="text-slate-500 text-sm font-medium mt-1">Move from Silver to Platinum Partner Status.</p>
                     </div>
                     <button
                         className="flex-shrink-0 px-4 py-2 rounded-xl font-semibold text-sm text-slate-500 border border-black/10 bg-slate-50 cursor-not-allowed whitespace-nowrap"
@@ -575,9 +446,9 @@ function ThirtyDayLockedCard() {
                 {/* Bullet points */}
                 <ul className="space-y-2">
                     {[
-                        "Turn your validated offer into a repeatable $10k/month business",
-                        "Advanced client acquisition, delegation, case studies & scaling playbooks",
-                        "Earn your 🥇 Kingstone AI Solutions Gold Certificate",
+                        "The Motherload: Turn your validated offer into a repeatable $10k/month engine.",
+                        "Lead Overflow Access: Advanced client acquisition, delegation systems, and scaling playbooks.",
+                        "The Platinum Credential: Earn your official 🥇 Platinum Partner Certification.",
                     ].map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-slate-600 text-sm leading-relaxed">
                             <span className="text-blue-600 mt-0.5 flex-shrink-0">→</span>
@@ -587,9 +458,9 @@ function ThirtyDayLockedCard() {
                 </ul>
 
                 {/* Refund highlight — full width */}
-                <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
-                    <span className="text-lg">🎁</span>
-                    <span>Complete the tracker in 30 days and get a <span className="underline">FULL REFUND</span> on your membership</span>
+                <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm font-bold shadow-lg shadow-slate-900/10">
+                    <span className="text-lg">🤝</span>
+                    <span>THE FOUNDER'S BET: Finish the 30-day tracker and get a 100% REFUND on your first month of Platinum HQ.</span>
                 </div>
             </div>
         </div>
@@ -598,11 +469,11 @@ function ThirtyDayLockedCard() {
 
 // ─── Overall Progress Bar ──────────────────────────────────────────────────
 
-function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
+function OverallProgress({ checked, unlockedPrizes }: { checked: Record<string, boolean>; unlockedPrizes: Record<number, boolean> }) {
     const totalTasks = DAYS.reduce((acc, d) => acc + d.tasks.length, 0);
     const completedTasks = DAYS.reduce((acc, d) => acc + d.tasks.filter(t => checked[t.id]).length, 0);
     const pct = Math.round((completedTasks / totalTasks) * 100);
-    const completedDays = DAYS.filter(d => d.tasks.every(t => checked[t.id])).length;
+    const completedDays = DAYS.filter(d => unlockedPrizes[d.day] || d.tasks.every(t => checked[t.id])).length;
 
     return (
         <div className="bg-white border border-black/10 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -656,8 +527,6 @@ function OverallProgress({ checked }: { checked: Record<string, boolean> }) {
     );
 }
 
-
-
 // ─── Main Component ────────────────────────────────────────────────────────
 
 interface SprintDashboardProps {
@@ -680,13 +549,16 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
         });
     };
 
-    const handleUnlock = (day: number, code: string) => {
-        // Optimistic update
-        setUnlockedPrizes(prev => ({ ...prev, [day]: true }));
-        // Persist to Supabase in background
-        startTransition(async () => {
-            await unlockPrize(day, code);
-        });
+    const handleUnlock = async (day: number, code: string) => {
+        // Persist to Supabase and wait for validation
+        const result = await unlockPrize(day, code);
+
+        if (result.success) {
+            setUnlockedPrizes(prev => ({ ...prev, [day]: true }));
+            return { success: true };
+        } else {
+            return { success: false, error: result.error };
+        }
     };
 
 
@@ -724,7 +596,7 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                 </div>
 
                 {/* Overall progress */}
-                <OverallProgress checked={checked} />
+                <OverallProgress checked={checked} unlockedPrizes={unlockedPrizes} />
 
                 <div className="flex gap-2">
                     <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold shadow-md shadow-blue-600/20">
@@ -755,23 +627,23 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
                     ))}
                 </div>
 
-                <div className="rounded-2xl border border-black/10 bg-white p-6 space-y-4">
+                <div className="rounded-2xl border border-black/10 bg-white p-6 space-y-4 shadow-sm">
                     <div className="flex items-center gap-2">
-                        <h2 className="font-bold text-slate-900 text-lg">
-                            Daily Non-Negotiables
+                        <h2 className="font-bold text-slate-900 text-lg uppercase tracking-tight">
+                            Daily Maintenance Protocol
                         </h2>
-                        <span className="font-mono text-xs text-blue-600 font-semibold ml-1">(Days 5–10)</span>
+                        <span className="font-mono text-xs text-blue-600 font-bold ml-1 uppercase">(Days 6+)</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {[
-                            "Follow up on all conversations from yesterday",
-                            "30 cold calls + outreach DMs (combined)",
-                            "Iterate your outreach scripts",
-                            "Post your daily accountability update",
+                            { label: "Response Management", desc: "Clear all follow-ups and active threads." },
+                            { label: "Volume Injection", desc: "30 high-intent cold calls + outreach DMs." },
+                            { label: "Architecture Review", desc: "Iterate outreach scripts based on yesterday's data." },
+                            { label: "Partner Update", desc: "Post your daily accountability check-in." },
                         ].map((item) => (
-                            <div key={item} className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-black/10 text-slate-700 font-medium text-sm">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                                <span>{item}</span>
+                            <div key={item.label} className="p-4 rounded-xl bg-slate-50 border border-black/5 text-slate-700">
+                                <p className="font-bold text-slate-900 text-sm mb-0.5">{item.label}</p>
+                                <p className="text-slate-500 text-xs leading-relaxed font-medium">{item.desc}</p>
                             </div>
                         ))}
                     </div>

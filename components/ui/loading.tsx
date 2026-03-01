@@ -25,7 +25,7 @@ export function Loading({
   };
 
   const colorClasses = {
-    primary: "border-[#0A66C2] text-[#0A66C2]",
+    primary: "border-primary text-primary",
     secondary: "border-gray-400 text-gray-400",
     white: "border-white text-white",
     black: "border-black text-black",
@@ -40,7 +40,7 @@ export function Loading({
     }[color];
 
     const topColor = {
-      primary: "border-t-[#0A66C2]",
+      primary: "border-t-primary",
       secondary: "border-t-gray-400",
       white: "border-t-white",
       black: "border-t-black",
@@ -72,7 +72,7 @@ export function Loading({
             size === "md" && "h-2 w-2",
             size === "lg" && "h-2.5 w-2.5",
             size === "xl" && "h-3 w-3",
-            color === "primary" && "bg-[#0A66C2]",
+            color === "primary" && "bg-primary",
             color === "secondary" && "bg-gray-400",
             color === "white" && "bg-white",
             color === "black" && "bg-black"
@@ -91,7 +91,7 @@ export function Loading({
       className={cn(
         "rounded-full animate-pulse",
         sizeClasses[size],
-        color === "primary" && "bg-[#0A66C2]",
+        color === "primary" && "bg-primary",
         color === "secondary" && "bg-gray-400",
         color === "white" && "bg-white",
         color === "black" && "bg-black",
@@ -111,7 +111,7 @@ export function Loading({
             size === "md" && "h-3 w-1",
             size === "lg" && "h-4 w-1",
             size === "xl" && "h-6 w-1.5",
-            color === "primary" && "bg-[#0A66C2]",
+            color === "primary" && "bg-primary",
             color === "secondary" && "bg-gray-400",
             color === "white" && "bg-white",
             color === "black" && "bg-black"
@@ -135,7 +135,7 @@ export function Loading({
             size === "md" && "h-2 w-2",
             size === "lg" && "h-2.5 w-2.5",
             size === "xl" && "h-3 w-3",
-            color === "primary" && "bg-[#0A66C2]",
+            color === "primary" && "bg-primary",
             color === "secondary" && "bg-gray-400",
             color === "white" && "bg-white",
             color === "black" && "bg-black"
@@ -168,8 +168,8 @@ export function Loading({
       <div className="flex flex-col items-center gap-3">
         {renderLoader()}
         <p className={cn(
-          "text-sm",
-          color === "primary" && "text-[#0A66C2]",
+          "text-sm font-figtree",
+          color === "primary" && "text-primary",
           color === "secondary" && "text-gray-500",
           color === "white" && "text-white",
           color === "black" && "text-black"
