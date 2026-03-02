@@ -14,7 +14,7 @@ export default function PartnersPage() {
             tier: "Platinum",
             specialty: "Salesforce Agents",
             blurb: "Wyneo Technology specializes in deploying custom AI agents integrated natively with Salesforce to automate data entry, streamline pipeline management, and accelerate revenue operations.",
-            link: "#"
+            link: "mailto:dan@wyneotech.com"
         }
     ];
 
@@ -33,7 +33,7 @@ export default function PartnersPage() {
             tier: "Silver",
             specialty: "Product Launch Operations",
             blurb: "Automating go-to-market strategies, user feedback aggregation, and launch analytics for early-stage startups.",
-            link: "#"
+            link: "mailto:info@launchlens.xyz"
         }
     ];
 
