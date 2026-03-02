@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { useUser } from "@/context/user-context";
 
 interface DemoModeContextType {
@@ -14,15 +14,31 @@ const DemoModeContext = createContext<DemoModeContextType | undefined>(undefined
 const ALLOWED_DEMO_EMAIL = "hangal@usc.edu";
 
 export function DemoModeProvider({ children }: { children: ReactNode }) {
+  /*
   const [isDemoMode, setIsDemoMode] = useState(false);
   const { user } = useUser();
 
-  const toggleDemoMode = () => {
-    if (user?.email === ALLOWED_DEMO_EMAIL) {
-      setIsDemoMode(prev => !prev);
-    } else {
-      // Demo mode is restricted to authorized users
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('isDemoMode');
+      if (stored === 'true') {
+        setIsDemoMode(true);
+      }
+    } catch (e) {
+      console.error("Failed to read demo mode from localStorage", e);
     }
+  }, []);
+
+  const toggleDemoMode = () => {
+    setIsDemoMode(prev => {
+      const newVal = !prev;
+      try {
+        localStorage.setItem('isDemoMode', String(newVal));
+      } catch (e) {
+        // ignore
+      }
+      return newVal;
+    });
   };
 
   const clearDemoCampaigns = () => {
@@ -32,6 +48,11 @@ export function DemoModeProvider({ children }: { children: ReactNode }) {
       console.error("Failed to clear demo campaigns:", error);
     }
   };
+  */
+
+  const isDemoMode = false;
+  const toggleDemoMode = () => { };
+  const clearDemoCampaigns = () => { };
 
   return (
     <DemoModeContext.Provider value={{ isDemoMode, toggleDemoMode, clearDemoCampaigns }}>

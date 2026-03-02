@@ -84,18 +84,18 @@ const updateSession = async (request: NextRequest) => {
       return NextResponse.redirect(new URL("/dashboard", request.url));
     }
 
-    // If accessing dashboard without session, redirect to sign-in
+    // If accessing dashboard without session, redirect to partner-login
     if (request.nextUrl.pathname.startsWith("/dashboard") && !session) {
-      return NextResponse.redirect(new URL("/sign-in", request.url));
+      return NextResponse.redirect(new URL("/partner-login", request.url));
     }
 
     return response;
   } catch (error) {
     console.error("Session update error:", error);
 
-    // For dashboard routes, redirect to sign-in on error
+    // For dashboard routes, redirect to partner-login on error
     if (request.nextUrl.pathname.startsWith("/dashboard")) {
-      return NextResponse.redirect(new URL("/sign-in", request.url));
+      return NextResponse.redirect(new URL("/partner-login", request.url));
     }
 
     // For other routes, proceed

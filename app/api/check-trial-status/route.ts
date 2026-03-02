@@ -25,7 +25,7 @@ export async function GET(request: Request) {
     const supabase = await import("@/lib/supabase/server").then((m) => m.createClient(cookieStore));
     const { data: profile, error: profileError } = await supabase
       .from("profiles")
-      .select("created_at, trial_weeks")
+      .select("created_at, trial_weeks, partner_status")
       .eq("id", user.id)
       .single();
 
@@ -39,17 +39,21 @@ export async function GET(request: Request) {
       (now.getTime() - createdAt.getTime()) / (1000 * 60 * 60 * 24),
     );
 
-    // Use trial_weeks from profile, fallback to 1 week if not set
-    const trialWeeks = profile.trial_weeks || 1;
-    const trialDays = trialWeeks * 7;
-    const daysRemaining = Math.max(0, trialDays - daysSinceSignup);
+    // 14-day Outreach Engine specific trial
+    const outreachTrialDays = 14;
+    const daysRemaining = Math.max(0, outreachTrialDays - daysSinceSignup);
+
+    // User is allowed access if trial is active or they are Platinum
+    const isPlatinum = profile.partner_status && profile.partner_status.toLowerCase().includes("platinum");
+    const allowed = daysRemaining > 0 || isPlatinum;
 
     return NextResponse.json({
       daysRemaining,
       created_at: profile.created_at,
       now: now.toISOString(),
       daysSinceSignup,
-      subscribed: false,
+      isPlatinum,
+      subscribed: allowed, // Use subscribed field from the UI to grant access
     });
   } catch (error) {
     return NextResponse.json({ daysRemaining: 0, error: "Internal server error" }, { status: 500 });

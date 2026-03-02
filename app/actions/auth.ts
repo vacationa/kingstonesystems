@@ -101,6 +101,7 @@ export const signUpAction = async (formData: FormData) => {
           email: email,
           trial_weeks: trialWeeks,
           partner_code: partnerCode,
+          outreach_trial_start: new Date().toISOString(),
         },
       },
     });

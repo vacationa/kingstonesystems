@@ -151,7 +151,7 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       <div className="bg-white rounded-2xl border border-black/5">
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
           <div className="flex flex-col min-w-[180px]">
-            <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
               Daily Connection Activity
             </h2>
             <p className="text-slate-500 text-sm font-light">
@@ -175,7 +175,7 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       <div className="bg-white rounded-2xl border border-black/5">
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
           <div className="flex flex-col min-w-[180px]">
-            <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
               Daily Connection Activity
             </h2>
             <p className="text-slate-500 text-sm font-light">
@@ -206,7 +206,7 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       <div className="bg-white rounded-2xl border border-black/5">
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-center py-2 px-4 flex-shrink-0 gap-6">
           <div className="flex flex-col min-w-[180px]">
-            <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
               Daily Connection Activity
             </h2>
             <p className="text-slate-500 text-sm font-light">
@@ -232,7 +232,7 @@ export function ConnectionRequestsChart({ selectedCampaignId }: ConnectionReques
       {/* Header - matches MetricsDashboard pattern */}
       <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between py-2 px-4 flex-shrink-0 gap-6">
         <div className="flex flex-col min-w-[180px]">
-          <h2 className="text-xl text-slate-900 mb-1 tracking-tight">
+          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
             Daily Connection Activity
           </h2>
           <p className="text-slate-500 text-sm font-light">

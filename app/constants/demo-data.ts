@@ -309,30 +309,88 @@ export const demoCampaigns: Campaign[] = [
 export const demoActivities = [
   {
     id: "act-1",
-    type: "connection",
-    message: "Dr. Maria Santos (CISO at MedTech Solutions) accepted your connection request",
-    timestamp: new Date(Date.now() - 1800000).toISOString(), // 30 mins ago
-    status: "accepted",
+    type: "followResponse",
+    message: "Dr. Maria Santos accepted your connection request",
+    timestamp: new Date(Date.now() - 600000).toISOString(), // 10 mins ago
+    status: "success",
   },
   {
     id: "act-2",
-    type: "message",
-    message: "Received reply from James Park (Partner at GreenVentures)",
-    timestamp: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
-    status: "received",
+    type: "sendMessage",
+    message: "Sent message to James Park",
+    timestamp: new Date(Date.now() - 1800000).toISOString(), // 30 mins ago
+    status: "success",
   },
   {
     id: "act-3",
-    type: "connection",
-    message: "Connection request sent to Dr. Rachel Kim (VP of Innovation at HealthFirst)",
-    timestamp: new Date(Date.now() - 7200000).toISOString(), // 2 hours ago
-    status: "pending",
+    type: "followup_message_send",
+    message: "Sent 1st follow-up message to Sarah Jenkins",
+    timestamp: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
+    status: "success",
   },
   {
     id: "act-4",
-    type: "message",
-    message: "Message sent to Alex Chen (Security Architect at SecureNet)",
+    type: "followRequest",
+    message: "Sent connection request to Dr. Rachel Kim",
+    timestamp: new Date(Date.now() - 7200000).toISOString(), // 2 hours ago
+    status: "success",
+  },
+  {
+    id: "act-5",
+    type: "collectProfiles",
+    message: "Imported 125 new prospects from Sales Navigator search",
+    campaign_name: "Enterprise Security Leaders",
     timestamp: new Date(Date.now() - 10800000).toISOString(), // 3 hours ago
-    status: "sent",
+    status: "success",
+  },
+  {
+    id: "act-6",
+    type: "visit",
+    message: "Viewed profile of Alexander Chen",
+    timestamp: new Date(Date.now() - 14400000).toISOString(), // 4 hours ago
+    status: "success",
+  },
+  {
+    id: "act-7",
+    type: "sendMessage",
+    message: "Sent message to Emily Chen",
+    timestamp: new Date(Date.now() - 18000000).toISOString(), // 5 hours ago
+    status: "success",
+  },
+  {
+    id: "act-8",
+    type: "second_followup_message_send",
+    message: "Sent 2nd follow-up message to Michael Chang",
+    timestamp: new Date(Date.now() - 21600000).toISOString(), // 6 hours ago
+    status: "success",
+  },
+  {
+    id: "act-9",
+    type: "followResponse",
+    message: "David Wilson accepted your connection request",
+    timestamp: new Date(Date.now() - 25200000).toISOString(), // 7 hours ago
+    status: "success",
+  },
+  {
+    id: "act-10",
+    type: "followRequest",
+    message: "Sent connection request to Thomas Anderson",
+    timestamp: new Date(Date.now() - 28800000).toISOString(), // 8 hours ago
+    status: "success",
+  },
+  {
+    id: "act-11",
+    type: "collectProfiles",
+    message: "Imported 47 prospects from CSV upload",
+    campaign_name: "Climate Tech Investors",
+    timestamp: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
+    status: "success",
+  },
+  {
+    id: "act-12",
+    type: "visit",
+    message: "Viewed profile of Lisa Thompson",
+    timestamp: new Date(Date.now() - 90000000).toISOString(),
+    status: "success",
   }
 ];

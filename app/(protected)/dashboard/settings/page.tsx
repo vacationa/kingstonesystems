@@ -25,6 +25,7 @@ import { Slider } from "@/components/ui/slider";
 import { useWarmupStatus } from "@/components/hooks/useWarmupStatus";
 import { Suspense } from "react";
 import { jetbrainsMono, aeonik } from "@/app/fonts/fonts";
+import { useDemoMode } from "@/app/context/demo-mode-context";
 
 interface EditableField {
   id: "first_name" | "last_name";
@@ -37,6 +38,7 @@ type TabType = "profile" | "support" | "logout" | "guardrails";
 function SettingsContent() {
   const user = useUser();
   const { isInWarmup, daysRemaining, isLoading: warmupLoading } = useWarmupStatus();
+  const { isDemoMode, toggleDemoMode } = useDemoMode();
   const searchParams = useSearchParams();
   const tabParam = searchParams.get("tab") as TabType | null;
 
@@ -328,6 +330,33 @@ function SettingsContent() {
                   </button>
                 </div>
               )}
+
+              {/* Developer / Demo Settings - Commented out for now
+              <div className="pt-6 mt-6 border-t border-black/10">
+                <h3 className="text-sm font-bold text-gray-900 mb-4 tracking-tight">Developer Settings</h3>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">Demo Mode</p>
+                    <p className="text-xs text-gray-500 mt-1">Populate dashboards with dummy data for presentation</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={toggleDemoMode}
+                    className={cn(
+                      "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2",
+                      isDemoMode ? "bg-[#0A66C2]" : "bg-gray-200"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out",
+                        isDemoMode ? "translate-x-5" : "translate-x-0"
+                      )}
+                    />
+                  </button>
+                </div>
+              </div>
+              */}
             </form>
           </div>
         </div>

@@ -64,7 +64,7 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
                 <div className="flex flex-col md:flex-row gap-6 md:items-start items-center mb-4">
                     <div className="w-32 h-32 flex-shrink-0">
                         <img
-                            src="/assets/silver-badge.png"
+                            src="/new-silver-badge.jpg"
                             alt="Silver Partner Status Badge"
                             className="w-full h-full object-contain filter drop-shadow-xl"
                         />
@@ -242,7 +242,7 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
                             <div className="relative group/badge">
                                 <div className="absolute -inset-4 bg-slate-200/50 rounded-full blur-2xl group-hover/badge:bg-slate-300/50 transition-all duration-500" />
                                 <img
-                                    src="/assets/silver-badge.png"
+                                    src="/new-silver-badge.jpg"
                                     alt="Silver Partner Certification"
                                     className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl transition-transform duration-500 group-hover/badge:scale-105"
                                 />

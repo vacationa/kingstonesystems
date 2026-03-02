@@ -3,6 +3,7 @@
 import { LayoutDashboard, Lock, Database, Terminal, Shield, Network, Folder, Compass, Ruler, Database as DbIcon, Zap, Target, Users, TrendingUp, BarChart, Code, Cpu, Globe, Rocket, Sword, GitMerge, Flame, Settings, Anchor, Crown } from "lucide-react";
 import { jetbrainsMono } from "@/app/fonts/fonts";
 import Link from "next/link";
+import { useDemoMode } from "@/app/context/demo-mode-context";
 
 const ARSENAL_CATEGORIES = [
     {
@@ -151,16 +152,12 @@ export default function PlatinumArsenalPage() {
                     <div className="flex flex-col md:flex-row gap-6 md:items-start items-center">
                         <div className="w-32 h-32 flex-shrink-0">
                             <img
-                                src="/platinum-badge.png"
+                                src="/new-platinum-badge.jpg"
                                 alt="Platinum Status Badge"
                                 className="w-full h-full object-contain filter drop-shadow-xl"
                             />
                         </div>
                         <div className="space-y-2 text-center md:text-left">
-                            <div className={`${jetbrainsMono.variable} font-mono text-xs text-slate-500 tracking-widest uppercase font-semibold flex items-center justify-center md:justify-start gap-2`}>
-                                <span className="flex h-1.5 w-1.5 rounded-full bg-slate-300 animate-pulse"></span>
-                                PLATINUM STATUS REQUIRED
-                            </div>
                             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-500 to-slate-800 drop-shadow-sm">
                                 The Platinum Arsenal
                             </h1>
@@ -170,13 +167,6 @@ export default function PlatinumArsenalPage() {
                         </div>
                     </div>
 
-                    <Link
-                        href="/dashboard/settings"
-                        className="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-xl shadow-slate-900/10 hover:shadow-slate-900/20 hover:from-slate-700 hover:to-slate-800 transition-all active:scale-95 flex items-center gap-2 w-fit relative overflow-hidden group/btn"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[150%] skew-x-[-15deg] group-hover/btn:translate-x-[150%] transition-transform duration-1000" />
-                        Upgrade to Platinum
-                    </Link>
                 </div>
             </div>
 
@@ -199,7 +189,7 @@ export default function PlatinumArsenalPage() {
                             {category.items.map((item, i) => (
                                 <div
                                     key={i}
-                                    className="group relative bg-white border border-slate-200 rounded-2xl p-5 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 pointer-events-none hover:shadow-xl hover:border-slate-400 hover:shadow-slate-300/20"
+                                    className="group relative bg-white border border-slate-200 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:border-slate-400 hover:shadow-slate-300/20"
                                 >
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-slate-100 to-transparent rounded-tr-2xl pointer-events-none z-0 group-hover:from-slate-200 group-hover:opacity-50 transition-colors" />
 
@@ -209,9 +199,6 @@ export default function PlatinumArsenalPage() {
                                     <div className="relative z-10 flex items-start justify-between mb-3">
                                         <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-gradient-to-br group-hover:from-slate-100 group-hover:to-slate-200 group-hover:text-slate-700 group-hover:border-slate-300 transition-all group-hover:shadow-sm">
                                             {item.icon}
-                                        </div>
-                                        <div className="bg-slate-100 rounded-full p-1.5 group-hover:bg-slate-200 transition-colors flex items-center justify-center shadow-inner group-hover:shadow-slate-300/50">
-                                            <Lock size={12} className="text-slate-400 group-hover:text-slate-600 transition-colors" />
                                         </div>
                                     </div>
                                     <div className="relative z-10 space-y-1">
@@ -228,7 +215,7 @@ export default function PlatinumArsenalPage() {
                                             Asset #{100 * (catIndex + 1) + i}
                                         </p>
                                         <div className="text-[10px] font-bold text-slate-300 group-hover:text-slate-500 transition-colors uppercase tracking-widest flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-slate-400 transition-colors"></span> Locked
+                                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 group-hover:bg-green-500 transition-colors"></span> Unlocked
                                         </div>
                                     </div>
                                 </div>
@@ -238,27 +225,6 @@ export default function PlatinumArsenalPage() {
                 ))}
             </div>
 
-            {/* Floating Upsell for extra punch */}
-            <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-lg px-4">
-                <div className="bg-white/80 backdrop-blur-xl border border-slate-200 shadow-2xl rounded-2xl p-4 flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <img
-                                src="/platinum-badge.png"
-                                alt="Platinum Status Badge"
-                                className="w-full h-full object-contain filter drop-shadow-lg"
-                            />
-                        </div>
-                        <div>
-                            <div className="text-sm font-bold text-slate-900">Unlock the Arsenal</div>
-                            <div className="text-xs text-slate-500 font-semibold">Move from Silver to Platinum Status</div>
-                        </div>
-                    </div>
-                    <button className="bg-slate-900 text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-lg hover:bg-black transition-all active:scale-95">
-                        Upgrade Now →
-                    </button>
-                </div>
-            </div>
         </div>
     );
 }

@@ -1002,7 +1002,7 @@ export default function LinkedInAutomationPage() {
   // If already connected or in demo mode, show the main dashboard
   if ((hasCredentials || isDemoMode) && !isLoading) {
     return (
-      <div className="font-figtree h-full flex flex-col min-h-0 dashboard-scroll-container scrollbar-hide" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
+      <div className="font-figtree h-full flex flex-col min-h-0 dashboard-scroll-container scrollbar-hide px-4 lg:px-8" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
         <div className="w-full flex flex-col gap-6 min-h-0 h-full dashboard-content-wrapper pb-12">
           {/* Campaign Context (only when campaign selected) */}
           <DashboardContext
@@ -1019,7 +1019,7 @@ export default function LinkedInAutomationPage() {
           />
 
           {!selectedCampaign && (
-            <div className="max-w-5xl mx-auto px-4 lg:px-12 py-10 relative z-10 space-y-2 w-full">
+            <div className="py-2 px-4 lg:px-8 relative z-10 space-y-2 w-full">
               <div className={`${jetbrainsMono.variable} font-mono text-xs text-blue-600 tracking-widest uppercase font-semibold`}>
                 <span className="flex items-center gap-2">
                   <span className="flex h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse"></span>

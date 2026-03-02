@@ -15,6 +15,8 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
 import { LoadingSpinner } from "@/components/ui/loading";
+import { useDemoMode } from "@/app/context/demo-mode-context";
+import { demoActivities } from "@/app/constants/demo-data";
 import {
   Select,
   SelectContent,
@@ -52,6 +54,7 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
   const [totalCount, setTotalCount] = useState<number>(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { activities: realtimeActivities = [] } = useRealtime();
+  const { isDemoMode } = useDemoMode();
 
   const ITEMS_PER_PAGE = 10;
 
@@ -129,9 +132,25 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
   useEffect(() => {
     setActivities([]);
     setCurrentPage(1);
-    fetchLogs(1);
+
+    if (isDemoMode) {
+      // Use demo data instead of fetching
+      const demoLogs: Activity[] = demoActivities.map((log: any) => ({
+        id: log.id as unknown as number, // Handle string ID from mockup in a safe way
+        type: log.type,
+        message: log.message,
+        timestamp: log.timestamp,
+        status: log.status,
+      }));
+      setActivities(demoLogs);
+      setTotalCount(demoLogs.length);
+      setTotalPages(1);
+      setLoading(false);
+    } else {
+      fetchLogs(1);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeFilter, selectedCampaignId]);
+  }, [activeFilter, selectedCampaignId, isDemoMode]);
 
   // Handle page changes
   const handlePageChange = (page: number) => {
@@ -211,9 +230,9 @@ export function RecentActivity({ selectedCampaignId }: RecentActivityProps) {
   return (
     <div className="h-full flex flex-col">
       <div className="w-full flex flex-row items-center py-2 px-4 flex-shrink-0 gap-4">
-        <div className="flex-shrink-0 flex items-center justify-between py-2 px-4 shadow-sm z-10">
+        <div className="flex-shrink-0 flex flex-col items-start justify-center py-2 px-4 shadow-sm z-10">
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Recent Activity</h2>
-          <p className="text-slate-500 text-sm  font-light">See what's happening</p>
+          <p className="text-slate-500 text-sm font-light mt-1">See what's happening</p>
         </div>
         <div className="ml-auto">
           <Select value={activeFilter} onValueChange={setActiveFilter}>

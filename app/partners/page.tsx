@@ -82,7 +82,9 @@ export default function PartnersPage() {
         /* Layout */
         .section-padding { padding: 80px 0; }
         .tier-section { margin-bottom: 96px; }
-        .tier-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 52px; }
+        .tier-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 52px; }
+        .tier-header-content { flex: 1; }
+        .tier-badge { width: 140px; height: auto; flex-shrink: 0; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08)); }
         .tier-title { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
         .tier-name { font-size: 26px; font-weight: 300; letter-spacing: -0.5px; color: var(--text-dark); }
         .tier-rule { width: 40px; height: 1px; background: var(--border); margin: 12px 0 32px; }
@@ -146,7 +148,8 @@ export default function PartnersPage() {
           .mobile-toggle { display: flex; flex-direction: column; }
           .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 20px; gap: 16px; z-index: 999; }
           .nav-links.open { display: flex; }
-          .tier-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+          .tier-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+          .tier-badge { width: 100px; }
         }
       `}</style>
 
@@ -187,12 +190,13 @@ export default function PartnersPage() {
                     {/* GOLD TIER */}
                     <section className="tier-section">
                         <div className="tier-header">
-                            <div>
+                            <div className="tier-header-content">
                                 <p className="tier-title">Tier I</p>
                                 <h2 className="tier-name">Platinum Partners</h2>
                                 <div className="tier-rule"></div>
                                 <p className="tier-desc">Top-tier partners who have demonstrated exceptional technical mastery and scaled complex AI deployments.</p>
                             </div>
+                            <img src="/new-platinum-badge.jpg" alt="Platinum Certified Badge" className="tier-badge" />
                         </div>
 
                         <div className="partner-grid">
@@ -232,12 +236,13 @@ export default function PartnersPage() {
                     {/* SILVER TIER */}
                     <section className="tier-section">
                         <div className="tier-header">
-                            <div>
+                            <div className="tier-header-content">
                                 <p className="tier-title">Tier II</p>
                                 <h2 className="tier-name">Silver Partners</h2>
                                 <div className="tier-rule"></div>
                                 <p className="tier-desc">Trusted agencies fully equipped to design, build, and deploy Kingstone AI solutions.</p>
                             </div>
+                            <img src="/new-silver-badge.jpg" alt="Silver Certified Badge" className="tier-badge" />
                         </div>
 
                         <div className="partner-grid">
