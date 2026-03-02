@@ -164,14 +164,18 @@ export default function PlatinumArsenalPage() {
                             <p className="text-slate-500 text-lg max-w-2xl font-medium leading-relaxed">
                                 The proprietary infrastructure for agencies to scale past $10k/mo. High-ticket pipelines, lead overflow, and professional-grade agency assets.
                             </p>
+                            <div className="mt-4 inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-lg font-medium border border-red-100">
+                                <Lock size={16} />
+                                Platinum Status Required
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             {/* Categories and Grid */}
-            <div className="max-w-7xl mx-auto space-y-20">
+            <div className="max-w-7xl mx-auto space-y-20 relative">
+
                 {ARSENAL_CATEGORIES.map((category, catIndex) => (
                     <div key={catIndex} className="space-y-6">
                         <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
@@ -189,33 +193,26 @@ export default function PlatinumArsenalPage() {
                             {category.items.map((item, i) => (
                                 <div
                                     key={i}
-                                    className="group relative bg-white border border-slate-200 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:border-slate-400 hover:shadow-slate-300/20"
+                                    className="group relative bg-white border border-slate-200 rounded-2xl p-5 transition-all duration-300 pointer-events-none opacity-60"
                                 >
-                                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-slate-100 to-transparent rounded-tr-2xl pointer-events-none z-0 group-hover:from-slate-200 group-hover:opacity-50 transition-colors" />
-
-                                    {/* Shimmer effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent -translate-x-[150%] skew-x-[-15deg] group-hover:translate-x-[150%] transition-transform duration-1000 z-0 pointer-events-none rounded-2xl" />
-
                                     <div className="relative z-10 flex items-start justify-between mb-3">
-                                        <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-gradient-to-br group-hover:from-slate-100 group-hover:to-slate-200 group-hover:text-slate-700 group-hover:border-slate-300 transition-all group-hover:shadow-sm">
+                                        <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400">
                                             {item.icon}
                                         </div>
                                     </div>
                                     <div className="relative z-10 space-y-1">
-                                        <h4 className="font-bold text-slate-900 text-[15px] leading-tight group-hover:text-slate-800 transition-colors">
-                                            {item.name}
+                                        <h4 className="font-bold text-slate-500 text-[15px] leading-tight flex items-center gap-2">
+                                            {item.name} <Lock size={12} className="text-slate-400" />
                                         </h4>
-                                        <p className="text-xs text-slate-500 font-medium leading-relaxed h-8 line-clamp-2">
-                                            {item.desc}
-                                        </p>
+                                        <div className="h-8 bg-slate-100 rounded animate-pulse mt-2 w-3/4"></div>
                                     </div>
 
-                                    <div className="relative z-10 mt-4 pt-4 border-t border-slate-100 flex items-center justify-between group-hover:border-slate-200 transition-colors">
-                                        <p className={`${jetbrainsMono.variable} font-mono text-[9px] text-slate-400 uppercase tracking-widest font-bold group-hover:text-slate-600 transition-colors`}>
+                                    <div className="relative z-10 mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                                        <p className={`${jetbrainsMono.variable} font-mono text-[9px] text-slate-400 uppercase tracking-widest font-bold`}>
                                             Asset #{100 * (catIndex + 1) + i}
                                         </p>
-                                        <div className="text-[10px] font-bold text-slate-300 group-hover:text-slate-500 transition-colors uppercase tracking-widest flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 group-hover:bg-green-500 transition-colors"></span> Unlocked
+                                        <div className="text-[10px] font-bold text-red-400 uppercase tracking-widest flex items-center gap-1">
+                                            <Lock size={10} /> Locked
                                         </div>
                                     </div>
                                 </div>
@@ -223,6 +220,25 @@ export default function PlatinumArsenalPage() {
                         </div>
                     </div>
                 ))}
+
+                {/* Overlay Prompt */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                    <div className="sticky top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-8 shadow-2xl max-w-lg w-full mx-4 text-center pointer-events-auto filter drop-shadow-2xl">
+                        <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-inner border border-slate-700">
+                            <Lock className="text-slate-200" size={32} />
+                        </div>
+                        <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">
+                            Platinum Status Required
+                        </h3>
+                        <p className="text-slate-500 mb-8 leading-relaxed font-medium">
+                            The Platinum Arsenal contains proprietary acquisition systems, high-ticket technical sales frameworks, and strategic agency assets.
+                        </p>
+                        <button className="w-full py-4 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 border border-slate-700 flex items-center justify-center gap-2">
+                            <span>Upgrade to Platinum Status</span>
+                            <Crown size={16} className="text-slate-300" />
+                        </button>
+                    </div>
+                </div>
             </div>
 
         </div>
