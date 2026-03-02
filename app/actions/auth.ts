@@ -36,7 +36,7 @@ export const signUpAction = async (formData: FormData) => {
 
   const validPartnerCodes = ["Wyneo2026", "PenPaper2026", "LaunchLens2026", "KingstonePartner26", "KING"];
   if (!partnerCode || !validPartnerCodes.includes(partnerCode)) {
-    return { error: "Invalid Partner Code" };
+    return { error: "Invalid Invite Code" };
   }
 
   // Test Supabase connection

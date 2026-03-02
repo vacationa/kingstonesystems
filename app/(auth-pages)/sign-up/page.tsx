@@ -21,7 +21,7 @@ const signUpSchema = z.object({
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Please enter a valid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
-  partnerCode: z.string().min(1, "Partner code is required"),
+  partnerCode: z.string().min(1, "Invite code is required"),
 });
 
 type SignUpFormValues = z.infer<typeof signUpSchema>;
@@ -211,13 +211,13 @@ export default function SignUpPage() {
                   htmlFor="partnerCode"
                   className={`text-sm  text-slate-700 font-semibold`}
                 >
-                  Partner Code
+                  Invite Code
                 </Label>
                 <Input
                   id="partnerCode"
                   type="text"
                   className="text-sm bg-slate-50 h-11 rounded-xl border border-slate-200 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600/50 text-slate-900 placeholder:text-slate-400 shadow-none"
-                  placeholder="Enter partner code"
+                  placeholder="Enter invite code"
                   {...register("partnerCode")}
                 />
                 {errors.partnerCode && (
