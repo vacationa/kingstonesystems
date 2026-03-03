@@ -130,7 +130,7 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                 </p>
                 <div className="mt-3 px-4 py-2 bg-white border border-black/10 rounded-xl inline-block">
                     <p className="text-xs text-slate-500 font-medium">
-                        {dayData.prize?.name || dayData.prizes?.[0]?.name}
+                        {dayData.prize?.name}
                     </p>
                 </div>
             </div>
@@ -155,12 +155,12 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
 
                     <div>
                         <p className="font-bold text-slate-900 text-base">
-                            {dayData.prize?.name || dayData.prizes?.[0]?.name}
+                            {dayData.prize?.name}
                         </p>
                         <div
                             className="text-slate-600 text-sm leading-relaxed mt-1 max-w-lg prose-a:text-blue-600 prose-a:underline hover:prose-a:text-blue-500 prose-a:transition-colors"
                             dangerouslySetInnerHTML={{
-                                __html: (dayData.prize?.description || dayData.prizes?.[0]?.description || "").replace(
+                                __html: (dayData.prize?.description || "").replace(
                                     /\[([^\]]+)\]\(([^)]+)\)/g,
                                     '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: #2563EB; text-decoration: underline; font-weight: 500;">$1</a>'
                                 )
@@ -180,23 +180,6 @@ function PrizeCard({ day, dayData, isComplete, unlockedPrize, onUnlock }: {
                         </a>
                     )}
 
-                    {dayData.prizes && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                            {dayData.prizes.map((p, i) => (
-                                <div
-                                    key={i}
-                                    className="p-4 rounded-xl bg-white border border-black/5 shadow-sm"
-                                >
-                                    <div className="flex items-center justify-between gap-2">
-                                        <div className="min-w-0">
-                                            <p className="font-bold text-slate-900 text-sm truncate">{p.name}</p>
-                                            <p className="text-slate-500 text-[10px] mt-0.5 whitespace-normal leading-tight">{p.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    )}
 
 
                     <div
