@@ -64,10 +64,9 @@ const DAYS = [
         tasks: [
             { id: "d4_v1", label: "Watch How to Build an Elite Lead List Fast" },
             { id: "d4_v2", label: "Watch LinkedIn Prospecting: Authority & Outreach System" },
+            { id: "d4_v3", label: "Watch Cold Calling System: High-Speed Pipeline Building" },
             { id: "d4_linkedin_automation", label: "Create your first Linkedin Automation campaign" },
             { id: "d4_screenshot_campaign", label: "Screenshot your campaign" },
-            { id: "d4_outreach_call", label: "Send your first outreach message or make your first call" },
-            { id: "d4_screenshot", label: "Screenshot your lead list and outreach" },
         ],
     },
     {
