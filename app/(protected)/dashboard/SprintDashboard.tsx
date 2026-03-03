@@ -44,16 +44,10 @@ const DAYS = [
         day: 3,
         title: "Build Your AI Agency Website",
         color: "#f59e0b",
-        prizes: [
-            {
-                name: "Instagram Audit",
-                description: "Enter your Instagram handle below and our team will provide a comprehensive profile optimization audit within 48 hours.",
-            },
-            {
-                name: "LinkedIn Audit",
-                description: "Enter your LinkedIn profile URL or username below and our team will provide a comprehensive profile optimization audit within 48 hours.",
-            }
-        ],
+        prize: {
+            name: "Instagram & LinkedIn Audits",
+            description: "Submit your Instagram handle and LinkedIn profile URL/username in the Systems Vault and our team will provide a comprehensive profile optimization audit within 48 hours.",
+        },
         tasks: [
             { id: "d3_v4", label: "Watch Build Your AI Agency Website" },
             { id: "d3_website", label: "Finish your website" },
