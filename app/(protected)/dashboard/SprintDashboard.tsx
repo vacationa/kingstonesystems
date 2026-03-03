@@ -55,9 +55,8 @@ const DAYS = [
             }
         ],
         tasks: [
-            { id: "d3_v2", label: 'Watch Finalizing Your Core Offer' },
             { id: "d3_v4", label: "Watch Build Your AI Agency Website" },
-            { id: "d3_website", label: "Get your website up" },
+            { id: "d3_website", label: "Finish your website" },
         ],
     },
     {
