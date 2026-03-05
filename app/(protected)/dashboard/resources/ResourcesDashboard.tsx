@@ -384,9 +384,14 @@ export default function ResourcesDashboard({ initialPrizes = {}, initialPartnerS
                                 For those ready to move from Silver to Platinum Status. Unlock the High-Ticket Pipeline, the proprietary Agency Arsenal, and our Lead Overflow.
                             </p>
 
-                            <button className="mt-6 px-10 py-4 rounded-xl bg-slate-900 border border-slate-800 hover:bg-black text-white font-bold transition-all shadow-xl shadow-slate-900/10 hover:-translate-y-0.5">
+                            <a
+                                href="https://www.skool.com/platinum"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-6 inline-block px-10 py-4 rounded-xl bg-slate-900 border border-slate-800 hover:bg-black text-white font-bold transition-all shadow-xl shadow-slate-900/10 hover:-translate-y-0.5"
+                            >
                                 Upgrade Status ↗
-                            </button>
+                            </a>
                         </div>
 
                         <div className="flex-1 w-full space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm backdrop-blur-md">

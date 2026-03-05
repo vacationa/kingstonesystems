@@ -1,11 +1,29 @@
 "use client";
 
-import { LayoutDashboard, Lock, Database, Terminal, Shield, Network, Folder, Compass, Ruler, Database as DbIcon, Zap, Target, Users, TrendingUp, BarChart, Code, Cpu, Globe, Rocket, Sword, GitMerge, Flame, Settings, Anchor, Crown } from "lucide-react";
+import { LayoutDashboard, Lock, Database, Terminal, Shield, Network, Folder, Compass, Ruler, Database as DbIcon, Zap, Target, Users, TrendingUp, BarChart, Code, Cpu, Globe, Rocket, Sword, GitMerge, Flame, Settings, Anchor, Crown, Bot, Phone, MessageSquare } from "lucide-react";
 import { jetbrainsMono } from "@/app/fonts/fonts";
 import Link from "next/link";
 import { useDemoMode } from "@/app/context/demo-mode-context";
 
 const ARSENAL_CATEGORIES = [
+    {
+        name: "Agents",
+        icon: <Bot size={20} className="text-slate-600" />,
+        items: [
+            { name: "Tow Truck AI Receptionist", desc: "24/7 AI voice agent for towing dispatch & intake.", icon: <Phone size={16} /> },
+            { name: "HVAC AI Receptionist", desc: "Automated booking & emergency call routing for HVAC.", icon: <Phone size={16} /> },
+            { name: "Auto Repair AI Receptionist", desc: "AI-powered scheduling & service inquiry handler.", icon: <Phone size={16} /> },
+            { name: "Gym AI Receptionist", desc: "Membership inquiries, class bookings & tours on autopilot.", icon: <Phone size={16} /> },
+            { name: "Pest Control AI Receptionist", desc: "Instant quoting & appointment booking for pest services.", icon: <Phone size={16} /> },
+            { name: "Personal Injury Law Firm AI Receptionist", desc: "24/7 lead intake & case qualification for law firms.", icon: <Phone size={16} /> },
+            { name: "Med Spa AI Receptionist", desc: "Appointment scheduling & treatment inquiry automation.", icon: <Phone size={16} /> },
+            { name: "Driving School AI Receptionist", desc: "Lesson booking & student inquiry management.", icon: <Phone size={16} /> },
+            { name: "Plumbing Missed Call Text-Back System", desc: "Automated SMS follow-up for missed plumbing calls.", icon: <MessageSquare size={16} /> },
+            { name: "Barbershop Missed Call Text-Back System", desc: "Instant text follow-up for missed barbershop calls.", icon: <MessageSquare size={16} /> },
+            { name: "HVAC Missed Call Text-Back System", desc: "Automated text response for missed HVAC service calls.", icon: <MessageSquare size={16} /> },
+            { name: "Ecommerce Returns Agent", desc: "AI-powered returns & refund request automation.", icon: <Bot size={16} /> },
+        ]
+    },
     {
         name: "I. Sales & Acquisition (The Spear)",
         icon: <Sword size={20} className="text-slate-600" />,
@@ -233,10 +251,15 @@ export default function PlatinumArsenalPage() {
                         <p className="text-slate-500 mb-8 leading-relaxed font-medium">
                             The Platinum Arsenal contains proprietary acquisition systems, high-ticket technical sales frameworks, and strategic agency assets.
                         </p>
-                        <button className="w-full py-4 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 border border-slate-700 flex items-center justify-center gap-2">
+                        <a
+                            href="https://www.skool.com/platinum"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full py-4 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 border border-slate-700 flex items-center justify-center gap-2"
+                        >
                             <span>Upgrade to Platinum Status</span>
                             <Crown size={16} className="text-slate-300" />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
