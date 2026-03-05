@@ -22,6 +22,10 @@ const ARSENAL_CATEGORIES = [
             { name: "Barbershop Missed Call Text-Back System", desc: "Instant text follow-up for missed barbershop calls.", icon: <MessageSquare size={16} /> },
             { name: "HVAC Missed Call Text-Back System", desc: "Automated text response for missed HVAC service calls.", icon: <MessageSquare size={16} /> },
             { name: "Ecommerce Returns Agent", desc: "AI-powered returns & refund request automation.", icon: <Bot size={16} /> },
+            { name: "Solar Proposal Generator", desc: "Automated solar installation proposals & estimates.", icon: <Zap size={16} /> },
+            { name: "Plumbing Quote Generator", desc: "Instant AI-generated quotes for plumbing services.", icon: <Ruler size={16} /> },
+            { name: "HVAC Proposal Generator", desc: "Automated HVAC system proposals & pricing.", icon: <Settings size={16} /> },
+            { name: "Junk Removal Quoter", desc: "AI-powered junk removal estimates & booking.", icon: <Target size={16} /> },
         ]
     },
     {
