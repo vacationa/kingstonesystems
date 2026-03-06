@@ -102,7 +102,7 @@ const ARSENAL_CATEGORIES = [
             { name: "The Cold Email \"Glitch\" Subject Lines", desc: "10 high-open-rate headlines.", icon: <Terminal size={16} />, href: "https://docs.google.com/document/d/1FfJwNWf01o3ISLMuCbcbgphlk97uaZdQmtj-3MpGOIw/edit?tab=t.0" },
             { name: "Automated Follow-up Matrix", desc: "Sequence for \"Non-Responsive\" leads.", icon: <Network size={16} />, href: "https://docs.google.com/document/d/1aimmRQBBl3MMTpB9_I7oCN0GlmDgu2sIJojnOso4t7c/edit?tab=t.0" },
             { name: "Strategic Niche Pivot SOP", desc: "How to change industries in 24 hours.", icon: <Globe size={16} />, href: "https://docs.google.com/document/d/1RyJM1OSK2DOY3Gy1LZbLePYkJ45vsW7E42L52hrkkUM/edit?tab=t.0" },
-            { name: "The \"Platinum\" Outreach Calendar", desc: "Daily volume targets for $10k/mo.", icon: <TrendingUp size={16} />, href: "https://docs.google.com/document/d/1DMyvWrARr5PwbXNuuRjyh0U-wc4OeRLKKpxlOOHWq7M/edit?tab=t.0" },
+            { name: "The \"Platinum\" Outreach Calendar", desc: "Daily volume targets for $5k/mo.", icon: <TrendingUp size={16} />, href: "https://docs.google.com/document/d/1DMyvWrARr5PwbXNuuRjyh0U-wc4OeRLKKpxlOOHWq7M/edit?tab=t.0" },
         ]
     },
     {
@@ -182,7 +182,7 @@ export default async function PlatinumArsenalPage() {
                                 The Platinum Arsenal
                             </h1>
                             <p className="text-slate-500 text-lg max-w-2xl font-medium leading-relaxed">
-                                The proprietary infrastructure for agencies to scale past $10k/mo. High-ticket pipelines, lead overflow, and professional-grade agency assets.
+                                The proprietary infrastructure for agencies to scale past $5k/mo. High-ticket pipelines, lead overflow, and professional-grade agency assets.
                             </p>
                             {hasAccess ? (
                                 <div className="mt-4 inline-flex items-center gap-2 bg-emerald-50 text-emerald-600 px-4 py-2 rounded-lg font-medium border border-emerald-100">

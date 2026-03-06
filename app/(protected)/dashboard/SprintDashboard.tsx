@@ -421,7 +421,7 @@ function ThirtyDayLockedCard() {
                 {/* Bullet points */}
                 <ul className="space-y-2">
                     {[
-                        "The Motherload: Turn your validated offer into a repeatable $10k/month engine.",
+                        "The Motherload: Turn your validated offer into a repeatable $5k/month engine.",
                         "Lead Overflow Access: Advanced client acquisition, delegation systems, and scaling playbooks.",
                         "The Platinum Credential: Earn your official 🥇 Platinum Partner Certification.",
                     ].map((item) => (
