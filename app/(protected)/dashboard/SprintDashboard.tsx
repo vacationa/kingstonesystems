@@ -42,7 +42,7 @@ const DAYS = [
     },
     {
         day: 3,
-        title: "Build Your AI Agency Website",
+        title: "Finalize Your Offer",
         color: "#f59e0b",
         prize: {
             name: "Instagram & LinkedIn Audits",
