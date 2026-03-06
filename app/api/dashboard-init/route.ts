@@ -21,7 +21,7 @@ export async function GET(req: Request) {
   // Get profile and check for LinkedIn credentials
   const { data: profile, error: profileError } = await supabase
     .from("profiles")
-    .select("id, linkedin_connected, created_at, trial_weeks")
+    .select("id, linkedin_connected, created_at, partner_status")
     .eq("id", user.id)
     .single();
 
@@ -43,19 +43,19 @@ export async function GET(req: Request) {
   //   profile.linkedin_connected = false;
   // }
 
-  // Trial status
-  let daysRemaining = 0;
-  if (profile?.created_at) {
+  // Trial / access status
+  // Platinum members have unlimited LinkedIn access
+  // Silver (free) members get a 14-day trial from signup
+  const TRIAL_DAYS = 14;
+  const isPlatinum = !!profile?.partner_status?.toLowerCase().includes("platinum");
+  let daysRemaining = isPlatinum ? TRIAL_DAYS : 0;
+  if (!isPlatinum && profile?.created_at) {
     const createdAt = new Date(profile.created_at);
     const now = new Date();
     const daysSinceSignup = Math.floor(
       (now.getTime() - createdAt.getTime()) / (1000 * 60 * 60 * 24),
     );
-
-    // Use trial_weeks from profile, fallback to 1 week if not set
-    const trialWeeks = profile.trial_weeks || 1;
-    const trialDays = trialWeeks * 7;
-    daysRemaining = Math.max(0, trialDays - daysSinceSignup);
+    daysRemaining = Math.max(0, TRIAL_DAYS - daysSinceSignup);
   }
 
   // Import status
