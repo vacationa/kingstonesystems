@@ -13,6 +13,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [timeRange, setTimeRange] = useState<any>("7d");
   const [partnerStatus, setPartnerStatus] = useState("Awaiting Activation");
+  const [trialDaysRemaining, setTrialDaysRemaining] = useState<number | null>(null);
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
     async function fetchStatus() {
@@ -20,6 +22,23 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       setPartnerStatus(status);
     }
     fetchStatus();
+  }, []);
+
+  useEffect(() => {
+    async function fetchTrialStatus() {
+      try {
+        const res = await fetch("/api/check-trial-status");
+        const data = await res.json();
+        if ((data.subscribed && data.daysRemaining === undefined) || data.isPlatinum) {
+          setIsSubscribed(true);
+        } else {
+          setTrialDaysRemaining(data.daysRemaining ?? 0);
+        }
+      } catch {
+        // silently fail
+      }
+    }
+    fetchTrialStatus();
   }, []);
 
   interface NavItem {
@@ -121,10 +140,17 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </div>
             {!isCollapsed && (
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold text-slate-900 truncate">Silver Partner</div>
-                <div className={`${jetbrainsMono.variable} font-mono text-[10px] text-slate-500 uppercase tracking-widest`}>
-                  {partnerStatus === "Active" ? "Silver Partner Activated" : partnerStatus}
+                <div className="text-sm font-bold text-slate-900 truncate">
+                  {partnerStatus === "Platinum" ? "Platinum Partner" : "Silver Partner"}
                 </div>
+                <div className={`${jetbrainsMono.variable} font-mono text-[10px] uppercase tracking-widest ${partnerStatus === "Platinum" ? "text-amber-500" : "text-slate-500"}`}>
+                  {partnerStatus === "Platinum" ? "Platinum Access" : partnerStatus === "Active" ? "Silver Activated" : partnerStatus}
+                </div>
+                {!isSubscribed && trialDaysRemaining !== null && (
+                  <div className={`${jetbrainsMono.variable} font-mono text-[9px] uppercase tracking-widest mt-0.5 ${trialDaysRemaining <= 0 ? "text-red-400" : trialDaysRemaining <= 3 ? "text-amber-500" : "text-slate-400"}`}>
+                    {trialDaysRemaining <= 0 ? "Trial ended" : `${trialDaysRemaining}d trial left`}
+                  </div>
+                )}
               </div>
             )}
           </div>
