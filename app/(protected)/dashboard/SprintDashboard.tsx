@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useTransition } from "react";
-import { LogOut } from "lucide-react";
+import { useState, useEffect, useTransition } from "react";
+import { LogOut, Clock, AlertTriangle } from "lucide-react";
 import { aeonik, jetbrainsMono } from "../../../app/fonts/fonts";
 import { loadSprintProgress, toggleTask, unlockPrize, submitAuditRequest } from "@/app/actions/sprint";
 import { signOutAction } from "@/app/actions/auth";
@@ -49,8 +49,8 @@ const DAYS = [
             description: "Submit your Instagram handle and LinkedIn profile URL/username in the Systems Vault and our team will provide a comprehensive profile optimization audit within 48 hours.",
         },
         tasks: [
-            { id: "d3_v4", label: "Watch Build Your AI Agency Website" },
-            { id: "d3_website", label: "Finish your website" },
+            { id: "d3_v1", label: "Watch Finalizing Your Core Offer" },
+            { id: "d3_pitch", label: "Fill out 1-page pitch" },
         ],
     },
     {
@@ -442,6 +442,77 @@ function ThirtyDayLockedCard() {
     );
 }
 
+// ─── LinkedIn Trial Countdown Banner ───────────────────────────────────────
+
+function LinkedInTrialBanner({ onExpired }: { onExpired: () => void }) {
+    const [trialData, setTrialData] = useState<{
+        daysRemaining: number;
+        subscribed: boolean;
+        isPlatinum: boolean;
+        isLoading: boolean;
+    }>({
+        daysRemaining: 14,
+        subscribed: false,
+        isPlatinum: false,
+        isLoading: true,
+    });
+
+    useEffect(() => {
+        let mounted = true;
+        async function fetchTrialStatus() {
+            try {
+                const res = await fetch("/api/check-trial-status");
+                const data = await res.json();
+                if (!mounted) return;
+
+                const subscribed = !!data?.subscribed;
+                const isPlatinum = !!data?.isPlatinum;
+                const daysRemaining = Number(data?.daysRemaining ?? 0);
+
+                setTrialData({ daysRemaining, subscribed, isPlatinum, isLoading: false });
+
+                // If trial expired and not subscribed/platinum, trigger expiration
+                if (daysRemaining <= 0 && !subscribed && !isPlatinum) {
+                    onExpired();
+                }
+            } catch {
+                if (mounted) {
+                    setTrialData(prev => ({ ...prev, isLoading: false }));
+                }
+            }
+        }
+        fetchTrialStatus();
+        return () => { mounted = false; };
+    }, [onExpired]);
+
+    // Don't show banner for subscribed or platinum users, or while loading
+    if (trialData.isLoading || trialData.subscribed || trialData.isPlatinum) {
+        return null;
+    }
+
+    const isExpired = trialData.daysRemaining <= 0;
+
+    if (isExpired) {
+        return (
+            <div className="flex items-center justify-center gap-2 py-3 px-4 text-xs text-red-400 font-medium">
+                <span>Your 14-day Outreach Engine trial has ended — campaigns paused.</span>
+            </div>
+        );
+    }
+
+    return (
+        <div className="flex items-center justify-center gap-2 py-3 px-4">
+            <Clock size={13} className="text-slate-400" />
+            <span className="text-xs text-slate-400 font-medium">
+                LinkedIn Outreach Engine trial
+            </span>
+            <span className="text-[11px] font-mono font-semibold text-slate-500 bg-slate-100 border border-black/5 px-2 py-0.5 rounded-full">
+                {trialData.daysRemaining} day{trialData.daysRemaining !== 1 ? "s" : ""} left
+            </span>
+        </div>
+    );
+}
+
 // ─── Overall Progress Bar ──────────────────────────────────────────────────
 
 function OverallProgress({ checked, unlockedPrizes }: { checked: Record<string, boolean>; unlockedPrizes: Record<number, boolean> }) {
@@ -536,6 +607,33 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
         }
     };
 
+    // Handle trial expiration: pause all campaigns and sign out
+    const handleTrialExpired = async () => {
+        try {
+            // Fetch campaigns and pause all active ones
+            const res = await fetch("/api/dashboard-init");
+            if (res.ok) {
+                const data = await res.json();
+                const activeCampaigns = (data.campaigns || []).filter(
+                    (c: any) => c.status === "active"
+                );
+                await Promise.allSettled(
+                    activeCampaigns.map((c: any) =>
+                        fetch(`/api/campaigns/${c.id}/status`, {
+                            method: "PATCH",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ status: "paused" }),
+                        })
+                    )
+                );
+            }
+        } catch (err) {
+            console.error("Error pausing campaigns on trial expiry:", err);
+        }
+        // Sign user out after a brief delay for UX
+        setTimeout(() => signOutAction(), 3000);
+    };
+
 
     return (
         <div className="w-full min-h-screen bg-slate-50 text-slate-900 relative" style={{ fontFamily: "var(--font-figtree, 'Figtree', system-ui, sans-serif)" }}>
@@ -626,6 +724,9 @@ export default function SprintDashboard({ initialChecked, initialPrizes }: Sprin
 
                 {/* 30-day locked card */}
                 <ThirtyDayLockedCard />
+
+                {/* LinkedIn Automation Trial Countdown */}
+                <LinkedInTrialBanner onExpired={handleTrialExpired} />
 
                 {/* Saving indicator */}
                 {isPending && (
